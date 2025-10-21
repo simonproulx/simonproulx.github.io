@@ -507,7 +507,7 @@ let lastScrollPosition = 0;
         if (media.type === 'video') {
           item.innerHTML = `<video muted><source src="${media.src}" type="video/mp4"></video><div class="play-icon">▶</div>`;
         } else {
-          item.innerHTML = `<img src="${media.src}" alt="${(media.title||'')}" />`;
+          item.innerHTML = `<img src="${media.thumb}" alt="${(media.title||'')}" loading="lazy" />`;
         }
         item.onclick = () => switchMedia(idx);
         subCarousel.appendChild(item);

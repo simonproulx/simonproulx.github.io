@@ -1,57 +1,57 @@
 {
-"hallway-study": {
-  "title": "Ornate Temple Corridor",
-  "description": "A real-time environment study focusing on modular architecture, procedural texturing, and volumetric lighting.",
-  "details": "Software: Unreal Engine, Substance Designer, ZBrush, ComfyUI\nTechniques: High-to-low poly baking, PBR material authoring, procedural generation, dynamic lighting",
-  "links": [
-    { "text": "View on ArtStation", "url": "#" }
-  ],
-  "category": "3d-work",
-  "media": [
-    {
-      "type": "image",
-      "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/portfolio/projects/other-3d/hallway_textured",
-      "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_800,c_scale/portfolio/projects/other-3d/hallway_textured",
-      "title": "Final Render",
-      "description": "The primary cinematic shot showcasing the repeating architectural elements and the interplay of volumetric light and shadow."
-    },
-    {
-      "type": "image",
-      "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/portfolio/projects/other-3d/hallway_wireframe",
-      "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_800,c_scale/portfolio/projects/other-3d/hallway_wireframe",
-      "title": "Wireframe & Topology",
-      "description": "A technical breakdown showing the optimized mesh topology of the modular assets used to construct the scene."
-    },
-    {
-      "type": "image",
-      "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/portfolio/projects/other-3d/hallway_overlay",
-      "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_800,c_scale/portfolio/projects/other-3d/hallway_overlay",
-      "title": "Lighting & Composition Overlay",
-      "description": "An analysis of the scene's composition and lighting setup, highlighting key lights and post-processing volumes."
-    },
-    {
-      "type": "image",
-      "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/portfolio/projects/other-3d/hallway_comfyUI",
-      "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_800,c_scale/portfolio/projects/other-3d/hallway_comfyUI",
-      "title": "Procedural Texture Graph (ComfyUI)",
-      "description": "The node-based graph from ComfyUI used to generate the intricate patterns and materials for the ceiling and pillars."
-    },
-    {
-      "type": "image",
-      "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/portfolio/projects/other-3d/hallway_reference",
-      "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_800,c_scale/portfolio/projects/other-3d/hallway_reference",
-      "title": "Moodboard & Key References",
-      "description": "A collection of the primary architectural and artistic references that inspired the final design and mood of the environment."
-    },
-    {
-      "type": "image",
-      "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/portfolio/projects/other-3d/hallway_wide",
-      "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_800,c_scale/portfolio/projects/other-3d/hallway_wide",
-      "title": "Ultrawide Cinematic Shot",
-      "description": "An alternate, wider composition that emphasizes the scale and grandeur of the temple corridor."
-    }
-  ]
-},
+  "hallway-study": {
+    "title": "Ornate Temple Corridor",
+    "description": "A real-time environment study focusing on modular architecture, procedural texturing, and volumetric lighting.",
+    "details": "Software: Unreal Engine, Substance Designer, ZBrush, ComfyUI\nTechniques: High-to-low poly baking, PBR material authoring, procedural generation, dynamic lighting",
+    "links": [
+      { "text": "View on ArtStation", "url": "#" }
+    ],
+    "category": "3d-work",
+    "media": [
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/hallway_textured",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_800,c_scale/hallway_textured",
+        "title": "Final Render",
+        "description": "The primary cinematic shot showcasing the repeating architectural elements and the interplay of volumetric light and shadow."
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/hallway_wireframe",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_800,c_scale/hallway_wireframe",
+        "title": "Wireframe & Topology",
+        "description": "A technical breakdown showing the optimized mesh topology of the modular assets used to construct the scene."
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/hallway_overlay",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_800,c_scale/hallway_overlay",
+        "title": "Lighting & Composition Overlay",
+        "description": "An analysis of the scene's composition and lighting setup, highlighting key lights and post-processing volumes."
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/hallway_comfyUI",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_800,c_scale/hallway_comfyUI",
+        "title": "Procedural Texture Graph (ComfyUI)",
+        "description": "The node-based graph from ComfyUI used to generate the intricate patterns and materials for the ceiling and pillars."
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/hallway_reference",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_800,c_scale/hallway_reference",
+        "title": "Moodboard & Key References",
+        "description": "A collection of the primary architectural and artistic references that inspired the final design and mood of the environment."
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/hallway_wide",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_800,c_scale/hallway_wide",
+        "title": "Ultrawide Cinematic Shot",
+        "description": "An alternate, wider composition that emphasizes the scale and grandeur of the temple corridor."
+      }
+    ]
+  },
 "3d-work-2":{
    "title":"Organic Architecture",
    "description":"Procedural architecture blending natural forms with modern design principles.",
