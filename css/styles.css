@@ -168,7 +168,7 @@
     .hero {
         height:100vh;
         background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-        url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover;
+        url('https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto,w_1920,c_limit/hero_shot_main_page') center/cover;
         position: relative; /* This is crucial for absolute positioning of children */
         display: flex; /* Keep this for centering the logo */
         flex-direction: column; /* Keep this for centering the logo */
