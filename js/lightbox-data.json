@@ -1,45 +1,53 @@
 {
-"3d-work-1":{
-   "title":"Futuristic Environment",
-   "description":"A sci-fi environment created using Unreal Engine 5 with custom materials and lighting systems.",
-   "details":"Created using: Unreal Engine 5, Substance Designer, Houdini\nRender time: 2 hours per frame\nPolygon count: 2.5M triangles\nTexture resolution: 4K PBR materials",
-   "links":[
-      {
-         "text":"View on ArtStation",
-         "url":"#"
-      },
-      {
-         "text":"GitHub Repository",
-         "url":"#"
-      }
-   ],
-   "category":"3d-work",
-   "media":[
-      {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1614728263952-84ea256f9679?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Main Environment View",
-         "description":"The primary view showcasing the futuristic environment with dynamic lighting."
-      },
-      {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Wireframe Analysis",
-         "description":"Technical breakdown showing the mesh topology and optimization techniques."
-      },
-      {
-         "type":"video",
-         "src":"https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4",
-         "title":"Animation Walkthrough",
-         "description":"Animated sequence demonstrating the environment\\'s dynamic elements and lighting changes."
-      },
-      {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Material Breakdown",
-         "description":"Close-up view of the custom PBR materials and surface details."
-      }
-   ]
+"hallway-study": {
+  "title": "Ornate Temple Corridor",
+  "description": "A real-time environment study focusing on modular architecture, procedural texturing, and volumetric lighting.",
+  "details": "Software: Unreal Engine, Substance Designer, ZBrush, ComfyUI\nTechniques: High-to-low poly baking, PBR material authoring, procedural generation, dynamic lighting",
+  "links": [
+    {
+      "text": "View on ArtStation",
+      "url": "#"
+    }
+  ],
+  "category": "3d-work",
+  "media": [
+    {
+      "type": "image",
+      "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/portfolio/projects/other-3d/hallway_textured",
+      "title": "Final Render",
+      "description": "The primary cinematic shot showcasing the repeating architectural elements and the interplay of volumetric light and shadow."
+    },
+    {
+      "type": "image",
+      "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/portfolio/projects/other-3d/hallway_wireframe",
+      "title": "Wireframe & Topology",
+      "description": "A technical breakdown showing the optimized mesh topology of the modular assets used to construct the scene."
+    },
+    {
+      "type": "image",
+      "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/portfolio/projects/other-3d/hallway_overlay",
+      "title": "Lighting & Composition Overlay",
+      "description": "An analysis of the scene's composition and lighting setup, highlighting key lights and post-processing volumes."
+    },
+    {
+      "type": "image",
+      "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/portfolio/projects/other-3d/hallway_comfyUI",
+      "title": "Procedural Texture Graph (ComfyUI)",
+      "description": "The node-based graph from ComfyUI used to generate the intricate patterns and materials for the ceiling and pillars."
+    },
+    {
+      "type": "image",
+      "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/portfolio/projects/other-3d/hallway_reference",
+      "title": "Moodboard & Key References",
+      "description": "A collection of the primary architectural and artistic references that inspired the final design and mood of the environment."
+    },
+    {
+      "type": "image",
+      "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/portfolio/projects/other-3d/hallway_wide",
+      "title": "Ultrawide Cinematic Shot",
+      "description": "An alternate, wider composition that emphasizes the scale and grandeur of the temple corridor."
+    }
+  ]
 },
 "3d-work-2":{
    "title":"Organic Architecture",
