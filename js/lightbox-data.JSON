@@ -1,0 +1,522 @@
+{
+"3d-work-1":{
+   "title":"Futuristic Environment",
+   "description":"A sci-fi environment created using Unreal Engine 5 with custom materials and lighting systems.",
+   "details":"Created using: Unreal Engine 5, Substance Designer, Houdini\nRender time: 2 hours per frame\nPolygon count: 2.5M triangles\nTexture resolution: 4K PBR materials",
+   "links":[
+      {
+         "text":"View on ArtStation",
+         "url":"#"
+      },
+      {
+         "text":"GitHub Repository",
+         "url":"#"
+      }
+   ],
+   "category":"3d-work",
+   "media":[
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1614728263952-84ea256f9679?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Main Environment View",
+         "description":"The primary view showcasing the futuristic environment with dynamic lighting."
+      },
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Wireframe Analysis",
+         "description":"Technical breakdown showing the mesh topology and optimization techniques."
+      },
+      {
+         "type":"video",
+         "src":"https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4",
+         "title":"Animation Walkthrough",
+         "description":"Animated sequence demonstrating the environment\\'s dynamic elements and lighting changes."
+      },
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Material Breakdown",
+         "description":"Close-up view of the custom PBR materials and surface details."
+      }
+   ]
+},
+"3d-work-2":{
+   "title":"Organic Architecture",
+   "description":"Procedural architecture blending natural forms with modern design principles.",
+   "details":"Software: Maya, Houdini, Substance Suite\nInspiration: Biomimetic design patterns\nTechniques: Procedural modeling, L-systems\nProject duration: 3 weeks",
+   "links":[
+      {
+         "text":"Process Breakdown",
+         "url":"#"
+      },
+      {
+         "text":"Download Assets",
+         "url":"#"
+      }
+   ],
+   "category":"3d-work",
+   "media":[
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Final Architecture",
+         "description":"The completed organic architecture structure with natural lighting."
+      },
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Concept Sketches",
+         "description":"Initial design concepts and biomimetic inspiration references."
+      },
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Procedural Network",
+         "description":"Houdini node network showing the procedural generation process."
+      },
+      {
+         "type":"video",
+         "src":"https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4",
+         "title":"Growth Animation",
+         "description":"Time-lapse animation showing the organic growth simulation."
+      }
+   ]
+},
+"3d-work-3":{
+   "title":"Futuristic Cityscape",
+   "description":"A detailed futuristic city environment with neon lighting and dynamic weather effects.",
+   "details":"Created using: Unreal Engine 5, Houdini, Substance Painter\nPolygon count: 3M triangles\nTexture resolution: 4K PBR materials",
+   "links":[
+      {
+         "text":"View on ArtStation",
+         "url":"#"
+      },
+      {
+         "text":"Project Breakdown",
+         "url":"#"
+      }
+   ],
+   "category":"3d-work",
+   "media":[
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Cityscape View",
+         "description":"Main view of the futuristic city with neon lights."
+      },
+      {
+         "type":"video",
+         "src":"https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4",
+         "title":"City Animation",
+         "description":"Flythrough animation of the city environment."
+      }
+   ]
+},
+"3d-work-4":{
+   "title":"Alien Landscape",
+   "description":"An alien planet environment featuring exotic flora and terrain.",
+   "details":"Software: Houdini, Unreal Engine 5, Substance Designer\nProject duration: 4 weeks\nUnique procedural flora system",
+   "links":[
+      {
+         "text":"View on ArtStation",
+         "url":"#"
+      },
+      {
+         "text":"Download Assets",
+         "url":"#"
+      }
+   ],
+   "category":"3d-work",
+   "media":[
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Alien Terrain",
+         "description":"Wide shot of the alien landscape with unique vegetation."
+      },
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Flora Details",
+         "description":"Close-up view of the exotic flora with unique textures."
+      }
+   ]
+},
+"plugin-1":{
+   "title":"Terrain Generator Plugin",
+   "description":"Custom Maya plugin for procedural terrain generation with real-time preview.",
+   "details":"Language: Python, C++ API\nFeatures: Real-time preview, Export to game engines\nCompatibility: Maya 2020-2024\nPerformance: Optimized for large terrains",
+   "links":[
+      {
+         "text":"Download Plugin",
+         "url":"#"
+      },
+      {
+         "text":"Documentation",
+         "url":"#"
+      },
+      {
+         "text":"Source Code",
+         "url":"#"
+      }
+   ],
+   "category":"plugin",
+   "media":[
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Plugin Interface",
+         "description":"The main user interface showing terrain generation controls and real-time preview."
+      },
+      {
+         "type":"video",
+         "src":"https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4",
+         "title":"Live Demo",
+         "description":"Real-time demonstration of terrain generation with parameter adjustments."
+      },
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1614728263952-84ea256f9679?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Generated Terrains",
+         "description":"Various terrain examples created using different parameter settings."
+      },
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Code Structure",
+         "description":"Overview of the plugin architecture and key code components."
+      }
+   ]
+},
+"plugin-2":{
+   "title":"Procedural Foliage Plugin",
+   "description":"A Houdini plugin for generating procedural foliage with customizable parameters.",
+   "details":"Language: Python, Houdini VEX\nFeatures: Real-time preview, Export to Unreal Engine\nCompatibility: Houdini 18+\nPerformance: Optimized for large forests",
+   "links":[
+      {
+         "text":"Download Plugin",
+         "url":"#"
+      },
+      {
+         "text":"Documentation",
+         "url":"#"
+      }
+   ],
+   "category":"plugin",
+   "media":[
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Plugin Interface",
+         "description":"User interface of the procedural foliage plugin."
+      },
+      {
+         "type":"video",
+         "src":"https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4",
+         "title":"Live Demo",
+         "description":"Demonstration of foliage generation in real-time."
+      }
+   ]
+},
+"plugin-3":{
+   "title":"Material Blending Plugin",
+   "description":"A Substance Designer plugin for advanced material blending techniques.",
+   "details":"Language: C++, Substance Designer API\nFeatures: Layer blending, Mask generation\nCompatibility: Substance Designer 2021+\nPerformance: GPU accelerated",
+   "links":[
+      {
+         "text":"Download Plugin",
+         "url":"#"
+      },
+      {
+         "text":"Source Code",
+         "url":"#"
+      }
+   ],
+   "category":"plugin",
+   "media":[
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1614728263952-84ea256f9679?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Material Blending UI",
+         "description":"User interface showing material blending controls."
+      },
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Blending Results",
+         "description":"Example of blended materials with different parameters."
+      }
+   ]
+},
+"industrial-1":{
+   "title":"Modular Furniture System",
+   "description":"Sustainable furniture design with modular components and eco-friendly materials.",
+   "details":"Materials: Recycled aluminum, Bamboo composite\nAssembly: Tool-free connection system\nCertifications: FSC certified, GREENGUARD Gold\nLifespan: 20+ years with proper care",
+   "links":[
+      {
+         "text":"Product Catalog",
+         "url":"#"
+      },
+      {
+         "text":"Sustainability Report",
+         "url":"#"
+      }
+   ],
+   "category":"industrial",
+   "media":[
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Complete System",
+         "description":"The full modular furniture system in a modern office environment."
+      },
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Component Details",
+         "description":"Close-up view of the modular connection system and material finishes."
+      },
+      {
+         "type":"video",
+         "src":"https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4",
+         "title":"Assembly Process",
+         "description":"Step-by-step assembly demonstration showing the tool-free connection system."
+      },
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1542744094-3a31f272c490?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Sustainability Features",
+         "description":"Breakdown of eco-friendly materials and sustainable manufacturing processes."
+      }
+   ]
+},
+"industrial-2":{
+   "title":"Smart Home Device",
+   "description":"IoT-enabled smart home device with minimalist design approach.",
+   "details":"Materials: Anodized aluminum, Tempered glass\nConnectivity: WiFi 6, Bluetooth 5.0, Zigbee\nDesign philosophy: Scandinavian minimalism\nBattery life: 6 months on single charge",
+   "links":[
+      {
+         "text":"Technical Specs",
+         "url":"#"
+      },
+      {
+         "text":"User Manual",
+         "url":"#"
+      }
+   ],
+   "category":"industrial",
+   "media":[
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Product Design",
+         "description":"Final product design with minimalist aesthetic and premium materials."
+      },
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1542744094-3a31f272c490?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Technical Drawings",
+         "description":"Detailed technical drawings and component specifications."
+      },
+      {
+         "type":"video",
+         "src":"https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4",
+         "title":"Product Demo",
+         "description":"Interactive demonstration of smart home device features."
+      }
+   ]
+},
+"industrial-3":{
+   "title":"Ergonomic Workspace",
+   "description":"Comprehensive ergonomic workspace solution for modern offices.",
+   "details":"Components: Adjustable desk, Ergonomic chair, Monitor arm\nHeight range: 28-48 inches\nWeight capacity: 300 lbs\nCertifications: BIFMA, GREENGUARD",
+   "links":[
+      {
+         "text":"Ergonomic Study",
+         "url":"#"
+      },
+      {
+         "text":"Assembly Guide",
+         "url":"#"
+      }
+   ],
+   "category":"industrial",
+   "media":[
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1542744094-3a31f272c490?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Complete Workspace",
+         "description":"Full ergonomic workspace setup in modern office environment."
+      },
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Ergonomic Features",
+         "description":"Detailed view of ergonomic adjustments and health benefits."
+      },
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Component Breakdown",
+         "description":"Individual components and their ergonomic design principles."
+      }
+   ]
+},
+"graphic-1":{
+   "title":"Brand Identity System",
+   "description":"Complete visual identity for a tech startup, including logo, typography, and color palette.",
+   "details":"Deliverables: Logo variations, Style guide, Business cards\nTypography: Custom font pairing system\nColor palette: Accessibility compliant (WCAG AA)\nApplications: Web, print, merchandise",
+   "links":[
+      {
+         "text":"Brand Guidelines",
+         "url":"#"
+      },
+      {
+         "text":"Logo Package",
+         "url":"#"
+      }
+   ],
+   "category":"graphic",
+   "media":[
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Logo Variations",
+         "description":"Primary logo and alternative versions for different applications and backgrounds."
+      },
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1572044162444-ad60f128bdea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Color Palette",
+         "description":"Complete color system with accessibility guidelines and usage examples."
+      },
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Typography System",
+         "description":"Custom font pairings and typographic hierarchy for brand consistency."
+      },
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Brand Applications",
+         "description":"Real-world applications including business cards, letterhead, and digital assets."
+      }
+   ]
+},
+"graphic-2":{
+   "title":"Event Poster Series",
+   "description":"Dynamic poster series for electronic music events with kinetic typography.",
+   "details":"Style: Kinetic typography, Neon aesthetics\nDimensions: Various sizes (A1, A2, Digital)\nTypography: Custom lettering with motion blur\nColor scheme: Neon gradients on dark backgrounds",
+   "links":[
+      {
+         "text":"Full Series",
+         "url":"#"
+      },
+      {
+         "text":"Print Files",
+         "url":"#"
+      }
+   ],
+   "category":"graphic",
+   "media":[
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1572044162444-ad60f128bdea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Main Poster",
+         "description":"Primary event poster with kinetic typography and neon effects."
+      },
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Typography Study",
+         "description":"Custom lettering development and kinetic motion studies."
+      },
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Color Variations",
+         "description":"Different color schemes and gradient applications for the series."
+      }
+   ]
+},
+"art-1":{
+   "title":"Digital Sculpture",
+   "description":"Interactive digital sculpture exploring the relationship between form and light.",
+   "category":"art",
+   "media":[
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Digital Sculpture",
+         "description":"Interactive digital sculpture exploring the relationship between form and light."
+      }
+   ]
+},
+"art-2":{
+   "title":"Kinetic Installation",
+   "description":"Interactive kinetic sculpture responding to viewer movement and sound.",
+   "category":"art",
+   "media":[
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Kinetic Installation",
+         "description":"Interactive kinetic sculpture responding to viewer movement and sound."
+      }
+   ]
+},
+"art-3":{
+   "title":"Mixed Media Sculpture",
+   "description":"Contemporary mixed media sculpture exploring texture and form.",
+   "category":"art",
+   "media":[
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1578321272176-b7bbc0679853?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Mixed Media Sculpture",
+         "description":"Contemporary mixed media sculpture exploring texture and form."
+      }
+   ]
+},
+"photo-1":{
+   "title":"Architectural Photography",
+   "description":"Modern architecture captured with emphasis on geometric forms and natural lighting.",
+   "category":"photo",
+   "media":[
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Architectural Photography",
+         "description":"Modern architecture captured with emphasis on geometric forms and natural lighting."
+      }
+   ]
+},
+"photo-2":{
+   "title":"Urban Landscapes",
+   "description":"Urban landscape photography capturing the energy of city environments.",
+   "category":"photo",
+   "media":[
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Urban Landscapes",
+         "description":"Urban landscape photography capturing the energy of city environments."
+      }
+   ]
+},
+"photo-3":{
+   "title":"Abstract Compositions",
+   "description":"Abstract photographic compositions exploring light, shadow, and form.",
+   "category":"photo",
+   "media":[
+      {
+         "type":"image",
+         "src":"https://images.unsplash.com/photo-1614728263952-84ea256f9679?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+         "title":"Abstract Compositions",
+         "description":"Abstract photographic compositions exploring light, shadow, and form."
+      }
+   ]
+}
+}
