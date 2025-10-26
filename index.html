@@ -28,7 +28,7 @@
     <!-- Open Graph (OG) Tags: For social sharing (e.g., LinkedIn or Twitter shares look pro with images/previews) -->
     <meta property="og:title" content="Simon Proulx - Game Environment Design Portfolio">
     <meta property="og:description" content="Showcasing innovative 3D environments for games by Simon Proulx.">
-    <meta property="og:image" content="https://res.cloudinary.com/dlepppgm2/image/upload/w_1200,h_630,c_fill,g_auto/hero_shot_main_page">
+    <meta property="og:image" content="https://res.cloudinary.com/dlepppgm2/image/upload/v1761332043/env_proj1_MainHero_l5v1c8.png">
     <meta property="og:url" content="simonproulx.me"> <!-- Your actual site URL -->
     <meta property="og:type" content="website"> <!-- Fine as-is -->
 
@@ -424,10 +424,10 @@
             
     </svg>
     
-    <!-- Website Content -->
+<!-- Website Content -->
       
       <div class="hero-divider"></div>
-      <p class="hero-subtitle">3D Environment Designer crafting immersive worlds for games & live experiences</p>
+      <p class="hero-subtitle">3D Environment Designer and Aspiring Technical Artist<br>Looking to push the boundaries of real-time experiences</p>
 
     </section>
 
@@ -441,7 +441,11 @@
 
     <div class="reels-grid">
       <div class="reel-item" onclick="navigateToPage('project1')">
-        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Environment Reel 1">
+        <img data-src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E"
+             alt="Environment Reel 1" 
+             class="lazy-load"
+             style="background: #1a1a1a;">
         <div class="reel-overlay">
           <h3 class="reel-title">Procedural Landscapes</h3>
           <p class="reel-description">Unreal Engine • Houdini • Substance Designer</p>
@@ -449,7 +453,11 @@
       </div>
 
       <div class="reel-item" onclick="navigateToPage('project2')">
-        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Environment Reel 2">
+        <img data-src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E"
+             alt="Environment Reel 2" 
+             class="lazy-load"
+             style="background: #1a1a1a;">
         <div class="reel-overlay">
           <h3 class="reel-title">Architectural Environments</h3>
           <p class="reel-description">Maya • Substance Suite • Unreal Engine</p>
@@ -463,94 +471,183 @@
       <button class="tab-btn" onclick="navigateTo('contact')">Contact</button>
     </div>
   </section>
-    <!-- Additional Work Section (full restored) -->
-    <section class="additional-work" id="additional-work">
-      <!-- Other 3D Work -->
-      <div class="work-category">
-        <h3 class="category-title">Other 3D Work</h3>
-        <div class="carousel-container">
-          <div class="carousel-rail">
-            <div class="carousel">
-              <div class="carousel-item" onclick="openLightbox('hallway-study')">
-                <img
-                  src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,w_600,c_thumb,g_auto/hallway_textured"
-                  alt="Ornate Temple Corridor (thumbnail)"
-                  loading="lazy"
-                  width="600"
-                  height="400"
-                />
-              </div>
-
-              <div class="carousel-item" onclick="openLightbox('3d-work-2')">
-                <img
-                  src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                  alt="3D Work 2"
-                  loading="lazy"
-                  width="600"
-                  height="400"
-                />
-              </div>
-
-              <div class="carousel-item" onclick="openLightbox('3d-work-3')">
-                <img
-                  src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                  alt="3D Work 3"
-                  loading="lazy"
-                  width="600"
-                  height="400"
-                />
-              </div>
-
-              <div class="carousel-item" onclick="openLightbox('3d-work-4')">
-                <img
-                  src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                  alt="3D Work 4"
-                  loading="lazy"
-                  width="600"
-                  height="400"
-                />
-              </div>
-            </div>
-            <!-- The clipping track + thumb (sibling of .carousel) -->
-          <div class="scroll-track">
-            <div class="scroll-thumb"></div>
-          </div>
-
-        </div>
-        <!-- End .carousel-rail -->
-      </div>
-      <!-- End .carousel-container -->
-    </div>
-    <!-- End .work-category -->
-
-    <!-- Plugin Demos -->
+  <!-- Additional Work Section (full restored) -->
+  <section class="additional-work" id="additional-work">
+    <!-- Other 3D Work -->
     <div class="work-category">
-      <h3 class="category-title">Code, Shaders, Systems</h3>
-
+      <h3 class="category-title">Other 3D Work</h3>
       <div class="carousel-container">
         <div class="carousel-rail">
-
-          <!-- The horizontal scroller -->
           <div class="carousel">
-            <div class="carousel-item" onclick="openLightbox('plugin-1')">
-              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Plugin Demo 1">
+            <div class="carousel-item" data-lightbox-id="spaceman" onclick="openLightbox('spaceman')">
+              <img
+                src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761276276/3d_spaceman_main_hdjup4.png"
+                alt="Spaceman – Scene Replication (thumbnail)"
+                width="600"
+                height="400"
+              />
+              <div class="carousel-item-overlay">
+                <h3 class="carousel-item-title">Spaceman – Scene Replication</h3>
+              </div>
             </div>
 
-            <div class="carousel-item" onclick="openLightbox('plugin-2')">
-              <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Plugin Demo 2">
+            <div class="carousel-item" data-lightbox-id="arrival-scene-replication" onclick="openLightbox('arrival-scene-replication')">
+              <img
+                src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761277692/3d_arrival_main_ygykys.png"
+                alt="Arrival - Scene Replication (thumbnail)"
+                width="600"
+                height="400"
+              />
+              <div class="carousel-item-overlay">
+                <h3 class="carousel-item-title">Arrival – Scene Replication</h3>
+              </div>
             </div>
 
-            <div class="carousel-item" onclick="openLightbox('plugin-3')">
-              <img src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Plugin Demo 3">
+            <div class="carousel-item" data-lightbox-id="procedural-experiments" onclick="openLightbox('procedural-experiments')">
+              <img
+                src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761276291/3d_geo_exp_01_eqkxjw.png"
+                alt="Procedural Geometry Experiments (thumbnail)"
+                width="600"
+                height="400"
+              />
+              <div class="carousel-item-overlay">
+                <h3 class="carousel-item-title">Procedural Geometry Experiments</h3>
+              </div>
+            </div>
+
+            <div class="carousel-item" data-lightbox-id="hallway-study" onclick="openLightbox('hallway-study')">
+              <img
+                src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/hallway_textured"
+                alt="Ornate Temple Corridor (thumbnail)"
+                width="600"
+                height="400"
+              />
+              <div class="carousel-item-overlay">
+                <h3 class="carousel-item-title">Ornate Temple Corridor</h3>
+              </div>
             </div>
           </div>
-          <!-- End .carousel -->
-
           <!-- The clipping track + thumb (sibling of .carousel) -->
           <div class="scroll-track">
             <div class="scroll-thumb"></div>
           </div>
-
+        </div>
+        <!-- End .carousel-rail -->
+      </div>
+      <!-- End .carousel-container -->
+    </div>
+    <!-- End .work-category -->
+    
+    <!-- Industrial Design -->
+    <div class="work-category">
+      <h3 class="category-title">Industrial Design</h3>
+      <div class="carousel-container">
+        <div class="carousel-rail">
+          <div class="carousel">
+            <div class="carousel-item" data-lightbox-id="industrial-design-luminis-lumistik-ip-merge" onclick="openLightbox('industrial-design-luminis-lumistik-ip-merge')">
+              <img
+                src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761420272/id_luminis_internship_11_eednyt.png"
+                alt="Luminis Lumistik IP Merge (thumbnail)"
+                width="600"
+                height="400"
+              />
+              <div class="carousel-item-overlay">
+                <h3 class="carousel-item-title">Luminis Lumistik IP Merge</h3>
+              </div>
+            </div>
+            <div class="carousel-item" data-lightbox-id="industrial-design-national-gallery-internship" onclick="openLightbox('industrial-design-national-gallery-internship')">
+              <img
+                src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761454345/ngc_internship_3_qdvhzy.png"
+                alt="National Gallery of Canada – Exhibition Design Internship (thumbnail)"
+                width="600"
+                height="400"
+              />
+              <div class="carousel-item-overlay">
+                <h3 class="carousel-item-title">National Gallery of Canada – Exhibition Design</h3>
+              </div>
+            </div>
+            <div class="carousel-item" data-lightbox-id="industrial-design-myco-audio-speaker" onclick="openLightbox('industrial-design-myco-audio-speaker')">
+              <img
+                src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761348307/id_myco_audio_main_up_qiq0dl.png"
+                alt="Myco Audio Mycoboard Composite Speaker (thumbnail)"
+                width="600"
+                height="400"
+              />
+              <div class="carousel-item-overlay">
+                <h3 class="carousel-item-title">Myco Audio – Mycoboard Composite Speaker</h3>
+              </div>
+            </div>
+            <div class="carousel-item" data-lightbox-id="industrial-design-alaya-hologram-projector" onclick="openLightbox('industrial-design-alaya-hologram-projector')">
+              <img
+                src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761277799/id_alaya_main_htubvx.png"
+                alt="Alaya – Hologram Projector (thumbnail)"
+                width="600"
+                height="400"
+              />
+              <div class="carousel-item-overlay">
+                <h3 class="carousel-item-title">Alaya Hologram Projector</h3>
+              </div>
+            </div>
+            <div class="carousel-item" data-lightbox-id="industrial-design-onx-mini-itx-case" onclick="openLightbox('industrial-design-onx-mini-itx-case')">
+              <img
+                src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761348963/id_onx_main_sxvv78.png"
+                alt="ONX – Mini-ITX PC Case with AI Visualizer (thumbnail)"
+                width="600"
+                height="400"
+              />
+              <div class="carousel-item-overlay">
+                <h3 class="carousel-item-title">ONX – Mini-ITX PC Case with AI Visualizer</h3>
+              </div>
+            </div>
+            <div class="carousel-item" data-lightbox-id="industrial-design-pneumatic-stone-grinder" onclick="openLightbox('industrial-design-pneumatic-stone-grinder')">
+              <img
+                src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761344724/id_grinder_main_jfhqve.png"
+                alt="Pneumatic Stone Grinder with Integrated Water Jet System (thumbnail)"
+                width="600"
+                height="400"
+              />
+              <div class="carousel-item-overlay">
+                <h3 class="carousel-item-title">Pneumatic Stone Grinder with Water Jet System</h3>
+              </div>
+            </div>
+            <div class="carousel-item" data-lightbox-id="industrial-design-colony-modular-charging-system" onclick="openLightbox('industrial-design-colony-modular-charging-system')">
+              <img
+                src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761337266/id_colony_main_g7yvcg.png"
+                alt="Colony – Smart Modular Charging System (thumbnail)"
+                width="600"
+                height="400"
+              />
+              <div class="carousel-item-overlay">
+                <h3 class="carousel-item-title">Colony – Smart Modular Charging System</h3>
+              </div>
+            </div>
+            <div class="carousel-item" data-lightbox-id="industrial-design-ora-speaker-projection-system" onclick="openLightbox('industrial-design-ora-speaker-projection-system')">
+              <img
+                src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761349615/id_ora_main_wtroyh.png"
+                alt="ORA – Speaker with Integrated HDMI Projection System (thumbnail)"
+                width="600"
+                height="400"
+              />
+              <div class="carousel-item-overlay">
+                <h3 class="carousel-item-title">ORA – Speaker with Projection System</h3>
+              </div>
+            </div>
+            <div class="carousel-item" data-lightbox-id="industrial-design-additional-renders" onclick="openLightbox('industrial-design-additional-renders')">
+              <img
+                src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761352341/id_seaker_product2_hborsa.png"
+                alt="Additional Renders – Product Design Collection (thumbnail)"
+                width="600"
+                height="400"
+              />
+              <div class="carousel-item-overlay">
+                <h3 class="carousel-item-title">Additional Renders – Product Design Collection</h3>
+              </div>
+            </div>
+          </div>
+          <!-- The clipping track + thumb (sibling of .carousel) -->
+          <div class="scroll-track">
+            <div class="scroll-thumb"></div>
+          </div>
         </div>
         <!-- End .carousel-rail -->
       </div>
@@ -558,119 +655,172 @@
     </div>
     <!-- End .work-category -->
 
-      <!-- Industrial Design -->
+         
+      <!-- Plugin Demos -->
       <div class="work-category">
-        <h3 class="category-title">Industrial Design</h3>
+        <h3 class="category-title">Code, Shaders, Systems</h3>
+
         <div class="carousel-container">
           <div class="carousel-rail">
-            <div class="carousel">
-              <div class="carousel-item" onclick="openLightbox('industrial-1')">
-                <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Industrial Design 1">
-              </div>
-              <div class="carousel-item" onclick="openLightbox('industrial-2')">
-                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Industrial Design 2">
-              </div>
-              <div class="carousel-item" onclick="openLightbox('industrial-3')">
-                <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Industrial Design 3">
-              </div>
-            </div>
-          <!-- The clipping track + thumb (sibling of .carousel) -->
-          <div class="scroll-track">
-            <div class="scroll-thumb"></div>
-          </div>
-        </div>
-        <!-- End .carousel-rail -->
-      </div>
-      <!-- End .carousel-container -->
-    </div>
-    <!-- End .work-category -->
 
-      <!-- Graphic Design -->
-      <div class="work-category">
-        <h3 class="category-title">Graphic Design</h3>
-        <div class="carousel-container">
-          <div class="carousel-rail">
+            <!-- The horizontal scroller -->
             <div class="carousel">
-              <div class="carousel-item" onclick="openLightbox('graphic-1')">
-                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Graphic Design 1">
+              <div class="carousel-item" onclick="openLightbox('plugin-1')">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                    alt="Plugin Demo 1">
+                <div class="carousel-item-overlay">
+                  <h3 class="carousel-item-title">Plugin Demo 1</h3>
+                </div>
               </div>
-              <div class="carousel-item" onclick="openLightbox('graphic-2')">
-                <img src="https://images.unsplash.com/photo-1572044162444-ad60f128bdea?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Graphic Design 2">
-              </div>
-            </div>
-          <!-- The clipping track + thumb (sibling of .carousel) -->
-          <div class="scroll-track">
-            <div class="scroll-thumb"></div>
-          </div>
-        </div>
-        <!-- End .carousel-rail -->
-      </div>
-      <!-- End .carousel-container -->
-    </div>
-    <!-- End .work-category -->
 
-      <!-- Art & Sculptures -->
-      <div class="work-category">
-        <h3 class="category-title">Art & Sculptures</h3>
-        <div class="carousel-container">
-          <div class="carousel-rail">
-            <div class="carousel">
-              <div class="carousel-item" onclick="openLightbox('art-1')">
-                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Art 1">
+              <div class="carousel-item" onclick="openLightbox('plugin-2')">
+                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                    alt="Plugin Demo 2">
+                <div class="carousel-item-overlay">
+                  <h3 class="carousel-item-title">Plugin Demo 2</h3>
+                </div>
               </div>
-              <div class="carousel-item" onclick="openLightbox('art-2')">
-                <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Art 2">
-              </div>
-              <div class="carousel-item" onclick="openLightbox('art-3')">
-                <img src="https://images.unsplash.com/photo-1578321272176-b7bbc0679853?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Art 3">
-              </div>
-            </div>
-          <!-- The clipping track + thumb (sibling of .carousel) -->
-          <div class="scroll-track">
-            <div class="scroll-thumb"></div>
-          </div>
-        </div>
-        <!-- End .carousel-rail -->
-      </div>
-      <!-- End .carousel-container -->
-    </div>
-    <!-- End .work-category -->
 
-      <!-- Photography -->
-      <div class="work-category">
-        <h3 class="category-title">Photography</h3>
-        <div class="carousel-container">
-          <div class="carousel-rail">
-            <div class="carousel">
-              <div class="carousel-item" onclick="openLightbox('photo-1')">
-                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Photography 1">
-              </div>
-              <div class="carousel-item" onclick="openLightbox('photo-2')">
-                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Photography 2">
-              </div>
-              <div class="carousel-item" onclick="openLightbox('photo-3')">
-                <img src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Photography 3">
+              <div class="carousel-item" onclick="openLightbox('plugin-3')">
+                <img src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                    alt="Plugin Demo 3">
+                <div class="carousel-item-overlay">
+                  <h3 class="carousel-item-title">Plugin Demo 3</h3>
+                </div>
               </div>
             </div>
-          <!-- The clipping track + thumb (sibling of .carousel) -->
-          <div class="scroll-track">
-            <div class="scroll-thumb"></div>
+            <!-- End .carousel -->
+
+            <!-- The clipping track + thumb (sibling of .carousel) -->
+            <div class="scroll-track">
+              <div class="scroll-thumb"></div>
+            </div>
+
           </div>
+          <!-- End .carousel-rail -->
         </div>
-        <!-- End .carousel-rail -->
+        <!-- End .carousel-container -->
       </div>
-      <!-- End .carousel-container -->
-    </div>
-    <!-- End .work-category -->
-    </section>
+      <!-- End .work-category -->
+      
+        <!-- Graphic Design -->
+        <div class="work-category">
+          <h3 class="category-title">Graphic Design</h3>
+          <div class="carousel-container">
+            <div class="carousel-rail">
+              <div class="carousel">
+                <div class="carousel-item" onclick="openLightbox('graphic-1')">
+                  <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                      alt="Graphic Design 1">
+                  <div class="carousel-item-overlay">
+                    <h3 class="carousel-item-title">Graphic Design 1</h3>
+                  </div>
+                </div>
+                <div class="carousel-item" onclick="openLightbox('graphic-2')">
+                  <img src="https://images.unsplash.com/photo-1572044162444-ad60f128bdea?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                      alt="Graphic Design 2">
+                  <div class="carousel-item-overlay">
+                    <h3 class="carousel-item-title">Graphic Design 2</h3>
+                  </div>
+                </div>
+              </div>
+            <!-- The clipping track + thumb (sibling of .carousel) -->
+            <div class="scroll-track">
+              <div class="scroll-thumb"></div>
+            </div>
+          </div>
+          <!-- End .carousel-rail -->
+        </div>
+        <!-- End .carousel-container -->
+      </div>
+      <!-- End .work-category -->
+
+        <!-- Art & Sculptures -->
+        <div class="work-category">
+          <h3 class="category-title">Art & Sculptures</h3>
+          <div class="carousel-container">
+            <div class="carousel-rail">
+              <div class="carousel">
+                <div class="carousel-item" onclick="openLightbox('art-1')">
+                  <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                      alt="Art 1">
+                  <div class="carousel-item-overlay">
+                    <h3 class="carousel-item-title">Art 1</h3>
+                  </div>
+                </div>
+                <div class="carousel-item" onclick="openLightbox('art-2')">
+                  <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                      alt="Art 2">
+                  <div class="carousel-item-overlay">
+                    <h3 class="carousel-item-title">Art 2</h3>
+                  </div>
+                </div>
+                <div class="carousel-item" onclick="openLightbox('art-3')">
+                  <img src="https://images.unsplash.com/photo-1578321272176-b7bbc0679853?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                      alt="Art 3">
+                  <div class="carousel-item-overlay">
+                    <h3 class="carousel-item-title">Art 3</h3>
+                  </div>
+                </div>
+              </div>
+            <!-- The clipping track + thumb (sibling of .carousel) -->
+            <div class="scroll-track">
+              <div class="scroll-thumb"></div>
+            </div>
+          </div>
+          <!-- End .carousel-rail -->
+        </div>
+        <!-- End .carousel-container -->
+      </div>
+      <!-- End .work-category -->
+
+        <!-- Photography -->
+        <div class="work-category">
+          <h3 class="category-title">Photography</h3>
+          <div class="carousel-container">
+            <div class="carousel-rail">
+              <div class="carousel">
+                <div class="carousel-item" onclick="openLightbox('photo-1')">
+                  <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                      alt="Photography 1">
+                  <div class="carousel-item-overlay">
+                    <h3 class="carousel-item-title">Photography 1</h3>
+                  </div>
+                </div>
+                <div class="carousel-item" onclick="openLightbox('photo-2')">
+                  <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                      alt="Photography 2">
+                  <div class="carousel-item-overlay">
+                    <h3 class="carousel-item-title">Photography 2</h3>
+                  </div>
+                </div>
+                <div class="carousel-item" onclick="openLightbox('photo-3')">
+                  <img src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                      alt="Photography 3">
+                  <div class="carousel-item-overlay">
+                    <h3 class="carousel-item-title">Photography 3</h3>
+                  </div>
+                </div>
+              </div>
+            <!-- The clipping track + thumb (sibling of .carousel) -->
+            <div class="scroll-track">
+              <div class="scroll-thumb"></div>
+            </div>
+          </div>
+          <!-- End .carousel-rail -->
+        </div>
+        <!-- End .carousel-container -->
+      </div>
+      <!-- End .work-category -->
+      </section>
 
     <section id="contact" class="contact">
         <h2>Let's Connect</h2>
-        <p>Ready to create something extraordinary together?</p>
+        <p>Find me here:</p>
         <div class="contact-links">
             
             <!-- Email -->
-            <a href="mailto:your.email@example.com" class="contact-link">
+            <a href="mailto:simonproulx.fbx@gmail.com" class="contact-link">
             <div class="contact-icon">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -681,7 +831,7 @@
             </a>
             
             <!-- LinkedIn -->
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-link">
+            <a href="https://www.linkedin.com/in/simonproulx-fbx/" target="_blank" class="contact-link">
             <div class="contact-icon">
                 <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
@@ -691,7 +841,7 @@
             </a>
             
             <!-- ArtStation -->
-            <a href="https://artstation.com/yourprofile" target="_blank" class="contact-link">
+            <a href="https://www.artstation.com/simon_proulx" target="_blank" class="contact-link">
             <div class="contact-icon">
                 <svg viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 23.63l2.703 4.672c0.552 1.094 1.667 1.781 2.885 1.781h17.943l-3.724-6.453zM32 23.661c0-0.641-0.193-1.245-0.516-1.75l-10.516-18.276c-0.557-1.057-1.656-1.719-2.854-1.719h-5.557l16.24 28.135 2.563-4.432c0.5-0.849 0.641-1.224 0.641-1.958zM17.161 19.047l-7.255-12.568-7.26 12.568z"/>
@@ -713,6 +863,12 @@
       <h1>Procedural Landscapes</h1>
       <p>Creating vast, realistic terrains using procedural generation techniques</p>
     </section>
+
+    <!-- Media: Vimeo -->
+    <div class="project-media">
+      <div class="media-embed" data-type="vimeo" data-id="123456789"></div>
+      <p class="media-caption">Final cinematic (Vimeo)</p>
+    </div>
 
     <div class="project-content">
       <div class="project-section">
@@ -866,7 +1022,7 @@
     </div>
     </div>
 
-  <!-- ==== Lightbox (single unified rich instance) ==== -->
+ <!-- ==== Lightbox (single unified rich instance) ==== -->
   <div id="lightbox" class="lightbox">
     <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
     <!-- Previous Project -->
@@ -879,6 +1035,9 @@
     </button>
 
     <div class="lightbox-content">
+        <!-- Desktop fullscreen hint -->
+        <div class="lightbox-hint">Click image to fullscreen</div>
+        
         <div class="lightbox-media-container">
             <div class="lightbox-track">
             <img id="lightbox-image" class="lightbox-image" src="" alt="" style="display:none;">

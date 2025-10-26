@@ -1,533 +1,1069 @@
 {
-  "hallway-study": {
-    "title": "Ornate Temple Corridor",
-    "description": "A real-time environment study focusing on modular architecture, procedural texturing, and volumetric lighting.",
-    "details": "Software: Unreal Engine, Substance Designer, ZBrush, ComfyUI\nTechniques: High-to-low poly baking, PBR material authoring, procedural generation, dynamic lighting",
+  "spaceman": {
+    "title": "Spaceman – Scene Replication",
+    "description": "A scene replication study focused on hard-surface modeling, material fidelity, and composition.",
+    "details": "Created using: Unreal Engine 5, Maya, Substance Painter/Designer\nTechniques: Modular hard-surface modeling, PBR authoring, lighting and lookdev",
     "links": [
-      { "text": "View on ArtStation", "url": "#" }
+      {
+        "text": "Original artist: Robbie Trevino",
+        "url": "https://www.artstation.com/robbietrevino"
+      }
     ],
     "category": "3d-work",
     "media": [
       {
         "type": "image",
-        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/hallway_textured",
-        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_800,c_scale/hallway_textured",
+        "src": "3d_spaceman_main_hdjup4.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761276276/3d_spaceman_main_hdjup4.png",
+        "title": "Main Shot",
+        "description": "Primary render establishing the final look and composition."
+      },
+      {
+        "type": "image",
+        "src": "3d_spaceman_model_qchfrd.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761276263/3d_spaceman_model_qchfrd.png",
+        "title": "Model Setup",
+        "description": "Overview of the base meshes and scene assembly."
+      },
+      {
+        "type": "image",
+        "src": "3d_spaceman_outliner_model_oqyl9e.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761276263/3d_spaceman_outliner_model_oqyl9e.png",
+        "title": "Outliner + Model",
+        "description": "Scene hierarchy and modeling breakdown."
+      },
+      {
+        "type": "image",
+        "src": "3d_spaceman_material_board_h8elvl.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761276268/3d_spaceman_material_board_h8elvl.png",
+        "title": "Material Reference",
+        "description": "Material callouts and reference board used for PBR targets."
+      },
+      {
+        "type": "image",
+        "src": "3d_spaceman_comparison_nksauk.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761277649/3d_spaceman_comparison_nksauk.png",
+        "title": "Final vs Reference",
+        "description": "Side-by-side comparison of the final render and original art."
+      },
+      {
+        "type": "image",
+        "src": "3d_spaceman_model_closeup_y07cum.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761276276/3d_spaceman_model_closeup_y07cum.png",
+        "title": "Model Closeup",
+        "description": "Detail crop highlighting forms, bevels, and material breakup."
+      }
+    ]
+  },
+  "arrival-scene-replication": {
+    "title": "Arrival - Scene Replication",
+    "description": "A scene replication study focusing on modular modeling, lighting mood, and material consistency.",
+    "details": "Software: Maya, Vray, Substance Painter, ComfyUI\nTechniques: High-to-low poly baking, PBR material authoring, procedural generation, dynamic lighting",
+    "category": "3d-work",
+    "media": [
+      {
+        "type": "image",
+        "src": "3d_arrival_main_ygykys.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761277692/3d_arrival_main_ygykys.png",
+        "title": "Main Shot",
+        "description": "Primary hero frame establishing composition, mood, and the focal read."
+      },
+      {
+        "type": "image",
+        "src": "3d_arrival_model2_eivuii.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761277696/3d_arrival_model2_eivuii.png",
+        "title": "Model Setup",
+        "description": "A look at modular construction and placement for efficient scene assembly."
+      },
+      {
+        "type": "image",
+        "src": "3d_arrival_model1_d84wva.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761277688/3d_arrival_model1_d84wva.png",
+        "title": "Model Setup 2",
+        "description": "Alternate view of the modular kit and scene blockout."
+      },
+      {
+        "type": "image",
+        "src": "3d_arrival_reference_gfz0d3.jpg",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761277689/3d_arrival_reference_gfz0d3.jpg",
+        "title": "Reference Image",
+        "description": "Key reference used to match proportions, lighting, and texture language."
+      },
+      {
+        "type": "image",
+        "src": "3d_arrival_improved_comfy_smvcvz.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761277698/3d_arrival_improved_comfy_smvcvz.png",
+        "title": "Volumetric ComfyUI Pass",
+        "description": "Procedural enhancement pass focusing on volumetrics and atmospheric depth."
+      }
+    ]
+  },
+  "procedural-experiments": {
+    "title": "Procedural Geometry Experiments",
+    "description": "A series of experimental procedural models and V-Ray renders exploring form, repetition, and material response.",
+    "details": "Created using: Maya/Houdini, V-Ray\nTechniques: Procedural modeling, instancing, shader explorations, parametric variation",
+    "category": "3d-work",
+    "media": [
+      {
+        "type": "image",
+        "src": "3d_geo_exp_01_eqkxjw.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761276291/3d_geo_exp_01_eqkxjw.png",
+        "title": "Experiment 01 (Main)",
+        "description": "Primary render from the procedural geometry study."
+      },
+      {
+        "type": "image",
+        "src": "3d_geo_exp_04_qecb5u.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761276291/3d_geo_exp_04_qecb5u.png",
+        "title": "Experiment 04",
+        "description": "Variant exploring different repetition patterns and shading."
+      },
+      {
+        "type": "image",
+        "src": "3d_geo_exp_02_gv1asl.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761276289/3d_geo_exp_02_gv1asl.png",
+        "title": "Experiment 02",
+        "description": "Alternate form study with parametric adjustments."
+      },
+      {
+        "type": "image",
+        "src": "3d_geo_exp_03_k5aokw.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761276291/3d_geo_exp_03_k5aokw.png",
+        "title": "Experiment 03",
+        "description": "Material and lighting variation to stress-test forms."
+      }
+    ]
+  },
+  "hallway-study": {
+    "title": "Ornate Temple Corridor",
+    "description": "A quick hallway study, modeled in Maya, procedurally textured in Comfy-UI",
+    "details": "Software: Unreal Engine, Substance Designer, ZBrush, ComfyUI\nTechniques: High-to-low poly baking, PBR material authoring, procedural generation, dynamic lighting",
+    "category": "3d-work",
+    "media": [
+      {
+        "type": "image",
+        "src": "hallway_textured",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/hallway_textured",
         "title": "Final Render",
         "description": "The primary cinematic shot showcasing the repeating architectural elements and the interplay of volumetric light and shadow."
       },
       {
         "type": "image",
-        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/hallway_wireframe",
-        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_800,c_scale/hallway_wireframe",
+        "src": "hallway_wireframe",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/hallway_wireframe",
         "title": "Wireframe & Topology",
         "description": "A technical breakdown showing the optimized mesh topology of the modular assets used to construct the scene."
       },
       {
         "type": "image",
-        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/hallway_overlay",
-        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_800,c_scale/hallway_overlay",
+        "src": "hallway_overlay",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/hallway_overlay",
         "title": "Lighting & Composition Overlay",
         "description": "An analysis of the scene's composition and lighting setup, highlighting key lights and post-processing volumes."
       },
       {
         "type": "image",
-        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/hallway_comfyUI",
-        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_800,c_scale/hallway_comfyUI",
+        "src": "hallway_comfyUI",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/hallway_comfyUI",
         "title": "Procedural Texture Graph (ComfyUI)",
         "description": "The node-based graph from ComfyUI used to generate the intricate patterns and materials for the ceiling and pillars."
       },
       {
         "type": "image",
-        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/hallway_reference",
-        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_800,c_scale/hallway_reference",
+        "src": "hallway_reference",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/hallway_reference",
         "title": "Moodboard & Key References",
         "description": "A collection of the primary architectural and artistic references that inspired the final design and mood of the environment."
-      },
-      {
-        "type": "image",
-        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/hallway_wide",
-        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_800,c_scale/hallway_wide",
-        "title": "Ultrawide Cinematic Shot",
-        "description": "An alternate, wider composition that emphasizes the scale and grandeur of the temple corridor."
       }
     ]
   },
-"3d-work-2":{
-   "title":"Organic Architecture",
-   "description":"Procedural architecture blending natural forms with modern design principles.",
-   "details":"Software: Maya, Houdini, Substance Suite\nInspiration: Biomimetic design patterns\nTechniques: Procedural modeling, L-systems\nProject duration: 3 weeks",
-   "links":[
+  "plugin-1": {
+    "title": "Terrain Generator Plugin",
+    "description": "Custom Maya plugin for procedural terrain generation with real-time preview.",
+    "details": "Language: Python, C++ API\nFeatures: Real-time preview, Export to game engines\nCompatibility: Maya 2020-2024\nPerformance: Optimized for large terrains",
+    "links": [
       {
-         "text":"Process Breakdown",
-         "url":"#"
+        "text": "Download Plugin",
+        "url": "#"
       },
       {
-         "text":"Download Assets",
-         "url":"#"
+        "text": "Documentation",
+        "url": "#"
+      },
+      {
+        "text": "Source Code",
+        "url": "#"
       }
-   ],
-   "category":"3d-work",
-   "media":[
+    ],
+    "category": "plugin",
+    "media": [
       {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Final Architecture",
-         "description":"The completed organic architecture structure with natural lighting."
+        "type": "image",
+        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/plugin_terrain_ui",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/plugin_terrain_ui",
+        "title": "Plugin Interface",
+        "description": "The main user interface showing terrain generation controls and real-time preview."
       },
       {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Concept Sketches",
-         "description":"Initial design concepts and biomimetic inspiration references."
+        "type": "video",
+        "src": "https://res.cloudinary.com/dlepppgm2/video/upload/f_auto,q_auto:good/plugin_terrain_demo",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/video/upload/f_auto,q_auto:good,w_160,so_0/plugin_terrain_demo.jpg",
+        "title": "Live Demo",
+        "description": "Real-time demonstration of terrain generation with parameter adjustments."
       },
       {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Procedural Network",
-         "description":"Houdini node network showing the procedural generation process."
+        "type": "image",
+        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/plugin_terrain_examples",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/plugin_terrain_examples",
+        "title": "Generated Terrains",
+        "description": "Various terrain examples created using different parameter settings."
       },
       {
-         "type":"video",
-         "src":"https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4",
-         "title":"Growth Animation",
-         "description":"Time-lapse animation showing the organic growth simulation."
+        "type": "image",
+        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/plugin_terrain_code",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/plugin_terrain_code",
+        "title": "Code Structure",
+        "description": "Overview of the plugin architecture and key code components."
       }
-   ]
-},
-"3d-work-3":{
-   "title":"Futuristic Cityscape",
-   "description":"A detailed futuristic city environment with neon lighting and dynamic weather effects.",
-   "details":"Created using: Unreal Engine 5, Houdini, Substance Painter\nPolygon count: 3M triangles\nTexture resolution: 4K PBR materials",
-   "links":[
+    ]
+  },
+  "plugin-2": {
+    "title": "Procedural Foliage Plugin",
+    "description": "A Houdini plugin for generating procedural foliage with customizable parameters.",
+    "details": "Language: Python, Houdini VEX\nFeatures: Real-time preview, Export to Unreal Engine\nCompatibility: Houdini 18+\nPerformance: Optimized for large forests",
+    "links": [
       {
-         "text":"View on ArtStation",
-         "url":"#"
+        "text": "Download Plugin",
+        "url": "#"
       },
       {
-         "text":"Project Breakdown",
-         "url":"#"
+        "text": "Documentation",
+        "url": "#"
       }
-   ],
-   "category":"3d-work",
-   "media":[
+    ],
+    "category": "plugin",
+    "media": [
       {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Cityscape View",
-         "description":"Main view of the futuristic city with neon lights."
+        "type": "image",
+        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/plugin_foliage_ui",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/plugin_foliage_ui",
+        "title": "Plugin Interface",
+        "description": "User interface of the procedural foliage plugin."
       },
       {
-         "type":"video",
-         "src":"https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4",
-         "title":"City Animation",
-         "description":"Flythrough animation of the city environment."
+        "type": "video",
+        "src": "https://res.cloudinary.com/dlepppgm2/video/upload/f_auto,q_auto:good/plugin_foliage_demo",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/video/upload/f_auto,q_auto:good,w_160,so_0/plugin_foliage_demo.jpg",
+        "title": "Live Demo",
+        "description": "Demonstration of foliage generation in real-time."
       }
-   ]
-},
-"3d-work-4":{
-   "title":"Alien Landscape",
-   "description":"An alien planet environment featuring exotic flora and terrain.",
-   "details":"Software: Houdini, Unreal Engine 5, Substance Designer\nProject duration: 4 weeks\nUnique procedural flora system",
-   "links":[
+    ]
+  },
+  "plugin-3": {
+    "title": "Material Blending Plugin",
+    "description": "A Substance Designer plugin for advanced material blending techniques.",
+    "details": "Language: C++, Substance Designer API\nFeatures: Layer blending, Mask generation\nCompatibility: Substance Designer 2021+\nPerformance: GPU accelerated",
+    "links": [
       {
-         "text":"View on ArtStation",
-         "url":"#"
+        "text": "Download Plugin",
+        "url": "#"
       },
       {
-         "text":"Download Assets",
-         "url":"#"
+        "text": "Source Code",
+        "url": "#"
       }
-   ],
-   "category":"3d-work",
-   "media":[
+    ],
+    "category": "plugin",
+    "media": [
       {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Alien Terrain",
-         "description":"Wide shot of the alien landscape with unique vegetation."
+        "type": "image",
+        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/plugin_material_ui",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/plugin_material_ui",
+        "title": "Material Blending UI",
+        "description": "User interface showing material blending controls."
       },
       {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Flora Details",
-         "description":"Close-up view of the exotic flora with unique textures."
+        "type": "image",
+        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/plugin_material_results",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/plugin_material_results",
+        "title": "Blending Results",
+        "description": "Example of blended materials with different parameters."
       }
-   ]
-},
-"plugin-1":{
-   "title":"Terrain Generator Plugin",
-   "description":"Custom Maya plugin for procedural terrain generation with real-time preview.",
-   "details":"Language: Python, C++ API\nFeatures: Real-time preview, Export to game engines\nCompatibility: Maya 2020-2024\nPerformance: Optimized for large terrains",
-   "links":[
+    ]
+  },
+  "industrial-design-luminis-lumistik-ip-merge": {
+    "title": "Luminis Lumistik IP Merge",
+    "description": "Industrial design and systems integration project consolidating acquired IP into a unified, serviceable product family.",
+    "details": "Focus: Component consolidation, serviceability, cross-family standardization, and IP integration\nDeliverables: Committee presentation, internship report, and production-ready component proposals",
+    "links": [
       {
-         "text":"Download Plugin",
-         "url":"#"
+        "text": "Committee Report (PDF)",
+        "url": "https://res.cloudinary.com/dlepppgm2/image/upload/id_luminis_presentation_dyk2mo.pdf",
+        "type": "pdf"
       },
       {
-         "text":"Documentation",
-         "url":"#"
+        "text": "Internship Report (PDF)",
+        "url": "https://res.cloudinary.com/dlepppgm2/image/upload/id_luminis_report_ybt67u.pdf",
+        "type": "pdf"
       },
       {
-         "text":"Source Code",
-         "url":"#"
+        "text": "Finished Product Line",
+        "url": "https://www.luminis.com/products/family/lumistik",
+        "type": "external"
       }
-   ],
-   "category":"plugin",
-   "media":[
+    ],
+    "category": "industrial",
+    "media": [
       {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Plugin Interface",
-         "description":"The main user interface showing terrain generation controls and real-time preview."
+        "type": "image",
+        "src": "id_luminis_internship_11_eednyt.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761420272/id_luminis_internship_11_eednyt.png",
+        "title": "Hero Lumistik IP Merge",
+        "description": "High-level overview of the IP merge initiative and product family alignment."
       },
       {
-         "type":"video",
-         "src":"https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4",
-         "title":"Live Demo",
-         "description":"Real-time demonstration of terrain generation with parameter adjustments."
+        "type": "image",
+        "src": "id_luminis_internship_3_imu5j4.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761420279/id_luminis_internship_3_imu5j4.png",
+        "title": "Product Family",
+        "description": "Contextual lineup showing the Lumistik family breadth."
       },
       {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1614728263952-84ea256f9679?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Generated Terrains",
-         "description":"Various terrain examples created using different parameter settings."
+        "type": "image",
+        "src": "id_luminis_internship_1_chpwae.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761420287/id_luminis_internship_1_chpwae.png",
+        "title": "Targeted Component Cyclone",
+        "description": "Detail from the acquired company Cyclone product line targeted for cross-family integration."
       },
       {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Code Structure",
-         "description":"Overview of the plugin architecture and key code components."
+        "type": "image",
+        "src": "id_luminis_internship_9_ppxpio.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761420973/id_luminis_internship_9_ppxpio.png",
+        "title": "Universal Components",
+        "description": "New standardized components and castings for manufacturability and serviceability."
+      },
+      {
+        "type": "image",
+        "src": "id_luminis_internship_7_xn5ok8.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761420283/id_luminis_internship_7_xn5ok8.png",
+        "title": "Improved Universal Components",
+        "description": "Extract from the committee presentation outlining improved universal parts."
+      },
+      {
+        "type": "image",
+        "src": "id_luminis_internship_10_mefqwd.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761420285/id_luminis_internship_10_mefqwd.png",
+        "title": "Bollard Base & Access",
+        "description": "Improved bollard base casting and service access panel."
       }
-   ]
-},
-"plugin-2":{
-   "title":"Procedural Foliage Plugin",
-   "description":"A Houdini plugin for generating procedural foliage with customizable parameters.",
-   "details":"Language: Python, Houdini VEX\nFeatures: Real-time preview, Export to Unreal Engine\nCompatibility: Houdini 18+\nPerformance: Optimized for large forests",
-   "links":[
+    ]
+    },
+    "industrial-design-national-gallery-internship": {
+    "title": "National Gallery of Canada – Exhibition Design Internship",
+    "description": "Exhibition design internship focused on display systems, working curator models, and gallery infrastructure for a major national institution.",
+    "details": "Institution: National Gallery of Canada\nFocus: Exhibition display systems, working curator models, technical documentation\nDeliverables: Technical drawings, full-scale prototypes, laser-cut art replicas, internship documentation\nPress: Featured in Ottawa Citizen news coverage",
+    "links": [
       {
-         "text":"Download Plugin",
-         "url":"#"
+        "text": "Technical Drawings & Design Document (PDF)",
+        "url": "https://res.cloudinary.com/dlepppgm2/image/upload/ngc_internship_design_document_lvixuh.pdf",
+        "type": "pdf"
       },
       {
-         "text":"Documentation",
-         "url":"#"
+        "text": "Pre-Internship Gallery Analysis (PDF)",
+        "url": "https://res.cloudinary.com/dlepppgm2/image/upload/ngc_internship_pre_analysis_ih2zbq.pdf",
+        "type": "pdf"
+      },
+      {
+        "text": "Full Internship Document (PDF)",
+        "url": "https://res.cloudinary.com/dlepppgm2/image/upload/ngc_full_document_x4ynl5.pdf",
+        "type": "pdf"
       }
-   ],
-   "category":"plugin",
-   "media":[
+    ],
+    "category": "industrial",
+    "media": [
       {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Plugin Interface",
-         "description":"User interface of the procedural foliage plugin."
+        "type": "image",
+        "src": "ngc_internship_3_qdvhzy.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761454345/ngc_internship_3_qdvhzy.png",
+        "title": "Exhibition Display Systems",
+        "description": "Overview of custom display infrastructure designed for the National Gallery exhibition space."
       },
       {
-         "type":"video",
-         "src":"https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4",
-         "title":"Live Demo",
-         "description":"Demonstration of foliage generation in real-time."
+        "type": "image",
+        "src": "ngc_internship_2_jnspz6.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761454341/ngc_internship_2_jnspz6.png",
+        "title": "Display Platform",
+        "description": "Custom-designed display platform for artifact presentation and visitor engagement."
+      },
+      {
+        "type": "image",
+        "src": "ngc_internship_1_j5qipn.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761454347/ngc_internship_1_j5qipn.png",
+        "title": "Lightbox Wall System",
+        "description": "Integrated lightbox wall system for illuminated artwork display."
+      },
+      {
+        "type": "image",
+        "src": "ngc_internship_1_viacky.jpg",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761454318/ngc_internship_1_viacky.jpg",
+        "title": "Two-Sided Wall Case",
+        "description": "Double-sided display case allowing for dual exhibition viewing."
+      },
+      {
+        "type": "image",
+        "src": "ngc_internship_5_mrv7qy.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761454327/ngc_internship_5_mrv7qy.png",
+        "title": "Working Curator Models",
+        "description": "Scale models used by curators for exhibition planning and spatial layout."
+      },
+      {
+        "type": "video",
+        "src": "ngc_internship_news_video_efobvf.mp4",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/video/upload/f_auto,q_auto:good,w_160,so_0/v1761440911/ngc_internship_news_video_efobvf.jpg",
+        "title": "Ottawa Citizen News Feature",
+        "description": "News coverage showcasing the working curator models and exhibition design process."
+      },
+      {
+        "type": "image",
+        "src": "ngc_internship_7_opaycn.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761454334/ngc_internship_7_opaycn.png",
+        "title": "Working Curator Model – Detail View",
+        "description": "Close-up of curator model showing modular display components and layout flexibility."
+      },
+      {
+        "type": "image",
+        "src": "ngc_internship_8_ow3q2c.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761454322/ngc_internship_8_ow3q2c.png",
+        "title": "Working Curator Model – Assembly",
+        "description": "Alternate view of the working curator model demonstrating assembly and configuration options."
+      },
+      {
+        "type": "image",
+        "src": "ngc_internship_10_ocl6sl.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761454336/ngc_internship_10_ocl6sl.png",
+        "title": "Laser-Cut Art Replicas",
+        "description": "Miniature laser-cut artwork replicas created for use in working curator models."
+      },
+      {
+        "type": "image",
+        "src": "ngc_internship_11_gorerw.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761454334/ngc_internship_11_gorerw.png",
+        "title": "Laser-Cut Art Replicas – Detail",
+        "description": "Additional miniature art replicas showcasing precision laser cutting and scale accuracy."
+      },
+      {
+        "type": "image",
+        "src": "ngc_internship_9_lxcxdi.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761454326/ngc_internship_9_lxcxdi.png",
+        "title": "Full-Scale Artwork Comparison",
+        "description": "Full-scale artworks shown for comparison with miniature replicas and display planning."
       }
-   ]
-},
-"plugin-3":{
-   "title":"Material Blending Plugin",
-   "description":"A Substance Designer plugin for advanced material blending techniques.",
-   "details":"Language: C++, Substance Designer API\nFeatures: Layer blending, Mask generation\nCompatibility: Substance Designer 2021+\nPerformance: GPU accelerated",
-   "links":[
+    ]
+  },
+  "industrial-design-myco-audio-speaker": {
+    "title": "Myco Audio – Mycoboard Composite Speaker",
+    "description": "A purely conceptual speaker design exploring mycelium substrate composites as a sustainable material for audio products.",
+    "details": "Project Type: Conceptual product design\nMaterial Focus: Mycelium-based composite (Mycoboard)\nDeliverables: Product renders, exploded views, technical drawings, presentation deck\nSoftware: [Add your software here]",
+    "links": [
       {
-         "text":"Download Plugin",
-         "url":"#"
-      },
-      {
-         "text":"Source Code",
-         "url":"#"
+        "text": "Full Presentation (PDF)",
+        "url": "https://res.cloudinary.com/dlepppgm2/image/upload/id_myco_audio_presentation_wonghv.pdf",
+        "type": "pdf"
       }
-   ],
-   "category":"plugin",
-   "media":[
+    ],
+    "category": "industrial",
+    "media": [
       {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1614728263952-84ea256f9679?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Material Blending UI",
-         "description":"User interface showing material blending controls."
+        "type": "image",
+        "src": "id_myco_audio_main_up_qiq0dl.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale,dpr_2.0/v1761348307/id_myco_audio_main_up_qiq0dl.png",
+        "title": "Main Shot",
+        "description": "Primary product render showcasing the mycelium composite speaker form and material language."
       },
       {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Blending Results",
-         "description":"Example of blended materials with different parameters."
+        "type": "image",
+        "src": "id_myco_audio_exploded_cdhxel.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale,dpr_2.0/v1761348310/id_myco_audio_exploded_cdhxel.png",
+        "title": "Exploded View",
+        "description": "Technical exploded view detailing component assembly and internal structure."
+      },
+      {
+        "type": "image",
+        "src": "id_myco_audio_tfs_kux9s2.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale,dpr_2.0/v1761348310/id_myco_audio_tfs_kux9s2.png",
+        "title": "Design Concept Breakdown",
+        "description": "Top, front, and side orthographic views with design concept annotations."
+      },
+      {
+        "type": "image",
+        "src": "id_myco_audio_sketches_model_gmwww7.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale,dpr_2.0/v1761430651/id_myco_audio_sketches_model_gmwww7.png",
+        "title": "Sketches & Model",
+        "description": "Early concept sketches and physical model exploration."
+      },
+      {
+        "type": "image",
+        "src": "id_myco_audio_render1_oib3ie.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale,dpr_2.0/v1761348290/id_myco_audio_render1_oib3ie.png",
+        "title": "Legacy Improved Render – Hero Shot",
+        "description": "Enhanced Comfy UI lighting pass on the hero product shot, emphasizing material texture and form."
+      },
+      {
+        "type": "image",
+        "src": "id_myco_audio_explodedcomfy_vvyxom.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale,dpr_2.0/v1761348301/id_myco_audio_explodedcomfy_vvyxom.png",
+        "title": "Legacy Improved Render – Exploded View",
+        "description": "Enhanced Comfy UI lighting pass on the exploded view, highlighting component detail and assembly logic."
       }
-   ]
-},
-"industrial-1":{
-   "title":"Modular Furniture System",
-   "description":"Sustainable furniture design with modular components and eco-friendly materials.",
-   "details":"Materials: Recycled aluminum, Bamboo composite\nAssembly: Tool-free connection system\nCertifications: FSC certified, GREENGUARD Gold\nLifespan: 20+ years with proper care",
-   "links":[
+    ]
+  },
+  "industrial-design-alaya-hologram-projector": {
+    "title": "Alaya – Hologram Projector",
+    "description": "A purely conceptual desktop hologram projector exploring form, interaction, and futuristic product language.",
+    "details": "Project Duration: 2 weeks\nFocus: Conceptual product design, form exploration, rendering\nSoftware: [Add your software here]\nDeliverables: Hero renders, detail studies, full project documentation",
+    "links": [],
+    "category": "industrial",
+    "media": [
       {
-         "text":"Product Catalog",
-         "url":"#"
+        "type": "image",
+        "src": "id_alaya_main_htubvx.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale,dpr_2.0/v1761277799/id_alaya_main_htubvx.png",
+        "title": "Hero Shot",
+        "description": "Primary conceptual render establishing the product's form language and interaction model."
       },
       {
-         "text":"Sustainability Report",
-         "url":"#"
+        "type": "image",
+        "src": "id_alaya_render_rs_2_pmwno2.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale,dpr_2.0/v1761344231/id_alaya_render_rs_2_pmwno2.png",
+        "title": "Product Render 1",
+        "description": "Clean product shot highlighting overall proportions and material finish."
+      },
+      {
+        "type": "image",
+        "src": "id_alaya_render_rs_3_bnoxwp.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale,dpr_2.0/v1761344244/id_alaya_render_rs_3_bnoxwp.png",
+        "title": "Detail Render 1",
+        "description": "Close-up detail showcasing surface treatment and component integration."
+      },
+      {
+        "type": "image",
+        "src": "id_alaya_render_rs_4_qhp7b1.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale,dpr_2.0/v1761344240/id_alaya_render_rs_4_qhp7b1.png",
+        "title": "Detail Render 2",
+        "description": "Additional detail view emphasizing form transitions and material quality."
+      },
+      {
+        "type": "image",
+        "src": "id_alaya_full_fvj5g0.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale,dpr_2.0/v1761277793/id_alaya_full_fvj5g0.png",
+        "title": "Full Project Page",
+        "description": "Complete project documentation including process, iterations, and final deliverables."
       }
-   ],
-   "category":"industrial",
-   "media":[
+    ]
+    },
+    "industrial-design-onx-mini-itx-case": {
+    "title": "ONX – Mini-ITX PC Case with AI Visualizer",
+    "description": "A conceptual Mini-ITX PC case featuring an integrated AI response visualizer, designed to give artificial intelligence a tangible, expressive personality.",
+    "details": "Project Type: Conceptual product design\nFocus: Compact PC case design, AI interaction visualization, integrated display systems\nFeatures: Mini-ITX form factor, integrated visualizer display, modular component layout\nSoftware: [Add your software here]",
+    "links": [],
+    "category": "industrial",
+    "media": [
       {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Complete System",
-         "description":"The full modular furniture system in a modern office environment."
+        "type": "image",
+        "src": "id_onx_main_sxvv78.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761348963/id_onx_main_sxvv78.png",
+        "title": "Main Shot",
+        "description": "Primary hero render showcasing the ONX case design and integrated AI visualizer display."
       },
       {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Component Details",
-         "description":"Close-up view of the modular connection system and material finishes."
+        "type": "image",
+        "src": "id_onx_main2_uysk9k.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761348965/id_onx_main2_uysk9k.png",
+        "title": "Logo Highlight",
+        "description": "Detail view emphasizing the ONX branding and front panel design language."
       },
       {
-         "type":"video",
-         "src":"https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4",
-         "title":"Assembly Process",
-         "description":"Step-by-step assembly demonstration showing the tool-free connection system."
+        "type": "image",
+        "src": "id_onx_main3_y8peib.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761348962/id_onx_main3_y8peib.png",
+        "title": "Front View",
+        "description": "Clean front elevation showing the visualizer interface and overall proportions."
       },
       {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1542744094-3a31f272c490?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Sustainability Features",
-         "description":"Breakdown of eco-friendly materials and sustainable manufacturing processes."
+        "type": "image",
+        "src": "id_onx_ai_t4aftn.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761348954/id_onx_ai_t4aftn.png",
+        "title": "AI Visualizer Examples",
+        "description": "Concept exploration of AI response visualizations and personality expression modes."
+      },
+      {
+        "type": "image",
+        "src": "id_onx_itx_n5keaz.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761348965/id_onx_itx_n5keaz.png",
+        "title": "Case System Overview",
+        "description": "Internal layout and Mini-ITX component integration strategy."
+      },
+      {
+        "type": "image",
+        "src": "id_onx_exploded_yivixp.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761348958/id_onx_exploded_yivixp.png",
+        "title": "Exploded View",
+        "description": "Technical exploded view detailing component assembly and modular construction."
       }
-   ]
-},
-"industrial-2":{
-   "title":"Smart Home Device",
-   "description":"IoT-enabled smart home device with minimalist design approach.",
-   "details":"Materials: Anodized aluminum, Tempered glass\nConnectivity: WiFi 6, Bluetooth 5.0, Zigbee\nDesign philosophy: Scandinavian minimalism\nBattery life: 6 months on single charge",
-   "links":[
+    ]
+    },
+    "industrial-design-pneumatic-stone-grinder": {
+    "title": "Pneumatic Stone Grinder with Integrated Water Jet System",
+    "description": "Ergonomically optimized handheld pneumatic grinder designed for stone fabrication, featuring an integrated water jet cooling and dust suppression system.",
+    "details": "Project Type: Industrial tool design\nFocus: Ergonomics, pneumatic systems, water jet integration, user safety\nDeliverables: Full technical report, research paper, physical prototype, technical drawings\nSoftware: [Add your software here]",
+    "links": [
       {
-         "text":"Technical Specs",
-         "url":"#"
+        "text": "Full Technical Report (PDF)",
+        "url": "https://res.cloudinary.com/dlepppgm2/image/upload/v1761344950/PneumaticStoneGrinder_spgowg.pdf",
+        "type": "pdf"
       },
       {
-         "text":"User Manual",
-         "url":"#"
+        "text": "Research Paper (PDF)",
+        "url": "https://res.cloudinary.com/dlepppgm2/image/upload/id_grinder_research_s8p6ab.pdf",
+        "type": "pdf"
       }
-   ],
-   "category":"industrial",
-   "media":[
+    ],
+    "category": "industrial",
+    "media": [
       {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Product Design",
-         "description":"Final product design with minimalist aesthetic and premium materials."
+        "type": "image",
+        "src": "id_grinder_main_jfhqve.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761344724/id_grinder_main_jfhqve.png",
+        "title": "Main Shot",
+        "description": "Primary hero render showcasing the ergonomic form and integrated water jet system."
       },
       {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1542744094-3a31f272c490?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Technical Drawings",
-         "description":"Detailed technical drawings and component specifications."
+        "type": "image",
+        "src": "id_grinder_detail_mbs6lz.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761344713/id_grinder_detail_mbs6lz.png",
+        "title": "Speed Control Dial Detail",
+        "description": "Close-up render of the speed control dial interface and tactile feedback design."
       },
       {
-         "type":"video",
-         "src":"https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4",
-         "title":"Product Demo",
-         "description":"Interactive demonstration of smart home device features."
-      }
-   ]
-},
-"industrial-3":{
-   "title":"Ergonomic Workspace",
-   "description":"Comprehensive ergonomic workspace solution for modern offices.",
-   "details":"Components: Adjustable desk, Ergonomic chair, Monitor arm\nHeight range: 28-48 inches\nWeight capacity: 300 lbs\nCertifications: BIFMA, GREENGUARD",
-   "links":[
-      {
-         "text":"Ergonomic Study",
-         "url":"#"
+        "type": "image",
+        "src": "id_grinder_detail2_asnlnj.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761344757/id_grinder_detail2_asnlnj.png",
+        "title": "Water Jet Control Detail",
+        "description": "Detail view of the integrated water jet control mechanism and flow adjustment."
       },
       {
-         "text":"Assembly Guide",
-         "url":"#"
-      }
-   ],
-   "category":"industrial",
-   "media":[
-      {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1542744094-3a31f272c490?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Complete Workspace",
-         "description":"Full ergonomic workspace setup in modern office environment."
+        "type": "image",
+        "src": "id_grinder_internals_jh2fhn.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761344678/id_grinder_internals_jh2fhn.png",
+        "title": "Internal Cross Section",
+        "description": "Technical cross-section revealing pneumatic system layout and water jet integration."
       },
       {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Ergonomic Features",
-         "description":"Detailed view of ergonomic adjustments and health benefits."
+        "type": "image",
+        "src": "id_grinder_side_mukqsi.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761344687/id_grinder_side_mukqsi.png",
+        "title": "Side View",
+        "description": "Side elevation showing ergonomic grip contours and control placement."
       },
       {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Component Breakdown",
-         "description":"Individual components and their ergonomic design principles."
-      }
-   ]
-},
-"graphic-1":{
-   "title":"Brand Identity System",
-   "description":"Complete visual identity for a tech startup, including logo, typography, and color palette.",
-   "details":"Deliverables: Logo variations, Style guide, Business cards\nTypography: Custom font pairing system\nColor palette: Accessibility compliant (WCAG AA)\nApplications: Web, print, merchandise",
-   "links":[
-      {
-         "text":"Brand Guidelines",
-         "url":"#"
+        "type": "image",
+        "src": "id_grinder_top_hiibjy.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761344698/id_grinder_top_hiibjy.png",
+        "title": "Top View",
+        "description": "Top-down view highlighting symmetry and component layout."
       },
       {
-         "text":"Logo Package",
-         "url":"#"
-      }
-   ],
-   "category":"graphic",
-   "media":[
-      {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Logo Variations",
-         "description":"Primary logo and alternative versions for different applications and backgrounds."
+        "type": "image",
+        "src": "id_grinder_front_qhcdnc.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761344682/id_grinder_front_qhcdnc.png",
+        "title": "Front View",
+        "description": "Front elevation showing grinding head and water jet nozzle positioning."
       },
       {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1572044162444-ad60f128bdea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Color Palette",
-         "description":"Complete color system with accessibility guidelines and usage examples."
+        "type": "image",
+        "src": "id_grinder_pdf_10_aiuccy.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761344684/id_grinder_pdf_10_aiuccy.png",
+        "title": "Technical Drawing",
+        "description": "Dimensioned technical drawing with component callouts and specifications."
       },
       {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Typography System",
-         "description":"Custom font pairings and typographic hierarchy for brand consistency."
+        "type": "image",
+        "src": "id_grinder_3dmodel_rdmgbt.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761344741/id_grinder_3dmodel_rdmgbt.png",
+        "title": "Physical 3D Model",
+        "description": "Physical prototype model demonstrating ergonomic form and grip testing."
+      }
+    ]
+  },
+    "industrial-design-colony-modular-charging-system": {
+    "title": "Colony – Smart Modular Charging System",
+    "description": "A conceptual modular charging system with integrated app control, allowing users to manage power distribution and scheduling across multiple connected devices.",
+    "details": "Project Type: Conceptual product design\nFocus: Modular hardware design, IoT integration, UI/UX design, smart home connectivity\nFeatures: Modular stackable units, app-based power management, individual device control\nSoftware: [Add your software here]",
+    "links": [],
+    "category": "industrial",
+    "media": [
+      {
+        "type": "image",
+        "src": "id_colony_main_g7yvcg.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761337266/id_colony_main_g7yvcg.png",
+        "title": "Main Shot",
+        "description": "Primary hero render showcasing the Colony modular charging system and stacking design."
       },
       {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Brand Applications",
-         "description":"Real-world applications including business cards, letterhead, and digital assets."
-      }
-   ]
-},
-"graphic-2":{
-   "title":"Event Poster Series",
-   "description":"Dynamic poster series for electronic music events with kinetic typography.",
-   "details":"Style: Kinetic typography, Neon aesthetics\nDimensions: Various sizes (A1, A2, Digital)\nTypography: Custom lettering with motion blur\nColor scheme: Neon gradients on dark backgrounds",
-   "links":[
-      {
-         "text":"Full Series",
-         "url":"#"
+        "type": "image",
+        "src": "id_colony_ui_tnexli.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761337261/id_colony_ui_tnexli.png",
+        "title": "UI Samples",
+        "description": "Mobile app interface design samples showing power management and device control screens."
       },
       {
-         "text":"Print Files",
-         "url":"#"
-      }
-   ],
-   "category":"graphic",
-   "media":[
-      {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1572044162444-ad60f128bdea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Main Poster",
-         "description":"Primary event poster with kinetic typography and neon effects."
+        "type": "video",
+        "src": "id_colony_ux_demo_ah9cls.mp4",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/video/upload/f_auto,q_auto:good,w_160,so_0/v1761337256/id_colony_ux_demo_ah9cls.jpg",
+        "title": "UI/UX Demo Video",
+        "description": "Interactive demonstration of the Colony app interface and user flow for power scheduling and device management."
       },
       {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Typography Study",
-         "description":"Custom lettering development and kinetic motion studies."
+        "type": "image",
+        "src": "id_colony_bit1_main_p3kkqd.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761342523/id_colony_bit1_main_p3kkqd.png",
+        "title": "Single Unit Render",
+        "description": "Detailed render of an individual Colony charging module showing form and connection points."
       },
       {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Color Variations",
-         "description":"Different color schemes and gradient applications for the series."
-      }
-   ]
-},
-"art-1":{
-   "title":"Digital Sculpture",
-   "description":"Interactive digital sculpture exploring the relationship between form and light.",
-   "category":"art",
-   "media":[
+        "type": "image",
+        "src": "id_colony_bit_group_ltcxes.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761342503/id_colony_bit_group_ltcxes.png",
+        "title": "Group 'Colony' Render",
+        "description": "Multiple units stacked together demonstrating the modular 'colony' concept and scalability."
+      },
       {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Digital Sculpture",
-         "description":"Interactive digital sculpture exploring the relationship between form and light."
+        "type": "image",
+        "src": "id_colony_logo_vemqbw.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761337247/id_colony_logo_vemqbw.png",
+        "title": "Colony Logo",
+        "description": "Brand identity and logo design for the Colony product line."
       }
-   ]
-},
-"art-2":{
-   "title":"Kinetic Installation",
-   "description":"Interactive kinetic sculpture responding to viewer movement and sound.",
-   "category":"art",
-   "media":[
+    ]
+    },
+    "industrial-design-ora-speaker-projection-system": {
+    "title": "ORA – Speaker with Integrated HDMI Projection System",
+    "description": "A conceptual speaker design featuring an integrated fisheye lens projection system for immersive at-home visual experiences, designed for parties, events, and ambient environments.",
+    "details": "Project Type: Conceptual product design\nFocus: Audio-visual integration, projection mapping, experiential design\nFeatures: HDMI input, fisheye lens projection, integrated speaker system, ambient lighting\nSoftware: [Add your software here]",
+    "links": [],
+    "category": "industrial",
+    "media": [
       {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Kinetic Installation",
-         "description":"Interactive kinetic sculpture responding to viewer movement and sound."
-      }
-   ]
-},
-"art-3":{
-   "title":"Mixed Media Sculpture",
-   "description":"Contemporary mixed media sculpture exploring texture and form.",
-   "category":"art",
-   "media":[
+        "type": "image",
+        "src": "id_ora_main_wtroyh.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761349615/id_ora_main_wtroyh.png",
+        "title": "Main Shot",
+        "description": "Primary hero render showcasing the ORA speaker and integrated projection lens."
+      },
       {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1578321272176-b7bbc0679853?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Mixed Media Sculpture",
-         "description":"Contemporary mixed media sculpture exploring texture and form."
-      }
-   ]
-},
-"photo-1":{
-   "title":"Architectural Photography",
-   "description":"Modern architecture captured with emphasis on geometric forms and natural lighting.",
-   "category":"photo",
-   "media":[
+        "type": "image",
+        "src": "id_ora_exploded_render_koxxlf.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761349605/id_ora_exploded_render_koxxlf.png",
+        "title": "Exploded View – Legacy Improved Render",
+        "description": "Enhanced lighting pass on the exploded view, detailing internal component layout and projection system integration."
+      },
       {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Architectural Photography",
-         "description":"Modern architecture captured with emphasis on geometric forms and natural lighting."
-      }
-   ]
-},
-"photo-2":{
-   "title":"Urban Landscapes",
-   "description":"Urban landscape photography capturing the energy of city environments.",
-   "category":"photo",
-   "media":[
+        "type": "image",
+        "src": "id_ora_desc_g257s7.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761349623/id_ora_desc_g257s7.png",
+        "title": "Product Detail Highlights",
+        "description": "Annotated breakdown of key features including HDMI input, fisheye projection, and speaker configuration."
+      },
       {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Urban Landscapes",
-         "description":"Urban landscape photography capturing the energy of city environments."
-      }
-   ]
-},
-"photo-3":{
-   "title":"Abstract Compositions",
-   "description":"Abstract photographic compositions exploring light, shadow, and form.",
-   "category":"photo",
-   "media":[
+        "type": "image",
+        "src": "id_ora_development_uxzrlf.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761349622/id_ora_development_uxzrlf.png",
+        "title": "Conceptualization Work",
+        "description": "Early concept sketches and development process showing ideation and form exploration."
+      },
       {
-         "type":"image",
-         "src":"https://images.unsplash.com/photo-1614728263952-84ea256f9679?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-         "title":"Abstract Compositions",
-         "description":"Abstract photographic compositions exploring light, shadow, and form."
+        "type": "image",
+        "src": "id_ora_render1_soinup.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761349592/id_ora_render1_soinup.png",
+        "title": "Legacy Improved Render – Hero Shot",
+        "description": "Enhanced lighting pass on the hero product shot, emphasizing material quality and projection lens detail."
       }
-   ]
-}
+    ]
+  },
+    "industrial-design-additional-renders": {
+    "title": "Additional Renders – Product Design Collection",
+    "description": "A curated collection of product design renders showcasing material quality, lighting technique, and design versatility across various conceptual projects.",
+    "details": "Collection Focus: Rendering quality, material exploration, lighting passes, technical visualization\nProjects Include: Deepwater communications bracelet, magnetic skateboard rack, modular educational facility, character modeling\nSoftware: [Add your software here]",
+    "links": [],
+    "category": "industrial",
+    "media": [
+      {
+        "type": "image",
+        "src": "id_seaker_product2_hborsa.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761352341/id_seaker_product2_hborsa.png",
+        "title": "Deepwater Communications Bracelet",
+        "description": "Conceptual wearable communications device designed for underwater use with integrated LED guidance system."
+      },
+      {
+        "type": "image",
+        "src": "id_seaker_exploded2_wrfa0y.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761352329/id_seaker_exploded2_wrfa0y.png",
+        "title": "Deepwater Bracelet – Exploded View",
+        "description": "Technical exploded view revealing internal component layout and waterproof sealing system."
+      },
+      {
+        "type": "image",
+        "src": "id_seaker_detail1_mfgrud.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761352341/id_seaker_detail1_mfgrud.png",
+        "title": "Deepwater Bracelet – Charging Port Detail",
+        "description": "Close-up detail render showcasing the waterproof charging port design and material transitions."
+      },
+      {
+        "type": "image",
+        "src": "id_seaker_detail3_c6llow.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761352341/id_seaker_detail3_c6llow.png",
+        "title": "Deepwater Bracelet – LED Ring & O-Ring Seal",
+        "description": "Detail shot highlighting the LED guidance ring and precision o-ring seal engineering."
+      },
+      {
+        "type": "image",
+        "src": "id_skaterack_comfy2_wfarw4.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761352389/id_skaterack_comfy2_wfarw4.png",
+        "title": "Magnetic Skateboard Rack – Legacy Improved Render",
+        "description": "Enhanced lighting pass on magnetic skateboard wall mount system showcasing material quality and form."
+      },
+      {
+        "type": "image",
+        "src": "id_skaterack_comfy_pteljc.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761352388/id_skaterack_comfy_pteljc.png",
+        "title": "Magnetic Skateboard Rack – Exploded View",
+        "description": "Legacy improved render showing exploded assembly and magnetic mounting mechanism."
+      },
+      {
+        "type": "image",
+        "src": "id_ken_renders__12_gpx70g.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761346404/id_ken_renders__12_gpx70g.png",
+        "title": "Shipping Container Educational Facility",
+        "description": "Modular educational space design utilizing repurposed shipping containers with custom furniture integration."
+      },
+      {
+        "type": "image",
+        "src": "id_ken_renders__14_uieew9.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761346395/id_ken_renders__14_uieew9.png",
+        "title": "Educational Facility – Front View",
+        "description": "Front elevation of the modular container facility showing entry and window configuration."
+      },
+      {
+        "type": "image",
+        "src": "id_ken_renders__2_dsregk.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761346386/id_ken_renders__2_dsregk.png",
+        "title": "Custom Chair & Desk – Legacy Improved Render",
+        "description": "Enhanced lighting pass on custom furniture designed for the educational facility space."
+      },
+      {
+        "type": "image",
+        "src": "id_ken_renders__1_ciyqcs.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761346381/id_ken_renders__1_ciyqcs.png",
+        "title": "Wall Light – Legacy Improved Render",
+        "description": "Custom wall lighting fixture designed for the container facility with enhanced material rendering."
+      },
+      {
+        "type": "image",
+        "src": "id_ken_renders__6_na33pr.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761346406/id_ken_renders__6_na33pr.png",
+        "title": "Educational Facility – Interior Detail",
+        "description": "Close-up interior view showcasing spatial layout and custom furniture integration."
+      },
+      {
+        "type": "image",
+        "src": "id_gir_main_txijwt.jpg",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761337387/id_gir_main_txijwt.jpg",
+        "title": "Robot Modeling Project – GIR from Invader Zim",
+        "description": "Character modeling and rendering project recreating GIR with attention to material and form accuracy."
+      },
+      {
+        "type": "image",
+        "src": "id_gir_breakdown_qjxfl7.jpg",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761337385/id_gir_breakdown_qjxfl7.jpg",
+        "title": "GIR Model – Component Breakdown",
+        "description": "Exploded view showing model construction and component assembly logic."
+      },
+      {
+        "type": "image",
+        "src": "id_gir_technical_drawing_gmup3k.jpg",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761337390/id_gir_technical_drawing_gmup3k.jpg",
+        "title": "GIR Model – Technical Drawing",
+        "description": "Dimensioned technical drawing with orthographic views and construction details."
+      }
+    ]
+  },
+  "graphic-1": {
+    "title": "Brand Identity System",
+    "description": "Complete visual identity for a tech startup, including logo, typography, and color palette.",
+    "details": "Deliverables: Logo variations, Style guide, Business cards\nTypography: Custom font pairing system\nColor palette: Accessibility compliant (WCAG AA)\nApplications: Web, print, merchandise",
+    "links": [
+      {
+        "text": "Brand Guidelines",
+        "url": "#"
+      },
+      {
+        "text": "Logo Package",
+        "url": "#"
+      }
+    ],
+    "category": "graphic",
+    "media": [
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/brand_logo",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/brand_logo",
+        "title": "Logo Variations",
+        "description": "Primary logo and alternative versions for different applications and backgrounds."
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/brand_colors",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/brand_colors",
+        "title": "Color Palette",
+        "description": "Complete color system with accessibility guidelines and usage examples."
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/brand_typography",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/brand_typography",
+        "title": "Typography System",
+        "description": "Custom font pairings and typographic hierarchy for brand consistency."
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/brand_applications",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/brand_applications",
+        "title": "Brand Applications",
+        "description": "Real-world applications including business cards, letterhead, and digital assets."
+      }
+    ]
+  },
+  "graphic-2": {
+    "title": "Event Poster Series",
+    "description": "Dynamic poster series for electronic music events with kinetic typography.",
+    "details": "Style: Kinetic typography, Neon aesthetics\nDimensions: Various sizes (A1, A2, Digital)\nTypography: Custom lettering with motion blur\nColor scheme: Neon gradients on dark backgrounds",
+    "links": [
+      {
+        "text": "Full Series",
+        "url": "#"
+      },
+      {
+        "text": "Print Files",
+        "url": "#"
+      }
+    ],
+    "category": "graphic",
+    "media": [
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/poster_main",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/poster_main",
+        "title": "Main Poster",
+        "description": "Primary event poster with kinetic typography and neon effects."
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/poster_typography",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/poster_typography",
+        "title": "Typography Study",
+        "description": "Custom lettering development and kinetic motion studies."
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/poster_variations",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/poster_variations",
+        "title": "Color Variations",
+        "description": "Different color schemes and gradient applications for the series."
+      }
+    ]
+  },
+  "art-1": {
+    "title": "Digital Sculpture",
+    "description": "Interactive digital sculpture exploring the relationship between form and light.",
+    "category": "art",
+    "media": [
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/art_digital_sculpture",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/art_digital_sculpture",
+        "title": "Digital Sculpture",
+        "description": "Interactive digital sculpture exploring the relationship between form and light."
+      }
+    ]
+  },
+  "art-2": {
+    "title": "Kinetic Installation",
+    "description": "Interactive kinetic sculpture responding to viewer movement and sound.",
+    "category": "art",
+    "media": [
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/art_kinetic",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/art_kinetic",
+        "title": "Kinetic Installation",
+        "description": "Interactive kinetic sculpture responding to viewer movement and sound."
+      }
+    ]
+  },
+  "art-3": {
+    "title": "Mixed Media Sculpture",
+    "description": "Contemporary mixed media sculpture exploring texture and form.",
+    "category": "art",
+    "media": [
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/art_mixed_media",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/art_mixed_media",
+        "title": "Mixed Media Sculpture",
+        "description": "Contemporary mixed media sculpture exploring texture and form."
+      }
+    ]
+  },
+  "photo-1": {
+    "title": "Architectural Photography",
+    "description": "Modern architecture captured with emphasis on geometric forms and natural lighting.",
+    "category": "photo",
+    "media": [
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/photo_architecture",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/photo_architecture",
+        "title": "Architectural Photography",
+        "description": "Modern architecture captured with emphasis on geometric forms and natural lighting."
+      }
+    ]
+  },
+  "photo-2": {
+    "title": "Urban Landscapes",
+    "description": "Urban landscape photography capturing the energy of city environments.",
+    "category": "photo",
+    "media": [
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/photo_urban",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/photo_urban",
+        "title": "Urban Landscapes",
+        "description": "Urban landscape photography capturing the energy of city environments."
+      }
+    ]
+  },
+  "photo-3": {
+    "title": "Abstract Compositions",
+    "description": "Abstract photographic compositions exploring light, shadow, and form.",
+    "category": "photo",
+    "media": [
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/photo_abstract",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/photo_abstract",
+        "title": "Abstract Compositions",
+        "description": "Abstract photographic compositions exploring light, shadow, and form."
+      }
+    ]
+  }
 }

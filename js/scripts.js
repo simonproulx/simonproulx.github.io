@@ -288,7 +288,7 @@
       console.log('%c ' + msg + ' ', 'background: #222; color: #0ff; padding: 4px 8px; border-radius: 4px;');
     })();
 
-      // Add this near the top of scripts.js
+  
   let lightboxData = {}; // Empty placeholder until loaded
 
   // Fetch the data on load
@@ -297,136 +297,254 @@
           const response = await fetch('js/lightbox-data.json');
           if (!response.ok) throw new Error('Failed to load lightbox data');
           lightboxData = await response.json();
-          console.log('Lightbox data loaded successfully!'); // For debugging
-          // Now you can init anything that depends on it, if needed
+          console.log('Lightbox data loaded successfully!');
+          
+          // ✅ Initialize thumbnail hover preloading
+          initThumbnailPreloading();
       } catch (error) {
           console.error('Error loading lightbox data:', error);
-          // Optional: Fallback or alert user
       }
   });
 
+  /* ==== UNIFIED PAGE NAVIGATION ==== */
+  let lastScrollPosition = 0;
 
-/* ==== UNIFIED PAGE NAVIGATION ==== */
-let lastScrollPosition = 0;
+  function navigateToPage(pageId) {
+      const backBtn = document.getElementById('globalBackBtn');
+      const currentPage = document.querySelector('.page.active');
+      const newPage = document.getElementById(pageId);
+      const fadeLayer = document.getElementById('page-fade');
 
-    function navigateToPage(pageId) {
-    const backBtn = document.getElementById('globalBackBtn');
-    const currentPage = document.querySelector('.page.active');
-    const newPage = document.getElementById(pageId);
-    const fadeLayer = document.getElementById('page-fade');
+      // Close any open lightbox
+      const lightbox = document.getElementById('lightbox');
+      if (lightbox && lightbox.classList.contains('active')) {
+          closeLightbox();
+      }
 
-    // Close any open lightbox
-    const lightbox = document.getElementById('lightbox');
-    if (lightbox && lightbox.classList.contains('active')) {
-        closeLightbox();
-    }
+      // ✅ Save WINDOW scroll position if leaving home
+      if (currentPage && currentPage.id === 'home' && pageId !== 'home') {
+          lastScrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+          console.log('💾 Saved home scroll position:', lastScrollPosition);
+      }
 
-    // ✅ Save WINDOW scroll position if leaving home
-    if (currentPage && currentPage.id === 'home' && pageId !== 'home') {
-        lastScrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
-        console.log('💾 Saved home scroll position:', lastScrollPosition);
-    }
+      // --- Fade curtain ON if changing page ---
+      if (currentPage && currentPage.id !== pageId) {
+          fadeLayer.classList.add('active');
+      }
 
-    // --- Fade curtain ON if changing page ---
-    if (currentPage && currentPage.id !== pageId) {
-        fadeLayer.classList.add('active');
-    }
+      setTimeout(() => {
+          // --- Page Transition Logic ---
+          if (currentPage && currentPage.id !== pageId) {
+              currentPage.classList.remove('active');
+              currentPage.style.display = 'none';
+          }
 
-    setTimeout(() => {
-        // --- Page Transition Logic ---
-        if (currentPage && currentPage.id !== pageId) {
-        currentPage.classList.remove('active');
-        currentPage.style.display = 'none';
-        }
+          if (newPage && (!currentPage || currentPage.id !== pageId)) {
+              newPage.style.display = 'block';
+              requestAnimationFrame(() => {
+                  newPage.classList.add('active');
+                  // Initialize lazy media for this page only
+                  if (newPage && newPage.classList.contains('page')) {
+                      initLazyForProjectPage(newPage);
+                  }
+              });
+          }
 
-        if (newPage && (!currentPage || currentPage.id !== pageId)) {
-        newPage.style.display = 'block';
-        requestAnimationFrame(() => {
-            newPage.classList.add('active');
-        });
-        }
+          // --- Handle button + scroll logic ---
+          if (pageId === 'home') {
+              if (backBtn) {
+                  backBtn.classList.remove('visible');
+                  setTimeout(() => (backBtn.style.display = 'none'), 400);
+              }
 
-        // --- Handle button + scroll logic ---
-        if (pageId === 'home') {
-        if (backBtn) {
-            backBtn.classList.remove('visible');
-            setTimeout(() => (backBtn.style.display = 'none'), 400);
-        }
+              // ✅ Restore scroll position IMMEDIATELY while curtain is still active
+              setTimeout(() => {
+                  window.scrollTo({ top: lastScrollPosition, behavior: 'instant' });
+                  console.log('🔙 Restored home scroll to:', lastScrollPosition);
+              }, 10);
 
-        // ✅ Restore scroll position IMMEDIATELY while curtain is still active
-        setTimeout(() => {
-            window.scrollTo({ top: lastScrollPosition, behavior: 'instant' });
-            console.log('🔙 Restored home scroll to:', lastScrollPosition);
-        }, 10);
+          } else {
+              if (backBtn) {
+                  backBtn.style.display = 'block';
+                  setTimeout(() => backBtn.classList.add('visible'), 400);
+              }
+              if (newPage) newPage.scrollTop = 0;
+          }
 
-        } else {
-        if (backBtn) {
-            backBtn.style.display = 'block';
-            setTimeout(() => backBtn.classList.add('visible'), 400);
-        }
-        if (newPage) newPage.scrollTop = 0;
-        }
+          // --- Fade curtain OFF ---
+          if (currentPage && currentPage.id !== pageId) {
+              setTimeout(() => fadeLayer.classList.remove('active'), 500);
+          }
+      }, currentPage && currentPage.id !== pageId ? 400 : 0);
+  }
 
-        // --- Fade curtain OFF ---
-        if (currentPage && currentPage.id !== pageId) {
-        setTimeout(() => fadeLayer.classList.remove('active'), 500);
-        }
-    }, currentPage && currentPage.id !== pageId ? 400 : 0);
-    }
+  let currentLightboxId = null;
+  let currentCategory = null;
+  let categoryItems = [];
+  let currentIndex = 0;
+  let currentMediaIndex = 0;
+  const categoriesWithTabs = ['3d-work','plugin','industrial','graphic'];
 
+  // Bulletproof body lock (prevents background scroll + preserves position)
+  let __bodyLockScrollY = 0;
 
-    // The rest of your JS stays the same—functions like openLightbox will now use the fetched lightboxData
+  function lockBody() {
+      if (document.body.classList.contains('is-locked')) return;
+      __bodyLockScrollY = window.scrollY || window.pageYOffset || 0;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${__bodyLockScrollY}px`;
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+      document.body.style.width = '100%';
+      document.body.classList.add('lightbox-open', 'is-locked');
+  }
 
-    let currentLightboxId = null;
-    let currentCategory = null;
-    let categoryItems = [];
-    let currentIndex = 0;
-    let currentMediaIndex = 0;
-    const categoriesWithTabs = ['3d-work','plugin','industrial','graphic'];
+  function unlockBody() {
+      if (!document.body.classList.contains('is-locked')) return;
+      const y = __bodyLockScrollY;
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.width = '';
+      document.body.classList.remove('lightbox-open', 'is-locked');
+      
+      // Force instant scroll restoration 
+      requestAnimationFrame(() => {
+          const htmlEl = document.documentElement;
+          const originalBehavior = htmlEl.style.scrollBehavior;
+          htmlEl.style.scrollBehavior = 'auto';
+          window.scrollTo(0, y);
+          htmlEl.style.scrollBehavior = originalBehavior;
+      });
+  }
 
-    // Bulletproof body lock (prevents background scroll + preserves position) ===
-    let __bodyLockScrollY = 0;
+  /* ==== CLOUDINARY OPTIMIZATION HELPERS ==== */
+  function cld(publicId, w, q = 'q_auto') {
+      const cleanId = publicId.replace(/^\/+/, '');
+      // ✅ Removed hardcoded version—Cloudinary serves latest automatically
+      return `https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,${q},w_${w},dpr_auto,c_limit/${cleanId}`;
+  }
 
-    function lockBody() {
-    if (document.body.classList.contains('is-locked')) return;
-    __bodyLockScrollY = window.scrollY || window.pageYOffset || 0;
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${__bodyLockScrollY}px`;
-    document.body.style.left = '0';
-    document.body.style.right = '0';
-    document.body.style.width = '100%';
-    document.body.classList.add('lightbox-open', 'is-locked');
-    }
+  function pickWidth() {
+      const dpr = window.devicePixelRatio || 1;
+      const target = Math.min(window.innerWidth * dpr, 3840);
+      const widths = [800, 1200, 1600, 2000, 2560, 3200, 3840];
+      return widths.reduce((a, b) => (Math.abs(b - target) < Math.abs(a - target) ? b : a));
+  }
 
-    function unlockBody() {
-    if (!document.body.classList.contains('is-locked')) return;
-    const y = __bodyLockScrollY;
-    document.body.style.position = '';
-    document.body.style.top = '';
-    document.body.style.left = '';
-    document.body.style.right = '';
-    document.body.style.width = '';
-    document.body.classList.remove('lightbox-open', 'is-locked');
-    
-    // Force instant scroll restoration 
-    requestAnimationFrame(() => {
-        const htmlEl = document.documentElement;
-        const originalBehavior = htmlEl.style.scrollBehavior;
-        htmlEl.style.scrollBehavior = 'auto'; // disable smooth scroll
-        window.scrollTo(0, y);
-        htmlEl.style.scrollBehavior = originalBehavior; // restore
-    });
-    }
+  function prefetch(url) {
+      const img = new Image();
+      img.decoding = 'async';
+      img.loading = 'eager';
+      img.src = url;
+  }
 
-    /* ==== OPEN / UPDATE LIGHTBOX ==== */
-    function openLightbox(itemId) {
+  function optimizeImageSrc(originalSrc) {
+      if (originalSrc.includes('res.cloudinary.com')) {
+          const match = originalSrc.match(/\/v\d+\/(.+)$/);
+          if (match) {
+              const publicId = match[1];
+              const w = pickWidth();
+              const q = w >= 2560 ? 'q_auto:eco' : 'q_auto';
+              return cld(publicId, w, q);
+          }
+          return originalSrc;
+      }
+      
+      const w = pickWidth();
+      const q = w >= 2560 ? 'q_auto:eco' : 'q_auto';
+      return cld(originalSrc, w, q);
+  }
+
+  function prefetchNeighbors(data) {
+      const w = pickWidth();
+      const q = w >= 2560 ? 'q_auto:eco' : 'q_auto';
+      
+      // Prefetch prev/next media in current item
+      if (data.media && data.media.length > 1) {
+          const prevIdx = (currentMediaIndex - 1 + data.media.length) % data.media.length;
+          const nextIdx = (currentMediaIndex + 1) % data.media.length;
+          
+          [prevIdx, nextIdx].forEach(idx => {
+              const media = data.media[idx];
+              if (media.type === 'image') {
+                  prefetch(cld(media.src, w, q));
+              }
+          });
+      }
+      
+      // Prefetch prev/next items in category
+      if (categoryItems.length > 1) {
+          const prevItemIdx = (currentIndex - 1 + categoryItems.length) % categoryItems.length;
+          const nextItemIdx = (currentIndex + 1) % categoryItems.length;
+          
+          [prevItemIdx, nextItemIdx].forEach(idx => {
+              const itemId = categoryItems[idx];
+              const itemData = lightboxData[itemId];
+              if (itemData && itemData.media && itemData.media[0]) {
+                  const media = itemData.media[0];
+                  if (media.type === 'image') {
+                      prefetch(cld(media.src, w, q));
+                  }
+              }
+          });
+      }
+  }
+
+  /* ==== ✨ NEW: THUMBNAIL HOVER PRELOADING ==== */
+  function initThumbnailPreloading() {
+      document.querySelectorAll('[data-lightbox-id]').forEach(thumb => {
+          thumb.addEventListener('mouseenter', () => {
+              const projectKey = thumb.getAttribute('data-lightbox-id');
+              preloadProjectHero(projectKey);
+          }, { once: false, passive: true });
+      });
+  }
+
+  function preloadProjectHero(projectKey) {
+      const project = lightboxData[projectKey];
+      if (!project || !project.media || !project.media[0]) return;
+      
+      const firstMedia = project.media[0];
+      if (firstMedia.type === 'image') {
+          const w = pickWidth();
+          const q = w >= 2560 ? 'q_auto:eco' : 'q_auto';
+          prefetch(cld(firstMedia.src, w, q));
+      }
+  }
+
+  function optimizeVideoSrc(publicId) {
+    // Strip any existing extension
+    const cleanId = publicId.replace(/\.(ts|mp4|mov|avi)$/i, '');
+    return `https://res.cloudinary.com/dlepppgm2/video/upload/f_auto,q_auto/${cleanId}.mp4`;
+  }
+
+  /* ==== OPEN / UPDATE LIGHTBOX ==== */
+  function openLightbox(itemId) {
       const data = lightboxData[itemId];
       if (!data) return;
+      
+      // ✅ Clear stale content IMMEDIATELY
+      const imgEl = document.getElementById('lightbox-image');
+      const videoEl = document.getElementById('lightbox-video');
+      const iframeEl = document.getElementById('lightbox-iframe');
+      
+      imgEl.style.opacity = '0';
+      imgEl.src = '';
+      videoEl.style.display = 'none';
+      videoEl.pause();
+      videoEl.querySelector('source').src = '';
+      if (iframeEl) {
+          iframeEl.style.display = 'none';
+          iframeEl.src = '';
+      }
+      
       currentLightboxId = itemId;
       currentCategory = data.category || null;
       currentMediaIndex = 0;
 
-      // gather same-category items for prev/next navigation
+      // Gather same-category items for prev/next navigation
       categoryItems = Object.keys(lightboxData).filter(id => (lightboxData[id].category || '') === (currentCategory || ''));
       currentIndex = categoryItems.indexOf(itemId);
 
@@ -435,199 +553,298 @@ let lastScrollPosition = 0;
       const tabsContainer = document.getElementById('lightbox-tabs');
       const subCarousel = document.getElementById('lightbox-sub-carousel');
       if (categoriesWithTabs.includes(currentCategory) && data.media && data.media.length > 1) {
-        tabsContainer.style.display = 'flex';
-        subCarousel.style.display = 'flex';
-        populateSubCarousel(data.media);
-        updateTabContent(data);
-        // default to description tab
-        document.querySelectorAll('.lightbox-tab').forEach(t=>t.classList.remove('active'));
-        document.querySelectorAll('.lightbox-tab')[0]?.classList.add('active');
-        document.querySelectorAll('.lightbox-tab-content').forEach(c=>c.classList.remove('active'));
-        document.getElementById('tab-description').classList.add('active');
+          tabsContainer.style.display = 'flex';
+          subCarousel.style.display = 'flex';
+          populateSubCarousel(data.media);
+          updateTabContent(data);
+          // Default to description tab
+          document.querySelectorAll('.lightbox-tab').forEach(t=>t.classList.remove('active'));
+          document.querySelectorAll('.lightbox-tab')[0]?.classList.add('active');
+          document.querySelectorAll('.lightbox-tab-content').forEach(c=>c.classList.remove('active'));
+          document.getElementById('tab-description').classList.add('active');
       } else {
-        tabsContainer.style.display = 'none';
-        subCarousel.style.display = 'none';
-        // no sub-carousel placeholder
-        subCarousel.innerHTML = '';
+          tabsContainer.style.display = 'none';
+          subCarousel.style.display = 'none';
+          subCarousel.innerHTML = '';
       }
 
       const prevBtn = document.querySelector('.lightbox-prev');
       const nextBtn = document.querySelector('.lightbox-next');
-      if (categoryItems.length > 1) { prevBtn.classList.remove('hidden'); nextBtn.classList.remove('hidden'); }
-      else { prevBtn.classList.add('hidden'); nextBtn.classList.add('hidden'); }
+      if (categoryItems.length > 1) { 
+          prevBtn.classList.remove('hidden'); 
+          nextBtn.classList.remove('hidden'); 
+      } else { 
+          prevBtn.classList.add('hidden'); 
+          nextBtn.classList.add('hidden'); 
+      }
 
       const lightbox = document.getElementById('lightbox');
       lightbox.style.display = 'flex';
       setTimeout(()=> lightbox.classList.add('active'), 10);
-      // Save current scroll position
-        lockBody();
-    }
+      lockBody();
+      
+      // 🚀 Prefetch neighbors after opening
+      setTimeout(() => prefetchNeighbors(data), 100);
+  }
 
-    function updateLightboxContent(data) {
+  function updateLightboxContent(data) {
       const currentMedia = data.media[currentMediaIndex];
       const imageEl = document.getElementById('lightbox-image');
       const videoEl = document.getElementById('lightbox-video');
 
-      document.getElementById('lightbox-title').textContent =
-        currentMedia.title || data.title || '';
-      document.getElementById('lightbox-description').textContent =
-        currentMedia.description || data.description || '';
+      document.getElementById('lightbox-title').textContent = currentMedia.title || data.title || '';
+      document.getElementById('lightbox-description').textContent = currentMedia.description || data.description || '';
 
-      if (currentMedia.type === 'video') {
-        imageEl.style.display = 'none';
-        videoEl.style.display = 'block';
-        // set source
-        videoEl.querySelector('source').src = currentMedia.src;
-        videoEl.load();
-      } else {
-        if (!videoEl.paused) videoEl.pause();
-        videoEl.style.display = 'none';
-        imageEl.style.display = 'block';
-        imageEl.src = currentMedia.src;
-        imageEl.alt = currentMedia.title || '';
+      // 🎬 YouTube embed
+      if (currentMedia.type === 'youtube') {
+          imageEl.style.display = 'none';
+          videoEl.style.display = 'none';
+          
+          let iframeEl = document.getElementById('lightbox-iframe');
+          if (!iframeEl) {
+              iframeEl = document.createElement('iframe');
+              iframeEl.id = 'lightbox-iframe';
+              iframeEl.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+              iframeEl.allowFullscreen = true;
+              videoEl.parentElement.appendChild(iframeEl);
+          }
+          iframeEl.style.display = 'block';
+          iframeEl.src = `https://www.youtube.com/embed/${currentMedia.videoId}?autoplay=0`;
+      }
+      // 🎬 Vimeo embed
+      else if (currentMedia.type === 'vimeo') {
+          imageEl.style.display = 'none';
+          videoEl.style.display = 'none';
+          
+          let iframeEl = document.getElementById('lightbox-iframe');
+          if (!iframeEl) {
+              iframeEl = document.createElement('iframe');
+              iframeEl.id = 'lightbox-iframe';
+              iframeEl.allow = 'autoplay; fullscreen; picture-in-picture';
+              iframeEl.allowFullscreen = true;
+              videoEl.parentElement.appendChild(iframeEl);
+          }
+          iframeEl.style.display = 'block';
+          iframeEl.src = `https://player.vimeo.com/video/${currentMedia.videoId}?autoplay=0`;
+      }
+      // 📄 PDF embed
+      else if (currentMedia.type === 'pdf') {
+          imageEl.style.display = 'none';
+          videoEl.style.display = 'none';
+          
+          let iframeEl = document.getElementById('lightbox-iframe');
+          if (!iframeEl) {
+              iframeEl = document.createElement('iframe');
+              iframeEl.id = 'lightbox-iframe';
+              videoEl.parentElement.appendChild(iframeEl);
+          }
+          iframeEl.style.display = 'block';
+          iframeEl.src = currentMedia.src;
+      }
+      // 🎥 Regular video
+      else if (currentMedia.type === 'video') {
+          imageEl.style.display = 'none';
+          videoEl.style.display = 'block';
+          const iframeEl = document.getElementById('lightbox-iframe');
+          if (iframeEl) iframeEl.style.display = 'none';
+          
+          const videoSrc = optimizeVideoSrc(currentMedia.src); // ✅ NEW
+          videoEl.querySelector('source').src = videoSrc;
+          videoEl.load();
+      }
+      // 🖼️ Image (default) — ✅ NOW WITH LOADING STATE
+      else {
+          if (!videoEl.paused) videoEl.pause();
+          videoEl.style.display = 'none';
+          const iframeEl = document.getElementById('lightbox-iframe');
+          if (iframeEl) iframeEl.style.display = 'none';
+          
+          // ✅ Show loading state
+          imageEl.style.opacity = '0.3';
+          imageEl.style.filter = 'blur(10px)';
+          imageEl.style.display = 'block';
+          
+          // ✅ Preload then swap
+          const newSrc = optimizeImageSrc(currentMedia.src);
+          const tempImg = new Image();
+          tempImg.onload = () => {
+              imageEl.src = newSrc;
+              imageEl.alt = currentMedia.title || '';
+              imageEl.style.opacity = '1';
+              imageEl.style.filter = 'none';
+          };
+          tempImg.onerror = () => {
+              // Fallback if image fails
+              imageEl.style.opacity = '1';
+              imageEl.style.filter = 'none';
+          };
+          tempImg.src = newSrc;
+          
+          imageEl.loading = 'eager';
+          imageEl.decoding = 'async';
+          imageEl.fetchPriority = 'high';
       }
 
-      // 🔑 reset the track after loading new media
+      // 🔑 Reset track after loading new media
       const track = document.querySelector('.lightbox-track');
       if (track) {
-        track.style.transition = 'none';
-        track.style.transform = 'translateX(0)';
-        setTimeout(() => {
-          track.style.transition = '';
-        }, 20);
+          track.style.transition = 'none';
+          track.style.transform = 'translateX(0)';
+          setTimeout(() => {
+              track.style.transition = '';
+          }, 20);
       }
-    }
+      
+      // 🚀 Prefetch neighbors after switching media
+      setTimeout(() => prefetchNeighbors(data), 100);
+  }
 
-    function populateSubCarousel(mediaItems) {
+  function populateSubCarousel(mediaItems) {
       const subCarousel = document.getElementById('lightbox-sub-carousel');
       subCarousel.innerHTML = '';
       mediaItems.forEach((media, idx) => {
-        const item = document.createElement('div');
-        item.className = 'sub-carousel-item' + (idx === currentMediaIndex ? ' active' : '');
-        if (media.type === 'video') {
-          item.innerHTML = `<video muted><source src="${media.src}" type="video/mp4"></video><div class="play-icon">▶</div>`;
-        } else {
-          item.innerHTML = `<img src="${media.thumb}" alt="${(media.title||'')}" loading="lazy" />`;
-        }
-        item.onclick = () => switchMedia(idx);
-        subCarousel.appendChild(item);
+          const item = document.createElement('div');
+          item.className = 'sub-carousel-item' + (idx === currentMediaIndex ? ' active' : '');
+          
+          if (media.type === 'video') {
+              const thumbSrc = media.thumb || 'https://placehold.co/160x90/1a1a1a/666?text=Video';
+              item.innerHTML = `<img src="${thumbSrc}" alt="${(media.title||'')}" loading="lazy" /><div class="play-icon">▶</div>`;
+          } else if (media.type === 'youtube' || media.type === 'vimeo') {
+              const thumbSrc = media.thumb || 'https://placehold.co/160x90/1a1a1a/666?text=Video';
+              item.innerHTML = `<img src="${thumbSrc}" alt="${(media.title||'')}" loading="lazy" /><div class="play-icon">▶</div>`;
+          } else if (media.type === 'pdf') {
+              const thumbSrc = media.thumb || 'https://placehold.co/160x90/1a1a1a/666?text=PDF';
+              item.innerHTML = `<img src="${thumbSrc}" alt="${(media.title||'')}" loading="lazy" /><div class="play-icon">📄</div>`;
+          } else {
+              item.innerHTML = `<img src="${media.thumb}" alt="${(media.title||'')}" loading="lazy" />`;
+          }
+          
+          item.onclick = () => switchMedia(idx);
+          subCarousel.appendChild(item);
       });
-    }
+  }
 
-    function switchMedia(mediaIndex) {
+  function switchMedia(mediaIndex) {
       const data = lightboxData[currentLightboxId];
       currentMediaIndex = mediaIndex;
 
       document.querySelectorAll('.sub-carousel-item').forEach((it, i) => {
-        it.classList.toggle('active', i === mediaIndex);
+          it.classList.toggle('active', i === mediaIndex);
       });
 
       const imageEl = document.getElementById('lightbox-image');
       const videoEl = document.getElementById('lightbox-video');
-      imageEl.style.opacity = '0.5'; videoEl.style.opacity = '0.5';
-      setTimeout(()=> { updateLightboxContent(data); imageEl.style.opacity = '1'; videoEl.style.opacity = '1'; }, 150);
-    }
+      imageEl.style.opacity = '0.5'; 
+      videoEl.style.opacity = '0.5';
+      setTimeout(()=> { 
+          updateLightboxContent(data); 
+          imageEl.style.opacity = '1'; 
+          videoEl.style.opacity = '1'; 
+      }, 150);
+  }
 
-    function updateTabContent(data) {
+  function updateTabContent(data) {
       if (data.details) document.getElementById('lightbox-details').textContent = data.details;
-      const linksContainer = document.getElementById('lightbox-links'); linksContainer.innerHTML = '';
+      const linksContainer = document.getElementById('lightbox-links'); 
+      linksContainer.innerHTML = '';
       if (data.links && data.links.length) {
-        data.links.forEach(l => {
-          const a = document.createElement('a'); a.href = l.url; a.textContent = l.text; a.className='lightbox-link'; a.target='_blank';
-          linksContainer.appendChild(a);
-        });
+          data.links.forEach(l => {
+              const a = document.createElement('a'); 
+              a.href = l.url; 
+              a.textContent = l.text; 
+              a.className='lightbox-link'; 
+              a.target='_blank';
+              linksContainer.appendChild(a);
+          });
       }
-    }
+  }
 
-    // switchLightboxTab now receives (tabName, el)
-    function switchLightboxTab(tabName, el) {
+  function switchLightboxTab(tabName, el) {
       document.querySelectorAll('.lightbox-tab').forEach(t => t.classList.remove('active'));
       if (el) el.classList.add('active');
 
       document.querySelectorAll('.lightbox-tab-content').forEach(c => c.classList.remove('active'));
       const target = document.getElementById('tab-' + tabName);
       if (target) target.classList.add('active');
-    }
+  }
 
-    function closeLightbox() {
-    return new Promise(resolve => {
-        const lightbox  = document.getElementById('lightbox');
-        const fadeLayer = document.getElementById('page-fade');
-        const imageEl   = document.getElementById('lightbox-image');
-        const videoEl   = document.getElementById('lightbox-video');
-        const mediaContainer = document.querySelector('.lightbox-media-container');
+  function closeLightbox() {
+      return new Promise(resolve => {
+          const lightbox  = document.getElementById('lightbox');
+          const fadeLayer = document.getElementById('page-fade');
+          const imageEl   = document.getElementById('lightbox-image');
+          const videoEl   = document.getElementById('lightbox-video');
+          const mediaContainer = document.querySelector('.lightbox-media-container');
 
-        // ✅ Curtain ON first
-        fadeLayer.classList.add('active');
+          // ✅ Curtain ON first
+          fadeLayer.classList.add('active');
 
-        // ✅ Wait for fade to fully cover (300ms to match transition)
-        setTimeout(() => {
-        // NOW hide everything under the black curtain
-        if (imageEl) imageEl.style.display = 'none';
-        if (videoEl) {
-            videoEl.style.display = 'none';
-            videoEl.pause();
-            videoEl.querySelector('source').src = '';
-            videoEl.load();
-        }
+          // ✅ Wait for fade to fully cover
+          setTimeout(() => {
+              if (imageEl) imageEl.style.display = 'none';
+              if (videoEl) {
+                  videoEl.style.display = 'none';
+                  videoEl.pause();
+                  videoEl.querySelector('source').src = '';
+                  videoEl.load();
+              }
 
-        // Remove all lightbox states
-        lightbox.style.display = 'none';
-        lightbox.classList.remove('active');
-        lightbox.classList.remove('expanded-mode');
-        if (mediaContainer) mediaContainer.classList.remove('expanded');
+              // 🧹 Clean up iframe
+              const iframeEl = document.getElementById('lightbox-iframe');
+              if (iframeEl) {
+                  iframeEl.style.display = 'none';
+                  iframeEl.src = '';
+              }
 
-        // Unlock body
-        unlockBody();
+              lightbox.style.display = 'none';
+              lightbox.classList.remove('active');
+              lightbox.classList.remove('expanded-mode');
+              if (mediaContainer) mediaContainer.classList.remove('expanded');
 
-        // ✅ Keep curtain up for a moment longer, then lift it
-        setTimeout(() => {
-            requestAnimationFrame(() => {
-            // eslint-disable-next-line no-unused-expressions
-            document.body.offsetHeight;
-            requestAnimationFrame(() => {
-                fadeLayer.classList.remove('active');
-                resolve();
-            });
-            });
-        }, 50); // ✅ Brief hold before lifting curtain
+              unlockBody();
 
-        }, 300); // ✅ Match fade transition duration exactly
-    });
-    }
+              setTimeout(() => {
+                  requestAnimationFrame(() => {
+                      document.body.offsetHeight;
+                      requestAnimationFrame(() => {
+                          fadeLayer.classList.remove('active');
+                          resolve();
+                      });
+                  });
+              }, 50);
 
-    // === Block wheel/touch from bubbling to page while lightbox is open ===
-    (function attachLightboxScrollGuards() {
-    const lb = document.getElementById('lightbox');
-    if (!lb) return;
+          }, 300);
+      });
+  }
 
-    // Only block wheel events that would scroll the page behind the lightbox
-    // Allow touchmove for pinch-zoom and vertical scrolling inside info panel
-    const blockWheel = e => {
-        // Allow wheel inside scrollable info panel
-        if (e.target.closest('.lightbox-info')) return;
-        e.preventDefault();
-    };
+  // Block wheel/touch from bubbling to page while lightbox is open
+  (function attachLightboxScrollGuards() {
+      const lb = document.getElementById('lightbox');
+      if (!lb) return;
 
-    function enableGuards() {
-        lb.addEventListener('wheel', blockWheel, { passive: false });
-        // Do NOT block touchmove globally—let swipe handler manage it
-    }
-    
-    function disableGuards() {
-        lb.removeEventListener('wheel', blockWheel);
-    }
+      const blockWheel = e => {
+          if (e.target.closest('.lightbox-info')) return;
+          e.preventDefault();
+      };
 
-    const observer = new MutationObserver(() => {
-        if (lb.classList.contains('active')) enableGuards(); 
-        else disableGuards();
-    });
-    observer.observe(lb, { attributes: true, attributeFilter: ['class'] });
+      function enableGuards() {
+          lb.addEventListener('wheel', blockWheel, { passive: false });
+      }
+      
+      function disableGuards() {
+          lb.removeEventListener('wheel', blockWheel);
+      }
 
-    if (lb.classList.contains('active')) enableGuards();
-    })();
+      const observer = new MutationObserver(() => {
+          if (lb.classList.contains('active')) enableGuards(); 
+          else disableGuards();
+      });
+      observer.observe(lb, { attributes: true, attributeFilter: ['class'] });
 
-    function navigateLightbox(direction) {
+      if (lb.classList.contains('active')) enableGuards();
+  })();
+
+  function navigateLightbox(direction) {
       if (!categoryItems || categoryItems.length <= 1) return;
       currentIndex += direction;
       if (currentIndex >= categoryItems.length) currentIndex = 0;
@@ -639,105 +856,101 @@ let lastScrollPosition = 0;
 
       const imageEl = document.getElementById('lightbox-image');
       const videoEl = document.getElementById('lightbox-video');
-      imageEl.style.opacity='0.5'; videoEl.style.opacity='0.5';
+      imageEl.style.opacity='0.5'; 
+      videoEl.style.opacity='0.5';
       setTimeout(()=> {
-        updateLightboxContent(data);
-        if (categoriesWithTabs.includes(data.category) && data.media && data.media.length>1) {
-          populateSubCarousel(data.media); updateTabContent(data);
-        } else {
-          document.getElementById('lightbox-sub-carousel').style.display='none';
-          document.getElementById('lightbox-sub-carousel').innerHTML = '<div class="placeholder"></div>';
-          document.getElementById('lightbox-tabs').style.display='none';
-        }
-        imageEl.style.opacity='1'; videoEl.style.opacity='1';
+          updateLightboxContent(data);
+          if (categoriesWithTabs.includes(data.category) && data.media && data.media.length>1) {
+              populateSubCarousel(data.media); 
+              updateTabContent(data);
+          } else {
+              document.getElementById('lightbox-sub-carousel').style.display='none';
+              document.getElementById('lightbox-sub-carousel').innerHTML = '<div class="placeholder"></div>';
+              document.getElementById('lightbox-tabs').style.display='none';
+          }
+          imageEl.style.opacity='1'; 
+          videoEl.style.opacity='1';
       }, 150);
-    }
+  }
 
-    function addLightboxSwipeSupport() {
-    const container = document.querySelector('.lightbox-media-container');
-    const track = container?.querySelector('.lightbox-track');
-    if (!container || !track) return;
+  function addLightboxSwipeSupport() {
+      const container = document.querySelector('.lightbox-media-container');
+      const track = container?.querySelector('.lightbox-track');
+      if (!container || !track) return;
 
-    let startX = 0;
-    let startY = 0;
-    let deltaX = 0;
-    let deltaY = 0;
-    let isDragging = false;
-    let isHorizontalSwipe = null; // null = not decided yet
+      let startX = 0;
+      let startY = 0;
+      let deltaX = 0;
+      let deltaY = 0;
+      let isDragging = false;
+      let isHorizontalSwipe = null;
 
-    container.addEventListener('touchstart', e => {
-        // Allow multi-touch for pinch-zoom
-        if (e.touches.length > 1) return;
-        
-        startX = e.touches[0].clientX;
-        startY = e.touches[0].clientY;
-        deltaX = 0;
-        deltaY = 0;
-        isDragging = true;
-        isHorizontalSwipe = null;
-        track.style.transition = 'none';
-    }, { passive: true });
+      container.addEventListener('touchstart', e => {
+          if (e.touches.length > 1) return;
+          
+          startX = e.touches[0].clientX;
+          startY = e.touches[0].clientY;
+          deltaX = 0;
+          deltaY = 0;
+          isDragging = true;
+          isHorizontalSwipe = null;
+          track.style.transition = 'none';
+      }, { passive: true });
 
-    container.addEventListener('touchmove', e => {
-        if (!isDragging || e.touches.length > 1) return;
-        
-        deltaX = e.touches[0].clientX - startX;
-        deltaY = e.touches[0].clientY - startY;
-        
-        // Decide gesture direction on first significant move
-        if (isHorizontalSwipe === null && (Math.abs(deltaX) > 10 || Math.abs(deltaY) > 10)) {
-        isHorizontalSwipe = Math.abs(deltaX) > Math.abs(deltaY);
-        }
+      container.addEventListener('touchmove', e => {
+          if (!isDragging || e.touches.length > 1) return;
+          
+          deltaX = e.touches[0].clientX - startX;
+          deltaY = e.touches[0].clientY - startY;
+          
+          if (isHorizontalSwipe === null && (Math.abs(deltaX) > 10 || Math.abs(deltaY) > 10)) {
+              isHorizontalSwipe = Math.abs(deltaX) > Math.abs(deltaY);
+          }
 
-        // Only handle horizontal swipes for sub-carousel navigation
-        const subCarousel = document.getElementById('lightbox-sub-carousel');
-        const isSubCarouselVisible = subCarousel && subCarousel.style.display !== 'none';
-        
-        if (isHorizontalSwipe && isSubCarouselVisible) {
-        track.style.transform = `translateX(${deltaX}px)`;
-        e.preventDefault(); // block horizontal scroll only
-        }
-        // else: let browser handle vertical scroll, pinch, etc.
-    }, { passive: false }); // must be non-passive to preventDefault conditionally
+          const subCarousel = document.getElementById('lightbox-sub-carousel');
+          const isSubCarouselVisible = subCarousel && subCarousel.style.display !== 'none';
+          
+          if (isHorizontalSwipe && isSubCarouselVisible) {
+              track.style.transform = `translateX(${deltaX}px)`;
+              e.preventDefault();
+          }
+      }, { passive: false });
 
-    container.addEventListener('touchend', () => {
-        if (!isDragging) return;
-        
-        const threshold = container.offsetWidth * 0.25;
-        const subCarousel = document.getElementById('lightbox-sub-carousel');
-        const isSubCarouselVisible = subCarousel && subCarousel.style.display !== 'none';
-        
-        track.style.transition = 'transform 0.3s ease';
+      container.addEventListener('touchend', () => {
+          if (!isDragging) return;
+          
+          const threshold = container.offsetWidth * 0.25;
+          const subCarousel = document.getElementById('lightbox-sub-carousel');
+          const isSubCarouselVisible = subCarousel && subCarousel.style.display !== 'none';
+          
+          track.style.transition = 'transform 0.3s ease';
 
-        if (isHorizontalSwipe && isSubCarouselVisible && Math.abs(deltaX) > threshold) {
-        if (deltaX > 0) {
-            track.style.transform = `translateX(${container.offsetWidth}px)`;
-            setTimeout(() => navigateSubCarousel(-1), 300);
-        } else {
-            track.style.transform = `translateX(-${container.offsetWidth}px)`;
-            setTimeout(() => navigateSubCarousel(1), 300);
-        }
-        } else if (!isSubCarouselVisible && isHorizontalSwipe && Math.abs(deltaX) > threshold) {
-        // Fallback: navigate projects when no sub-carousel
-        if (deltaX > 0) {
-            navigateLightbox(-1);
-        } else {
-            navigateLightbox(1);
-        }
-        track.style.transform = 'translateX(0)';
-        } else {
-        // Spring back
-        track.style.transform = 'translateX(0)';
-        }
+          if (isHorizontalSwipe && isSubCarouselVisible && Math.abs(deltaX) > threshold) {
+              if (deltaX > 0) {
+                  track.style.transform = `translateX(${container.offsetWidth}px)`;
+                  setTimeout(() => navigateSubCarousel(-1), 300);
+              } else {
+                  track.style.transform = `translateX(-${container.offsetWidth}px)`;
+                  setTimeout(() => navigateSubCarousel(1), 300);
+              }
+          } else if (!isSubCarouselVisible && isHorizontalSwipe && Math.abs(deltaX) > threshold) {
+              if (deltaX > 0) {
+                  navigateLightbox(-1);
+              } else {
+                  navigateLightbox(1);
+              }
+              track.style.transform = 'translateX(0)';
+          } else {
+              track.style.transform = 'translateX(0)';
+          }
 
-        isDragging = false;
-        isHorizontalSwipe = null;
-        startX = startY = deltaX = deltaY = 0;
-    }, { passive: true });
-    }  
+          isDragging = false;
+          isHorizontalSwipe = null;
+          startX = startY = deltaX = deltaY = 0;
+      }, { passive: true });
+  }
 
-    // Lightbox navigation support
-    function navigateSubCarousel(direction) {
+  function navigateSubCarousel(direction) {
       if (!currentLightboxId || !lightboxData[currentLightboxId] || !lightboxData[currentLightboxId].media) return;
 
       const media = lightboxData[currentLightboxId].media;
@@ -747,60 +960,59 @@ let lastScrollPosition = 0;
       if (currentMediaIndex >= media.length) currentMediaIndex = 0;
       if (currentMediaIndex < 0) currentMediaIndex = media.length - 1;
 
-      // wait for swipe animation, then update
       setTimeout(() => {
-        updateLightboxContent(lightboxData[currentLightboxId]);
-        if (categoriesWithTabs.includes(lightboxData[currentLightboxId].category)) {
-          populateSubCarousel(media);
-          updateTabContent(lightboxData[currentLightboxId]);
-        }
-      }, 10); // small delay keeps it smooth
-    }
-    
-    /* ==== Keyboard & click handling ==== */
-    document.addEventListener('keydown', function(e) {
-  const lb = document.getElementById('lightbox');
-  if (lb && lb.classList.contains('active')) {
-    const subCarousel = document.getElementById('lightbox-sub-carousel');
-    const isSubCarouselVisible = subCarousel && subCarousel.style.display !== 'none';
-
-    switch(e.key) {
-      case 'Escape': 
-        closeLightbox(); 
-        break;
-      case 'ArrowLeft': 
-        if (isSubCarouselVisible) {
-          navigateSubCarousel(-1); 
-        } else {
-          navigateLightbox(-1);  // Fallback to project navigation when no subcarousel
-        }
-        break;
-      case 'ArrowRight': 
-        if (isSubCarouselVisible) {
-          navigateSubCarousel(1); 
-        } else {
-          navigateLightbox(1);  // Fallback to project navigation when no subcarousel
-        }
-        break;
-      case 'ArrowUp':
-        e.preventDefault();
-        if (currentMediaIndex > 0) switchMedia(currentMediaIndex - 1);
-        break;
-      case 'ArrowDown':
-        e.preventDefault();
-        const data = lightboxData[currentLightboxId];
-        if (data && data.media && currentMediaIndex < data.media.length - 1) switchMedia(currentMediaIndex + 1);
-        break;
-      case ' ':
-      case 'PageDown':
-      case 'PageUp':
-      case 'Home':
-      case 'End':
-        e.preventDefault();
-        break;
-    }
+          updateLightboxContent(lightboxData[currentLightboxId]);
+          if (categoriesWithTabs.includes(lightboxData[currentLightboxId].category)) {
+              populateSubCarousel(media);
+              updateTabContent(lightboxData[currentLightboxId]);
+          }
+      }, 10);
   }
-});
+
+  /* ==== Keyboard & click handling ==== */
+  document.addEventListener('keydown', function(e) {
+      const lb = document.getElementById('lightbox');
+      if (lb && lb.classList.contains('active')) {
+          const subCarousel = document.getElementById('lightbox-sub-carousel');
+          const isSubCarouselVisible = subCarousel && subCarousel.style.display !== 'none';
+
+          switch(e.key) {
+              case 'Escape': 
+                  closeLightbox(); 
+                  break;
+              case 'ArrowLeft': 
+                  if (isSubCarouselVisible) {
+                      navigateSubCarousel(-1); 
+                  } else {
+                      navigateLightbox(-1);
+                  }
+                  break;
+              case 'ArrowRight': 
+                  if (isSubCarouselVisible) {
+                      navigateSubCarousel(1); 
+                  } else {
+                      navigateLightbox(1);
+                  }
+                  break;
+              case 'ArrowUp':
+                  e.preventDefault();
+                  if (currentMediaIndex > 0) switchMedia(currentMediaIndex - 1);
+                  break;
+              case 'ArrowDown':
+                  e.preventDefault();
+                  const data = lightboxData[currentLightboxId];
+                  if (data && data.media && currentMediaIndex < data.media.length - 1) switchMedia(currentMediaIndex + 1);
+                  break;
+              case ' ':
+              case 'PageDown':
+              case 'PageUp':
+              case 'Home':
+              case 'End':
+                  e.preventDefault();
+                  break;
+          }
+      }
+  });
     
 
 // Mobile swipe: velocity-aware snapping + optional one-item paging + edge easing
@@ -1745,6 +1957,179 @@ document.addEventListener('transitionend', (e) => {
   
 })();
 
+/* ==== PROJECT PAGE MEDIA EMBEDS (YouTube/Vimeo only) ==== */
+  document.addEventListener("DOMContentLoaded", function() {
+    initializeProjectMediaEmbeds();
+  });
+
+  function initializeProjectMediaEmbeds() {
+    const embeds = document.querySelectorAll('.media-embed');
+    embeds.forEach(embed => {
+      const type = embed.getAttribute('data-type');
+      const id = embed.getAttribute('data-id');
+      if (embed.dataset.initialized === '1') return;
+
+      const iframe = document.createElement('iframe');
+      iframe.allowFullscreen = true;
+
+      if (type === 'youtube') {
+        iframe.src = `https://www.youtube.com/embed/${id}?rel=0&modestbranding=1`;
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      } else if (type === 'vimeo') {
+        iframe.src = `https://player.vimeo.com/video/${id}`;
+        iframe.allow = 'autoplay; fullscreen; picture-in-picture';
+      } else {
+        return; // Not a supported embed type
+      }
+
+      embed.appendChild(iframe);
+      embed.dataset.initialized = '1';
+    });
+  }
+  /* ==== PROJECT PAGE LAZY MEDIA ==== */
+
+      // Observe images/videos to swap data-src -> src
+      const pageMediaObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+
+          // IMG
+          if (el.tagName === 'IMG' && el.dataset.src) {
+            el.src = el.dataset.src;
+            el.addEventListener('load', () => el.classList.add('lazy-loaded'), { once: true });
+            delete el.dataset.src;
+            obs.unobserve(el);
+            return;
+          }
+
+          // VIDEO (with <source data-src>)
+          if (el.tagName === 'VIDEO') {
+            const source = el.querySelector('source[data-src]');
+            if (source) {
+              source.src = source.dataset.src;
+              delete source.dataset.src;
+              el.load();
+              // Mark loaded once metadata arrives (or on canplay)
+              const markLoaded = () => el.classList.add('lazy-loaded');
+              el.addEventListener('loadedmetadata', markLoaded, { once: true });
+              el.addEventListener('canplay', markLoaded, { once: true });
+            }
+            obs.unobserve(el);
+            return;
+          }
+        });
+      }, { root: null, rootMargin: '200px 0px', threshold: 0.01 });
+
+      // Observe embeds to create iframes lazily
+      const embedObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          const container = entry.target; // .media-embed.lazy-embed
+          if (container.dataset.initialized === '1') { obs.unobserve(container); return; }
+
+          const type = container.getAttribute('data-type');
+          const id = container.getAttribute('data-id');
+
+          const iframe = document.createElement('iframe');
+          iframe.allowFullscreen = true;
+
+          if (type === 'youtube') {
+            iframe.src = `https://www.youtube.com/embed/${id}?rel=0&modestbranding=1`;
+            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+          } else if (type === 'vimeo') {
+            iframe.src = `https://player.vimeo.com/video/${id}`;
+            iframe.allow = 'autoplay; fullscreen; picture-in-picture';
+          } else {
+            obs.unobserve(container);
+            return;
+          }
+
+          iframe.addEventListener('load', () => container.classList.add('lazy-loaded'), { once: true });
+          container.appendChild(iframe);
+          container.dataset.initialized = '1';
+          obs.unobserve(container);
+        });
+      }, { root: null, rootMargin: '200px 0px', threshold: 0.01 });
+
+      // Kick off observers for a specific page container
+      function initLazyForProjectPage(pageEl) {
+        // Images and videos
+        pageEl.querySelectorAll('img.lazy-media, video.lazy-media').forEach(el => {
+          // Only observe elements still using data-src (images) or with <source data-src> (videos)
+          if (el.tagName === 'IMG' && el.dataset.src) {
+            pageMediaObserver.observe(el);
+          } else if (el.tagName === 'VIDEO') {
+            const source = el.querySelector('source[data-src]');
+            if (source) pageMediaObserver.observe(el);
+          }
+        });
+
+        // Embeds (YouTube/Vimeo)
+        pageEl.querySelectorAll('.media-embed.lazy-embed').forEach(el => {
+          if (el.dataset.initialized !== '1') embedObserver.observe(el);
+        });
+      }
+
+// ============================================
+// LAZY LOADING IMPLEMENTATION
+// ============================================
+
+// Lazy load images, videos, and iframes using IntersectionObserver
+function initLazyLoading() {
+    const lazyMedia = document.querySelectorAll('.lazy-load');
+    
+    if ('IntersectionObserver' in window) {
+        const mediaObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const media = entry.target;
+                    
+                    // Handle images
+                    if (media.tagName === 'IMG' && media.dataset.src) {
+                        media.src = media.dataset.src;
+                        media.classList.remove('lazy-load');
+                        media.classList.add('lazy-loaded');
+                    }
+                    
+                    // Handle videos (Cloudinary/direct sources)
+                    if (media.tagName === 'VIDEO' && media.dataset.src) {
+                        media.src = media.dataset.src;
+                        media.load();
+                        media.classList.remove('lazy-load');
+                        media.classList.add('lazy-loaded');
+                    }
+                    
+                    // Handle iframes (YouTube/Vimeo)
+                    if (media.tagName === 'IFRAME' && media.dataset.src) {
+                        media.src = media.dataset.src;
+                        media.classList.remove('lazy-load');
+                        media.classList.add('lazy-loaded');
+                    }
+                    
+                    observer.unobserve(media);
+                }
+            });
+        }, {
+            rootMargin: '50px 0px', // Start loading 50px before entering viewport
+            threshold: 0.01
+        });
+        
+        lazyMedia.forEach(media => mediaObserver.observe(media));
+    } else {
+        // Fallback for browsers without IntersectionObserver
+        lazyMedia.forEach(media => {
+            if (media.dataset.src) {
+                media.src = media.dataset.src;
+                if (media.tagName === 'VIDEO') media.load();
+            }
+        });
+    }
+}
+
+// Initialize lazy loading on page load
+document.addEventListener('DOMContentLoaded', initLazyLoading);
+      
 document.addEventListener('DOMContentLoaded', function() {
   if (typeof attachObservers === 'function') attachObservers();
   if (typeof init === 'function') init();

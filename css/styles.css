@@ -177,25 +177,37 @@
         height: 100vh; /* Make sure the hero section takes up the full viewport height */
         overflow: hidden;
     }
-    
-        /* Hero stuff */
-        .hero-title,
-        .hero-divider,
-
-        /* Push only the subtitle down, away from logo */
-        .hero-subtitle {
-        position: absolute; /* Take it out of the normal flow */
-        bottom: 25%; /* Anchor it 30% from the bottom of the .hero container */
-        left: 50%; /* Center it horizontally */
-        transform: translateX(-50%); /* Fine-tune horizontal centering */
-        text-align: center; /* Ensure text within the subtitle is centered */
-        width: 80%; /* Give it a width so text wraps if needed */
-        max-width: 800px; /* Prevent it from getting too wide on large screens */
-        font-size: clamp(1rem, 1.5vw, 1.75rem); /* Keep responsive font size */
-        color: #fff; /* Assuming white text for visibility */
-        z-index: 10; /* Ensure it's above other elements if needed */
+    /* Mobile adjustments for hero image positioning */
+      @media (max-width: 768px) {
+        .hero {
+          background-position: 75% center; /* Shift right - adjust the percentage as needed */
         }
-        
+      }
+
+      /* For smaller phones if needed */
+      @media (max-width: 480px) {
+        .hero {
+          background-position: 80% center; /* Shift even more right if necessary */
+        }
+      }
+      /* Hero stuff */
+      .hero-title,
+      .hero-divider,
+
+      /* Push only the subtitle down, away from logo */
+      .hero-subtitle {
+      position: absolute; /* Take it out of the normal flow */
+      bottom: 25%; /* Anchor it 30% from the bottom of the .hero container */
+      left: 50%; /* Center it horizontally */
+      transform: translateX(-50%); /* Fine-tune horizontal centering */
+      text-align: center; /* Ensure text within the subtitle is centered */
+      width: 80%; /* Give it a width so text wraps if needed */
+      max-width: 800px; /* Prevent it from getting too wide on large screens */
+      font-size: clamp(1rem, 1.5vw, 1.75rem); /* Keep responsive font size */
+      color: #fff; /* Assuming white text for visibility */
+      z-index: 10; /* Ensure it's above other elements if needed */
+      }
+      
     /* Parallax-ready hero elements */
     .hero {
       position: relative;
@@ -249,6 +261,10 @@
     .tab-btn:hover, .tab-btn.active { background:rgba(255,255,255,.1); color:#fff; }
 
     /* --- Project / page styles --- */
+    .lazy-media,
+    .media-embed { opacity: 0; transition: opacity .3s ease; }
+    .lazy-loaded { opacity: 1; }
+
     .project-hero {
       height:60vh;
       background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
@@ -265,6 +281,107 @@
     .project-section ul { list-style:none; padding-left:0; }
     .project-section li { font-size:clamp(1rem, 1.2vw, 1.3rem); opacity:.8; margin-bottom:10px; padding-left:20px; position:relative; }
     .project-section li::before { content:'▸'; position:absolute; left:0; color:rgba(255,255,255,.5); }
+
+    /* Project Media Blocks */
+    .project-media {
+      margin: 60px 0;
+      width: 100%;
+      max-width: 1400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .project-media img,
+    .project-media video,
+    .project-media .media-embed {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      background: #000;
+      display: block;
+    }
+
+    .project-media video {
+      max-height: 80vh;
+      object-fit: contain;
+    }
+
+    /* Embedded video containers (YouTube, Vimeo) */
+    .media-embed {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #000;
+    }
+
+    .media-embed iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 8px;
+    }
+
+    .media-caption {
+      margin-top: 12px;
+      font-size: 0.95rem;
+      opacity: 0.75;
+      text-align: center;
+      font-style: italic;
+    }
+
+    /* PDF link block */
+    .project-link-block {
+      margin: 40px 0 10px;
+      text-align: center;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 20px;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 8px;
+      color: #fff;
+      text-decoration: none;
+      transition: background .2s ease, border-color .2s ease, transform .05s ease;
+      backdrop-filter: blur(2px);
+    }
+
+    .project-link::before {
+      content: "📄";
+      font-size: 1.1em;
+    }
+
+    .project-link:hover {
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.4);
+    }
+
+    .project-link:active {
+      transform: translateY(1px);
+    }
+
+    /* Optional full-bleed modifier for media */
+    .project-media--bleed { 
+      max-width: none; 
+      width: 100vw; 
+      margin-left: 50%; 
+      transform: translateX(-50%); 
+    }
+    .project-media--bleed .media-embed,
+    .project-media--bleed img,
+    .project-media--bleed video {
+      border-radius: 0;
+    }
+
+    @media (max-width: 768px) {
+      .project-media { margin: 36px 0; }
+    }
 
     /* --- Resume styles --- */
     .resume-section {
@@ -522,7 +639,7 @@
     .carousel-item video {
       height: 100%;
       width: auto;
-      object-fit: cover;
+      object-fit: contain;
       object-position: center;
       display: block;
       pointer-events: none;
@@ -564,6 +681,39 @@
         max-width: 100%;
         margin-left: auto;
         margin-right: auto;
+      }
+    }
+
+    /* Carousel item title overlay */
+    .carousel-item-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      padding: 20px 15px 15px;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+      pointer-events: none;
+    }
+
+    .carousel-item:hover .carousel-item-overlay {
+      transform: translateY(0);
+    }
+
+    .carousel-item-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0;
+      color: #fff;
+      text-align: center;
+    }
+
+    /* Hide carousel overlays on mobile to preserve touch navigation */
+    @media (max-width: 768px) {
+      .carousel-item-overlay {
+        display: none !important;
       }
     }
 
@@ -693,7 +843,8 @@
     .lightbox-links { display:flex; gap:clamp(0.6rem, 1.2vw, 1rem); flex-wrap: wrap; justify-content:center; margin-top: clamp(0.6rem, 1.5vh, 1rem); }
     .lightbox-link { display:inline-block; padding: clamp(0.4rem, 1vw, 0.7rem) clamp(0.8rem, 2vw, 1.2rem); background:rgba(255,255,255,.1); color:#fff; text-decoration:none; border-radius:4px; font-size: clamp(0.8rem, 1.3vw, 1rem); transition:background .3s ease; }
     .lightbox-link:hover { background:rgba(255,255,255,.2); }
-
+    #lightbox-iframe { width: 100%; height: 100%; border: none; background: #000; }
+    #lightbox-image { transition: opacity 0.2s ease, filter 0.2s ease; }
     .lightbox-close { 
         position: absolute; 
         top: calc(env(safe-area-inset-top, 0px) + clamp(16px, 2vh, 20px));
@@ -840,6 +991,31 @@
         font-size: 0.8rem;
       }
     }
+    /* Lightbox fullscreen hint (desktop only) */
+    .lightbox-hint {
+      position: relative;
+      text-align: center;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.5);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+      padding: 8px 0;
+      margin-bottom: 12px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .lightbox-content:hover .lightbox-hint {
+      opacity: 1;
+    }
+
+    /* Hide on mobile (since there's already a fullscreen icon) */
+    @media (max-width: 768px) {
+      .lightbox-hint {
+        display: none;
+      }
+    }
 
     /* Ensure hamburger never shows on desktop */
     @media (min-width: 769px) {
@@ -897,15 +1073,16 @@
       .sub-carousel-item { min-width:80px; height:60px; }
 
       /* Hero adjustments for mobile */
-      #logo { width: clamp(180px, 60vw, 300px); }
+      #logo { width: clamp(200px, 75vw, 350px); }
       
       .hero-subtitle {
         position: static;
-        transform: none;
+        transform: translateY(-15%);
         margin-top: 20px;
-        font-size: clamp(1rem, 4vw, 1.3rem);
-        width: 90%;
-        max-width: 500px;
+        font-size: clamp(1.1rem, 4.5vw, 1.4rem);
+        width: 65%; /* Widen it so lines don't break as early */
+        max-width: none; /* Remove max-width constraint on mobile */
+        line-height: 1.4; /* Add breathing room between lines */
       }
     }
     /* --- Dynamic Scaling for Titles / Text --- */
