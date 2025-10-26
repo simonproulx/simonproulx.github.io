@@ -557,7 +557,7 @@
       }
     }
 
-    /* --- Additional Work / carousel (full restored) --- */
+    /* --- Additional Work  --- */
     .additional-work { padding:80px 20px; max-width:min(95vw, 1800px); margin:0 auto; }
     .work-category { margin-bottom:80px; }
     .category-title {
@@ -568,10 +568,10 @@
       letter-spacing:2px;
       text-transform:uppercase;
 
-      white-space: nowrap;             /* ✅ prevents wrapping */
-      overflow: hidden;                /* ✅ prevents overflow spill */
-      text-overflow: ellipsis;         /* ✅ if too long, show “…” instead of wrapping */
-      font-size: clamp(1rem, 4vw, 1.8rem); /* ✅ scale based on screen, never too big */
+      white-space: nowrap;            
+      overflow: hidden;                
+      text-overflow: ellipsis;         
+      font-size: clamp(1rem, 4vw, 1.8rem); 
     }
 
     @media (max-width: 480px) {
@@ -647,15 +647,6 @@
       touch-action: manipulation;
     }
 
-    /* Heights on small/very large screens */
-    @media (max-width: 480px) {
-      .carousel { height: clamp(161px, 48vw, 253px); }
-      .carousel-item { min-width: 300px; }
-    }
-    @media (min-width: 1600px) {
-      .carousel { height: clamp(299px, 25vw, 483px); }
-    }
-
     /* Container and rail */
     .carousel-container {
       max-width: min(95vw, 1800px);
@@ -672,16 +663,48 @@
     @media (max-width: 768px) {
       .carousel-container {
         max-width: none;
-        padding-left: clamp(8px, 3vw, 18px);
-        padding-right: clamp(8px, 3vw, 18px);
+        padding-left: 0; 
+        padding-right: 0;
       }
+      
       .carousel-rail,
       .carousel {
-        width: min(100vw, 96dvw);
+        width: 100vw; 
         max-width: 100%;
         margin-left: auto;
         margin-right: auto;
       }
+    
+      .carousel {
+        gap: 16px; 
+        padding: 0 6%; 
+        scroll-padding: 6%; 
+      }
+      
+      .carousel-item {
+        min-width: auto; 
+        max-width: none;
+        flex: 0 0 auto; 
+      }
+    }
+
+    /* Heights on small/very large screens */
+    @media (max-width: 480px) {
+      .carousel { 
+        height: clamp(161px, 48vw, 253px);
+        padding: 0 5%; /* ⬅️ Slightly less padding on small screens */
+        scroll-padding: 5%;
+        gap: 12px;
+      }
+      .carousel-item { 
+        min-width: auto;
+        max-width: none;
+        flex: 0 0 auto;
+      }
+    }
+    
+    @media (min-width: 1600px) {
+      .carousel { height: clamp(299px, 25vw, 483px); }
     }
 
     /* Carousel item title overlay */
@@ -713,6 +736,62 @@
     /* Hide carousel overlays on mobile to preserve touch navigation */
     @media (max-width: 768px) {
       .carousel-item-overlay {
+        display: none !important;
+      }
+    }
+
+    /* Carousel hint arrows (mobile only) */
+    .carousel-hint-arrows {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 10;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .carousel-hint-arrows.visible {
+      opacity: 1;
+    }
+
+    .carousel-hint-arrows.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .carousel-hint-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 52px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.8);
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+      animation: arrowPulse 1.8s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .carousel-hint-left {
+      left: 2vw; /* ⬅️ Closer to screen edge */
+      animation-delay: 0s;
+    }
+
+    .carousel-hint-right {
+      right: 2vw; /* ⬅️ Closer to screen edge */
+      animation-delay: 0.9s;
+    }
+
+    @keyframes arrowPulse {
+      0%, 100% { opacity: 0.5; transform: translateY(-50%) scale(1); }
+      50% { opacity: 1; transform: translateY(-50%) scale(1.2); }
+    }
+
+    /* Hide on desktop */
+    @media (hover: hover) and (pointer: fine) {
+      .carousel-hint-arrows {
         display: none !important;
       }
     }

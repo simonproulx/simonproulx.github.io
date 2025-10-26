@@ -930,7 +930,7 @@
       {
         "type": "video",
         "src": "animation_beatdapp_botb2_1_nlmzxi.mp4",
-        "thumb": "https://res.cloudinary.com/dlepppgm2/video/upload/f_auto,q_auto:good,w_160,so_0/v1761406585/animation_beatdapp_botb2_1_nlmzxi.jpg",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/v1761406665/BeatdappBOTB_BlankMobile_u0djbe.png",
         "title": "Social Media Animated Mobile Reel",
         "description": "Custom motion graphics and animated social media reel featuring Runway-generated animated background and original design assets."
       },
@@ -966,9 +966,37 @@
       {
         "type": "video",
         "src": "animation_ren_BTS_vjabyg.mp4",
-        "thumb": "https://res.cloudinary.com/dlepppgm2/video/upload/f_auto,q_auto:good,w_160,so_0/v1761406436/animation_ren_BTS_vjabyg.jpg",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/v1761520963/graphic_ren_bts_still_lltcur.jpg",
         "title": "BTS Contest Social Media Reel",
         "description": "Animated social media reel promoting a BTS concert experience contest for the Renaissance fan engagement platform."
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/v1761520954/graphic_ren_bts_1_ijtg23.jpg",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160/v1761520954/graphic_ren_bts_1_ijtg23.jpg",
+        "title": "Supporting Graphics for Social Media",
+        "description": "Supporting graphics for social media promotion."
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/v1761520956/graphic_ren_bts_2_zuu5ac.jpg",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160/v1761520956/graphic_ren_bts_2_zuu5ac.jpg",
+        "title": "Supporting Graphics for Social Media",
+        "description": "Supporting graphics for social media promotion."
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/v1761520958/graphic_ren_bts_3_ck2dz0.jpg",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160/v1761520958/graphic_ren_bts_3_ck2dz0.jpg",
+        "title": "Supporting Graphics for Social Media",
+        "description": "Supporting graphics for social media promotion."
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/v1761520962/graphic_ren_bts_4_dhuovo.jpg",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160/v1761520962/graphic_ren_bts_4_dhuovo.jpg",
+        "title": "Supporting Graphics for Social Media",
+        "description": "Supporting graphics for social media promotion."
       }
     ]
   },

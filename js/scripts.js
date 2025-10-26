@@ -658,8 +658,14 @@
           const iframeEl = document.getElementById('lightbox-iframe');
           if (iframeEl) iframeEl.style.display = 'none';
           
-          const videoSrc = optimizeVideoSrc(currentMedia.src); // ✅ NEW
+          const videoSrc = optimizeVideoSrc(currentMedia.src);
           videoEl.querySelector('source').src = videoSrc;
+          
+          // ⬅️ Set poster/thumbnail if available
+          if (currentMedia.thumb) {
+              videoEl.poster = currentMedia.thumb;
+          }
+          
           videoEl.load();
       }
       // 🖼️ Image (default) — ✅ NOW WITH LOADING STATE
@@ -2145,6 +2151,76 @@ document.addEventListener('transitionend', (e) => {
         });
       }
 
+// Auto-hiding carousel hint arrows (mobile only)
+function initCarouselHints() {
+  const isTouch = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
+  if (!isTouch) return;
+
+  const template = document.getElementById('carousel-arrows-template');
+  if (!template) return;
+
+  // Intersection Observer to detect when carousel enters viewport
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const rail = entry.target;
+        const arrows = rail.querySelector('.carousel-hint-arrows');
+        if (arrows && !arrows.classList.contains('hidden')) {
+          // Show arrows when carousel enters view
+          setTimeout(() => arrows.classList.add('visible'), 100);
+        }
+      }
+    });
+  }, {
+    threshold: 0.3 // Trigger when 30% of carousel is visible
+  });
+
+  document.querySelectorAll('.carousel-rail').forEach(rail => {
+    const carousel = rail.querySelector('.carousel');
+    if (!carousel) return;
+
+    // Clone and inject arrows
+    const arrows = template.content.cloneNode(true).querySelector('.carousel-hint-arrows');
+    rail.style.position = 'relative';
+    rail.appendChild(arrows);
+
+    let hasScrolled = false;
+
+    function hideArrows() {
+      if (hasScrolled) return;
+      hasScrolled = true;
+      arrows.classList.remove('visible');
+      arrows.classList.add('hidden');
+      setTimeout(() => arrows.remove(), 600);
+    }
+
+    // Hide only when THIS carousel is scrolled
+    carousel.addEventListener('scroll', () => {
+      if (!hasScrolled) {
+        hideArrows();
+      }
+    }, { once: true, passive: true });
+
+    // Also hide on touch (in case scroll event doesn't fire immediately)
+    let touchMoved = false;
+    carousel.addEventListener('touchmove', () => {
+      touchMoved = true;
+    }, { once: true, passive: true });
+    
+    carousel.addEventListener('touchend', () => {
+      if (touchMoved) {
+        hideArrows();
+      }
+    }, { once: true, passive: true });
+
+    // Start observing this carousel
+    observer.observe(rail);
+  });
+}
+
+// Call after DOM ready
+document.addEventListener('DOMContentLoaded', initCarouselHints);
+
 // ============================================
 // LAZY LOADING IMPLEMENTATION
 // ============================================
@@ -2202,8 +2278,7 @@ function initLazyLoading() {
 }
 
 // Initialize lazy loading on page load
-document.addEventListener('DOMContentLoaded', initLazyLoading);
-      
+document.addEventListener('DOMContentLoaded', initLazyLoading); 
 document.addEventListener('DOMContentLoaded', function() {
   if (typeof attachObservers === 'function') attachObservers();
   if (typeof init === 'function') init();
