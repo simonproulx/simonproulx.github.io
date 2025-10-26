@@ -920,101 +920,110 @@
       }, 150);
   }
 
-  function addLightboxSwipeSupport() {
-      const container = document.querySelector('.lightbox-media-container');
-      const track = container?.querySelector('.lightbox-track');
-      if (!container || !track) return;
+function addLightboxSwipeSupport() {
+    const lightboxContent = document.querySelector('.lightbox-content');
+    const container = document.querySelector('.lightbox-media-container');
+    const track = container?.querySelector('.lightbox-track');
+    if (!lightboxContent || !container || !track) return;
 
-      let startX = 0;
-      let startY = 0;
-      let deltaX = 0;
-      let deltaY = 0;
-      let isDragging = false;
-      let isHorizontalSwipe = null;
+    let startX = 0;
+    let startY = 0;
+    let deltaX = 0;
+    let deltaY = 0;
+    let isDragging = false;
+    let isHorizontalSwipe = null;
 
-      container.addEventListener('touchstart', e => {
-          if (e.touches.length > 1) return;
-          
-          startX = e.touches[0].clientX;
-          startY = e.touches[0].clientY;
-          deltaX = 0;
-          deltaY = 0;
-          isDragging = true;
-          isHorizontalSwipe = null;
-          track.style.transition = 'none';
-      }, { passive: true });
+    lightboxContent.addEventListener('touchstart', e => {
+        if (e.touches.length > 1) return;
+        
+        const target = e.target;
+        if (target.closest('.lightbox-nav') || 
+            target.closest('.lightbox-close') || 
+            target.closest('.lightbox-tabs') || 
+            target.closest('.lightbox-tab') ||
+            target.closest('#lightbox-sub-carousel') ||
+            target.closest('.lightbox-info')) {
+            return;
+        }
+        
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        deltaX = 0;
+        deltaY = 0;
+        isDragging = true;
+        isHorizontalSwipe = null;
+        track.style.transition = 'none';
+    }, { passive: true });
 
-      container.addEventListener('touchmove', e => {
-          if (!isDragging || e.touches.length > 1) return;
-          
-          deltaX = e.touches[0].clientX - startX;
-          deltaY = e.touches[0].clientY - startY;
-          
-          if (isHorizontalSwipe === null && (Math.abs(deltaX) > 10 || Math.abs(deltaY) > 10)) {
-              isHorizontalSwipe = Math.abs(deltaX) > Math.abs(deltaY);
-          }
+    lightboxContent.addEventListener('touchmove', e => {
+        if (!isDragging || e.touches.length > 1) return;
+        
+        deltaX = e.touches[0].clientX - startX;
+        deltaY = e.touches[0].clientY - startY;
+        
+        if (isHorizontalSwipe === null && (Math.abs(deltaX) > 10 || Math.abs(deltaY) > 10)) {
+            isHorizontalSwipe = Math.abs(deltaX) > Math.abs(deltaY);
+        }
 
-          const subCarousel = document.getElementById('lightbox-sub-carousel');
-          const isSubCarouselVisible = subCarousel && subCarousel.style.display !== 'none';
-          
-          if (isHorizontalSwipe && isSubCarouselVisible) {
-              track.style.transform = `translateX(${deltaX}px)`;
-              e.preventDefault();
-          }
-      }, { passive: false });
+        // ⬅️ Show visual feedback for ALL horizontal swipes
+        if (isHorizontalSwipe) {
+            track.style.transform = `translateX(${deltaX}px)`;
+            e.preventDefault();
+        }
+    }, { passive: false });
 
-      container.addEventListener('touchend', () => {
-          if (!isDragging) return;
-          
-          const threshold = container.offsetWidth * 0.25;
-          const subCarousel = document.getElementById('lightbox-sub-carousel');
-          const isSubCarouselVisible = subCarousel && subCarousel.style.display !== 'none';
-          
-          track.style.transition = 'transform 0.3s ease';
+    lightboxContent.addEventListener('touchend', () => {
+        if (!isDragging) return;
+        
+        const threshold = container.offsetWidth * 0.25;
+        const subCarousel = document.getElementById('lightbox-sub-carousel');
+        const isSubCarouselVisible = subCarousel && subCarousel.style.display !== 'none';
+        
+        track.style.transition = 'transform 0.3s ease';
 
-          if (isHorizontalSwipe && isSubCarouselVisible && Math.abs(deltaX) > threshold) {
-              if (deltaX > 0) {
-                  track.style.transform = `translateX(${container.offsetWidth}px)`;
-                  setTimeout(() => navigateSubCarousel(-1), 300);
-              } else {
-                  track.style.transform = `translateX(-${container.offsetWidth}px)`;
-                  setTimeout(() => navigateSubCarousel(1), 300);
-              }
-          } else if (!isSubCarouselVisible && isHorizontalSwipe && Math.abs(deltaX) > threshold) {
-              if (deltaX > 0) {
-                  navigateLightbox(-1);
-              } else {
-                  navigateLightbox(1);
-              }
-              track.style.transform = 'translateX(0)';
-          } else {
-              track.style.transform = 'translateX(0)';
-          }
+        if (isHorizontalSwipe && isSubCarouselVisible && Math.abs(deltaX) > threshold) {
+            if (deltaX > 0) {
+                track.style.transform = `translateX(${container.offsetWidth}px)`;
+                setTimeout(() => navigateSubCarousel(-1), 300);
+            } else {
+                track.style.transform = `translateX(-${container.offsetWidth}px)`;
+                setTimeout(() => navigateSubCarousel(1), 300);
+            }
+        } else if (!isSubCarouselVisible && isHorizontalSwipe && Math.abs(deltaX) > threshold) {
+            if (deltaX > 0) {
+                navigateLightbox(-1);
+            } else {
+                navigateLightbox(1);
+            }
+            track.style.transform = 'translateX(0)';
+        } else {
+            track.style.transform = 'translateX(0)';
+        }
 
-          isDragging = false;
-          isHorizontalSwipe = null;
-          startX = startY = deltaX = deltaY = 0;
-      }, { passive: true });
-  }
+        isDragging = false;
+        isHorizontalSwipe = null;
+        startX = startY = deltaX = deltaY = 0;
+    }, { passive: true });
+}
 
-  function navigateSubCarousel(direction) {
-      if (!currentLightboxId || !lightboxData[currentLightboxId] || !lightboxData[currentLightboxId].media) return;
+function navigateSubCarousel(direction) {
+    if (!currentLightboxId || !lightboxData[currentLightboxId] || !lightboxData[currentLightboxId].media) return;
 
-      const media = lightboxData[currentLightboxId].media;
-      if (media.length <= 1) return;
+    const media = lightboxData[currentLightboxId].media;
+    if (media.length <= 1) return;
 
-      currentMediaIndex += direction;
-      if (currentMediaIndex >= media.length) currentMediaIndex = 0;
-      if (currentMediaIndex < 0) currentMediaIndex = media.length - 1;
+    currentMediaIndex += direction;
+    if (currentMediaIndex >= media.length) currentMediaIndex = 0;
+    if (currentMediaIndex < 0) currentMediaIndex = media.length - 1;
 
-      setTimeout(() => {
-          updateLightboxContent(lightboxData[currentLightboxId]);
-          if (categoriesWithTabs.includes(lightboxData[currentLightboxId].category)) {
-              populateSubCarousel(media);
-              updateTabContent(lightboxData[currentLightboxId]);
-          }
-      }, 10);
-  }
+    setTimeout(() => {
+        updateLightboxContent(lightboxData[currentLightboxId]);
+        if (categoriesWithTabs.includes(lightboxData[currentLightboxId].category)) {
+            populateSubCarousel(media);
+            updateTabContent(lightboxData[currentLightboxId]);
+        }
+    }, 10);
+}
 
   /* ==== Keyboard & click handling ==== */
   document.addEventListener('keydown', function(e) {
@@ -1028,7 +1037,7 @@
                   closeLightbox(); 
                   break;
               case 'ArrowLeft': 
-                  e.preventDefault(); // ⬅️ ADD THIS
+                  e.preventDefault(); 
                   if (isSubCarouselVisible) {
                       navigateSubCarousel(-1); 
                   } else {
@@ -1036,7 +1045,7 @@
                   }
                   break;
               case 'ArrowRight': 
-                  e.preventDefault(); // ⬅️ ADD THIS
+                  e.preventDefault(); 
                   if (isSubCarouselVisible) {
                       navigateSubCarousel(1); 
                   } else {
@@ -1848,68 +1857,73 @@ document.addEventListener('transitionend', (e) => {
   window.initAll = initAll;
 })();
   
-// === Mobile Lightbox Expansion System === //
+// === Mobile Lightbox Expansion System (Double-Tap + Swipe-Down) === //
 (function() {
   const lightbox = document.querySelector('.lightbox');
   const mediaContainer = document.querySelector('.lightbox-media-container');
-  const expandBtn = document.querySelector('.lightbox-expand-btn');
   
-  if (!expandBtn || !mediaContainer || !lightbox) return;
+  if (!mediaContainer || !lightbox) return;
   
   let isExpanded = false;
+  let lastTap = 0;
   
-    // Toggle expansion
-    function toggleExpansion() {
+  // Toggle expansion function
+  function toggleExpansion() {
     isExpanded = !isExpanded;
     
     if (isExpanded) {
-    // ✅ Store original position before expanding
-    const rect = mediaContainer.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    
-    // Set transform origin to current center
-    mediaContainer.style.transformOrigin = `${centerX}px ${centerY}px`;
-    
-    // ✅ Trigger UI cascade FIRST
-    lightbox.classList.add('expanded-mode');
-    
-    // ✅ THEN expand media after cascade completes (320ms = last element delay + transition time)
-    setTimeout(() => {
+      // Store original position before expanding
+      const rect = mediaContainer.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      
+      mediaContainer.style.transformOrigin = `${centerX}px ${centerY}px`;
+      
+      // Trigger UI cascade
+      lightbox.classList.add('expanded-mode');
+      
+      setTimeout(() => {
         mediaContainer.classList.add('expanded');
-        expandBtn.setAttribute('aria-label', 'Collapse media');
         
         // Enable pinch-zoom
         const img = mediaContainer.querySelector('.lightbox-image');
         const video = mediaContainer.querySelector('.lightbox-video');
         if (img) img.style.touchAction = 'pinch-zoom';
         if (video) video.style.touchAction = 'pinch-zoom';
-    }, 320); // ✅ Wait for stagger animation to finish (240ms delay + 80ms buffer)
-    
+      }, 320);
+      
     } else {
-        // Exit expanded mode
-        mediaContainer.classList.remove('expanded');
-        
-        setTimeout(() => {
+      // Exit expanded mode
+      mediaContainer.classList.remove('expanded');
+      
+      setTimeout(() => {
         lightbox.classList.remove('expanded-mode');
-        mediaContainer.style.transformOrigin = ''; // Reset
-        }, 333); // ✅ Remove parallax class after media shrinks
-        
-        expandBtn.setAttribute('aria-label', 'Expand media');
-        
-        // Reset touch action
-        const img = mediaContainer.querySelector('.lightbox-image');
-        const video = mediaContainer.querySelector('.lightbox-video');
-        if (img) img.style.touchAction = 'manipulation';
-        if (video) video.style.touchAction = 'manipulation';
+        mediaContainer.style.transformOrigin = '';
+      }, 333);
+      
+      // Reset touch action
+      const img = mediaContainer.querySelector('.lightbox-image');
+      const video = mediaContainer.querySelector('.lightbox-video');
+      if (img) img.style.touchAction = 'manipulation';
+      if (video) video.style.touchAction = 'manipulation';
     }
-    }
+  }
   
-  // Button click handler
-  expandBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    toggleExpansion();
-  });
+  // Double-tap handler (mobile only)
+  if (window.innerWidth <= 768) {
+    mediaContainer.addEventListener('touchend', function(e) {
+      const currentTime = new Date().getTime();
+      const tapLength = currentTime - lastTap;
+      
+      // Double-tap detected (within 300ms)
+      if (tapLength < 300 && tapLength > 0) {
+        e.preventDefault();
+        toggleExpansion();
+      }
+      
+      lastTap = currentTime;
+    });
+  }
   
   // Reset expansion when lightbox closes
   const closeBtn = document.querySelector('.lightbox-close');
@@ -1923,7 +1937,7 @@ document.addEventListener('transitionend', (e) => {
     });
   }
   
-  // Also reset on ESC key
+  // ESC key to exit expanded mode
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && isExpanded) {
       toggleExpansion();
@@ -1951,10 +1965,7 @@ document.addEventListener('transitionend', (e) => {
   observer.observe(mediaContainer, { attributes: true, attributeFilter: ['class'] });
   
   function onTouchStart(e) {
-    // Only allow swipe-down in expanded mode
     if (!isExpanded) return;
-    
-    // Don't interfere with pinch-zoom
     if (e.touches.length > 1) return;
     
     startY = e.touches[0].clientY;
@@ -1977,7 +1988,6 @@ document.addEventListener('transitionend', (e) => {
       mediaContainer.style.transform = `translateY(${deltaY}px) scale(${scale})`;
       mediaContainer.style.opacity = opacity;
       
-      // Prevent default only when actively swiping down
       if (deltaY > 10) {
         e.preventDefault();
       }
@@ -1989,14 +1999,22 @@ document.addEventListener('transitionend', (e) => {
     
     const deltaY = currentY - startY;
     
-    // Reset styles
     mediaContainer.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
     
     // If swiped down more than 100px, collapse
     if (deltaY > 100) {
-      // Trigger the expand button click to collapse
-      const expandBtn = document.querySelector('.lightbox-expand-btn');
-      if (expandBtn) expandBtn.click();
+      // Manually trigger collapse
+      mediaContainer.classList.remove('expanded');
+      setTimeout(() => {
+        lightbox.classList.remove('expanded-mode');
+        mediaContainer.style.transformOrigin = '';
+      }, 333);
+      
+      // Reset touch action
+      const img = mediaContainer.querySelector('.lightbox-image');
+      const video = mediaContainer.querySelector('.lightbox-video');
+      if (img) img.style.touchAction = 'manipulation';
+      if (video) video.style.touchAction = 'manipulation';
     }
     
     // Reset transform

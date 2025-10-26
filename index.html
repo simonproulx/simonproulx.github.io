@@ -1131,37 +1131,36 @@
     </div>
     </div>
 
- <!-- ==== Lightbox (single unified rich instance) ==== -->
+  <!-- ==== Lightbox (single unified rich instance) ==== -->
   <div id="lightbox" class="lightbox">
     <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    
     <!-- Previous Project -->
     <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">
       &#8249; <span class="label">Previous Project</span>
     </button>
+    
     <!-- Next Project -->
     <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">
       <span class="label">Next Project</span> &#8250;
     </button>
 
     <div class="lightbox-content">
-        <!-- Desktop fullscreen hint -->
-        <div class="lightbox-hint">Click image to fullscreen</div>
+      <!-- Desktop fullscreen hint -->
+      <div class="lightbox-hint">Click image to fullscreen</div>
+      
+      <div class="lightbox-media-container">
+        <!-- Mobile expansion hint -->
+        <div class="lightbox-expansion-hint">Double-tap to expand</div>
         
-        <div class="lightbox-media-container">
-            <div class="lightbox-track">
-            <img id="lightbox-image" class="lightbox-image" src="" alt="" style="display:none;">
-            <video id="lightbox-video" class="lightbox-video" controls style="display:none;">
-                <source src="" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            </div>
-            <!-- ✅ Button goes HERE, after the track closes -->
-            <button class="lightbox-expand-btn" aria-label="Expand media">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-            </svg>
-        </button>
-    </div>
+        <div class="lightbox-track">
+          <img id="lightbox-image" class="lightbox-image" src="" alt="" style="display:none;">
+          <video id="lightbox-video" class="lightbox-video" controls style="display:none;">
+            <source src="" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
 
       <div id="lightbox-sub-carousel" class="lightbox-sub-carousel" style="display:none;"></div>
 
