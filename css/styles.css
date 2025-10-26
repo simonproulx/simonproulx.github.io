@@ -822,17 +822,24 @@
     .lightbox-video { background:#000; }
     .lightbox-sub-carousel { display: flex; gap: clamp(8px, 1vw, 15px); margin: clamp(1rem, 3vh, 2rem) 0; padding: 0 clamp(1rem, 2vw, 2rem); max-width: 100%; overflow-x: auto; overflow-y: hidden; flex-wrap: nowrap; box-sizing: border-box; -ms-overflow-style: none; scrollbar-width: none; }
     .lightbox-sub-carousel::-webkit-scrollbar { display: none; }
-    .sub-carousel-item { min-width: clamp(70px, 12vw, 120px); height: clamp(50px, 9vw, 90px); border-radius:6px; overflow:hidden; cursor:pointer; transition:all .3s ease; border:2px solid transparent; position:relative; }
+    .sub-carousel-item { min-width: clamp(70px, 10vw, 100px); height: clamp(50px, 7.5vw, 75px); border-radius:6px; overflow:hidden; cursor:pointer; transition:all .3s ease; border:2px solid transparent; position:relative; }
     .sub-carousel-item:hover { transform:scale(1.05); border-color:rgba(255,255,255,.5); }
     .sub-carousel-item.active { border-color:#fff; box-shadow:0 0 15px rgba(255,255,255,.3); }
     .sub-carousel-item img, .sub-carousel-item video { width:100%; height:100%; object-fit:cover; }
     .sub-carousel-item .play-icon { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:20px; height:20px; background:rgba(255,255,255,.9); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:10px; color:#000; }
     .placeholder { padding: 20px; font-style: italic; color: #888; text-align: center; }
     
-    .lightbox-info { background:rgba(0,0,0,.8); padding: clamp(1rem, 2vw, 2rem); border-radius:8px; text-align:center; max-width:600px; width:100%; overflow-y: auto; max-height: calc(100vh - 120px); box-sizing: border-box; /* ensures it never cuts below screen */}
+    .lightbox-info { background:rgba(0,0,0,.8); padding: clamp(0.8rem, 1.5vw, 1.5rem); border-radius:8px; text-align:center; max-width:600px; width:100%; overflow-y: auto; max-height: calc(100vh - 120px); box-sizing: border-box; /* ensures it never cuts below screen */}
+      @media (max-width: 1920px) and (min-width: 1024px) {
+        .lightbox-info {
+          padding: 1rem;
+        }
+      }
+
     .lightbox-title { font-family:'Montserrat',sans-serif; font-size: clamp(1.3rem, 2.5vw, 2rem); font-weight:600; margin-bottom: clamp(0.6rem, 1.5vh, 1rem); color:#fff; }
     .lightbox-tabs { display:flex; justify-content:center; margin-bottom:15px; border-bottom:1px solid rgba(255,255,255,.2); }
     .lightbox-tab { background:transparent; border:none; color:rgba(255,255,255,.6); padding:10px 20px; font-size: clamp(0.8rem, 1.5vw, 1rem); cursor:pointer; transition:all .3s ease; border-bottom:2px solid transparent; }
+    .lightbox-tab[style*="display: none"] { display: none !important; }
     .lightbox-tab.active { color:#fff; border-bottom-color:#fff; }
     .lightbox-tab:hover { color:#fff; }
     .lightbox-tab-content { display:none; animation:fadeIn .3s ease; }
@@ -953,6 +960,20 @@
         line-height: 1;
     }
     }
+
+    /* Tighter sizing for 1080p and below */
+    @media (max-width: 1920px) and (min-width: 1024px) {
+      .sub-carousel-item { 
+        min-width: clamp(55px, 6.5vw, 75px);
+        height: clamp(38px, 4.5vw, 55px);
+      }   
+      .lightbox-media-container {
+        max-height: 60vh; /* Even more at 1080p */
+        }
+      .lightbox-image, .lightbox-video {
+      max-height: 60vh;
+        }
+      }
 
     /* Mobile: permanently show arrows + labels, docked lower */
     @media (max-width: 768px) {
@@ -1087,11 +1108,19 @@
     }
     /* --- Dynamic Scaling for Titles / Text --- */
     .lightbox-title {
-    font-size: clamp(1rem, 2.5vw, 2rem); /* scales down tighter */
-    line-height: 1.2;
-    margin-bottom: clamp(0.4rem, 1vh, 0.8rem);
-    word-wrap: break-word;  /* prevent overflow on long titles */
+      font-size: clamp(0.9rem, 2vw, 2rem); /* Reduced min from 1rem */
+      line-height: 1.2;
+      margin-bottom: clamp(0.4rem, 1vh, 0.8rem);
+      word-wrap: break-word;
     }
+
+    /* Further reduce title size at 1080p */
+    @media (max-width: 1920px) and (min-width: 1024px) {
+      .lightbox-title {
+        font-size: clamp(0.75rem, 1.3vw, 1.2rem);
+        margin-bottom: 0.4rem;
+          }
+        }
 
     /* Tabs */
     .lightbox-tabs {
@@ -1127,8 +1156,10 @@
 
     /* Subcarousel always safely below */
     .lightbox-sub-carousel {
-    flex-shrink: 0; /* don't let text shove it away */
-    margin-top: clamp(0.5rem, 1vh, 1rem);
+      flex-shrink: 0;
+      margin: clamp(0.4rem, 0.8vh, 0.8rem) 0; /* Tighter margins */
+      padding: 0 clamp(0.8rem, 1.5vw, 1.5rem);
+      gap: clamp(6px, 0.8vw, 12px);
     }
     /* Only enable smooth scroll when user initiates, not during programmatic restores */
     @media (prefers-reduced-motion: no-preference) {
@@ -1289,8 +1320,8 @@
         max-height: 84dvh;
       }
       .sub-carousel-item {
-        min-width: clamp(60px, 11vw, 110px);
-        height: clamp(45px, 8vw, 80px);
+        min-width: clamp(60px, 9vw, 90px); /* Reduced from 11vw/110px */
+        height: clamp(45px, 6.5vw, 65px); /* Reduced from 8vw/80px */
       }
     }
 
@@ -1393,7 +1424,31 @@
     position: relative;
     z-index: 50; /* ✅ Under media */
     }
+    /* Custom scrollbar for lightbox info section */
+    .lightbox-info {
+      scrollbar-width: thin; /* Firefox */
+      scrollbar-color: rgba(255, 255, 255, 0.3) rgba(0, 0, 0, 0.2); /* Firefox */
+    }
 
+    /* Webkit browsers (Chrome, Safari, Edge) */
+    .lightbox-info::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .lightbox-info::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+    }
+
+    .lightbox-info::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+
+    .lightbox-info::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.5);
+    }
     .lightbox-sub-carousel {
     position: relative;
     z-index: 50; /* ✅ Under media */

@@ -897,130 +897,334 @@
       }
     ]
   },
-  "graphic-1": {
-    "title": "Brand Identity System",
-    "description": "Complete visual identity for a tech startup, including logo, typography, and color palette.",
-    "details": "Deliverables: Logo variations, Style guide, Business cards\nTypography: Custom font pairing system\nColor palette: Accessibility compliant (WCAG AA)\nApplications: Web, print, merchandise",
+  "graphic-design-beatdapp-battle-of-the-bands": {
+    "title": "Beatdapp – Battle of the Bands Event Branding",
+    "description": "Complete event branding, promotional materials, and marketing strategy for a local music streaming fraud detection company's Battle of the Bands event, including social media assets, motion graphics, and live event visuals.",
+    "details": "Client: Beatdapp (Music streaming fraud detection)\nRole: Graphic design, motion graphics, event visuals, marketing strategy\nDeliverables: Event posters, social media animated reels, promotional banners, live event visuals\nSoftware: [Add your software here]",
     "links": [
       {
-        "text": "Brand Guidelines",
-        "url": "#"
+        "text": "Event Website",
+        "url": "https://www.beatdapp-botb.com/#",
+        "type": "external"
       },
       {
-        "text": "Logo Package",
-        "url": "#"
+        "text": "Hollywood Theatre Event Page",
+        "url": "https://www.hollywoodtheatre.ca/events/battle-of-the-bands",
+        "type": "external"
+      },
+      {
+        "text": "Beatdapp Client Website",
+        "url": "https://beatdapp.com/",
+        "type": "external"
       }
     ],
     "category": "graphic",
     "media": [
       {
         "type": "image",
-        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/brand_logo",
-        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/brand_logo",
-        "title": "Logo Variations",
-        "description": "Primary logo and alternative versions for different applications and backgrounds."
+        "src": "graphic_beatdapp_banner_jxkgha.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761406644/graphic_beatdapp_banner_jxkgha.png",
+        "title": "Event Banner Graphic",
+        "description": "Primary banner graphic used for web and social media promotion."
+      },
+      {
+        "type": "video",
+        "src": "animation_beatdapp_botb2_1_nlmzxi.mp4",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/video/upload/f_auto,q_auto:good,w_160,so_0/v1761406585/animation_beatdapp_botb2_1_nlmzxi.jpg",
+        "title": "Social Media Animated Mobile Reel",
+        "description": "Custom motion graphics and animated social media reel featuring Runway-generated animated background and original design assets."
+      },
+      {
+        "type": "video",
+        "src": "Recap_v3_gddrqb.mp4",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/video/upload/f_auto,q_auto:good,w_160,so_0/v1761501453/Recap_v3_gddrqb.jpg",
+        "title": "Event Recap Video",
+        "description": "Official event recap showcasing live visuals, band performances, and promotional assets used throughout the Battle of the Bands event."
       },
       {
         "type": "image",
-        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/brand_colors",
-        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/brand_colors",
-        "title": "Color Palette",
-        "description": "Complete color system with accessibility guidelines and usage examples."
-      },
-      {
-        "type": "image",
-        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/brand_typography",
-        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/brand_typography",
-        "title": "Typography System",
-        "description": "Custom font pairings and typographic hierarchy for brand consistency."
-      },
-      {
-        "type": "image",
-        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/brand_applications",
-        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/brand_applications",
-        "title": "Brand Applications",
-        "description": "Real-world applications including business cards, letterhead, and digital assets."
+        "src": "graphic_beatdapp_poster_g1ekl3.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761406658/graphic_beatdapp_poster_g1ekl3.png",
+        "title": "Main Event Poster",
+        "description": "Primary event poster design used for print and digital promotion across multiple platforms."
       }
     ]
   },
-  "graphic-2": {
-    "title": "Event Poster Series",
-    "description": "Dynamic poster series for electronic music events with kinetic typography.",
-    "details": "Style: Kinetic typography, Neon aesthetics\nDimensions: Various sizes (A1, A2, Digital)\nTypography: Custom lettering with motion blur\nColor scheme: Neon gradients on dark backgrounds",
+  "graphic-design-renaissance-bts-contest": {
+    "title": "Renaissance App – BTS Concert Experience Contest",
+    "description": "Social media motion design animation created for a music streaming fan engagement app promoting a BTS concert experience contest.",
+    "details": "Client: Renaissance (music streaming fan engagement app, now defunct)\nRole: Motion design, social media content creation\nDeliverables: Animated social media reel for contest promotion\nSoftware: [Add your software here]",
     "links": [
       {
-        "text": "Full Series",
-        "url": "#"
+        "text": "Renaissance App (X/Twitter)",
+        "url": "https://x.com/renaissanceapp?lang=en",
+        "type": "external"
+      }
+    ],
+    "category": "graphic",
+    "media": [
+      {
+        "type": "video",
+        "src": "animation_ren_BTS_vjabyg.mp4",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/video/upload/f_auto,q_auto:good,w_160,so_0/v1761406436/animation_ren_BTS_vjabyg.jpg",
+        "title": "BTS Contest Social Media Reel",
+        "description": "Animated social media reel promoting a BTS concert experience contest for the Renaissance fan engagement platform."
+      }
+    ]
+  },
+  "graphic-design-curbside-car-wash-logo": {
+    "title": "Curbside Car Wash – Company Logo Design",
+    "description": "Custom logo design for a local car detailing company, developed from original hand-drawn concept to final vector artwork. The company has since been acquired by a larger organization.",
+    "details": "Client: Curbside Car Wash (now part of Car Detailing Ottawa)\nRole: Logo design, brand identity, vector illustration\nDeliverables: Hand-drawn concept, final logo design, optimized SVG vector file\nSoftware: [Add your software here]",
+    "links": [
+      {
+        "text": "Car Detailing Ottawa (Current Company)",
+        "url": "https://www.cardetailingottawa.ca/",
+        "type": "external"
       },
       {
-        "text": "Print Files",
-        "url": "#"
+        "text": "Download Optimized SVG Logo",
+        "url": "https://res.cloudinary.com/dlepppgm2/image/upload/v1761491793/CCW_Vector2_WOB_jgw6uk.svg",
+        "type": "external"
       }
     ],
     "category": "graphic",
     "media": [
       {
         "type": "image",
-        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/poster_main",
-        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/poster_main",
-        "title": "Main Poster",
-        "description": "Primary event poster with kinetic typography and neon effects."
+        "src": "graphic_curbsidecarwash_usszlo.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761406667/graphic_curbsidecarwash_usszlo.png",
+        "title": "Final Logo Design",
+        "description": "Final company logo design for Curbside Car Wash, featuring clean vector artwork and brand identity."
       },
       {
         "type": "image",
-        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/poster_typography",
-        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/poster_typography",
-        "title": "Typography Study",
-        "description": "Custom lettering development and kinetic motion studies."
+        "src": "graphic_wwc_original_drawing_dtqhtb.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761493177/graphic_wwc_original_drawing_dtqhtb.png",
+        "title": "Original Hand Drawing",
+        "description": "Initial hand-drawn concept sketch showing the development process from idea to final design."
+      }
+    ]
+  },
+  "graphic-design-the-drop-shoe-cleaning": {
+    "title": "The Drop – Shoe Cleaning Service Branding",
+    "description": "Custom logo design and apparel graphics created for a local Ottawa shoe cleaning service, including brand identity and promotional clothing designs.",
+    "details": "Client: The Drop (Ottawa shoe cleaning service, now defunct)\nRole: Logo design, brand identity, apparel graphics\nDeliverables: Company logo, custom clothing graphics\nSoftware: [Add your software here]",
+    "links": [
+      {
+        "text": "The Drop (Facebook Page)",
+        "url": "https://www.facebook.com/p/The-Drop-100063635045220/",
+        "type": "external"
+      }
+    ],
+    "category": "graphic",
+    "media": [
+      {
+        "type": "image",
+        "src": "graphic_drop_sellursole_fdgntz.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761406633/graphic_drop_sellursole_fdgntz.png",
+        "title": "Custom Apparel Graphic",
+        "description": "Custom graphic design created for promotional clothing and merchandise."
       },
       {
         "type": "image",
-        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/poster_variations",
-        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/poster_variations",
-        "title": "Color Variations",
-        "description": "Different color schemes and gradient applications for the series."
+        "src": "graphic_drop_vdny5k.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761406631/graphic_drop_vdny5k.png",
+        "title": "Company Logo",
+        "description": "Primary logo design for The Drop shoe cleaning service brand identity."
       }
     ]
   },
-  "art-1": {
-    "title": "Digital Sculpture",
-    "description": "Interactive digital sculpture exploring the relationship between form and light.",
+  "graphic-design-glory-days-fine-goods": {
+    "title": "Glory Days Fine Goods – Apparel Graphic Commission",
+    "description": "Private graphic design commission created for a Vancouver-based clothing company, featuring custom artwork for apparel and merchandise.",
+    "details": "Client: Glory Days Fine Goods (Vancouver clothing company)\nRole: Graphic design, apparel artwork\nDeliverables: Custom graphic for clothing line\nSoftware: [Add your software here]",
+    "links": [
+      {
+        "text": "Glory Days Fine Goods (Company Website)",
+        "url": "https://glorydaysfinegoods.com/",
+        "type": "external"
+      }
+    ],
+    "category": "graphic",
+    "media": [
+      {
+        "type": "image",
+        "src": "graphic_glorydays_eq3erd.jpg",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761406634/graphic_glorydays_eq3erd.jpg",
+        "title": "Custom Apparel Graphic",
+        "description": "Custom graphic design created for Glory Days Fine Goods clothing and merchandise line."
+      }
+    ]
+  },
+  "graphic-design-university-of-montreal-mental-health": {
+    "title": "University of Montreal – Mental Health Pamphlet Graphics",
+    "description": "Custom illustrations created for a mental health awareness pamphlet commissioned by the University of Montreal, produced in collaboration with an established artist.",
+    "details": "Client: University of Montreal (via private commission)\nRole: Illustration, graphic design\nDeliverables: Two custom graphics for student mental health awareness materials\nSoftware: [Add your software here]",
+    "links": [],
+    "category": "graphic",
+    "media": [
+      {
+        "type": "image",
+        "src": "Art_UOM_graphic1_unpael.jpg",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761406648/Art_UOM_graphic1_unpael.jpg",
+        "title": "Mental Health Graphic 1",
+        "description": "Custom illustration for University of Montreal mental health awareness pamphlet."
+      },
+      {
+        "type": "image",
+        "src": "Art_UOM_graphic2_wgintz.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761406666/Art_UOM_graphic2_wgintz.png",
+        "title": "Mental Health Graphic 2",
+        "description": "Second custom illustration for University of Montreal mental health awareness materials."
+      }
+    ]
+  },
+  "graphic-design-heidi-conrod-motion-graphic": {
+    "title": "Heidi Conrod – Motion Graphic Commission",
+    "description": "Private motion graphic animation commission created for established Ottawa-based artist Heidi Conrod, translating her visual style into animated form.",
+    "details": "Client: Heidi Conrod (established artist, Ottawa)\nRole: Motion design, animation\nDeliverables: Custom animated motion graphic\nSoftware: [Add your software here]",
+    "links": [
+      {
+        "text": "Heidi Conrod (Artist Website)",
+        "url": "https://www.heidiconrod.com/",
+        "type": "external"
+      },
+      {
+        "text": "Link to Artwork Series",
+        "url": "https://www.heidiconrod.com/new-index-1#/constructions/",
+        "type": "external"
+      }
+    ],
+    "category": "graphic",
+    "media": [
+      {
+        "type": "video",
+        "src": "animation_blinded_forest_dan1o4.mp4",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/video/upload/f_auto,q_auto:good,w_160,so_0/v1761494367/animation_blinded_forest_dan1o4.jpg",
+        "title": "Blinded Forest Animation",
+        "description": "Custom motion graphic animation created for artist Heidi Conrod, featuring organic movement and visual storytelling."
+      }
+    ]
+  },
+  "art-soul-bird-sculpture": {
+    "title": "Soul Bird Sculpture",
+    "description": "Hand-sculpted clay sculpture inspired by Alex Grey's visionary artwork, featuring real gold leaf coating and crystal inserts. A meditation on consciousness and spiritual transformation.",
+    "details": "Medium: Clay sculpture with gold leaf and crystal inserts\nInspiration: Alex Grey's Soul Bird\nTechniques: Hand sculpting, gold leafing, crystal setting\nYear: [Add year if you want]",
+    "links": [
+      {
+        "text": "Original Artwork by Alex Grey",
+        "url": "https://www.alexgrey.com/art/sculptures/soulbird",
+        "type": "external"
+      }
+    ],
     "category": "art",
     "media": [
       {
         "type": "image",
-        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/art_digital_sculpture",
-        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/art_digital_sculpture",
-        "title": "Digital Sculpture",
-        "description": "Interactive digital sculpture exploring the relationship between form and light."
+        "src": "art_soul_bird_03_bg_rljqzn.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761411149/art_soul_bird_03_bg_rljqzn.png",
+        "title": "Main View",
+        "description": "Primary view of the Soul Bird sculpture showcasing gold leaf finish and crystal details."
+      },
+      {
+        "type": "image",
+        "src": "art_soul_bird_01_bg_a86ify.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761411123/art_soul_bird_01_bg_a86ify.png",
+        "title": "Front View",
+        "description": "Front-facing view highlighting the symmetrical design and crystal inserts."
+      },
+      {
+        "type": "image",
+        "src": "art_soul_bird_02bg_vdzbla.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761411150/art_soul_bird_02bg_vdzbla.png",
+        "title": "Right Side View",
+        "description": "Right profile showing sculptural depth and gold leaf application."
+      },
+      {
+        "type": "image",
+        "src": "art_soul_bird_04_bg_vlzb7d.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761411135/art_soul_bird_04_bg_vlzb7d.png",
+        "title": "Left Side View",
+        "description": "Left profile revealing sculptural form and material details."
+      },
+      {
+        "type": "image",
+        "src": "art_soul_bird_06_bg_bmzyyz.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761411148/art_soul_bird_06_bg_bmzyyz.png",
+        "title": "Angle 2",
+        "description": "Alternative angle showcasing the three-dimensional form and craftsmanship."
       }
     ]
   },
-  "art-2": {
-    "title": "Kinetic Installation",
-    "description": "Interactive kinetic sculpture responding to viewer movement and sound.",
+  "art-skeleton-studies": {
+    "title": "Skeleton Studies",
+    "description": "Photographic composition series exploring themes of mortality, form, and the human condition through skeletal imagery and visual storytelling.",
+    "details": "Medium: Photography, digital composition\nSeries: Skeleton Studies\nTechniques: [Add your techniques here]\nYear: [Add year if you want]",
+    "links": [],
     "category": "art",
     "media": [
       {
         "type": "image",
-        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/art_kinetic",
-        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/art_kinetic",
-        "title": "Kinetic Installation",
-        "description": "Interactive kinetic sculpture responding to viewer movement and sound."
+        "src": "art_skeleton2_xv31jl.jpg",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761406812/art_skeleton2_xv31jl.jpg",
+        "title": "Skeleton Study I",
+        "description": "First piece in the Skeleton Studies series, exploring form and mortality through photographic composition."
+      },
+      {
+        "type": "image",
+        "src": "art_skeleton_aadcvr.jpg",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761406814/art_skeleton_aadcvr.jpg",
+        "title": "Skeleton Study II",
+        "description": "Second piece in the series, continuing the exploration of skeletal imagery and visual narrative."
       }
     ]
   },
-  "art-3": {
-    "title": "Mixed Media Sculpture",
-    "description": "Contemporary mixed media sculpture exploring texture and form.",
+  "art-humpback-whale": {
+    "title": "Humpback Whale",
+    "description": "Pen and marker illustration capturing the grace and majesty of a humpback whale through detailed linework and expressive mark-making.",
+    "details": "Medium: Pen and marker on paper\nSubject: Humpback whale\nTechniques: Line drawing, marker rendering\nYear: [Add year if you want]",
+    "links": [],
     "category": "art",
     "media": [
       {
         "type": "image",
-        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/art_mixed_media",
-        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/art_mixed_media",
-        "title": "Mixed Media Sculpture",
-        "description": "Contemporary mixed media sculpture exploring texture and form."
+        "src": "art_whale_kd6skk.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761406821/art_whale_kd6skk.png",
+        "title": "Humpback Whale",
+        "description": "Pen and marker illustration of a humpback whale, showcasing detailed linework and expressive rendering."
+      }
+    ]
+  },
+  "art-spirit-bear": {
+    "title": "Spirit Bear",
+    "description": "Marker drawing depicting a spirit bear, exploring themes of wilderness, mysticism, and the sacred connection between nature and spirituality.",
+    "details": "Medium: Marker on paper\nSubject: Spirit bear\nTechniques: Marker rendering, expressive mark-making\nYear: [Add year if you want]",
+    "links": [],
+    "category": "art",
+    "media": [
+      {
+        "type": "image",
+        "src": "art_spirit_bear_tgfdje.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761406984/art_spirit_bear_tgfdje.png",
+        "title": "Spirit Bear",
+        "description": "Marker drawing of a spirit bear, capturing the mystical essence and wild beauty of this sacred creature."
+      }
+    ]
+  },
+  "graphic-design-untitled-personal-project": {
+    "title": "Untitled – Personal Graphic Work",
+    "description": "Personal conceptual graphic exploration showcasing creative experimentation and visual style outside of client work.",
+    "details": "Project Type: Personal work\nRole: Graphic design, visual exploration\nSoftware: [Add your software here]",
+    "links": [],
+    "category": "art",
+    "media": [
+      {
+        "type": "image",
+        "src": "art_bb_igyt64.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761406675/art_bb_igyt64.png",
+        "title": "Untitled Personal Graphic",
+        "description": "Personal graphic design work exploring visual style and creative expression."
       }
     ]
   },

@@ -383,7 +383,7 @@
   let categoryItems = [];
   let currentIndex = 0;
   let currentMediaIndex = 0;
-  const categoriesWithTabs = ['3d-work','plugin','industrial','graphic'];
+  const categoriesWithTabs = ['3d-work','plugin','industrial','graphic', 'art'];
 
   // Bulletproof body lock (prevents background scroll + preserves position)
   let __bodyLockScrollY = 0;
@@ -552,16 +552,26 @@
 
       const tabsContainer = document.getElementById('lightbox-tabs');
       const subCarousel = document.getElementById('lightbox-sub-carousel');
-      if (categoriesWithTabs.includes(currentCategory) && data.media && data.media.length > 1) {
+      
+      // ✅ ALWAYS show tabs for categoriesWithTabs
+      if (categoriesWithTabs.includes(currentCategory)) {
           tabsContainer.style.display = 'flex';
-          subCarousel.style.display = 'flex';
-          populateSubCarousel(data.media);
-          updateTabContent(data);
+          updateTabContent(data); // ⬅️ This function needs updating
+          
           // Default to description tab
           document.querySelectorAll('.lightbox-tab').forEach(t=>t.classList.remove('active'));
           document.querySelectorAll('.lightbox-tab')[0]?.classList.add('active');
           document.querySelectorAll('.lightbox-tab-content').forEach(c=>c.classList.remove('active'));
           document.getElementById('tab-description').classList.add('active');
+          
+          // ✅ Only show subcarousel if multiple media items
+          if (data.media && data.media.length > 1) {
+              subCarousel.style.display = 'flex';
+              populateSubCarousel(data.media);
+          } else {
+              subCarousel.style.display = 'none';
+              subCarousel.innerHTML = '';
+          }
       } else {
           tabsContainer.style.display = 'none';
           subCarousel.style.display = 'none';
@@ -744,18 +754,38 @@
   }
 
   function updateTabContent(data) {
+      // Update details
       if (data.details) document.getElementById('lightbox-details').textContent = data.details;
-      const linksContainer = document.getElementById('lightbox-links'); 
-      linksContainer.innerHTML = '';
-      if (data.links && data.links.length) {
+      
+      // Check if links exist
+      const hasLinks = data.links && data.links.length > 0;
+      
+      // Get the Links tab button and content
+      const linksTabButton = document.querySelector('.lightbox-tab[onclick*="links"]');
+      const linksTabContent = document.getElementById('tab-links');
+      const linksContainer = document.getElementById('lightbox-links');
+      
+      // Show/hide Links tab based on whether links exist
+      if (hasLinks) {
+          linksTabButton.style.display = 'inline-block';
+          // DON'T force display:block here - let the tab switching handle it
+          
+          // Populate links
+          linksContainer.innerHTML = '';
           data.links.forEach(l => {
-              const a = document.createElement('a'); 
-              a.href = l.url; 
-              a.textContent = l.text; 
-              a.className='lightbox-link'; 
-              a.target='_blank';
+              const a = document.createElement('a');
+              a.href = l.url;
+              a.textContent = l.text;
+              a.className = 'lightbox-link';
+              a.target = '_blank';
+              a.rel = 'noopener noreferrer';
               linksContainer.appendChild(a);
           });
+      } else {
+          // Hide the Links tab and content
+          linksTabButton.style.display = 'none';
+          linksTabContent.classList.remove('active'); // Remove active class if it has it
+          linksContainer.innerHTML = '';
       }
   }
 
@@ -858,16 +888,33 @@
       const videoEl = document.getElementById('lightbox-video');
       imageEl.style.opacity='0.5'; 
       videoEl.style.opacity='0.5';
+      
       setTimeout(()=> {
           updateLightboxContent(data);
-          if (categoriesWithTabs.includes(data.category) && data.media && data.media.length>1) {
-              populateSubCarousel(data.media); 
+          
+          // ✅ ALWAYS re-evaluate tabs/subcarousel visibility
+          const tabsContainer = document.getElementById('lightbox-tabs');
+          const subCarousel = document.getElementById('lightbox-sub-carousel');
+          
+          // ✅ ALWAYS show tabs for categoriesWithTabs
+          if (categoriesWithTabs.includes(data.category)) {
+              tabsContainer.style.display = 'flex';
               updateTabContent(data);
+              
+              // ✅ Only show subcarousel if multiple media items
+              if (data.media && data.media.length > 1) {
+                  subCarousel.style.display = 'flex';
+                  populateSubCarousel(data.media);
+              } else {
+                  subCarousel.style.display = 'none';
+                  subCarousel.innerHTML = '';
+              }
           } else {
-              document.getElementById('lightbox-sub-carousel').style.display='none';
-              document.getElementById('lightbox-sub-carousel').innerHTML = '<div class="placeholder"></div>';
-              document.getElementById('lightbox-tabs').style.display='none';
+              tabsContainer.style.display = 'none';
+              subCarousel.style.display = 'none';
+              subCarousel.innerHTML = '';
           }
+          
           imageEl.style.opacity='1'; 
           videoEl.style.opacity='1';
       }, 150);
@@ -981,6 +1028,7 @@
                   closeLightbox(); 
                   break;
               case 'ArrowLeft': 
+                  e.preventDefault(); // ⬅️ ADD THIS
                   if (isSubCarouselVisible) {
                       navigateSubCarousel(-1); 
                   } else {
@@ -988,6 +1036,7 @@
                   }
                   break;
               case 'ArrowRight': 
+                  e.preventDefault(); // ⬅️ ADD THIS
                   if (isSubCarouselVisible) {
                       navigateSubCarousel(1); 
                   } else {
@@ -1013,7 +1062,14 @@
           }
       }
   });
-    
+
+  /* ==== Click outside to close ==== */
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+      // Only close if clicking the lightbox background itself, not its children
+      if (e.target.id === 'lightbox') {
+          closeLightbox();
+      }
+  });
 
 // Mobile swipe: velocity-aware snapping + optional one-item paging + edge easing
 function initMobileNudge() {
