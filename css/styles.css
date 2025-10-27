@@ -190,34 +190,78 @@
           background-position: 80% center; /* Shift even more right if necessary */
         }
       }
-      /* Hero stuff */
-      .hero-title,
-      .hero-divider,
+/* Portfolio Logo */
+#logo {
+  position: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(8%, -0%);
+  width: 35vw;
+  max-width: 555px;
+  min-width: 120px;
+  height: auto;
+  pointer-events: none;
+}
 
-      /* Push only the subtitle down, away from logo */
+.hero {
+  height:100vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+  url('https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto,w_1920,c_limit/hero_shot_main_page') center/cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Mobile adjustments for hero image positioning */
+@media (max-width: 768px) {
+  .hero {
+    background-position: 75% center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    background-position: 80% center;
+  }
+}
+
+    /* Hero stuff */
+    .hero-title,
+    .hero-divider,
+    .hero-subtitle {
+      position: absolute;
+      bottom: 20%; 
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      width: 80%;
+      max-width: 800px;
+      font-size: clamp(1rem, 1.5vw, 1.75rem);
+      color: #fff;
+      z-index: 10;
+    }
+
+    /* Push subtitle down more on 1080p and 2k (but not 4k or mobile) */
+    @media (min-width: 1024px) and (max-width: 2560px) {
       .hero-subtitle {
-      position: absolute; /* Take it out of the normal flow */
-      bottom: 25%; /* Anchor it 30% from the bottom of the .hero container */
-      left: 50%; /* Center it horizontally */
-      transform: translateX(-50%); /* Fine-tune horizontal centering */
-      text-align: center; /* Ensure text within the subtitle is centered */
-      width: 80%; /* Give it a width so text wraps if needed */
-      max-width: 800px; /* Prevent it from getting too wide on large screens */
-      font-size: clamp(1rem, 1.5vw, 1.75rem); /* Keep responsive font size */
-      color: #fff; /* Assuming white text for visibility */
-      z-index: 10; /* Ensure it's above other elements if needed */
+        bottom: 16%; /* was 20%, now lower */
       }
-      
+    }
+
     /* Parallax-ready hero elements */
     .hero {
       position: relative;
-      overflow: visible; /* Allow elements to move beyond bounds */
+      overflow: visible;
     }
 
     #logo,
     .hero-subtitle {
       transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-      will-change: opacity, transform; /* Performance optimization */
+      will-change: opacity, transform;
     }
 
     /* Smooth scroll behavior */
@@ -226,8 +270,18 @@
     }
 
     /* --- About / sections --- */
-    .about-brief { padding:80px 20px; text-align:center; max-width:min(90vw, 1400px); margin:0 auto; }
-    .about-brief p { font-size:clamp(1.2rem, 1.5vw, 1.6rem); line-height:1.8; opacity:0.9; margin-bottom:20px; }
+    .about-brief { 
+      padding: 92px 20px 80px; /* increased top padding from 80px to 92px (~15% more) */
+      text-align:center; 
+      max-width:min(90vw, 1400px); 
+      margin:0 auto; 
+    }
+    .about-brief p { 
+      font-size:clamp(1.2rem, 1.5vw, 1.6rem); 
+      line-height:1.8; 
+      opacity:0.9; 
+      margin-bottom:20px; 
+    }
 
     /* --- Reels grid --- */
     .featured-reels { padding:80px 20px; max-width:min(95vw, 1800px); margin:0 auto; }
@@ -253,6 +307,14 @@
       display:flex; justify-content:center; gap:0; margin-bottom:80px;
       border:1px solid rgba(255,255,255,.2); border-radius:4px; overflow:hidden; max-width:600px; margin-left:auto; margin-right:auto;
     }
+
+    /* Desktop only: add more space above tab nav */
+    @media (min-width: 769px) {
+      .tab-navigation {
+        margin-top: 100px; /* adds breathing room from reels section */
+      }
+    }
+
     .tab-btn {
       background:transparent; border:none; color:#fff; padding:15px 25px; font-size:.9rem; letter-spacing:1px; text-transform:uppercase;
       cursor:pointer; transition:all .3s ease; border-right:1px solid rgba(255,255,255,.2); flex:1;
@@ -381,6 +443,36 @@
 
     @media (max-width: 768px) {
       .project-media { margin: 36px 0; }
+    }
+    
+    /* Project 1 media sizing - all media at ~90% width */
+    #project1 .project-media img,
+    #project1 .project-media video {
+      width: 90%;
+      max-width: 90vw;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+
+    #project1 .media-embed {
+      width: 90%;
+      max-width: 90vw;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Carousel stays full width and horizontal */
+    #project1 .work-carousel {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    #project1 .work-carousel .carousel-item img {
+      width: auto; /* override the 90% rule */
+      max-width: none;
+      height: 400px; /* match your main page carousel height */
     }
 
     /* --- Resume styles --- */
@@ -574,13 +666,20 @@
       font-size: clamp(1rem, 4vw, 1.8rem); 
     }
 
+    @media (max-width: 768px) {
+      .featured-reels { padding: 50px 20px; }
+      .additional-work { padding: 50px 20px; }
+      .reels-grid { margin-bottom: 50px; }
+      .work-category { margin-bottom: 50px; }
+    }
+
     @media (max-width: 480px) {
       .category-title {
         font-size: clamp(0.9rem, 5vw, 1.3rem);
-        letter-spacing: 1px; /* tighter fit */
+        letter-spacing: 1px;
       }
     }
-    
+        
     /* Scroller */
     .carousel {
       display: flex;

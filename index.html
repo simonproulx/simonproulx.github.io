@@ -427,43 +427,48 @@
 <!-- Website Content -->
       
       <div class="hero-divider"></div>
-      <p class="hero-subtitle">3D Environment Designer and Aspiring Technical Artist<br>Looking to push the boundaries of real-time experiences</p>
+      <p class="hero-subtitle">3D Environment Designer & Aspiring Technical Artist<br>Looking to push the boundaries of real-time experiences</p>
 
     </section>
 
-    <section class="about-brief">
-      <p>I'm a 3D game environment designer with a passion for procedural tools and the mathematical beauty found in nature. I blend traditional art with cutting-edge software to create immersive digital worlds.</p>
-      <p>My dream is to create breathtaking audio-reactive 3D experiences for live events, pushing the boundaries of immersive art.</p>
-    </section>
+  <section class="about-brief">
+    <p>I am a 3D environment designer for games with a passion for procedural tools, scripting, and the mathematical beauty found in nature. I blend traditional art with cutting-edge software to create immersive digital worlds.</p>
+    <p>With a background in product design, almost everything you see here is conceptualized, designed and brought to life by me.</p>
+    <p style="margin-top: 2em; font-weight: 300; opacity: 0.6; font-size: 0.9em;">*including this website*</p>
+  </section>
 
   <section class="featured-reels" id="projects">
     <h2 class="category-title">Featured Projects</h2>
 
-    <div class="reels-grid">
-      <div class="reel-item" onclick="navigateToPage('project1')">
-        <img data-src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E"
-             alt="Environment Reel 1" 
-             class="lazy-load"
-             style="background: #1a1a1a;">
-        <div class="reel-overlay">
-          <h3 class="reel-title">Procedural Landscapes</h3>
-          <p class="reel-description">Unreal Engine • Houdini • Substance Designer</p>
-        </div>
-      </div>
-
-      <div class="reel-item" onclick="navigateToPage('project2')">
-        <img data-src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E"
-             alt="Environment Reel 2" 
-             class="lazy-load"
-             style="background: #1a1a1a;">
-        <div class="reel-overlay">
-          <h3 class="reel-title">Architectural Environments</h3>
-          <p class="reel-description">Maya • Substance Suite • Unreal Engine</p>
-        </div>
+  <div class="reels-grid">
+    <!-- Project 1 (clickable) -->
+    <div class="reel-item" onclick="navigateToPage('project1')">
+      <img
+        src="https://res.cloudinary.com/dlepppgm2/image/upload/v1761332043/env_proj1_MainHero_l5v1c8.png"
+        alt="Environment Reel 1"
+        loading="eager"
+        fetchpriority="high"
+      >
+      <div class="reel-overlay">
+        <h3 class="reel-title">The Foyer</h3>
+        <p class="reel-description">Unreal Engine • Maya • Substance Designer • Zbrush • Houdini</p>
       </div>
     </div>
+
+    <!-- Project 2 (coming soon, not clickable) -->
+    <div class="reel-item" aria-disabled="true">
+      <img
+        src="https://res.cloudinary.com/dlepppgm2/image/upload/v1761538875/env_proj2_preview_zdokdo.png"
+        alt="Environment Reel 2 (Coming Soon)"
+        loading="eager"
+        fetchpriority="high"
+      >
+      <div class="reel-overlay">
+        <h3 class="reel-title">Coming Soon</h3>
+        <p class="reel-description">HLSL • Unreal Engine • PCG • Maya • Substrate • Zbrush • Substance Designer</p>
+      </div>
+    </div>
+  </div>
 
     <div class="tab-navigation">
       <button class="tab-btn" onclick="navigateTo('additional-work')">Additional Work</button>
@@ -975,55 +980,268 @@
   <!-- ==== Back Home Button ==== -->
     <button id="globalBackBtn" class="back-home" onclick="navigateToPage('home')" style="display: none;">← Back to Home</button>
 
-  <!-- ==== Project 1 page ==== -->
-  <div id="project1" class="page">
-    <section class="project-hero">
-      <h1>Procedural Landscapes</h1>
-      <p>Creating vast, realistic terrains using procedural generation techniques</p>
-    </section>
+<!-- ==== Project 1 page ==== -->
+<div id="project1" class="page">
+  <section class="project-hero" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://res.cloudinary.com/dlepppgm2/image/upload/v1761332043/env_proj1_MainHero_l5v1c8.png') center/cover;">
+    <h1>The Foyer</h1>
+    <p>A detailed environment showcasing original designs, procedural materials, and optimized game-ready assets</p>
+  </section>
 
-    <!-- Media: Vimeo -->
-    <div class="project-media">
-      <div class="media-embed" data-type="vimeo" data-id="123456789"></div>
-      <p class="media-caption">Final cinematic (Vimeo)</p>
+  <!-- Vimeo Reel Embed -->
+  <div class="project-media">
+    <div class="media-embed" data-type="vimeo" data-id="1060566545">
+      <iframe src="https://player.vimeo.com/video/1060566545" allowfullscreen allow="autoplay; fullscreen; picture-in-picture"></iframe>
     </div>
-
-    <div class="project-content">
-      <div class="project-section">
-        <h2>Project Overview</h2>
-        <p>This project showcases my expertise in procedural landscape generation using industry-standard tools. The goal was to create photorealistic, large-scale environments that could be used in AAA game productions while maintaining optimal performance.</p>
-        <p>The landscapes feature dynamic weather systems, realistic erosion patterns, and biodiversity that responds to environmental conditions. Each terrain is generated using mathematical algorithms that simulate natural geological processes.</p>
-      </div>
-
-      <div class="project-section">
-        <h2>Technical Implementation</h2>
-        <p>The project utilizes a combination of cutting-edge software and custom tools:</p>
-        <ul>
-          <li>Houdini for procedural terrain generation and erosion simulation</li>
-          <li>Unreal Engine 5 for real-time rendering and optimization</li>
-          <li>Substance Designer for procedural material creation</li>
-          <li>World Machine for large-scale heightmap generation</li>
-          <li>Custom Python scripts for automated asset placement</li>
-        </ul>
-      </div>
-
-      <div class="project-section">
-        <h2>Key Features</h2>
-        <ul>
-          <li>Realistic erosion patterns based on geological data</li>
-          <li>Dynamic vegetation distribution using ecological algorithms</li>
-          <li>Weather-responsive material systems</li>
-          <li>Optimized LOD system for large-scale rendering</li>
-          <li>Modular biome system for diverse environments</li>
-        </ul>
-      </div>
-
-      <div class="project-section">
-        <h2>Results & Impact</h2>
-        <p>The procedural landscape system has been successfully implemented in multiple game projects, reducing environment creation time by 70% while maintaining AAA quality standards. The system's flexibility allows for rapid iteration and customization based on specific project requirements.</p>
-      </div>
-    </div>
+    <p class="media-caption">Environment Reel</p>
   </div>
+
+  <div class="project-content">
+    <!-- Hero Shot -->
+    <div class="project-media">
+      <img class="lazy-media" data-src="https://res.cloudinary.com/dlepppgm2/image/upload/v1761332043/env_proj1_MainHero_l5v1c8.png" alt="Hero Shot">
+      <p class="media-caption">Hero Shot</p>
+    </div>
+
+    <!-- Render Passes -->
+    <div class="project-media">
+      <img class="lazy-media" data-src="https://res.cloudinary.com/dlepppgm2/image/upload/v1761332069/env_proj1_passes_c4pje3.png" alt="Render Passes">
+      <p class="media-caption">Render Passes</p>
+    </div>
+
+    <!-- Progress Video -->
+    <div class="project-media">
+      <video class="lazy-media" data-src="https://res.cloudinary.com/dlepppgm2/video/upload/v1761332131/env_proj1_progress_ulnjkt.mp4" controls muted loop playsinline>
+        <source data-src="https://res.cloudinary.com/dlepppgm2/video/upload/v1761332131/env_proj1_progress_ulnjkt.mp4" type="video/mp4">
+      </video>
+      <p class="media-caption">Progress Video</p>
+    </div>
+
+    <!-- Desk Detail 1 -->
+    <div class="project-media">
+      <img class="lazy-media" data-src="https://res.cloudinary.com/dlepppgm2/image/upload/v1761332870/env_proj1_still_desk2_yxcqvg.png" alt="Desk Detail 1">
+      <p class="media-caption">Desk Detail 1</p>
+    </div>
+
+    <!-- Desk Detail 2 -->
+    <div class="project-media">
+      <img class="lazy-media" data-src="https://res.cloudinary.com/dlepppgm2/image/upload/v1761332833/env_proj1_still_desk3_lduhsa.png" alt="Desk Detail 2">
+      <p class="media-caption">Desk Detail 2</p>
+    </div>
+
+    <!-- Desk Detail 3 -->
+    <div class="project-media">
+      <img class="lazy-media" data-src="https://res.cloudinary.com/dlepppgm2/image/upload/v1761332792/env_proj1_still_desk1_rjgtrd.png" alt="Desk Detail 3">
+      <p class="media-caption">Desk Detail 3</p>
+    </div>
+
+    <!-- Floor Tile Detail -->
+    <div class="project-media">
+      <img class="lazy-media" data-src="https://res.cloudinary.com/dlepppgm2/image/upload/v1761332886/env_proj1_still_tiles_ifcxzg.png" alt="Floor Tile Detail">
+      <p class="media-caption">Floor Tile Detail</p>
+    </div>
+
+    <!-- Prop Highlight -->
+    <div class="project-media">
+      <img class="lazy-media" data-src="https://res.cloudinary.com/dlepppgm2/image/upload/v1761332890/env_proj1_still_propshot_mpivq0.png" alt="Prop Highlight">
+      <p class="media-caption">Prop Highlight</p>
+    </div>
+
+    <!-- Prop Clutter -->
+    <div class="project-media">
+      <img class="lazy-media" data-src="https://res.cloudinary.com/dlepppgm2/image/upload/v1761332967/env_proj1_still_clutter_rzancu.png" alt="Prop Clutter">
+      <p class="media-caption">Prop Clutter</p>
+    </div>
+
+    <!-- Vending Machine Detail -->
+    <div class="project-media">
+      <img class="lazy-media" data-src="https://res.cloudinary.com/dlepppgm2/image/upload/v1761332890/env_proj1_still_vendingmachine_j7xdxo.png" alt="Vending Machine Detail">
+      <p class="media-caption">Vending Machine Detail</p>
+    </div>
+
+    <!-- Camera Detail -->
+    <div class="project-media">
+      <img class="lazy-media" data-src="https://res.cloudinary.com/dlepppgm2/image/upload/v1761332828/env_proj1_still_camera_dxor9u.png" alt="Camera Detail">
+      <p class="media-caption">Camera Detail</p>
+    </div>
+
+    <!-- Backroom -->
+    <div class="project-media">
+      <img class="lazy-media" data-src="https://res.cloudinary.com/dlepppgm2/image/upload/v1761332821/env_proj1_still_backroom_vntuec.png" alt="Backroom">
+      <p class="media-caption">Backroom</p>
+    </div>
+
+    <!-- Robot Detail -->
+    <div class="project-media">
+      <img class="lazy-media" data-src="https://res.cloudinary.com/dlepppgm2/image/upload/v1761332803/env_proj1_still_robot3_le31ah.png" alt="Robot Detail">
+      <p class="media-caption">Robot Detail</p>
+    </div>
+
+    <!-- Robot Detail 2 -->
+    <div class="project-media">
+      <img class="lazy-media" data-src="https://res.cloudinary.com/dlepppgm2/image/upload/v1761332851/env_proj1_still_robot_ladcfr.png" alt="Robot Detail 2">
+      <p class="media-caption">Robot Detail 2</p>
+    </div>
+
+    <!-- Hero Shot - Alt -->
+    <div class="project-media">
+      <img class="lazy-media" data-src="https://res.cloudinary.com/dlepppgm2/image/upload/v1761332843/env_proj1_still_main2_bowq1s.png" alt="Hero Shot - Alt">
+      <p class="media-caption">Hero Shot - Alt</p>
+    </div>
+
+    <!-- Prop Showcase Video -->
+    <div class="project-media">
+      <video class="lazy-media" data-src="https://res.cloudinary.com/dlepppgm2/video/upload/v1761332193/env_proj1_props_showcase_q4chda.mp4" controls muted loop playsinline>
+        <source data-src="https://res.cloudinary.com/dlepppgm2/video/upload/v1761332193/env_proj1_props_showcase_q4chda.mp4" type="video/mp4">
+      </video>
+      <p class="media-caption">Prop Showcase</p>
+    </div>
+
+    <!-- Prop Showcase Still -->
+    <div class="project-media">
+      <img class="lazy-media" data-src="https://res.cloudinary.com/dlepppgm2/image/upload/v1761332883/env_proj1_still_props1_z5yvq6.png" alt="Prop Showcase Still">
+      <p class="media-caption">Prop Showcase Still</p>
+    </div>
+
+    <!-- Large Prop Showcase Still -->
+    <div class="project-media">
+      <img class="lazy-media" data-src="https://res.cloudinary.com/dlepppgm2/image/upload/v1761332853/env_proj1_still_props2_kibdku.png" alt="Large Prop Showcase Still">
+      <p class="media-caption">Large Prop Showcase Still</p>
+    </div>
+
+    <!-- Multi Layer Material Showcase -->
+    <div class="project-media">
+      <img class="lazy-media" data-src="https://res.cloudinary.com/dlepppgm2/image/upload/v1761332057/env_proj1_materialsmulti_2_bp6hmr.png" alt="Multi Layer Material Showcase">
+      <p class="media-caption">Multi Layer Material Showcase - For Vertex Painting</p>
+    </div>
+
+    <!-- Vertex Painting Demo Video -->
+    <div class="project-media">
+      <video class="lazy-media" data-src="https://res.cloudinary.com/dlepppgm2/video/upload/v1761332318/env_proj1_vertexpaint_xkdlka.mp4" controls muted loop playsinline>
+        <source data-src="https://res.cloudinary.com/dlepppgm2/video/upload/v1761332318/env_proj1_vertexpaint_xkdlka.mp4" type="video/mp4">
+      </video>
+      <p class="media-caption">Vertex Painting Demo</p>
+    </div>
+
+    <!-- Prop Topology Carousel Section -->
+    <div class="project-section">
+      <h2>Prop Topology Samples</h2>
+      <div class="work-carousel" id="project1-topology-carousel">
+        <div class="carousel-item" data-lightbox-id="topology-1" onclick="openLightbox('topology-1')">
+          <img src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761543680/env_proj1_prop_topology_1_y20aw9.png" alt="Prop Topology 1" width="600" height="400">
+          <div class="carousel-item-overlay">
+            <h3 class="carousel-item-title">Prop Topology Sample 1</h3>
+          </div>
+        </div>
+
+        <div class="carousel-item" data-lightbox-id="topology-2" onclick="openLightbox('topology-2')">
+          <img src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761543676/env_proj1_prop_topology_16_qjy1o1.png" alt="Prop Topology 2" width="600" height="400">
+          <div class="carousel-item-overlay">
+            <h3 class="carousel-item-title">Prop Topology Sample 2</h3>
+          </div>
+        </div>
+
+        <div class="carousel-item" data-lightbox-id="topology-3" onclick="openLightbox('topology-3')">
+          <img src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761543675/env_proj1_prop_topology_15_etp6hb.png" alt="Prop Topology 3" width="600" height="400">
+          <div class="carousel-item-overlay">
+            <h3 class="carousel-item-title">Prop Topology Sample 3</h3>
+          </div>
+        </div>
+
+        <div class="carousel-item" data-lightbox-id="topology-4" onclick="openLightbox('topology-4')">
+          <img src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761543673/env_proj1_prop_topology_13_f1ghkh.png" alt="Prop Topology 4" width="600" height="400">
+          <div class="carousel-item-overlay">
+            <h3 class="carousel-item-title">Prop Topology Sample 4</h3>
+          </div>
+        </div>
+
+        <div class="carousel-item" data-lightbox-id="topology-5" onclick="openLightbox('topology-5')">
+          <img src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761543674/env_proj1_prop_topology_14_bcbfoo.png" alt="Prop Topology 5" width="600" height="400">
+          <div class="carousel-item-overlay">
+            <h3 class="carousel-item-title">Prop Topology Sample 5</h3>
+          </div>
+        </div>
+
+        <div class="carousel-item" data-lightbox-id="topology-6" onclick="openLightbox('topology-6')">
+          <img src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761543672/env_proj1_prop_topology_12_oo3tap.png" alt="Prop Topology 6" width="600" height="400">
+          <div class="carousel-item-overlay">
+            <h3 class="carousel-item-title">Prop Topology Sample 6</h3>
+          </div>
+        </div>
+
+        <div class="carousel-item" data-lightbox-id="topology-7" onclick="openLightbox('topology-7')">
+          <img src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761543667/env_proj1_prop_topology_8_i2dw0w.png" alt="Prop Topology 7" width="600" height="400">
+          <div class="carousel-item-overlay">
+            <h3 class="carousel-item-title">Prop Topology Sample 7</h3>
+          </div>
+        </div>
+
+        <div class="carousel-item" data-lightbox-id="topology-8" onclick="openLightbox('topology-8')">
+          <img src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761543665/env_proj1_prop_topology_6_nryte2.png" alt="Prop Topology 8" width="600" height="400">
+          <div class="carousel-item-overlay">
+            <h3 class="carousel-item-title">Prop Topology Sample 8</h3>
+          </div>
+        </div>
+
+        <div class="carousel-item" data-lightbox-id="topology-9" onclick="openLightbox('topology-9')">
+          <img src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761543681/env_proj1_prop_topology_3_eciv0f.png" alt="Prop Topology 9" width="600" height="400">
+          <div class="carousel-item-overlay">
+            <h3 class="carousel-item-title">Prop Topology Sample 9</h3>
+          </div>
+        </div>
+
+        <div class="carousel-item" data-lightbox-id="topology-10" onclick="openLightbox('topology-10')">
+          <img src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761543663/env_proj1_prop_topology_5_prnkbm.png" alt="Prop Topology 10" width="600" height="400">
+          <div class="carousel-item-overlay">
+            <h3 class="carousel-item-title">Prop Topology Sample 10</h3>
+          </div>
+        </div>
+
+        <div class="carousel-item" data-lightbox-id="topology-11" onclick="openLightbox('topology-11')">
+          <img src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761543662/env_proj1_prop_topology_4_hayvui.png" alt="Prop Topology 11" width="600" height="400">
+          <div class="carousel-item-overlay">
+            <h3 class="carousel-item-title">Prop Topology Sample 11</h3>
+          </div>
+        </div>
+
+        <div class="carousel-item" data-lightbox-id="topology-12" onclick="openLightbox('topology-12')">
+          <img src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761543668/env_proj1_prop_topology_9_tcb7wz.png" alt="Prop Topology 12" width="600" height="400">
+          <div class="carousel-item-overlay">
+            <h3 class="carousel-item-title">Prop Topology Sample 12</h3>
+          </div>
+        </div>
+
+        <div class="carousel-item" data-lightbox-id="topology-13" onclick="openLightbox('topology-13')">
+          <img src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761543666/env_proj1_prop_topology_7_axf3sx.png" alt="Prop Topology 13" width="600" height="400">
+          <div class="carousel-item-overlay">
+            <h3 class="carousel-item-title">Prop Topology Sample 13</h3>
+          </div>
+        </div>
+
+        <div class="carousel-item" data-lightbox-id="topology-14" onclick="openLightbox('topology-14')">
+          <img src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761543670/env_proj1_prop_topology_11_sraxok.png" alt="Prop Topology 14" width="600" height="400">
+          <div class="carousel-item-overlay">
+            <h3 class="carousel-item-title">Prop Topology Sample 14</h3>
+          </div>
+        </div>
+
+        <div class="carousel-item" data-lightbox-id="topology-15" onclick="openLightbox('topology-15')">
+          <img src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761543678/env_proj1_prop_topology_17_ej5ede.png" alt="Prop Topology 15" width="600" height="400">
+          <div class="carousel-item-overlay">
+            <h3 class="carousel-item-title">Prop Topology Sample 15</h3>
+          </div>
+        </div>
+
+        <div class="carousel-item" data-lightbox-id="topology-16" onclick="openLightbox('topology-16')">
+          <img src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761543680/env_proj1_prop_topology_2_vo1tjj.png" alt="Prop Topology 16" width="600" height="400">
+          <div class="carousel-item-overlay">
+            <h3 class="carousel-item-title">Prop Topology Sample 16</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
 
   <!-- ==== Project 2 page ==== -->
   <div id="project2" class="page">
@@ -1074,71 +1292,115 @@
     </div>
   </div>
 
-  <!-- ==== Resume page ==== -->
-    <div id="resume" class="page">
-    <section class="project-hero" style="background-image: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)), url('https://images.unsplash.com/photo-1614728263952-84ea256f9679?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
-        <h1>Resume</h1>
-        <p>Professional experience and qualifications in 3D environment design</p>
+<!-- ==== Resume page ==== -->
+<div id="resume" class="page">
+  <section class="project-hero" style="background-image: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)), url('https://res.cloudinary.com/dlepppgm2/image/upload/v1761332792/env_proj1_still_desk1_rjgtrd.png');">        <h1>Resume</h1>
+        <p></p>
     </section>
 
     <div class="project-content">
-        <!-- Professional Experience -->
-        <div class="resume-section">
-        <h2>Professional Experience</h2>
-        
-        <div class="resume-item">
-            <h3>Senior Environment Artist</h3>
-            <div class="resume-details">
-            <div class="position">Epic Games Studio</div>
-            <div class="date">2022 - Present</div>
-            <p>Lead environment artist for AAA game productions, specializing in procedural world generation and optimization.</p>
-            </div>
-        </div>
-
-        <div class="resume-item">
-            <h3>3D Environment Designer</h3>
-            <div class="resume-details">
-            <div class="position">Indie Game Collective</div>
-            <div class="date">2020 - 2022</div>
-            <p>Created diverse game environments for multiple indie projects, from concept to final implementation.</p>
-            </div>
-        </div>
-
-        <div class="resume-item">
-            <h3>Junior 3D Artist</h3>
-            <div class="resume-details">
-            <div class="position">Digital Arts Studio</div>
-            <div class="date">2018 - 2020</div>
-            <p>Focused on architectural visualization and environmental modeling for various clients.</p>
-            </div>
-        </div>
-        </div>
-
         <!-- Education -->
         <div class="resume-section">
-        <h2>Education</h2>
-        <div class="resume-item">
-            <h3>Bachelor of Fine Arts - Digital Media</h3>
-            <div class="resume-details">
-            <div class="position">Art Institute of Technology</div>
-            <div class="date">2014 - 2018</div>
-            <p>Specialized in 3D modeling, texturing, and environmental design. Graduated Magna Cum Laude.</p>
+            <h2>Education</h2>
+            
+            <div class="resume-item">
+                <h3>Think Tank Training Center</h3>
+                <div class="resume-details">
+                    <div class="position">On Campus Diploma Program</div>
+                    <div class="date">May 2022 - 2024</div>
+                    <p>Focus on Environment Art for Games</p>
+                    <p>Vancouver, British Columbia</p>
+                </div>
+            </div>
+
+            <div class="resume-item">
+                <h3>Carleton University - Faculty of Engineering & Design</h3>
+                <div class="resume-details">
+                    <div class="position">Bachelor of Industrial Design</div>
+                    <div class="date">September 2013 - 2018</div>
+                    <p>Ottawa, Ontario</p>
+                </div>
             </div>
         </div>
+
+        <!-- Professional Experience -->
+        <div class="resume-section">
+            <h2>Professional Experience</h2>
+            
+            <div class="resume-item">
+                <h3>Head Technician</h3>
+                <div class="resume-details">
+                    <div class="position">Scotiabank Dance Centre</div>
+                    <div class="date">June 2025 - Present</div>
+                    <p>Solo and team work for clients and companies under I.A.T.S.E local 118. Responsible for lighting production, design, audio production and engineering, and other live performance related tasks.</p>
+                </div>
+            </div>
+
+            <div class="resume-item">
+                <h3>Multi-Media Brand Strategist</h3>
+                <div class="resume-details">
+                    <div class="position">Self-Employed</div>
+                    <div class="date">May 2019 - Present</div>
+                    <p>Work with regional companies to produce graphics, logos, and art. Learned to be flexible with clients and deliver high quality art, assets, digital content and events.</p>
+                </div>
+            </div>
+
+            <div class="resume-item">
+                <h3>Design Intern</h3>
+                <div class="resume-details">
+                    <div class="position">The Luminaires Group</div>
+                    <div class="date">May 2017 - September 2017</div>
+                    <p>Served as contract lead on IP merger between two brands under the Luminaires Group umbrella corp. Helped design and prototype the 2018 Lumistik product line.</p>
+                </div>
+            </div>
+
+            <div class="resume-item">
+                <h3>Design Intern</h3>
+                <div class="resume-details">
+                    <div class="position">National Gallery of Canada</div>
+                    <div class="date">May 2016 - September 2016</div>
+                    <p>Assisted curators and lead designers through the exhibit design process. Built scale models of the galleries and designed displays and cases for upcoming exhibits.</p>
+                </div>
+            </div>
+
+            <div class="resume-item">
+                <h3>Lab Tech</h3>
+                <div class="resume-details">
+                    <div class="position">Carleton School of Architecture</div>
+                    <div class="date">September 2015 - May 2018</div>
+                    <p>Worked as a technician in the 3D printing, laser-cutting, equipment rental and print shops.</p>
+                </div>
+            </div>
+
+            <div class="resume-item">
+                <h3>Sales Associate</h3>
+                <div class="resume-details">
+                    <div class="position">ProTouch Painting & Design</div>
+                    <div class="date">June 2014 - September 2015</div>
+                    <p>Customer service, client engagement and canvassing.</p>
+                </div>
+            </div>
         </div>
 
         <!-- Technical Skills -->
         <div class="resume-section">
-        <h2>Technical Skills</h2>
-        <div class="resume-item">
-            <h3>3D Software</h3>
-            <div class="resume-details">
-            <p>Maya, 3ds Max, Blender, Houdini, ZBrush, Substance Suite, World Machine</p>
+            <h2>Technical Skills</h2>
+            <div class="resume-item">
+                <h3>3D & Game Development</h3>
+                <div class="resume-details">
+                    <p>Autodesk Maya, Unreal Engine, Adobe 3D Creative Suite, Houdini, Zbrush, Nuke, Photoshop, Gaea, Speedtree</p>
+                </div>
+            </div>
+            
+            <div class="resume-item">
+                <h3>Programming & Technical</h3>
+                <div class="resume-details">
+                    <p>Python, Javascript, Solidworks, Keyshot, Vray, Comfy UI, Adobe Illustrator, AI prompt engineering, Stable diffusion</p>
+                </div>
             </div>
         </div>
-        </div>
     </div>
-    </div>
+</div>
 
   <!-- ==== Lightbox (single unified rich instance) ==== -->
   <div id="lightbox" class="lightbox">

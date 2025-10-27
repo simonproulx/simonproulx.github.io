@@ -1060,6 +1060,13 @@
         "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761406631/graphic_drop_vdny5k.png",
         "title": "Company Logo",
         "description": "Primary logo design for The Drop shoe cleaning service brand identity."
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/v1761525108/61236845779__6A5380F8-28EF-4DB6-96D6-3820B640528D_cgqt5z.jpg",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160/v1761525108/61236845779__6A5380F8-28EF-4DB6-96D6-3820B640528D_cgqt5z.jpg",
+        "title": "The Drop Store Mural",
+        "description": "Hand-painted mural created for The Drop shoe cleaning service storefront."
       }
     ]
   },
@@ -1295,6 +1302,230 @@
         "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/photo_abstract",
         "title": "Abstract Compositions",
         "description": "Abstract photographic compositions exploring light, shadow, and form."
+      }
+    ]
+  },
+  "topology-1": {
+    "title": "Prop Topology Sample 1",
+    "description": "Optimized game-ready prop topology showcasing efficient edge flow and polygon distribution.",
+    "category": "topology",
+    "media": [
+      {
+        "type": "image",
+        "src": "env_proj1_prop_topology_1_y20aw9.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761543680/env_proj1_prop_topology_1_y20aw9.png",
+        "title": "Prop Topology Sample 1",
+        "description": "Optimized game-ready prop topology."
+      }
+    ]
+  },
+  "topology-2": {
+    "title": "Prop Topology Sample 2",
+    "description": "Optimized game-ready prop topology showcasing efficient edge flow and polygon distribution.",
+    "category": "topology",
+    "media": [
+      {
+        "type": "image",
+        "src": "env_proj1_prop_topology_16_qjy1o1.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761543676/env_proj1_prop_topology_16_qjy1o1.png",
+        "title": "Prop Topology Sample 2",
+        "description": "Optimized game-ready prop topology."
+      }
+    ]
+  },
+  "topology-3": {
+    "title": "Prop Topology Sample 3",
+    "description": "Optimized game-ready prop topology showcasing efficient edge flow and polygon distribution.",
+    "category": "topology",
+    "media": [
+      {
+        "type": "image",
+        "src": "env_proj1_prop_topology_15_etp6hb.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761543675/env_proj1_prop_topology_15_etp6hb.png",
+        "title": "Prop Topology Sample 3",
+        "description": "Optimized game-ready prop topology."
+      }
+    ]
+  },
+  "topology-4": {
+    "title": "Prop Topology Sample 4",
+    "description": "Optimized game-ready prop topology showcasing efficient edge flow and polygon distribution.",
+    "category": "topology",
+    "media": [
+      {
+        "type": "image",
+        "src": "env_proj1_prop_topology_13_f1ghkh.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761543673/env_proj1_prop_topology_13_f1ghkh.png",
+        "title": "Prop Topology Sample 4",
+        "description": "Optimized game-ready prop topology."
+      }
+    ]
+  },
+  "topology-5": {
+    "title": "Prop Topology Sample 5",
+    "description": "Optimized game-ready prop topology showcasing efficient edge flow and polygon distribution.",
+    "category": "topology",
+    "media": [
+      {
+        "type": "image",
+        "src": "env_proj1_prop_topology_14_bcbfoo.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761543674/env_proj1_prop_topology_14_bcbfoo.png",
+        "title": "Prop Topology Sample 5",
+        "description": "Optimized game-ready prop topology."
+      }
+    ]
+  },
+  "topology-6": {
+    "title": "Prop Topology Sample 6",
+    "description": "Optimized game-ready prop topology showcasing efficient edge flow and polygon distribution.",
+    "category": "topology",
+    "media": [
+      {
+        "type": "image",
+        "src": "env_proj1_prop_topology_12_oo3tap.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761543672/env_proj1_prop_topology_12_oo3tap.png",
+        "title": "Prop Topology Sample 6",
+        "description": "Optimized game-ready prop topology."
+      }
+    ]
+  },
+  "topology-7": {
+    "title": "Prop Topology Sample 7",
+    "description": "Optimized game-ready prop topology showcasing efficient edge flow and polygon distribution.",
+    "category": "topology",
+    "media": [
+      {
+        "type": "image",
+        "src": "env_proj1_prop_topology_8_i2dw0w.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761543667/env_proj1_prop_topology_8_i2dw0w.png",
+        "title": "Prop Topology Sample 7",
+        "description": "Optimized game-ready prop topology."
+      }
+    ]
+  },
+  "topology-8": {
+    "title": "Prop Topology Sample 8",
+    "description": "Optimized game-ready prop topology showcasing efficient edge flow and polygon distribution.",
+    "category": "topology",
+    "media": [
+      {
+        "type": "image",
+        "src": "env_proj1_prop_topology_6_nryte2.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761543665/env_proj1_prop_topology_6_nryte2.png",
+        "title": "Prop Topology Sample 8",
+        "description": "Optimized game-ready prop topology."
+      }
+    ]
+  },
+  "topology-9": {
+    "title": "Prop Topology Sample 9",
+    "description": "Optimized game-ready prop topology showcasing efficient edge flow and polygon distribution.",
+    "category": "topology",
+    "media": [
+      {
+        "type": "image",
+        "src": "env_proj1_prop_topology_3_eciv0f.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761543681/env_proj1_prop_topology_3_eciv0f.png",
+        "title": "Prop Topology Sample 9",
+        "description": "Optimized game-ready prop topology."
+      }
+    ]
+  },
+  "topology-10": {
+    "title": "Prop Topology Sample 10",
+    "description": "Optimized game-ready prop topology showcasing efficient edge flow and polygon distribution.",
+    "category": "topology",
+    "media": [
+      {
+        "type": "image",
+        "src": "env_proj1_prop_topology_5_prnkbm.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761543663/env_proj1_prop_topology_5_prnkbm.png",
+        "title": "Prop Topology Sample 10",
+        "description": "Optimized game-ready prop topology."
+      }
+    ]
+  },
+  "topology-11": {
+    "title": "Prop Topology Sample 11",
+    "description": "Optimized game-ready prop topology showcasing efficient edge flow and polygon distribution.",
+    "category": "topology",
+    "media": [
+      {
+        "type": "image",
+        "src": "env_proj1_prop_topology_4_hayvui.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761543662/env_proj1_prop_topology_4_hayvui.png",
+        "title": "Prop Topology Sample 11",
+        "description": "Optimized game-ready prop topology."
+      }
+    ]
+  },
+  "topology-12": {
+    "title": "Prop Topology Sample 12",
+    "description": "Optimized game-ready prop topology showcasing efficient edge flow and polygon distribution.",
+    "category": "topology",
+    "media": [
+      {
+        "type": "image",
+        "src": "env_proj1_prop_topology_9_tcb7wz.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761543668/env_proj1_prop_topology_9_tcb7wz.png",
+        "title": "Prop Topology Sample 12",
+        "description": "Optimized game-ready prop topology."
+      }
+    ]
+  },
+  "topology-13": {
+    "title": "Prop Topology Sample 13",
+    "description": "Optimized game-ready prop topology showcasing efficient edge flow and polygon distribution.",
+    "category": "topology",
+    "media": [
+      {
+        "type": "image",
+        "src": "env_proj1_prop_topology_7_axf3sx.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761543666/env_proj1_prop_topology_7_axf3sx.png",
+        "title": "Prop Topology Sample 13",
+        "description": "Optimized game-ready prop topology."
+      }
+    ]
+  },
+  "topology-14": {
+    "title": "Prop Topology Sample 14",
+    "description": "Optimized game-ready prop topology showcasing efficient edge flow and polygon distribution.",
+    "category": "topology",
+    "media": [
+      {
+        "type": "image",
+        "src": "env_proj1_prop_topology_11_sraxok.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761543670/env_proj1_prop_topology_11_sraxok.png",
+        "title": "Prop Topology Sample 14",
+        "description": "Optimized game-ready prop topology."
+      }
+    ]
+  },
+  "topology-15": {
+    "title": "Prop Topology Sample 15",
+    "description": "Optimized game-ready prop topology showcasing efficient edge flow and polygon distribution.",
+    "category": "topology",
+    "media": [
+      {
+        "type": "image",
+        "src": "env_proj1_prop_topology_17_ej5ede.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761543678/env_proj1_prop_topology_17_ej5ede.png",
+        "title": "Prop Topology Sample 15",
+        "description": "Optimized game-ready prop topology."
+      }
+    ]
+  },
+  "topology-16": {
+    "title": "Prop Topology Sample 16",
+    "description": "Optimized game-ready prop topology showcasing efficient edge flow and polygon distribution.",
+    "category": "topology",
+    "media": [
+      {
+        "type": "image",
+        "src": "env_proj1_prop_topology_2_vo1tjj.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761543680/env_proj1_prop_topology_2_vo1tjj.png",
+        "title": "Prop Topology Sample 16",
+        "description": "Optimized game-ready prop topology."
       }
     ]
   }

@@ -2150,6 +2150,135 @@ document.addEventListener('transitionend', (e) => {
           if (el.dataset.initialized !== '1') embedObserver.observe(el);
         });
       }
+// ============================================
+// PROJECT 1 PAGE INITIALIZATION
+// ============================================
+
+// Initialize project1 page when navigated to
+function initProject1Page() {
+  const project1Page = document.getElementById('project1');
+  if (!project1Page) return;
+
+  // Initialize lazy loading for project1 media (top-to-bottom sequential)
+  initSequentialLazyLoad(project1Page);
+
+  // Initialize carousel for topology section
+  initProject1Carousel();
+
+  // Initialize embed observers
+  initLazyForProjectPage(project1Page);
+}
+
+// Sequential lazy loading (loads top-to-bottom in order)
+function initSequentialLazyLoad(pageEl) {
+  const lazyMedia = Array.from(pageEl.querySelectorAll('.lazy-media'));
+  let currentIndex = 0;
+
+  function loadNext() {
+    if (currentIndex >= lazyMedia.length) return;
+
+    const media = lazyMedia[currentIndex];
+    
+    // Handle images
+    if (media.tagName === 'IMG' && media.dataset.src) {
+      media.src = media.dataset.src;
+      media.onload = () => {
+        media.classList.add('lazy-loaded');
+        currentIndex++;
+        loadNext();
+      };
+      delete media.dataset.src;
+    }
+    
+    // Handle videos
+    else if (media.tagName === 'VIDEO') {
+      const source = media.querySelector('source[data-src]');
+      if (source) {
+        source.src = source.dataset.src;
+        delete source.dataset.src;
+        media.load();
+        media.addEventListener('loadedmetadata', () => {
+          media.classList.add('lazy-loaded');
+          currentIndex++;
+          loadNext();
+        }, { once: true });
+      } else {
+        currentIndex++;
+        loadNext();
+      }
+    }
+    
+    else {
+      currentIndex++;
+      loadNext();
+    }
+  }
+
+  // Start loading sequence
+  loadNext();
+}
+
+// Initialize carousel for project1 topology section
+function initProject1Carousel() {
+  const carousel = document.getElementById('project1-topology-carousel');
+  if (!carousel) return;
+
+  // Reuse existing carousel scroll logic from main page
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  carousel.addEventListener('mousedown', (e) => {
+    isDown = true;
+    carousel.classList.add('active');
+    startX = e.pageX - carousel.offsetLeft;
+    scrollLeft = carousel.scrollLeft;
+  });
+
+  carousel.addEventListener('mouseleave', () => {
+    isDown = false;
+    carousel.classList.remove('active');
+  });
+
+  carousel.addEventListener('mouseup', () => {
+    isDown = false;
+    carousel.classList.remove('active');
+  });
+
+  carousel.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - carousel.offsetLeft;
+    const walk = (x - startX) * 2;
+    carousel.scrollLeft = scrollLeft - walk;
+  });
+
+  // Touch support
+  let touchStartX = 0;
+  let touchScrollLeft = 0;
+
+  carousel.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].pageX - carousel.offsetLeft;
+    touchScrollLeft = carousel.scrollLeft;
+  });
+
+  carousel.addEventListener('touchmove', (e) => {
+    const x = e.touches[0].pageX - carousel.offsetLeft;
+    const walk = (x - touchStartX) * 2;
+    carousel.scrollLeft = touchScrollLeft - walk;
+  });
+}
+
+// Hook into page navigation
+const originalNavigateToPage = window.navigateToPage;
+window.navigateToPage = function(pageId) {
+  originalNavigateToPage(pageId);
+  
+  // If navigating to project1, initialize it
+  if (pageId === 'project1') {
+    setTimeout(() => initProject1Page(), 100);
+  }
+};
 
 // Auto-hiding carousel hint arrows (mobile only)
 function initCarouselHints() {
