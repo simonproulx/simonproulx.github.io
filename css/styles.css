@@ -497,7 +497,7 @@
     display: block;
     pointer-events: none;
   }
-  
+
   /* Project 1 section titles */
   #project1 h2 {
     font-family: 'Montserrat', sans-serif;
@@ -713,7 +713,7 @@
       font-size: 1rem;
       letter-spacing: 1px;
       transition: all .3s ease;
-      z-index: 9999;
+      z-index: 1001;
       cursor: pointer;
       min-width: 44px;         /* ensures touch target size */
       min-height: 44px;
