@@ -2218,6 +2218,24 @@ function initSequentialLazyLoad(pageEl) {
   loadNext();
 }
 
+function initProject1Page() {
+  const project1Page = document.getElementById('project1');
+  if (!project1Page) return;
+
+  // Initialize lazy loading for project1 media (top-to-bottom sequential)
+  initSequentialLazyLoad(project1Page);
+
+  // Initialize carousel for topology section
+  initProject1Carousel();
+  
+  // Attach click handlers to project1 main media
+  project1Page.querySelectorAll('[data-lightbox="project1-main"]').forEach((el) => {
+    el.addEventListener('click', () => {
+      openLightbox('project1-main');
+    });
+  });
+}
+
 // Initialize carousel for project1 topology section
 function initProject1Carousel() {
   const carousel = document.getElementById('project1-topology-carousel');
@@ -2272,11 +2290,36 @@ function initProject1Carousel() {
 // Hook into page navigation
 const originalNavigateToPage = window.navigateToPage;
 window.navigateToPage = function(pageId) {
+  // Stop any playing Vimeo videos before navigating away from project1
+  if (pageId !== 'project1') {
+    const project1Page = document.getElementById('project1');
+    if (project1Page) {
+      const vimeoIframe = project1Page.querySelector('iframe[src*="vimeo.com"]');
+      if (vimeoIframe && vimeoIframe.src) {
+        // Save the src before clearing it
+        vimeoIframe.dataset.originalSrc = vimeoIframe.src;
+        vimeoIframe.src = '';
+      }
+    }
+  }
+  
   originalNavigateToPage(pageId);
   
-  // If navigating to project1, initialize it
+  // If navigating to project1, initialize and restore Vimeo
   if (pageId === 'project1') {
-    setTimeout(() => initProject1Page(), 100);
+    setTimeout(() => {
+      const project1Page = document.getElementById('project1');
+      if (project1Page) {
+        // Restore Vimeo iframe if it was cleared
+        const vimeoIframe = project1Page.querySelector('iframe[data-original-src]');
+        if (vimeoIframe && vimeoIframe.dataset.originalSrc) {
+          vimeoIframe.src = vimeoIframe.dataset.originalSrc;
+        }
+      }
+      
+      initProject1Page();
+      initializeProjectMediaEmbeds();
+    }, 100);
   }
 };
 

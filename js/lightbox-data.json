@@ -1528,5 +1528,152 @@
         "description": "Optimized game-ready prop topology."
       }
     ]
-  }
+  },
+  "project1-main": {
+  "title": "The Foyer",
+  "description": "A detailed environment showcasing original designs, procedural materials, and optimized game-ready assets",
+  "category": "project",
+  "media": [
+    {
+      "type": "image",
+      "src": "env_proj1_MainHero_l5v1c8.png",
+      "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761332043/env_proj1_MainHero_l5v1c8.png",
+      "title": "Hero Shot",
+      "description": ""
+    },
+    {
+      "type": "image",
+      "src": "env_proj1_passes_c4pje3.png",
+      "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761332069/env_proj1_passes_c4pje3.png",
+      "title": "Render Passes",
+      "description": ""
+    },
+    {
+      "type": "video",
+      "src": "env_proj1_progress_ulnjkt.mp4",
+      "thumb": "https://res.cloudinary.com/dlepppgm2/video/upload/v1761332131/env_proj1_progress_ulnjkt.mp4",
+      "title": "Progress Video",
+      "description": ""
+    },
+    {
+      "type": "image",
+      "src": "env_proj1_still_desk2_yxcqvg.png",
+      "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761332870/env_proj1_still_desk2_yxcqvg.png",
+      "title": "Desk Detail 1",
+      "description": ""
+    },
+    {
+      "type": "image",
+      "src": "env_proj1_still_desk3_lduhsa.png",
+      "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761332833/env_proj1_still_desk3_lduhsa.png",
+      "title": "Desk Detail 2",
+      "description": ""
+    },
+    {
+      "type": "image",
+      "src": "env_proj1_still_desk1_rjgtrd.png",
+      "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761332792/env_proj1_still_desk1_rjgtrd.png",
+      "title": "Desk Detail 3",
+      "description": ""
+    },
+    {
+      "type": "image",
+      "src": "env_proj1_still_tiles_ifcxzg.png",
+      "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761332886/env_proj1_still_tiles_ifcxzg.png",
+      "title": "Floor Tile Detail",
+      "description": ""
+    },
+    {
+      "type": "image",
+      "src": "env_proj1_still_propshot_mpivq0.png",
+      "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761332890/env_proj1_still_propshot_mpivq0.png",
+      "title": "Prop Highlight",
+      "description": ""
+    },
+    {
+      "type": "image",
+      "src": "env_proj1_still_clutter_rzancu.png",
+      "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761332967/env_proj1_still_clutter_rzancu.png",
+      "title": "Prop Clutter",
+      "description": ""
+    },
+    {
+      "type": "image",
+      "src": "env_proj1_still_vendingmachine_j7xdxo.png",
+      "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761332890/env_proj1_still_vendingmachine_j7xdxo.png",
+      "title": "Vending Machine Detail",
+      "description": ""
+    },
+    {
+      "type": "image",
+      "src": "env_proj1_still_camera_dxor9u.png",
+      "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761332828/env_proj1_still_camera_dxor9u.png",
+      "title": "Camera Detail",
+      "description": ""
+    },
+    {
+      "type": "image",
+      "src": "env_proj1_still_backroom_vntuec.png",
+      "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761332821/env_proj1_still_backroom_vntuec.png",
+      "title": "Backroom",
+      "description": ""
+    },
+    {
+      "type": "image",
+      "src": "env_proj1_still_robot3_le31ah.png",
+      "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761332803/env_proj1_still_robot3_le31ah.png",
+      "title": "Robot Detail",
+      "description": ""
+    },
+    {
+      "type": "image",
+      "src": "env_proj1_still_robot_ladcfr.png",
+      "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761332851/env_proj1_still_robot_ladcfr.png",
+      "title": "Robot Detail 2",
+      "description": ""
+    },
+    {
+      "type": "image",
+      "src": "env_proj1_still_main2_bowq1s.png",
+      "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761332843/env_proj1_still_main2_bowq1s.png",
+      "title": "Hero Shot - Alt",
+      "description": ""
+    },
+    {
+      "type": "video",
+      "src": "env_proj1_props_showcase_q4chda.mp4",
+      "thumb": "https://res.cloudinary.com/dlepppgm2/video/upload/v1761332193/env_proj1_props_showcase_q4chda.mp4",
+      "title": "Prop Showcase",
+      "description": ""
+    },
+    {
+      "type": "image",
+      "src": "env_proj1_still_props1_z5yvq6.png",
+      "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761332883/env_proj1_still_props1_z5yvq6.png",
+      "title": "Prop Showcase Still",
+      "description": ""
+    },
+    {
+      "type": "image",
+      "src": "env_proj1_still_props2_kibdku.png",
+      "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761332853/env_proj1_still_props2_kibdku.png",
+      "title": "Large Prop Showcase Still",
+      "description": ""
+    },
+    {
+      "type": "image",
+      "src": "env_proj1_materialsmulti_2_bp6hmr.png",
+      "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761332057/env_proj1_materialsmulti_2_bp6hmr.png",
+      "title": "Multi Layer Material Showcase",
+      "description": "For vertex painting"
+    },
+    {
+      "type": "video",
+      "src": "env_proj1_vertexpaint_xkdlka.mp4",
+      "thumb": "https://res.cloudinary.com/dlepppgm2/video/upload/v1761332318/env_proj1_vertexpaint_xkdlka.mp4",
+      "title": "Vertex Painting Demo",
+      "description": ""
+    }
+  ]
+}
 }

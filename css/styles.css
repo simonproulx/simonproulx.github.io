@@ -329,8 +329,7 @@
 
     .project-hero {
       height:60vh;
-      background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
-        url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover;
+      background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7));
       display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; position:relative;
     }
     .project-hero h1 { font-family:'Montserrat',sans-serif; font-size:3rem; font-weight:300; letter-spacing:4px; margin-bottom:20px; text-transform:uppercase; }
@@ -444,7 +443,7 @@
     @media (max-width: 768px) {
       .project-media { margin: 36px 0; }
     }
-    
+
     /* Project 1 media sizing - all media at ~90% width */
     #project1 .project-media img,
     #project1 .project-media video {
@@ -456,24 +455,126 @@
       display: block;
     }
 
-    #project1 .media-embed {
-      width: 90%;
-      max-width: 90vw;
-      margin-left: auto;
-      margin-right: auto;
+  /* Project 1 Topology Carousel */
+  #project1-topology-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    scroll-padding: 50%;
+    height: clamp(300px, 30vw, 400px); /* responsive height */
+    width: 100%;
+    cursor: default;
+    user-select: none;
+    scrollbar-width: auto;
+    scrollbar-color: rgba(255,255,255,0.36) rgba(255,255,255,0.08);
+    padding-bottom: 20px;
+  }
+
+  #project1-topology-carousel .carousel-item {
+    flex: 0 0 auto;
+    height: 100%;
+    width: auto;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    scroll-snap-align: center;
+  }
+
+  #project1-topology-carousel .carousel-item:hover {
+    transform: scale(1.05);
+  }
+
+  #project1-topology-carousel .carousel-item img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    pointer-events: none;
+  }
+  
+  /* Project 1 section titles */
+  #project1 h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: clamp(1rem, 4vw, 1.8rem);
+  }
+
+  @media (max-width: 480px) {
+    #project1 h2 {
+      font-size: clamp(0.9rem, 5vw, 1.3rem);
+      letter-spacing: 1px;
+    }
+  }
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    #project1-topology-carousel {
+      height: clamp(200px, 40vw, 300px); /* smaller on tablets */
+      gap: 16px;
+      padding: 0 6%;
+      scroll-padding: 6%;
+      padding-bottom: 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #project1-topology-carousel {
+      height: clamp(150px, 45vw, 220px); /* even smaller on phones */
+      gap: 12px;
+      padding: 0 5%;
+      scroll-padding: 5%;
+      padding-bottom: 18px;
+    }
+    
+    #project1-topology-carousel .carousel-item:hover {
+      transform: none; /* disable hover effect on touch */
+    }
+  }
+
+  /* Beefier custom scrollbar (desktop only) */
+  @media (hover: hover) and (pointer: fine) {
+    #project1-topology-carousel::-webkit-scrollbar {
+      height: 14px;
     }
 
-    /* Carousel stays full width and horizontal */
-    #project1 .work-carousel {
-      width: 100%;
-      max-width: 100%;
+    #project1-topology-carousel::-webkit-scrollbar-track {
+      background: rgba(255,255,255,0.08);
+      border-radius: 7px;
+      margin: 0 20px;
     }
 
-    #project1 .work-carousel .carousel-item img {
-      width: auto; /* override the 90% rule */
-      max-width: none;
-      height: 400px; /* match your main page carousel height */
+    #project1-topology-carousel::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.36);
+      border-radius: 7px;
+      border: 3px solid rgba(0,0,0,0.1);
+      background-clip: padding-box;
+      cursor: grab;
+      min-width: 60px;
     }
+
+    #project1-topology-carousel::-webkit-scrollbar-thumb:hover {
+      background: rgba(255,255,255,0.5);
+      background-clip: padding-box;
+    }
+
+    #project1-topology-carousel::-webkit-scrollbar-thumb:active {
+      cursor: grabbing;
+      background: rgba(255,255,255,0.6);
+      background-clip: padding-box;
+    }
+  }
 
     /* --- Resume styles --- */
     .resume-section {
