@@ -383,7 +383,7 @@
   let categoryItems = [];
   let currentIndex = 0;
   let currentMediaIndex = 0;
-  const categoriesWithTabs = ['3d-work','plugin','industrial','graphic', 'art'];
+  const categoriesWithTabs = ['3d-work','plugin','industrial','graphic', 'art', 'project'];
 
   // Bulletproof body lock (prevents background scroll + preserves position)
   let __bodyLockScrollY = 0;
@@ -521,7 +521,7 @@
   }
 
   /* ==== OPEN / UPDATE LIGHTBOX ==== */
-  function openLightbox(itemId) {
+  function openLightbox(itemId, startMediaIndex = 0) {
       const data = lightboxData[itemId];
       if (!data) return;
       
@@ -542,7 +542,7 @@
       
       currentLightboxId = itemId;
       currentCategory = data.category || null;
-      currentMediaIndex = 0;
+      currentMediaIndex = startMediaIndex;
 
       // Gather same-category items for prev/next navigation
       categoryItems = Object.keys(lightboxData).filter(id => (lightboxData[id].category || '') === (currentCategory || ''));
@@ -2216,24 +2216,6 @@ function initSequentialLazyLoad(pageEl) {
 
   // Start loading sequence
   loadNext();
-}
-
-function initProject1Page() {
-  const project1Page = document.getElementById('project1');
-  if (!project1Page) return;
-
-  // Initialize lazy loading for project1 media (top-to-bottom sequential)
-  initSequentialLazyLoad(project1Page);
-
-  // Initialize carousel for topology section
-  initProject1Carousel();
-  
-  // Attach click handlers to project1 main media
-  project1Page.querySelectorAll('[data-lightbox="project1-main"]').forEach((el) => {
-    el.addEventListener('click', () => {
-      openLightbox('project1-main');
-    });
-  });
 }
 
 // Initialize carousel for project1 topology section
