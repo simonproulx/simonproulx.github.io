@@ -328,8 +328,7 @@
     .lazy-loaded { opacity: 1; }
 
     .project-hero {
-      height:60vh;
-      background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7));
+      height:60vh; background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)); background-size: cover; background-position: center; background-repeat: no-repeat;
       display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; position:relative;
     }
     .project-hero h1 { font-family:'Montserrat',sans-serif; font-size:3rem; font-weight:300; letter-spacing:4px; margin-bottom:20px; text-transform:uppercase; }
@@ -1918,7 +1917,86 @@
     display: none !important;
     }
 
-    /* Enable pinch-zoom in expanded mode */
-    .lightbox-media-container.expanded {
-    touch-action: pinch-zoom;
+  /* Fullscreen subcarousel navigation arrows */
+  .fullscreen-nav-arrows {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 9999; /* ⬅️ Bumped up for desktop visibility – arrows on top! */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  /* Show arrows when expanded with pulse */
+  .lightbox-media-container.expanded .fullscreen-nav-arrows {
+    opacity: 1;
+    animation: arrowsFadeInPulseOut 3.5s ease forwards;
+  }
+
+  /* Fade in, pulse a couple times, then fade out */
+  @keyframes arrowsFadeInPulseOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    30% { opacity: 0.6; }
+    50% { opacity: 1; }
+    70% { opacity: 0.6; }
+    85% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+  .fullscreen-nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 52px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+    pointer-events: auto;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .fullscreen-nav-arrow:hover {
+    color: rgba(255, 255, 255, 1);
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  .fullscreen-nav-left {
+    left: 2vw;
+  }
+
+  .fullscreen-nav-right {
+    right: 2vw;
+  }
+
+  /* Desktop arrow key hint (pulses and fades, only on desktop) */
+  .desktop-nav-hint {
+    display: none; /* Hidden by default */
+    position: absolute;
+    bottom: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.7);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+    pointer-events: none;
+    white-space: nowrap;
+    animation: arrowsFadeInPulseOut 3.5s ease forwards; /* Same pulse as arrows */
+  }
+
+  @media (min-width: 769px) {
+    .lightbox-media-container.expanded .desktop-nav-hint {
+      display: block;
     }
+  }
+
+  /* Enable pinch-zoom in expanded mode */
+  .lightbox-media-container.expanded {
+  touch-action: pinch-zoom;
+  }
+  

@@ -1,5 +1,9 @@
   //<!-- Logo Animation Script -->//
   // Exposed parameters //
+  
+  let isExpanded = false;
+  let toggleExpansion;
+
   const CFG = {
     windows: {
       sun:       { start: 0.0, end: 1.2 },   // was 1.5
@@ -204,7 +208,7 @@
   }
 
   window.addEventListener('load', () => setTimeout(playAnimation, 100));
-  
+
   // Parallax effect on scroll 
     (function() {
     let ticking = false;
@@ -601,123 +605,131 @@
       setTimeout(() => prefetchNeighbors(data), 100);
   }
 
-  function updateLightboxContent(data) {
-      const currentMedia = data.media[currentMediaIndex];
-      const imageEl = document.getElementById('lightbox-image');
-      const videoEl = document.getElementById('lightbox-video');
+function updateLightboxContent(data) {
+    const currentMedia = data.media[currentMediaIndex];
+    const imageEl = document.getElementById('lightbox-image');
+    const videoEl = document.getElementById('lightbox-video');
 
-      document.getElementById('lightbox-title').textContent = currentMedia.title || data.title || '';
-      document.getElementById('lightbox-description').textContent = currentMedia.description || data.description || '';
+    document.getElementById('lightbox-title').textContent = currentMedia.title || data.title || '';
+    document.getElementById('lightbox-description').textContent = currentMedia.description || data.description || '';
 
-      // 🎬 YouTube embed
-      if (currentMedia.type === 'youtube') {
-          imageEl.style.display = 'none';
-          videoEl.style.display = 'none';
-          
-          let iframeEl = document.getElementById('lightbox-iframe');
-          if (!iframeEl) {
-              iframeEl = document.createElement('iframe');
-              iframeEl.id = 'lightbox-iframe';
-              iframeEl.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-              iframeEl.allowFullscreen = true;
-              videoEl.parentElement.appendChild(iframeEl);
-          }
-          iframeEl.style.display = 'block';
-          iframeEl.src = `https://www.youtube.com/embed/${currentMedia.videoId}?autoplay=0`;
-      }
-      // 🎬 Vimeo embed
-      else if (currentMedia.type === 'vimeo') {
-          imageEl.style.display = 'none';
-          videoEl.style.display = 'none';
-          
-          let iframeEl = document.getElementById('lightbox-iframe');
-          if (!iframeEl) {
-              iframeEl = document.createElement('iframe');
-              iframeEl.id = 'lightbox-iframe';
-              iframeEl.allow = 'autoplay; fullscreen; picture-in-picture';
-              iframeEl.allowFullscreen = true;
-              videoEl.parentElement.appendChild(iframeEl);
-          }
-          iframeEl.style.display = 'block';
-          iframeEl.src = `https://player.vimeo.com/video/${currentMedia.videoId}?autoplay=0`;
-      }
-      // 📄 PDF embed
-      else if (currentMedia.type === 'pdf') {
-          imageEl.style.display = 'none';
-          videoEl.style.display = 'none';
-          
-          let iframeEl = document.getElementById('lightbox-iframe');
-          if (!iframeEl) {
-              iframeEl = document.createElement('iframe');
-              iframeEl.id = 'lightbox-iframe';
-              videoEl.parentElement.appendChild(iframeEl);
-          }
-          iframeEl.style.display = 'block';
-          iframeEl.src = currentMedia.src;
-      }
-      // 🎥 Regular video
-      else if (currentMedia.type === 'video') {
-          imageEl.style.display = 'none';
-          videoEl.style.display = 'block';
-          const iframeEl = document.getElementById('lightbox-iframe');
-          if (iframeEl) iframeEl.style.display = 'none';
-          
-          const videoSrc = optimizeVideoSrc(currentMedia.src);
-          videoEl.querySelector('source').src = videoSrc;
-          
-          // ⬅️ Set poster/thumbnail if available
-          if (currentMedia.thumb) {
-              videoEl.poster = getVideoThumb(currentMedia);
-          }
-          
-          videoEl.load();
-      }
-      // 🖼️ Image (default) — ✅ NOW WITH LOADING STATE
-      else {
-          if (!videoEl.paused) videoEl.pause();
-          videoEl.style.display = 'none';
-          const iframeEl = document.getElementById('lightbox-iframe');
-          if (iframeEl) iframeEl.style.display = 'none';
-          
-          // ✅ Show loading state
-          imageEl.style.opacity = '0.3';
-          imageEl.style.filter = 'blur(10px)';
-          imageEl.style.display = 'block';
-          
-          // ✅ Preload then swap
-          const newSrc = optimizeImageSrc(currentMedia.src);
-          const tempImg = new Image();
-          tempImg.onload = () => {
-              imageEl.src = newSrc;
-              imageEl.alt = currentMedia.title || '';
-              imageEl.style.opacity = '1';
-              imageEl.style.filter = 'none';
-          };
-          tempImg.onerror = () => {
-              // Fallback if image fails
-              imageEl.style.opacity = '1';
-              imageEl.style.filter = 'none';
-          };
-          tempImg.src = newSrc;
-          
-          imageEl.loading = 'eager';
-          imageEl.decoding = 'async';
-          imageEl.fetchPriority = 'high';
-      }
+    // 🎬 YouTube embed
+    if (currentMedia.type === 'youtube') {
+        imageEl.style.display = 'none';
+        videoEl.style.display = 'none';
+        
+        let iframeEl = document.getElementById('lightbox-iframe');
+        if (!iframeEl) {
+            iframeEl = document.createElement('iframe');
+            iframeEl.id = 'lightbox-iframe';
+            iframeEl.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+            videoEl.parentElement.appendChild(iframeEl);
+        }
+        iframeEl.style.display = 'block';
+        iframeEl.src = `https://www.youtube.com/embed/${currentMedia.videoId}?autoplay=0`;
+    }
+    // 🎬 Vimeo embed
+    else if (currentMedia.type === 'vimeo') {
+        imageEl.style.display = 'none';
+        videoEl.style.display = 'none';
+        
+        let iframeEl = document.getElementById('lightbox-iframe');
+        if (!iframeEl) {
+            iframeEl = document.createElement('iframe');
+            iframeEl.id = 'lightbox-iframe';
+            iframeEl.allow = 'autoplay; fullscreen; picture-in-picture';
+            videoEl.parentElement.appendChild(iframeEl);
+        }
+        iframeEl.style.display = 'block';
+        iframeEl.src = `https://player.vimeo.com/video/${currentMedia.videoId}?autoplay=0`;
+    }
+    // 📄 PDF embed
+    else if (currentMedia.type === 'pdf') {
+        imageEl.style.display = 'none';
+        videoEl.style.display = 'none';
+        
+        let iframeEl = document.getElementById('lightbox-iframe');
+        if (!iframeEl) {
+            iframeEl = document.createElement('iframe');
+            iframeEl.id = 'lightbox-iframe';
+            videoEl.parentElement.appendChild(iframeEl);
+        }
+        iframeEl.style.display = 'block';
+        iframeEl.src = currentMedia.src;
+    }
+    // 🎥 Regular video
+    else if (currentMedia.type === 'video') {
+        imageEl.style.display = 'none';
+        videoEl.style.display = 'block';
+        const iframeEl = document.getElementById('lightbox-iframe');
+        if (iframeEl) iframeEl.style.display = 'none';
+        
+        const videoSrc = optimizeVideoSrc(currentMedia.src);
+        videoEl.querySelector('source').src = videoSrc;
+        
+        // ⬅️ Set poster/thumbnail if available
+        if (currentMedia.thumb) {
+            videoEl.poster = getVideoThumb(currentMedia);
+        }
+        
+        videoEl.load();
+    }
+    // 🖼️ Image (default) — ✅ NOW WITH LOADING STATE
+    else {
+        if (!videoEl.paused) videoEl.pause();
+        videoEl.style.display = 'none';
+        const iframeEl = document.getElementById('lightbox-iframe');
+        if (iframeEl) iframeEl.style.display = 'none';
+        
+        // ✅ Show loading state
+        imageEl.style.opacity = '0.3';
+        imageEl.style.filter = 'blur(10px)';
+        imageEl.style.display = 'block';
+        
+        // ✅ Preload then swap
+        const newSrc = optimizeImageSrc(currentMedia.src);
+        const tempImg = new Image();
+        tempImg.onload = () => {
+            imageEl.src = newSrc;
+            imageEl.alt = currentMedia.title || '';
+            imageEl.style.opacity = '1';
+            imageEl.style.filter = 'none';
+        };
+        tempImg.onerror = () => {
+            // Fallback if image fails
+            imageEl.style.opacity = '1';
+            imageEl.style.filter = 'none';
+        };
+        tempImg.src = newSrc;
+        
+        imageEl.loading = 'eager';
+        imageEl.decoding = 'async';
+        imageEl.fetchPriority = 'high';
+    }
 
-      // 🔑 Reset track after loading new media
-      const track = document.querySelector('.lightbox-track');
-      if (track) {
-          track.style.transition = 'none';
-          track.style.transform = 'translateX(0)';
-          setTimeout(() => {
-              track.style.transition = '';
-          }, 20);
-      }
-      
-      // 🚀 Prefetch neighbors after switching media
-      setTimeout(() => prefetchNeighbors(data), 100);
-  }
+    // 🔑 Reset track after loading new media
+    const track = document.querySelector('.lightbox-track');
+    if (track) {
+        track.style.transition = 'none';
+        track.style.transform = 'translateX(0)';
+        setTimeout(() => {
+            track.style.transition = '';
+        }, 20);
+    }
+    
+    // ✅ Show/hide fullscreen navigation arrows based on subcarousel
+    const fullscreenArrows = document.getElementById('fullscreen-nav-arrows');
+    if (fullscreenArrows) {
+        if (data.media && data.media.length > 1) {
+            fullscreenArrows.style.display = 'block';
+        } else {
+            fullscreenArrows.style.display = 'none';
+        }
+    }
+    
+    // 🚀 Prefetch neighbors after switching media
+    setTimeout(() => prefetchNeighbors(data), 100);
+}
 
 function getVideoThumb(media) {
     if (media.thumb) {
@@ -988,7 +1000,7 @@ function addLightboxSwipeSupport() {
         isDragging = true;
         isHorizontalSwipe = null;
         track.style.transition = 'none';
-    }, { passive: true });
+    }, { passive: true });  // ⬅️ Passive for better perf
 
     lightboxContent.addEventListener('touchmove', e => {
         if (!isDragging || e.touches.length > 1) return;
@@ -1000,12 +1012,12 @@ function addLightboxSwipeSupport() {
             isHorizontalSwipe = Math.abs(deltaX) > Math.abs(deltaY);
         }
 
-        // ⬅️ Show visual feedback for ALL horizontal swipes
+        // Show visual feedback for ALL horizontal swipes
         if (isHorizontalSwipe) {
             track.style.transform = `translateX(${deltaX}px)`;
             e.preventDefault();
         }
-    }, { passive: false });
+    }, { passive: false });  
 
     lightboxContent.addEventListener('touchend', () => {
         if (!isDragging) return;
@@ -1038,7 +1050,7 @@ function addLightboxSwipeSupport() {
         isDragging = false;
         isHorizontalSwipe = null;
         startX = startY = deltaX = deltaY = 0;
-    }, { passive: true });
+    }, { passive: true });  
 }
 
 function navigateSubCarousel(direction) {
@@ -1046,6 +1058,20 @@ function navigateSubCarousel(direction) {
 
     const media = lightboxData[currentLightboxId].media;
     if (media.length <= 1) return;
+
+    // ✅ Clear video BEFORE navigating within subcarousel
+    const videoEl = document.getElementById('lightbox-video');
+    const iframeEl = document.getElementById('lightbox-iframe');
+    if (videoEl) {
+        videoEl.pause();
+        videoEl.querySelector('source').src = '';
+        videoEl.load();
+        videoEl.style.display = 'none';
+    }
+    if (iframeEl) {
+        iframeEl.src = '';
+        iframeEl.style.display = 'none';
+    }
 
     currentMediaIndex += direction;
     if (currentMediaIndex >= media.length) currentMediaIndex = 0;
@@ -1060,71 +1086,62 @@ function navigateSubCarousel(direction) {
     }, 10);
 }
 
-  /* ==== Keyboard & click handling ==== */
-  document.addEventListener('keydown', function(e) {
-      const lb = document.getElementById('lightbox');
-      if (lb && lb.classList.contains('active')) {
-          const subCarousel = document.getElementById('lightbox-sub-carousel');
-          const isSubCarouselVisible = subCarousel && subCarousel.style.display !== 'none';
+/* ==== Keyboard & click handling ==== */
+document.addEventListener('keydown', function(e) {
+    const lb = document.getElementById('lightbox');
+    if (lb && lb.classList.contains('active')) {
+        const subCarousel = document.getElementById('lightbox-sub-carousel');
+        const isSubCarouselVisible = subCarousel && subCarousel.style.display !== 'none';
 
-          switch(e.key) {
-              case 'Escape': 
-                  closeLightbox(); 
-                  break;
-              case ' ': // Spacebar
+        switch(e.key) {
+            case 'Escape': 
+                if (isExpanded) {
+                    toggleExpansion(); // ESC1: Contract (isExpanded set to false immediately)
+                } else {
+                    closeLightbox(); // ESC2: Close lightbox
+                }
+                break;
+            case ' ': 
                 e.preventDefault();
                 const videoEl = document.getElementById('lightbox-video');
                 if (videoEl && videoEl.style.display !== 'none') {
-                    if (videoEl.paused) {
-                        videoEl.play();
-                    } else {
-                        videoEl.pause();
-                    }
+                    videoEl.paused ? videoEl.play() : videoEl.pause();
                 }
                 break;
-              case 'ArrowLeft': 
-                  e.preventDefault(); 
-                  if (isSubCarouselVisible) {
-                      navigateSubCarousel(-1); 
-                  } else {
-                      navigateLightbox(-1);
-                  }
-                  break;
-              case 'ArrowRight': 
-                  e.preventDefault(); 
-                  if (isSubCarouselVisible) {
-                      navigateSubCarousel(1); 
-                  } else {
-                      navigateLightbox(1);
-                  }
-                  break;
-              case 'ArrowUp':
-                  e.preventDefault();
-                  if (currentMediaIndex > 0) switchMedia(currentMediaIndex - 1);
-                  break;
-              case 'ArrowDown':
-                  e.preventDefault();
-                  const data = lightboxData[currentLightboxId];
-                  if (data && data.media && currentMediaIndex < data.media.length - 1) switchMedia(currentMediaIndex + 1);
-                  break;
-              case ' ':
-              case 'PageDown':
-              case 'PageUp':
-              case 'Home':
-              case 'End':
-                  e.preventDefault();
-                  break;
-          }
-      }
-  });
+            case 'ArrowLeft': 
+                e.preventDefault(); 
+                isSubCarouselVisible ? navigateSubCarousel(-1) : navigateLightbox(-1);
+                break;
+            case 'ArrowRight': 
+                e.preventDefault(); 
+                isSubCarouselVisible ? navigateSubCarousel(1) : navigateLightbox(1);
+                break;
+            case 'ArrowUp':
+                e.preventDefault();
+                if (currentMediaIndex > 0) switchMedia(currentMediaIndex - 1);
+                break;
+            case 'ArrowDown':
+                e.preventDefault();
+                const data = lightboxData[currentLightboxId];
+                if (data && data.media && currentMediaIndex < data.media.length - 1) switchMedia(currentMediaIndex + 1);
+                break;
+            case 'PageDown':
+            case 'PageUp':
+            case 'Home':
+            case 'End':
+                e.preventDefault();
+                break;
+        }
+    }
+});
 
-  /* ==== Click outside to close ==== */
-  document.getElementById('lightbox').addEventListener('click', function(e) {
-      // Only close if clicking the lightbox background itself, not its children
-      if (e.target.id === 'lightbox') {
-          closeLightbox();
-      }
-  });
+/* ==== Click outside to close ==== */
+document.getElementById('lightbox').addEventListener('click', function(e) {
+    // Only close if clicking the lightbox background itself, not its children
+    if (e.target.id === 'lightbox') {
+        closeLightbox();
+    }
+});
 
 // Mobile swipe: velocity-aware snapping + optional one-item paging + edge easing
 function initMobileNudge() {
@@ -1903,75 +1920,82 @@ document.addEventListener('transitionend', (e) => {
   window.initAll = initAll;
 })();
   
-// === Mobile Lightbox Expansion System (Double-Tap + Swipe-Down) === //
+// === Lightbox Expansion System (Double-Tap on Mobile + Click on Desktop) === //
 (function() {
   const lightbox = document.querySelector('.lightbox');
   const mediaContainer = document.querySelector('.lightbox-media-container');
   
   if (!mediaContainer || !lightbox) return;
   
-  let isExpanded = false;
   let lastTap = 0;
   
-  // Toggle expansion function
-  function toggleExpansion() {
-    isExpanded = !isExpanded;
+  // Toggle expansion function – smooth and immediate for you, daddy 😘
+  toggleExpansion = function() {
+    const fullscreenArrows = document.getElementById('fullscreen-nav-arrows');
+    const data = lightboxData[currentLightboxId];
     
     if (isExpanded) {
-      // Store original position before expanding
-      const rect = mediaContainer.getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
+      // ⬅️ IMMEDIATELY set to false so next ESC closes lightbox
+      isExpanded = false;
       
-      mediaContainer.style.transformOrigin = `${centerX}px ${centerY}px`;
-      
-      // Trigger UI cascade
-      lightbox.classList.add('expanded-mode');
-      
-      setTimeout(() => {
-        mediaContainer.classList.add('expanded');
-        
-        // Enable pinch-zoom
-        const img = mediaContainer.querySelector('.lightbox-image');
-        const video = mediaContainer.querySelector('.lightbox-video');
-        if (img) img.style.touchAction = 'pinch-zoom';
-        if (video) video.style.touchAction = 'pinch-zoom';
-      }, 320);
-      
-    } else {
       // Exit expanded mode
       mediaContainer.classList.remove('expanded');
       
       setTimeout(() => {
         lightbox.classList.remove('expanded-mode');
-        mediaContainer.style.transformOrigin = '';
+        mediaContainer.style.transformOrigin = ''; // Reset
+        if (fullscreenArrows) fullscreenArrows.style.display = 'none';
       }, 333);
       
-      // Reset touch action
       const img = mediaContainer.querySelector('.lightbox-image');
       const video = mediaContainer.querySelector('.lightbox-video');
       if (img) img.style.touchAction = 'manipulation';
       if (video) video.style.touchAction = 'manipulation';
+      
+    } else {
+      // Expand mode
+      isExpanded = true; // Set immediately
+      
+      // ⬅️ Smooth center expansion (no weird direction)
+      mediaContainer.style.transformOrigin = 'center center';
+      lightbox.classList.add('expanded-mode');
+      
+      setTimeout(() => {
+        mediaContainer.classList.add('expanded');
+        if (fullscreenArrows && data && data.media && data.media.length > 1) {
+          fullscreenArrows.style.display = 'block';
+        }
+        const img = mediaContainer.querySelector('.lightbox-image');
+        const video = mediaContainer.querySelector('.lightbox-video');
+        if (img) img.style.touchAction = 'pinch-zoom';
+        if (video) video.style.touchAction = 'pinch-zoom';
+      }, 320);
     }
-  }
+  };
   
-  // Double-tap handler (mobile only)
+  // Double-tap (mobile)
   if (window.innerWidth <= 768) {
     mediaContainer.addEventListener('touchend', function(e) {
       const currentTime = new Date().getTime();
       const tapLength = currentTime - lastTap;
-      
-      // Double-tap detected (within 300ms)
       if (tapLength < 300 && tapLength > 0) {
         e.preventDefault();
         toggleExpansion();
       }
-      
       lastTap = currentTime;
     });
   }
   
-  // Reset expansion when lightbox closes
+  // Click (desktop)
+  if (window.innerWidth > 768) {
+    mediaContainer.addEventListener('click', function(e) {
+      if (e.target.closest('.lightbox-media-container') && !e.target.closest('.fullscreen-nav-arrow')) {
+        toggleExpansion();
+      }
+    });
+  }
+  
+  // Close button reset
   const closeBtn = document.querySelector('.lightbox-close');
   if (closeBtn) {
     closeBtn.addEventListener('click', () => {
@@ -1982,14 +2006,6 @@ document.addEventListener('transitionend', (e) => {
       }
     });
   }
-  
-  // ESC key to exit expanded mode
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && isExpanded) {
-      toggleExpansion();
-    }
-  });
-  
 })();
 
 // === Swipe-Down to Exit Expanded Mode ===
@@ -2002,7 +2018,6 @@ document.addEventListener('transitionend', (e) => {
   let startY = 0;
   let currentY = 0;
   let isDragging = false;
-  let isExpanded = false;
   
   // Track expanded state
   const observer = new MutationObserver(() => {
