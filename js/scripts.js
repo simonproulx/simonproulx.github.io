@@ -553,7 +553,7 @@
       const tabsContainer = document.getElementById('lightbox-tabs');
       const subCarousel = document.getElementById('lightbox-sub-carousel');
       
-      // ✅ ALWAYS show tabs for categoriesWithTabs
+      // show tabs for categoriesWithTabs
       if (categoriesWithTabs.includes(currentCategory)) {
           tabsContainer.style.display = 'flex';
           updateTabContent(data); // ⬅️ This function needs updating
@@ -564,7 +564,7 @@
           document.querySelectorAll('.lightbox-tab-content').forEach(c=>c.classList.remove('active'));
           document.getElementById('tab-description').classList.add('active');
           
-          // ✅ Only show subcarousel if multiple media items
+          // show subcarousel if multiple media items
           if (data.media && data.media.length > 1) {
               subCarousel.style.display = 'flex';
               populateSubCarousel(data.media);
@@ -577,17 +577,21 @@
           subCarousel.style.display = 'none';
           subCarousel.innerHTML = '';
       }
-
+      
       const prevBtn = document.querySelector('.lightbox-prev');
       const nextBtn = document.querySelector('.lightbox-next');
-      if (categoryItems.length > 1) { 
-          prevBtn.classList.remove('hidden'); 
-          nextBtn.classList.remove('hidden'); 
-      } else { 
+      // Hide arrows for "project" category entirely
+      if (currentCategory === 'project') { 
           prevBtn.classList.add('hidden'); 
           nextBtn.classList.add('hidden'); 
+      } else if (categoryItems.length <= 1) {
+          prevBtn.classList.add('hidden'); 
+          nextBtn.classList.add('hidden'); 
+      } else { 
+          prevBtn.classList.remove('hidden'); 
+          nextBtn.classList.remove('hidden'); 
       }
-
+      
       const lightbox = document.getElementById('lightbox');
       lightbox.style.display = 'flex';
       setTimeout(()=> lightbox.classList.add('active'), 10);
@@ -663,7 +667,7 @@
           
           // ⬅️ Set poster/thumbnail if available
           if (currentMedia.thumb) {
-              videoEl.poster = currentMedia.thumb;
+              videoEl.poster = getVideoThumb(currentMedia);
           }
           
           videoEl.load();
@@ -715,30 +719,43 @@
       setTimeout(() => prefetchNeighbors(data), 100);
   }
 
-  function populateSubCarousel(mediaItems) {
-      const subCarousel = document.getElementById('lightbox-sub-carousel');
-      subCarousel.innerHTML = '';
-      mediaItems.forEach((media, idx) => {
-          const item = document.createElement('div');
-          item.className = 'sub-carousel-item' + (idx === currentMediaIndex ? ' active' : '');
-          
-          if (media.type === 'video') {
-              const thumbSrc = media.thumb || 'https://placehold.co/160x90/1a1a1a/666?text=Video';
-              item.innerHTML = `<img src="${thumbSrc}" alt="${(media.title||'')}" loading="lazy" /><div class="play-icon">▶</div>`;
-          } else if (media.type === 'youtube' || media.type === 'vimeo') {
-              const thumbSrc = media.thumb || 'https://placehold.co/160x90/1a1a1a/666?text=Video';
-              item.innerHTML = `<img src="${thumbSrc}" alt="${(media.title||'')}" loading="lazy" /><div class="play-icon">▶</div>`;
-          } else if (media.type === 'pdf') {
-              const thumbSrc = media.thumb || 'https://placehold.co/160x90/1a1a1a/666?text=PDF';
-              item.innerHTML = `<img src="${thumbSrc}" alt="${(media.title||'')}" loading="lazy" /><div class="play-icon">📄</div>`;
-          } else {
-              item.innerHTML = `<img src="${media.thumb}" alt="${(media.title||'')}" loading="lazy" />`;
-          }
-          
-          item.onclick = () => switchMedia(idx);
-          subCarousel.appendChild(item);
-      });
-  }
+function getVideoThumb(media) {
+    if (media.thumb) {
+        return media.thumb; // Use custom thumb if provided
+    }
+    // If it's a Cloudinary video URL, generate a larger thumbnail
+    if (media.src && media.src.includes('cloudinary.com')) {
+        // Extract the video path and generate a proper thumbnail
+        return media.src.replace('/video/upload/', '/video/upload/f_auto,q_auto:best,w_1200,so_0/')
+                       .replace('.mp4', '.jpg');
+    }
+    return 'https://placehold.co/800x450/1a1a1a/666?text=Video';
+}
+
+function populateSubCarousel(mediaItems) {
+    const subCarousel = document.getElementById('lightbox-sub-carousel');
+    subCarousel.innerHTML = '';
+    mediaItems.forEach((media, idx) => {
+        const item = document.createElement('div');
+        item.className = 'sub-carousel-item' + (idx === currentMediaIndex ? ' active' : '');
+        
+        if (media.type === 'video') {
+            const thumbSrc = getVideoThumb(media);
+            item.innerHTML = `<img src="${thumbSrc}" alt="${(media.title||'')}" loading="lazy" /><div class="play-icon">▶</div>`;
+        } else if (media.type === 'youtube' || media.type === 'vimeo') {
+            const thumbSrc = media.thumb || 'https://placehold.co/800x450/1a1a1a/666?text=Video';
+            item.innerHTML = `<img src="${thumbSrc}" alt="${(media.title||'')}" loading="lazy" /><div class="play-icon">▶</div>`;
+        } else if (media.type === 'pdf') {
+            const thumbSrc = media.thumb || 'https://placehold.co/800x450/1a1a1a/666?text=PDF';
+            item.innerHTML = `<img src="${thumbSrc}" alt="${(media.title||'')}" loading="lazy" /><div class="play-icon">📄</div>`;
+        } else {
+            item.innerHTML = `<img src="${media.thumb}" alt="${(media.title||'')}" loading="lazy" />`;
+        }
+        
+        item.onclick = () => switchMedia(idx);
+        subCarousel.appendChild(item);
+    });
+}
 
   function switchMedia(mediaIndex) {
       const data = lightboxData[currentLightboxId];
@@ -882,6 +899,21 @@
 
   function navigateLightbox(direction) {
       if (!categoryItems || categoryItems.length <= 1) return;
+
+      // ✅ Clear video BEFORE navigating
+      const videoEl = document.getElementById('lightbox-video');
+      const iframeEl = document.getElementById('lightbox-iframe');
+      if (videoEl) {
+          videoEl.pause();
+          videoEl.querySelector('source').src = '';
+          videoEl.load();
+          videoEl.style.display = 'none';
+      }
+      if (iframeEl) {
+          iframeEl.src = '';
+          iframeEl.style.display = 'none';
+      }
+
       currentIndex += direction;
       if (currentIndex >= categoryItems.length) currentIndex = 0;
       if (currentIndex < 0) currentIndex = categoryItems.length - 1;
@@ -891,9 +923,7 @@
       currentMediaIndex = 0;
 
       const imageEl = document.getElementById('lightbox-image');
-      const videoEl = document.getElementById('lightbox-video');
       imageEl.style.opacity='0.5'; 
-      videoEl.style.opacity='0.5';
       
       setTimeout(()=> {
           updateLightboxContent(data);
@@ -922,7 +952,6 @@
           }
           
           imageEl.style.opacity='1'; 
-          videoEl.style.opacity='1';
       }, 150);
   }
 
@@ -1042,6 +1071,17 @@ function navigateSubCarousel(direction) {
               case 'Escape': 
                   closeLightbox(); 
                   break;
+              case ' ': // Spacebar
+                e.preventDefault();
+                const videoEl = document.getElementById('lightbox-video');
+                if (videoEl && videoEl.style.display !== 'none') {
+                    if (videoEl.paused) {
+                        videoEl.play();
+                    } else {
+                        videoEl.pause();
+                    }
+                }
+                break;
               case 'ArrowLeft': 
                   e.preventDefault(); 
                   if (isSubCarouselVisible) {
