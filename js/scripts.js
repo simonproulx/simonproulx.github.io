@@ -2024,12 +2024,12 @@ document.addEventListener('transitionend', (e) => {
   
 })();
 
-// === Swipe-Down to Exit Expanded Mode ===
+// === Unified Swipe-Down Handler (Exit Expanded Mode OR Close Lightbox) ===
 (function() {
   const mediaContainer = document.querySelector('.lightbox-media-container');
   const lightbox = document.querySelector('.lightbox');
   
-  if (!mediaContainer || !lightbox) return;
+  if (!mediaContainer || !lightbox || window.innerWidth > 768) return; // Mobile only
   
   let startY = 0;
   let currentY = 0;
@@ -2042,7 +2042,6 @@ document.addEventListener('transitionend', (e) => {
   observer.observe(mediaContainer, { attributes: true, attributeFilter: ['class'] });
   
   function onTouchStart(e) {
-    if (!isExpanded) return;
     if (e.touches.length > 1) return;
     
     startY = e.touches[0].clientY;
@@ -2051,19 +2050,22 @@ document.addEventListener('transitionend', (e) => {
   }
   
   function onTouchMove(e) {
-    if (!isDragging || !isExpanded) return;
+    if (!isDragging) return;
     
     currentY = e.touches[0].clientY;
     const deltaY = currentY - startY;
     
     // Only allow downward swipes
     if (deltaY > 0) {
-      const opacity = Math.max(0.3, 1 - (deltaY / 400));
-      const scale = Math.max(0.85, 1 - (deltaY / 800));
-      
-      mediaContainer.style.transition = 'none';
-      mediaContainer.style.transform = `translateY(${deltaY}px) scale(${scale})`;
-      mediaContainer.style.opacity = opacity;
+      if (isExpanded) {
+        // Visual feedback for expanded mode exit
+        const opacity = Math.max(0.3, 1 - (deltaY / 400));
+        const scale = Math.max(0.85, 1 - (deltaY / 800));
+        
+        mediaContainer.style.transition = 'none';
+        mediaContainer.style.transform = `translateY(${deltaY}px) scale(${scale})`;
+        mediaContainer.style.opacity = opacity;
+      }
       
       if (deltaY > 10) {
         e.preventDefault();
@@ -2072,35 +2074,32 @@ document.addEventListener('transitionend', (e) => {
   }
   
   function onTouchEnd(e) {
-    if (!isDragging || !isExpanded) return;
+    if (!isDragging) return;
     
     const deltaY = currentY - startY;
+    const swipeThreshold = isExpanded ? 100 : 80; // Higher threshold for expanded mode
     
     mediaContainer.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
     
-    // If swiped down more than 100px, collapse
-    if (deltaY > 100) {
-      // Manually trigger collapse
-      mediaContainer.classList.remove('expanded');
-      setTimeout(() => {
-        lightbox.classList.remove('expanded-mode');
-        mediaContainer.style.transformOrigin = '';
-      }, 333);
-      
-      // Reset touch action
-      const img = mediaContainer.querySelector('.lightbox-image');
-      const video = mediaContainer.querySelector('.lightbox-video');
-      if (img) img.style.touchAction = 'manipulation';
-      if (video) video.style.touchAction = 'manipulation';
+    // Swipe down detected
+    if (deltaY > swipeThreshold) {
+      if (isExpanded) {
+        // Exit expanded mode with visual feedback
+        toggleExpansion();
+      } else {
+        // Close lightbox if not expanded
+        closeLightbox();
+      }
     }
     
-    // Reset transform
+    // Reset transform (for expanded mode visual feedback)
     mediaContainer.style.transform = '';
     mediaContainer.style.opacity = '';
     
     isDragging = false;
   }
   
+  // Listen on mediaContainer for better control
   mediaContainer.addEventListener('touchstart', onTouchStart, { passive: true });
   mediaContainer.addEventListener('touchmove', onTouchMove, { passive: false });
   mediaContainer.addEventListener('touchend', onTouchEnd);
