@@ -1087,6 +1087,8 @@ function navigateSubCarousel(direction) {
 }
 
 /* ==== Keyboard & click handling ==== */
+let escPressed = false; 
+
 document.addEventListener('keydown', function(e) {
     const lb = document.getElementById('lightbox');
     if (lb && lb.classList.contains('active')) {
@@ -1094,12 +1096,18 @@ document.addEventListener('keydown', function(e) {
         const isSubCarouselVisible = subCarousel && subCarousel.style.display !== 'none';
 
         switch(e.key) {
-            case 'Escape': 
+            case 'Escape':
+                if (escPressed) return; 
+                escPressed = true;
+                
                 if (isExpanded) {
-                    toggleExpansion(); // ESC1: Contract (isExpanded set to false immediately)
+                    toggleExpansion(); // ESC1: Contract
                 } else {
                     closeLightbox(); // ESC2: Close lightbox
                 }
+                
+                // Reset flag after a short delay
+                setTimeout(() => { escPressed = false; }, 400);
                 break;
             case ' ': 
                 e.preventDefault();
@@ -1935,7 +1943,7 @@ document.addEventListener('transitionend', (e) => {
     const data = lightboxData[currentLightboxId];
     
     if (isExpanded) {
-      // ⬅️ IMMEDIATELY set to false so next ESC closes lightbox
+      // IMMEDIATELY set to false so next ESC closes lightbox
       isExpanded = false;
       
       // Exit expanded mode
@@ -1943,7 +1951,7 @@ document.addEventListener('transitionend', (e) => {
       
       setTimeout(() => {
         lightbox.classList.remove('expanded-mode');
-        mediaContainer.style.transformOrigin = ''; // Reset
+        mediaContainer.style.transformOrigin = '';
         if (fullscreenArrows) fullscreenArrows.style.display = 'none';
       }, 333);
       
@@ -1954,9 +1962,9 @@ document.addEventListener('transitionend', (e) => {
       
     } else {
       // Expand mode
-      isExpanded = true; // Set immediately
+      isExpanded = true;
       
-      // ⬅️ Smooth center expansion (no weird direction)
+      // Smooth center expansion
       mediaContainer.style.transformOrigin = 'center center';
       lightbox.classList.add('expanded-mode');
       
@@ -2006,6 +2014,14 @@ document.addEventListener('transitionend', (e) => {
       }
     });
   }
+  
+  // Sync browser fullscreen exit with expanded mode
+  document.addEventListener('fullscreenchange', () => {
+    if (!document.fullscreenElement && isExpanded) {
+      toggleExpansion(); // Contract expanded mode when browser fullscreen exits
+    }
+  });
+  
 })();
 
 // === Swipe-Down to Exit Expanded Mode ===
