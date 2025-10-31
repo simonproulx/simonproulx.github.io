@@ -1,8 +1,8 @@
 {
   "spaceman": {
     "title": "Spaceman – Scene Replication",
-    "description": "A scene replication study focused on hard-surface modeling, material fidelity, and composition.",
-    "details": "Created using: Unreal Engine 5, Maya, Substance Painter/Designer\nTechniques: Modular hard-surface modeling, PBR authoring, lighting and lookdev",
+    "description": "A 3D scene replication of a 2D piece by Robbie Trevino, focused on hard-surface modeling, material fidelity, lighting and composition.",
+    "details": "Created using:  Maya, Vray, Toon Shaders, Substance Painter\nTechniques: Modular hard-surface modeling, lighting and lookdev",
     "links": [
       {
         "text": "Original artist: Robbie Trevino",
@@ -16,7 +16,7 @@
         "src": "3d_spaceman_main_hdjup4.png",
         "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761276276/3d_spaceman_main_hdjup4.png",
         "title": "Main Shot",
-        "description": "Primary render establishing the final look and composition."
+        "description": "Final Render submitted as a first term TTTC final project"
       },
       {
         "type": "image",
@@ -30,7 +30,7 @@
         "src": "3d_spaceman_outliner_model_oqyl9e.png",
         "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761276263/3d_spaceman_outliner_model_oqyl9e.png",
         "title": "Outliner + Model",
-        "description": "Scene hierarchy and modeling breakdown."
+        "description": "Alternative angle of the scene highlighting model hierarchy and scene setup"
       },
       {
         "type": "image",
@@ -145,7 +145,7 @@
         "src": "hallway_textured",
         "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/hallway_textured",
         "title": "Final Render",
-        "description": "The primary cinematic shot showcasing the repeating architectural elements and the interplay of volumetric light and shadow."
+        "description": "The primary cinematic shot - texture pass in comfy UI"
       },
       {
         "type": "image",
@@ -463,7 +463,7 @@
   "industrial-design-myco-audio-speaker": {
     "title": "Myco Audio – Mycoboard Composite Speaker",
     "description": "A purely conceptual speaker design exploring mycelium substrate composites as a sustainable material for audio products.",
-    "details": "Project Type: Conceptual product design\nMaterial Focus: Mycelium-based composite (Mycoboard)\nDeliverables: Product renders, exploded views, technical drawings, presentation deck\nSoftware: [Add your software here]",
+    "details": "Project Type: Conceptual product design\nMaterial Focus: Mycelium-based composite (Mycoboard)\nDeliverables: Product renders, exploded views, technical drawings, presentation deck\nSoftware: Solidworks, Keyshot",
     "links": [
       {
         "text": "Full Presentation (PDF)",
@@ -492,7 +492,7 @@
         "src": "id_myco_audio_tfs_kux9s2.png",
         "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale,dpr_2.0/v1761348310/id_myco_audio_tfs_kux9s2.png",
         "title": "Design Concept Breakdown",
-        "description": "Top, front, and side orthographic views with design concept annotations."
+        "description": "Top, front, and side orthographic views with user oriented design concept annotations."
       },
       {
         "type": "image",
@@ -520,7 +520,7 @@
   "industrial-design-alaya-hologram-projector": {
     "title": "Alaya – Hologram Projector",
     "description": "A purely conceptual desktop hologram projector exploring form, interaction, and futuristic product language.",
-    "details": "Project Duration: 2 weeks\nFocus: Conceptual product design, form exploration, rendering\nSoftware: [Add your software here]\nDeliverables: Hero renders, detail studies, full project documentation",
+    "details": "Project Duration: 2 weeks\nFocus: Conceptual product design, form exploration, rendering\nSoftware: Solidworks, Keyshot\nDeliverables: Hero renders, detail studies, full project documentation",
     "links": [],
     "category": "industrial",
     "media": [
@@ -564,7 +564,7 @@
     "industrial-design-onx-mini-itx-case": {
     "title": "ONX – Mini-ITX PC Case with AI Visualizer",
     "description": "A conceptual Mini-ITX PC case featuring an integrated AI response visualizer, designed to give artificial intelligence a tangible, expressive personality.",
-    "details": "Project Type: Conceptual product design\nFocus: Compact PC case design, AI interaction visualization, integrated display systems\nFeatures: Mini-ITX form factor, integrated visualizer display, modular component layout\nSoftware: [Add your software here]",
+    "details": "Project Type: Conceptual product design\nFocus: Compact PC case design, AI interaction visualization, integrated display systems\nFeatures: Mini-ITX form factor, integrated visualizer display, modular component layout\nSoftware: Solidworks, Keyshot",
     "links": [],
     "category": "industrial",
     "media": [
@@ -615,7 +615,7 @@
     "industrial-design-pneumatic-stone-grinder": {
     "title": "Pneumatic Stone Grinder with Integrated Water Jet System",
     "description": "Ergonomically optimized handheld pneumatic grinder designed for stone fabrication, featuring an integrated water jet cooling and dust suppression system.",
-    "details": "Project Type: Industrial tool design\nFocus: Ergonomics, pneumatic systems, water jet integration, user safety\nDeliverables: Full technical report, research paper, physical prototype, technical drawings\nSoftware: [Add your software here]",
+    "details": "Project Type: Industrial tool design\nFocus: Ergonomics, pneumatic systems, water jet integration, user safety\nDeliverables: Full technical report, research paper, physical prototype, technical drawings\nSoftware: Solidworks, Keyshot",
     "links": [
       {
         "text": "Full Technical Report (PDF)",
@@ -698,7 +698,7 @@
     "industrial-design-colony-modular-charging-system": {
     "title": "Colony – Smart Modular Charging System",
     "description": "A conceptual modular charging system with integrated app control, allowing users to manage power distribution and scheduling across multiple connected devices.",
-    "details": "Project Type: Conceptual product design\nFocus: Modular hardware design, IoT integration, UI/UX design, smart home connectivity\nFeatures: Modular stackable units, app-based power management, individual device control\nSoftware: [Add your software here]",
+    "details": "Project Type: Conceptual product design\nFocus: Modular hardware design, IoT integration, UI/UX design, smart home connectivity\nFeatures: Modular stackable units, app-based power management, individual device control\nSoftware: Solidworks, Keyshot",
     "links": [],
     "category": "industrial",
     "media": [
@@ -707,7 +707,7 @@
         "src": "id_colony_main_g7yvcg.png",
         "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761337266/id_colony_main_g7yvcg.png",
         "title": "Main Shot",
-        "description": "Primary hero render showcasing the Colony modular charging system and stacking design."
+        "description": "Primary hero render showcasing the Colony modular charging system and interlocking."
       },
       {
         "type": "image",
@@ -749,7 +749,7 @@
     "industrial-design-ora-speaker-projection-system": {
     "title": "ORA – Speaker with Integrated HDMI Projection System",
     "description": "A conceptual speaker design featuring an integrated fisheye lens projection system for immersive at-home visual experiences, designed for parties, events, and ambient environments.",
-    "details": "Project Type: Conceptual product design\nFocus: Audio-visual integration, projection mapping, experiential design\nFeatures: HDMI input, fisheye lens projection, integrated speaker system, ambient lighting\nSoftware: [Add your software here]",
+    "details": "Project Type: Conceptual product design\nFocus: Audio-visual integration, projection mapping, experiential design\nFeatures: HDMI input, fisheye lens projection, integrated speaker system, ambient lighting\nSoftware: Solidworks, Keyshot",
     "links": [],
     "category": "industrial",
     "media": [
@@ -793,7 +793,7 @@
     "industrial-design-additional-renders": {
     "title": "Additional Renders – Product Design Collection",
     "description": "A curated collection of product design renders showcasing material quality, lighting technique, and design versatility across various conceptual projects.",
-    "details": "Collection Focus: Rendering quality, material exploration, lighting passes, technical visualization\nProjects Include: Deepwater communications bracelet, magnetic skateboard rack, modular educational facility, character modeling\nSoftware: [Add your software here]",
+    "details": "Collection Focus: Rendering quality, material exploration, lighting passes, technical visualization\nProjects Include: Deepwater communications bracelet, magnetic skateboard rack, modular educational facility, character modeling\nSoftware: Solidworks, Keyshot",
     "links": [],
     "category": "industrial",
     "media": [
@@ -900,7 +900,7 @@
   "graphic-design-beatdapp-battle-of-the-bands": {
     "title": "Beatdapp – Battle of the Bands Event Branding",
     "description": "Complete event branding, promotional materials, and marketing strategy for a local music streaming fraud detection company's Battle of the Bands event, including social media assets, motion graphics, and live event visuals.",
-    "details": "Client: Beatdapp (Music streaming fraud detection)\nRole: Graphic design, motion graphics, event visuals, marketing strategy\nDeliverables: Event posters, social media animated reels, promotional banners, live event visuals\nSoftware: [Add your software here]",
+    "details": "Client: Beatdapp (Music streaming fraud detection)\nRole: Graphic design, motion graphics, event visuals, marketing strategy\nDeliverables: Event posters, social media animated reels, promotional banners, live event visuals\nSoftware: Photoshop, After Effects, Premiere Pro, Illustrator, Runway",
     "links": [
       {
         "text": "Event Website",
@@ -953,7 +953,7 @@
   "graphic-design-renaissance-bts-contest": {
     "title": "Renaissance App – BTS Concert Experience Contest",
     "description": "Social media motion design animation created for a music streaming fan engagement app promoting a BTS concert experience contest.",
-    "details": "Client: Renaissance (music streaming fan engagement app, now defunct)\nRole: Motion design, social media content creation\nDeliverables: Animated social media reel for contest promotion\nSoftware: [Add your software here]",
+    "details": "Client: Renaissance (music streaming fan engagement app, now defunct)\nRole: Motion design, social media content creation\nDeliverables: Animated social media reel for contest promotion\nSoftware: Photoshop, After Effects, Premiere Pro, Illustrator",
     "links": [
       {
         "text": "Renaissance App (X/Twitter)",
@@ -1003,7 +1003,7 @@
   "graphic-design-curbside-car-wash-logo": {
     "title": "Curbside Car Wash – Company Logo Design",
     "description": "Custom logo design for a local car detailing company, developed from original hand-drawn concept to final vector artwork. The company has since been acquired by a larger organization.",
-    "details": "Client: Curbside Car Wash (now part of Car Detailing Ottawa)\nRole: Logo design, brand identity, vector illustration\nDeliverables: Hand-drawn concept, final logo design, optimized SVG vector file\nSoftware: [Add your software here]",
+    "details": "Client: Curbside Car Wash (now part of Car Detailing Ottawa)\nRole: Logo design, brand identity, vector illustration\nDeliverables: Hand-drawn concept, final logo design, optimized SVG vector file\nSoftware: Hand drawing, Illustrator, Photoshop",
     "links": [
       {
         "text": "Car Detailing Ottawa (Current Company)",
@@ -1037,7 +1037,7 @@
   "graphic-design-the-drop-shoe-cleaning": {
     "title": "The Drop – Shoe Cleaning Service Branding",
     "description": "Custom logo design and apparel graphics created for a local Ottawa shoe cleaning service, including brand identity and promotional clothing designs.",
-    "details": "Client: The Drop (Ottawa shoe cleaning service, now defunct)\nRole: Logo design, brand identity, apparel graphics\nDeliverables: Company logo, custom clothing graphics\nSoftware: [Add your software here]",
+    "details": "Client: The Drop (Ottawa shoe cleaning service, now defunct)\nRole: Logo design, brand identity, apparel graphics\nDeliverables: Company logo, custom clothing graphics\nSoftware: Hand Drawing, Illustrator, Photoshop",
     "links": [
       {
         "text": "The Drop (Facebook Page)",
@@ -1073,7 +1073,7 @@
   "graphic-design-glory-days-fine-goods": {
     "title": "Glory Days Fine Goods – Apparel Graphic Commission",
     "description": "Private graphic design commission created for a Vancouver-based clothing company, featuring custom artwork for apparel and merchandise.",
-    "details": "Client: Glory Days Fine Goods (Vancouver clothing company)\nRole: Graphic design, apparel artwork\nDeliverables: Custom graphic for clothing line\nSoftware: [Add your software here]",
+    "details": "Client: Glory Days Fine Goods (Vancouver clothing company)\nRole: Graphic design, apparel artwork\nDeliverables: Custom graphic for clothing line\nSoftware: Illustrator",
     "links": [
       {
         "text": "Glory Days Fine Goods (Company Website)",
@@ -1095,7 +1095,7 @@
   "graphic-design-university-of-montreal-mental-health": {
     "title": "University of Montreal – Mental Health Pamphlet Graphics",
     "description": "Custom illustrations created for a mental health awareness pamphlet commissioned by the University of Montreal, produced in collaboration with an established artist.",
-    "details": "Client: University of Montreal (via private commission)\nRole: Illustration, graphic design\nDeliverables: Two custom graphics for student mental health awareness materials\nSoftware: [Add your software here]",
+    "details": "Client: University of Montreal (via private commission)\nRole: Illustration, graphic design\nDeliverables: Two custom graphics for student mental health awareness materials\nSoftware: Photoshop, Illustrator",
     "links": [],
     "category": "graphic",
     "media": [
@@ -1118,7 +1118,7 @@
   "graphic-design-heidi-conrod-motion-graphic": {
     "title": "Heidi Conrod – Motion Graphic Commission",
     "description": "Private motion graphic animation commission created for established Ottawa-based artist Heidi Conrod, translating her visual style into animated form.",
-    "details": "Client: Heidi Conrod (established artist, Ottawa)\nRole: Motion design, animation\nDeliverables: Custom animated motion graphic\nSoftware: [Add your software here]",
+    "details": "Client: Heidi Conrod (established artist, Ottawa)\nRole: Motion design, animation\nDeliverables: Custom animated motion graphic\nSoftware: After Effects, Illustrator, Photoshop",
     "links": [
       {
         "text": "Heidi Conrod (Artist Website)",
@@ -1145,7 +1145,7 @@
   "art-soul-bird-sculpture": {
     "title": "Soul Bird Sculpture",
     "description": "Hand-sculpted clay sculpture inspired by Alex Grey's visionary artwork, featuring real gold leaf coating and crystal inserts. A meditation on consciousness and spiritual transformation.",
-    "details": "Medium: Clay sculpture with gold leaf and crystal inserts\nInspiration: Alex Grey's Soul Bird\nTechniques: Hand sculpting, gold leafing, crystal setting\nYear: [Add year if you want]",
+    "details": "Medium: Clay sculpture with gold leaf and crystal inserts\nInspiration: Alex Grey's Soul Bird\nTechniques: Hand sculpting, gold leafing, crystal setting\nYear: 2024",
     "links": [
       {
         "text": "Original Artwork by Alex Grey",
@@ -1195,7 +1195,7 @@
   "art-skeleton-studies": {
     "title": "Skeleton Studies",
     "description": "Photographic composition series exploring themes of mortality, form, and the human condition through skeletal imagery and visual storytelling.",
-    "details": "Medium: Photography, digital composition\nSeries: Skeleton Studies\nTechniques: [Add your techniques here]\nYear: [Add year if you want]",
+    "details": "Medium: Photography, digital composition\nSeries: Skeleton Studies",
     "links": [],
     "category": "art",
     "media": [
@@ -1217,8 +1217,8 @@
   },
   "art-humpback-whale": {
     "title": "Humpback Whale",
-    "description": "Pen and marker illustration capturing the grace and majesty of a humpback whale through detailed linework and expressive mark-making.",
-    "details": "Medium: Pen and marker on paper\nSubject: Humpback whale\nTechniques: Line drawing, marker rendering\nYear: [Add year if you want]",
+    "description": "Pen and marker illustration",
+    "details": "Medium: Pen and marker on paper\nSubject: Humpback whale",
     "links": [],
     "category": "art",
     "media": [
@@ -1233,8 +1233,8 @@
   },
   "art-spirit-bear": {
     "title": "Spirit Bear",
-    "description": "Marker drawing depicting a spirit bear, exploring themes of wilderness, mysticism, and the sacred connection between nature and spirituality.",
-    "details": "Medium: Marker on paper\nSubject: Spirit bear\nTechniques: Marker rendering, expressive mark-making\nYear: [Add year if you want]",
+    "description": "",
+    "details": "Medium: Marker on paper\nSubject: Spirit bear",
     "links": [],
     "category": "art",
     "media": [
@@ -1243,14 +1243,14 @@
         "src": "art_spirit_bear_tgfdje.png",
         "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761406984/art_spirit_bear_tgfdje.png",
         "title": "Spirit Bear",
-        "description": "Marker drawing of a spirit bear, capturing the mystical essence and wild beauty of this sacred creature."
+        "description": ""
       }
     ]
   },
   "graphic-design-untitled-personal-project": {
     "title": "Untitled – Personal Graphic Work",
-    "description": "Personal conceptual graphic exploration showcasing creative experimentation and visual style outside of client work.",
-    "details": "Project Type: Personal work\nRole: Graphic design, visual exploration\nSoftware: [Add your software here]",
+    "description": "Personal conceptual graphic exploration",
+    "details": "Project Type: Personal work\nRole: Graphic design, visual exploration",
     "links": [],
     "category": "art",
     "media": [
