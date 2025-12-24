@@ -177,120 +177,203 @@
       }
     ]
   },
-  "plugin-1": {
-    "title": "Terrain Generator Plugin",
-    "description": "Custom Maya plugin for procedural terrain generation with real-time preview.",
-    "details": "Language: Python, C++ API\nFeatures: Real-time preview, Export to game engines\nCompatibility: Maya 2020-2024\nPerformance: Optimized for large terrains",
+
+  "scripts-simonproulx-systems": {
+    "title": "simonproulx.me – Website Systems Breakdown",
+    "description": "Complete technical documentation and system architecture breakdown for this portfolio website, showcasing custom-built carousel and lightbox systems, responsive design patterns, and deployment infrastructure.",
+    "details": "Project: Personal Portfolio Website. Full-stack development, UI/UX design, system architecture. Featuring custom carousel system, lightbox gallery system, responsive UI. Created, Hosted and Deployed with: HTML, CSS, JavaScript, Cloudinary CDN, GitHub Pages",
     "links": [
       {
-        "text": "Download Plugin",
-        "url": "#"
-      },
-      {
-        "text": "Documentation",
-        "url": "#"
-      },
-      {
-        "text": "Source Code",
-        "url": "#"
+        "text": "Live Website",
+        "url": "https://simonproulx.me",
+        "type": "external"
       }
     ],
-    "category": "plugin",
+    "category": "scripts",
     "media": [
       {
         "type": "image",
-        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/plugin_terrain_ui",
-        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/plugin_terrain_ui",
-        "title": "Plugin Interface",
-        "description": "The main user interface showing terrain generation controls and real-time preview."
+        "src": "MainsiteFlow2_ntvbql.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1766526851/MainsiteFlow2_ntvbql.png",
+        "title": "Main Site Flow",
+        "description": "High-level overview of the website's navigation structure and user interaction flow."
+      },
+      {
+        "type": "image",
+        "src": "CarouselSystem_ComponentArchitecture_lxnnqm.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1766526843/CarouselSystem_ComponentArchitecture_lxnnqm.png",
+        "title": "Carousel System – Component Architecture",
+        "description": "Detailed breakdown of the custom carousel system's component structure and data flow."
+      },
+      {
+        "type": "image",
+        "src": "Carousel_static_desktop_oaogpp.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1766526829/Carousel_static_desktop_oaogpp.png",
+        "title": "Carousel Desktop View",
+        "description": "Desktop interface design for the portfolio carousel system."
+      },
+      {
+        "type": "image",
+        "src": "CarouselSystem_DesktopInteractionFlow_h2sqvj.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1766526838/CarouselSystem_DesktopInteractionFlow_h2sqvj.png",
+        "title": "Carousel Desktop Interaction Flow",
+        "description": "User interaction patterns and event handling for desktop carousel navigation."
+      },
+      {
+        "type": "image",
+        "src": "Carousel_static_mobile_yco3bq.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1766526829/Carousel_static_mobile_yco3bq.png",
+        "title": "Carousel Mobile View",
+        "description": "Mobile-responsive interface design for the carousel system."
+      },
+      {
+        "type": "image",
+        "src": "CarouselSystem_MobileGestureSystem_r1ubq8.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1766526835/CarouselSystem_MobileGestureSystem_r1ubq8.png",
+        "title": "Carousel Mobile Gesture Interaction Flow",
+        "description": "Touch gesture handling and swipe interaction system for mobile devices."
+      },
+      {
+        "type": "image",
+        "src": "LightboxSystem_ComponentArchitecture_xg823t.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1766526834/LightboxSystem_ComponentArchitecture_xg823t.png",
+        "title": "Lightbox System – Component Architecture",
+        "description": "Technical architecture of the custom lightbox gallery system and its components."
+      },
+      {
+        "type": "image",
+        "src": "LightboxSystem_InitializationLifecycle_dz5cf6.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1766526846/LightboxSystem_InitializationLifecycle_dz5cf6.png",
+        "title": "Lightbox System – Initialization Lifecycle",
+        "description": "Detailed breakdown of the lightbox system's initialization process and lifecycle management."
+      },
+      {
+        "type": "image",
+        "src": "Lightbox_static_Desktop_zbaq3l.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1766526834/Lightbox_static_Desktop_zbaq3l.png",
+        "title": "Lightbox Desktop View",
+        "description": "Desktop interface design for the lightbox gallery overlay system."
+      },
+      {
+        "type": "image",
+        "src": "CarouselSystem_DesktopInteractionFlow_h2sqvj.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1766526838/CarouselSystem_DesktopInteractionFlow_h2sqvj.png",
+        "title": "Lightbox Desktop Interaction Flow",
+        "description": "User interaction patterns for desktop lightbox navigation and controls."
+      },
+      {
+        "type": "image",
+        "src": "Lightbox_static_mobile_gxuqkc.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1766526831/Lightbox_static_mobile_gxuqkc.png",
+        "title": "Lightbox Mobile View",
+        "description": "Mobile-responsive interface design for the lightbox gallery system."
+      },
+      {
+        "type": "image",
+        "src": "LightboxSystem_MobileGesture_InteractionFlow_o8oyxy.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1766526838/LightboxSystem_MobileGesture_InteractionFlow_o8oyxy.png",
+        "title": "Lightbox Mobile Gesture Interaction Flow",
+        "description": "Touch gesture handling and swipe navigation for mobile lightbox experience."
+      },
+      {
+        "type": "image",
+        "src": "Hosting_Deployment_tpp4pw.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1766526844/Hosting_Deployment_tpp4pw.png",
+        "title": "Hosting and Deployment Infrastructure",
+        "description": "Complete hosting and deployment architecture including CDN integration and version control workflow."
+      }
+    ]
+  },
+  "scripts-material-manager": {
+    "title": "Si's Material Manager – Maya Script Tool",
+    "description": "Custom Python-based material management tool for Autodesk Maya, streamlining texture workflow and material organization for 3D environment artists. Features automated material assignment, batch processing, and intuitive UI for rapid asset development.",
+    "details": "Project: Maya Production Tool\nRole: Tool development, UI/UX design, technical documentation\nDeliverables: Python script, custom Maya UI, data flow system\nTechnologies: Python, Maya API, PyQt",
+    "links": [],
+    "category": "scripts",
+    "media": [
+      {
+        "type": "image",
+        "src": "simm_DataFlowDiagram_vncquw.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1766450272/simm_DataFlowDiagram_vncquw.png",
+        "title": "Data Flow Diagram",
+        "description": "Technical architecture showing how the material manager processes and organizes texture data within Maya."
       },
       {
         "type": "video",
-        "src": "https://res.cloudinary.com/dlepppgm2/video/upload/f_auto,q_auto:good/plugin_terrain_demo",
-        "thumb": "https://res.cloudinary.com/dlepppgm2/video/upload/f_auto,q_auto:good,w_160,so_0/plugin_terrain_demo.jpg",
-        "title": "Live Demo",
-        "description": "Real-time demonstration of terrain generation with parameter adjustments."
+        "src": "Simm_demo_video_1080p_s1wblk.mp4",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/video/upload/f_auto,q_auto:good,w_160,so_0/v1766450242/Simm_demo_video_1080p_s1wblk.jpg",
+        "title": "Script Demo Video",
+        "description": "Full demonstration of Si's Material Manager in action, showcasing material assignment workflow and UI features."
       },
       {
         "type": "image",
-        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/plugin_terrain_examples",
-        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/plugin_terrain_examples",
-        "title": "Generated Terrains",
-        "description": "Various terrain examples created using different parameter settings."
-      },
-      {
-        "type": "image",
-        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/plugin_terrain_code",
-        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/plugin_terrain_code",
-        "title": "Code Structure",
-        "description": "Overview of the plugin architecture and key code components."
+        "src": "Popup_jid5vh.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1766457567/Popup_jid5vh.png",
+        "title": "Full Maya Script Interface",
+        "description": "Complete UI layout of the Material Manager tool within Maya's interface."
       }
     ]
   },
-  "plugin-2": {
-    "title": "Procedural Foliage Plugin",
-    "description": "A Houdini plugin for generating procedural foliage with customizable parameters.",
-    "details": "Language: Python, Houdini VEX\nFeatures: Real-time preview, Export to Unreal Engine\nCompatibility: Houdini 18+\nPerformance: Optimized for large forests",
-    "links": [
-      {
-        "text": "Download Plugin",
-        "url": "#"
-      },
-      {
-        "text": "Documentation",
-        "url": "#"
-      }
-    ],
-    "category": "plugin",
+  "scripts-shatter-fx": {
+    "title": "Si's Shatter FX – Maya Script Tool",
+    "description": "Advanced procedural destruction tool for Autodesk Maya, enabling artists to create realistic shatter and fracture effects with customizable parameters. Features automated geometry processing, physics setup, and artist-friendly controls for VFX production.",
+    "details": "Project: Maya VFX Tool\nRole: Tool development, procedural system design, UI/UX design\nDeliverables: Python script, custom Maya UI, physics automation system\nTechnologies: Python, Maya API, PyQt, Bullet Physics",
+    "links": [],
+    "category": "scripts",
     "media": [
       {
         "type": "image",
-        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/plugin_foliage_ui",
-        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/plugin_foliage_ui",
-        "title": "Plugin Interface",
-        "description": "User interface of the procedural foliage plugin."
+        "src": "Shatter_DataFlowDiagram_e1k15s.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1766457324/Shatter_DataFlowDiagram_e1k15s.png",
+        "title": "Data Flow Diagram",
+        "description": "Technical breakdown of the procedural shatter system's geometry processing and physics simulation pipeline."
       },
       {
         "type": "video",
-        "src": "https://res.cloudinary.com/dlepppgm2/video/upload/f_auto,q_auto:good/plugin_foliage_demo",
-        "thumb": "https://res.cloudinary.com/dlepppgm2/video/upload/f_auto,q_auto:good,w_160,so_0/plugin_foliage_demo.jpg",
-        "title": "Live Demo",
-        "description": "Demonstration of foliage generation in real-time."
+        "src": "SiShatterFX_demofull_stcpkl.mp4",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/video/upload/f_auto,q_auto:good,w_160,so_0/v1766457302/SiShatterFX_demofull_stcpkl.jpg",
+        "title": "Script Demo Video",
+        "description": "Complete demonstration of Si's Shatter FX tool, showing fracture generation and physics simulation workflow."
+      },
+      {
+        "type": "image",
+        "src": "ShatterFX_UI_full_xurfdm.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1766457345/ShatterFX_UI_full_xurfdm.png",
+        "title": "Full Maya Script Interface",
+        "description": "Complete UI layout of the Shatter FX tool with all parameter controls and options."
       }
     ]
   },
-  "plugin-3": {
-    "title": "Material Blending Plugin",
-    "description": "A Substance Designer plugin for advanced material blending techniques.",
-    "details": "Language: C++, Substance Designer API\nFeatures: Layer blending, Mask generation\nCompatibility: Substance Designer 2021+\nPerformance: GPU accelerated",
+  "scripts-logo-animation": {
+    "title": "Website Logo Animation – SVG Animation System",
+    "description": "Custom SVG animation framework for the portfolio website logo, featuring smooth morphing transitions and interactive hover states. Built with vanilla JavaScript and optimized for performance across all devices.",
+    "details": "Project: Portfolio Website Feature\nRole: Animation development, SVG optimization, interaction design\nDeliverables: SVG animation system, JavaScript framework, responsive implementation\nTechnologies: JavaScript, SVG, CSS animations",
     "links": [
       {
-        "text": "Download Plugin",
-        "url": "#"
-      },
-      {
-        "text": "Source Code",
-        "url": "#"
+        "text": "Live Website",
+        "url": "https://simonproulx.me",
+        "type": "external"
       }
     ],
-    "category": "plugin",
+    "category": "scripts",
     "media": [
       {
         "type": "image",
-        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/plugin_material_ui",
-        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/plugin_material_ui",
-        "title": "Material Blending UI",
-        "description": "User interface showing material blending controls."
+        "src": "AnimationSVG_framework_plmyke.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1766457121/AnimationSVG_framework_plmyke.png",
+        "title": "SVG Animation Framework",
+        "description": "Technical breakdown of the SVG animation system architecture and timing controls."
       },
       {
-        "type": "image",
-        "src": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_1920,c_limit/plugin_material_results",
-        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/plugin_material_results",
-        "title": "Blending Results",
-        "description": "Example of blended materials with different parameters."
+        "type": "video",
+        "src": "Screen_Recording_2025-10-09_180907_xgycvk.mp4",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/video/upload/f_auto,q_auto:good,w_160,so_0/v1766530959/Screen_Recording_2025-10-09_180907_xgycvk.jpg",
+        "title": "Animation Demo Video",
+        "description": "Screen recording showcasing the logo animation in action with smooth transitions and interactive states."
       }
     ]
   },
+
   "industrial-design-luminis-lumistik-ip-merge": {
     "title": "Luminis Lumistik IP Merge",
     "description": "Industrial design and systems integration project consolidating acquired IP into a unified, serviceable product family.",
@@ -1218,7 +1301,7 @@
   "art-humpback-whale": {
     "title": "Humpback Whale",
     "description": "Pen and marker illustration",
-    "details": "Medium: Pen and marker on paper\nSubject: Humpback whale",
+    "details": "Medium: Pen, marker, paper",
     "links": [],
     "category": "art",
     "media": [
@@ -1234,7 +1317,7 @@
   "art-spirit-bear": {
     "title": "Spirit Bear",
     "description": "",
-    "details": "Medium: Marker on paper\nSubject: Spirit bear",
+    "details": "Medium: Marker, pen, paper",
     "links": [],
     "category": "art",
     "media": [
@@ -1243,7 +1326,7 @@
         "src": "art_spirit_bear_tgfdje.png",
         "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1761406984/art_spirit_bear_tgfdje.png",
         "title": "Spirit Bear",
-        "description": ""
+        "description": "Explorative illustration driven by form and light sectionalization through color and pattern rules"
       }
     ]
   },

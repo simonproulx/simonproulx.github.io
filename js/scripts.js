@@ -6,12 +6,12 @@
 
   const CFG = {
     windows: {
-      sun:       { start: 0.0, end: 1.2 },   // was 1.5
-      dots:      { start: 1.2, end: 2.0 },   // was 1.5-2.5
-      rays:      { start: 0.4, end: 2.0 },   // was 0.5-2.5
-      waves:     { start: 0.0, end: 3.0 },   // was 3.0
-      text:      { start: 0.8, end: 1.8 },   // was 1.0-3.0
-      mountains: { start: 0.4, end: 3.0 },   // was 0.5-3.0
+      sun:       { start: 0.0, end: 1.2 },   
+      dots:      { start: 1.2, end: 2.0 },   
+      rays:      { start: 0.4, end: 2.0 },   
+      waves:     { start: 0.0, end: 3.0 },   
+      text:      { start: 0.8, end: 1.8 },   
+      mountains: { start: 0.4, end: 3.0 },   
     },
     feels: {
       sun:   { scaleFrom: 0.3, ease: "back.out(1.3)" },
@@ -136,7 +136,7 @@
       }, 
       textWin.start)
     
-  // ✨ 7) Unified diagonal shimmer across entire logo (including text)
+  // ✨ 7) Unified diagonal shimmer across logo (including text)
   .add(() => {
     const fullGroup = document.querySelector("#layer1");
     const shimmerGrad = document.querySelector("#shimmerGradient");
@@ -387,7 +387,7 @@
   let categoryItems = [];
   let currentIndex = 0;
   let currentMediaIndex = 0;
-  const categoriesWithTabs = ['3d-work','plugin','industrial','graphic', 'art', 'project'];
+  const categoriesWithTabs = ['3d-work','scripts','industrial','graphic', 'art', 'project'];
 
   // Bulletproof body lock (prevents background scroll + preserves position)
   let __bodyLockScrollY = 0;
@@ -1251,7 +1251,6 @@ function initMobileNudge() {
       const dt = Math.max(1, now - lastT);
 
       // Intent detection: if horizontal motion is dominant, give extra glide
-      // (We only have X data here; if you track Y somewhere else, you can refine this.)
       const intentBoost = 1.12; // small extra glide on consistent horizontal moves
 
       if (EDGE_EASING && (atLeftEdge() && dx < 0 || atRightEdge() && dx > 0)) {
@@ -1937,7 +1936,7 @@ document.addEventListener('transitionend', (e) => {
   
   let lastTap = 0;
   
-  // Toggle expansion function – smooth and immediate for you, daddy 😘
+  // Toggle expansion function – smooth and immediate
   toggleExpansion = function() {
     const fullscreenArrows = document.getElementById('fullscreen-nav-arrows');
     const data = lightboxData[currentLightboxId];
