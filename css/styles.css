@@ -2000,4 +2000,16 @@
   .lightbox-media-container.expanded {
   touch-action: pinch-zoom;
   }
+
+  /* Disable native viewport zooming so UI stays fixed */
+.lightbox-media-container.expanded,
+.lightbox-image {
+    touch-action: none !important; 
+}
+
+/* Ensure the image transitions smoothly when snapping back */
+.lightbox-image {
+    transform-origin: center center;
+    will-change: transform;
+}
   

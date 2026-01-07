@@ -305,6 +305,7 @@
           
           // ✅ Initialize thumbnail hover preloading
           initThumbnailPreloading();
+          initSmartZoom();
       } catch (error) {
           console.error('Error loading lightbox data:', error);
       }
@@ -606,6 +607,7 @@
   }
 
 function updateLightboxContent(data) {
+    resetZoom();
     const currentMedia = data.media[currentMediaIndex];
     const imageEl = document.getElementById('lightbox-image');
     const videoEl = document.getElementById('lightbox-video');
@@ -1142,6 +1144,95 @@ document.addEventListener('keydown', function(e) {
         }
     }
 });
+
+/* ==== SMART ZOOM SYSTEM (UPDATED) ==== */
+let zoomState = {
+    scale: 1,
+    dist: 0,
+    isPinching: false // 🚩 New flag to track gesture
+};
+
+function initSmartZoom() {
+    const img = document.getElementById('lightbox-image');
+    if (!img) return;
+
+    let snapTimeout;
+
+    const updateTransform = () => {
+        img.style.transform = `scale(${zoomState.scale})`;
+    };
+
+    // 1. TOUCH START
+    img.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 2) {
+            e.preventDefault();
+            zoomState.isPinching = true; // 🚩 We are starting a pinch
+            zoomState.dist = Math.hypot(
+                e.touches[0].pageX - e.touches[1].pageX,
+                e.touches[0].pageY - e.touches[1].pageY
+            );
+            clearTimeout(snapTimeout);
+            img.style.transition = 'none';
+        }
+    }, { passive: false });
+
+    // 2. TOUCH MOVE
+    img.addEventListener('touchmove', (e) => {
+        if (e.touches.length === 2) {
+            e.preventDefault();
+            // zoomState.isPinching is already true
+            const newDist = Math.hypot(
+                e.touches[0].pageX - e.touches[1].pageX,
+                e.touches[0].pageY - e.touches[1].pageY
+            );
+            const scaleChange = newDist / zoomState.dist;
+            zoomState.scale = Math.max(1, zoomState.scale * scaleChange);
+            zoomState.dist = newDist;
+            updateTransform();
+        }
+    }, { passive: false });
+
+    // 3. TOUCH END
+    img.addEventListener('touchend', (e) => {
+        // 🚩 CRITICAL FIX: If we were pinching, STOP this event from reaching the double-tap detector
+        if (zoomState.isPinching) {
+            e.stopPropagation();
+        }
+
+        // If fingers are lifted (less than 2 touching)
+        if (e.touches.length < 2) {
+            
+            // If ALL fingers are gone, reset the pinching flag
+            if (e.touches.length === 0) {
+                // Small delay to ensure double-tap logic doesn't fire on the very last lift
+                setTimeout(() => { zoomState.isPinching = false; }, 50);
+            }
+
+            clearTimeout(snapTimeout);
+            snapTimeout = setTimeout(() => {
+                img.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                zoomState.scale = 1;
+                updateTransform();
+            }, 600);
+        }
+    });
+    
+    // Safety: Reset flag if gesture is cancelled
+    img.addEventListener('touchcancel', () => {
+        zoomState.isPinching = false;
+    });
+}
+
+// Helper to reset zoom when changing slides
+function resetZoom() {
+    const img = document.getElementById('lightbox-image');
+    if (img) {
+        zoomState.scale = 1;
+        img.style.transition = 'none';
+        img.style.transform = 'scale(1)';
+        zoomState.isPinching = false;
+    }
+}
 
 /* ==== Click outside to close ==== */
 document.getElementById('lightbox').addEventListener('click', function(e) {
@@ -2500,8 +2591,35 @@ function initLazyLoading() {
     }
 }
 
+/* =========================================
+   MOBILE ORIENTATION FIX
+   ========================================= */
+window.addEventListener("orientationchange", function() {
+    // 1. Give the browser 100ms to finish the rotation animation
+    setTimeout(() => {
+        // 2. Force a viewport reset (fixes the "Super Zoom")
+        const viewport = document.querySelector("meta[name=viewport]");
+        if (viewport) {
+            viewport.setAttribute("content", "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no");
+        }
+
+        // 3. If Lightbox is open (Body is locked), force a width refresh
+        // This prevents the background page from getting stuck at the wrong width
+        if (document.body.classList.contains("is-locked")) {
+            document.body.style.width = window.innerWidth + "px";
+            document.body.style.height = window.innerHeight + "px";
+            
+            // Reset to 100% after a brief moment to ensure layout snaps back
+            setTimeout(() => {
+                document.body.style.width = "100%";
+                document.body.style.height = "";
+            }, 50);
+        }
+    }, 100);
+});
+
 // Initialize lazy loading on page load
-document.addEventListener('DOMContentLoaded', initLazyLoading); 
+document.addEventListener('DOMContentLoaded', initLazyLoading);
 document.addEventListener('DOMContentLoaded', function() {
   if (typeof attachObservers === 'function') attachObservers();
   if (typeof init === 'function') init();

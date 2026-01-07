@@ -145,7 +145,7 @@
         "src": "hallway_textured",
         "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/hallway_textured",
         "title": "Final Render",
-        "description": "The primary cinematic shot - texture pass in comfy UI"
+        "description": "Conceptual cinematic shot - AI texture pass in custom comfy UI graph"
       },
       {
         "type": "image",
@@ -166,7 +166,7 @@
         "src": "hallway_comfyUI",
         "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/hallway_comfyUI",
         "title": "Procedural Texture Graph (ComfyUI)",
-        "description": "The node-based graph from ComfyUI used to generate the intricate patterns and materials for the ceiling and pillars."
+        "description": "The node-based ComfyUI graph used to generate the intricate patterns and materials for the ceiling and pillars."
       },
       {
         "type": "image",
@@ -187,6 +187,11 @@
         "text": "Live Website",
         "url": "https://simonproulx.me",
         "type": "external"
+      },
+      {
+        "text": "Github Repository",
+        "url": "https://github.com/simonproulx/simonproulx.github.io",
+        "type": "external"
       }
     ],
     "category": "scripts",
@@ -194,9 +199,23 @@
       {
         "type": "image",
         "src": "MainsiteFlow2_ntvbql.png",
-        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:good,w_160,c_scale/v1766526851/MainsiteFlow2_ntvbql.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/v1767729717/MainsiteFlow_page1.drawio_kyui20.png",
         "title": "Main Site Flow",
-        "description": "High-level overview of the website's navigation structure and user interaction flow."
+        "description": "Basic overview of the UI and logic flow of the main site's initial load and hero section, navigation system, page transitions/routing and Carousel System"
+      },
+      {
+        "type": "image",
+        "src": "MainsiteFlow2_ntvbql.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/v1767729722/MainsiteFlow_page2.drawio_li7vdn.png",
+        "title": "Main Site Flow",
+        "description": "Basic overview of the UI and logic flow of the main site's lightbox system"
+      },
+      {
+        "type": "image",
+        "src": "MainsiteFlow2_ntvbql.png",
+        "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/v1767729721/MainsiteFlow_page3.drawio_pv8ryu.png",
+        "title": "Main Site Flow",
+        "description": "Basic overview of logic flow of the main site's scroll behaviours, hosting and deployment infrastructure and additional systems"
       },
       {
         "type": "image",
