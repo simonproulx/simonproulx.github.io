@@ -198,21 +198,21 @@
     "media": [
       {
         "type": "image",
-        "src": "MainsiteFlow2_ntvbql.png",
+        "src": "MainsiteFlow_page1.drawio_kyui20.png",
         "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/v1767729717/MainsiteFlow_page1.drawio_kyui20.png",
         "title": "Main Site Flow",
         "description": "Basic overview of the UI and logic flow of the main site's initial load and hero section, navigation system, page transitions/routing and Carousel System"
       },
       {
         "type": "image",
-        "src": "MainsiteFlow2_ntvbql.png",
+        "src": "MainsiteFlow_page2.drawio_li7vdn.png",
         "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/v1767729722/MainsiteFlow_page2.drawio_li7vdn.png",
         "title": "Main Site Flow",
         "description": "Basic overview of the UI and logic flow of the main site's lightbox system"
       },
       {
         "type": "image",
-        "src": "MainsiteFlow2_ntvbql.png",
+        "src": "MainsiteFlow_page3.drawio_pv8ryu.png",
         "thumb": "https://res.cloudinary.com/dlepppgm2/image/upload/v1767729721/MainsiteFlow_page3.drawio_pv8ryu.png",
         "title": "Main Site Flow",
         "description": "Basic overview of logic flow of the main site's scroll behaviours, hosting and deployment infrastructure and additional systems"
