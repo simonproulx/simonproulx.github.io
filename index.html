@@ -2,12 +2,8 @@
 <!--
   Project: Simon Portfolio
   File: Website_portfolio_v1.0.html
-  Version: 1.0
-  Date: 2025-09-08 (America/Vancouver)
-  Notes:
-    - Baseline snapshot of fully working build (home + project pages + carousels + rich lightbox)
-    - Includes fix to suppress "no additional images" message for Art & Sculptures and Photography
-    - Minimal changes: header comment, html[data-version], console banner
+  Version: 1.6.2
+  Date: 2026-01-09 (Canada/Vancouver)
 -->
 
 <html lang="en" data-version="1.0">
@@ -486,419 +482,408 @@
   </template>
   
     
-  <!-- Technical Projects & Development -->
-    <div class="work-category">
-      <h3 class="category-title">Technical Work</h3>
-      <div class="carousel-container">
-        <div class="carousel-rail">
-          <div class="carousel">
-            <div class="carousel-item" data-lightbox-id="scripts-simonproulx-systems" onclick="openLightbox('scripts-simonproulx-systems')">
-              <img
-                src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1766529107/SPdotme_cover_vbvgwz.png"
-                alt="simonproulx.me – Website Systems Breakdown (thumbnail)"
-                width="600"
-                height="400"
-              />
-              <div class="carousel-item-overlay">
-                <h3 class="carousel-item-title">simonproulx.me – Systems Breakdown</h3>
-              </div>
-            </div>
-            <div class="carousel-item" data-lightbox-id="scripts-material-manager" onclick="openLightbox('scripts-material-manager')">
-              <img
-                src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1766449985/SIMM_Icon_sajswp.png"
-                alt="Si's Material Manager – Maya Script Tool (thumbnail)"
-                width="600"
-                height="400"
-              />
-              <div class="carousel-item-overlay">
-                <h3 class="carousel-item-title">Si's Material Manager</h3>
-              </div>
-            </div>
-            <div class="carousel-item" data-lightbox-id="scripts-shatter-fx" onclick="openLightbox('scripts-shatter-fx')">
-              <img
-                src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1766457309/Si_sShatterFX_logo_styxm3.jpg"
-                alt="Si's Shatter FX – Maya Script Tool (thumbnail)"
-                width="600"
-                height="400"
-              />
-              <div class="carousel-item-overlay">
-                <h3 class="carousel-item-title">Si's Shatter FX</h3>
-              </div>
-            </div>
-            <div class="carousel-item" data-lightbox-id="scripts-logo-animation" onclick="openLightbox('scripts-logo-animation')">
-              <img
-                src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1766531875/SVG_animation_cover_vm7iia.png"
-                alt="Website Logo Animation – SVG Animation System (thumbnail)"
-                width="600"
-                height="400"
-              />
-              <div class="carousel-item-overlay">
-                <h3 class="carousel-item-title">Website Logo Animation</h3>
-              </div>
+<!-- ==== Additional Work Section (Wraps ALL Categories) ==== -->
+<section class="additional-work" id="additional-work">
+
+  <!-- 1. Technical Projects & Development -->
+  <div class="work-category">
+    <h3 class="category-title">Technical Work</h3>
+    <div class="carousel-container">
+      <div class="carousel-rail">
+        <div class="carousel">
+          <div class="carousel-item" data-lightbox-id="scripts-simonproulx-systems" onclick="openLightbox('scripts-simonproulx-systems')">
+            <img
+              src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1766529107/SPdotme_cover_vbvgwz.png"
+              alt="simonproulx.me – Website Systems Breakdown (thumbnail)"
+              width="600"
+              height="400"
+            />
+            <div class="carousel-item-overlay">
+              <h3 class="carousel-item-title">simonproulx.me – Systems Breakdown</h3>
             </div>
           </div>
-          <!-- The clipping track + thumb (sibling of .carousel) -->
-          <div class="scroll-track">
-            <div class="scroll-thumb"></div>
+          <div class="carousel-item" data-lightbox-id="scripts-material-manager" onclick="openLightbox('scripts-material-manager')">
+            <img
+              src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1766449985/SIMM_Icon_sajswp.png"
+              alt="Si's Material Manager – Maya Script Tool (thumbnail)"
+              width="600"
+              height="400"
+            />
+            <div class="carousel-item-overlay">
+              <h3 class="carousel-item-title">Si's Material Manager</h3>
+            </div>
+          </div>
+          <div class="carousel-item" data-lightbox-id="scripts-shatter-fx" onclick="openLightbox('scripts-shatter-fx')">
+            <img
+              src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1766457309/Si_sShatterFX_logo_styxm3.jpg"
+              alt="Si's Shatter FX – Maya Script Tool (thumbnail)"
+              width="600"
+              height="400"
+            />
+            <div class="carousel-item-overlay">
+              <h3 class="carousel-item-title">Si's Shatter FX</h3>
+            </div>
+          </div>
+          <div class="carousel-item" data-lightbox-id="scripts-logo-animation" onclick="openLightbox('scripts-logo-animation')">
+            <img
+              src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1766531875/SVG_animation_cover_vm7iia.png"
+              alt="Website Logo Animation – SVG Animation System (thumbnail)"
+              width="600"
+              height="400"
+            />
+            <div class="carousel-item-overlay">
+              <h3 class="carousel-item-title">Website Logo Animation</h3>
+            </div>
           </div>
         </div>
-        <!-- End .carousel-rail -->
+        <!-- The clipping track + thumb -->
+        <div class="scroll-track">
+          <div class="scroll-thumb"></div>
+        </div>
       </div>
-      <!-- End .carousel-container -->
     </div>
-  <!-- End .work-category -->       
+  </div>
 
-  <!-- Additional Work Section -->
-  <section class="additional-work" id="additional-work">
-    <!-- Other 3D Work -->
-    <div class="work-category">
-      <h3 class="category-title">Other 3D Work</h3>
-      <div class="carousel-container">
-        <div class="carousel-rail">
-          <div class="carousel">
-            <div class="carousel-item" data-lightbox-id="spaceman" onclick="openLightbox('spaceman')">
-              <img
-                src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761276276/3d_spaceman_main_hdjup4.png"
-                alt="Spaceman – Scene Replication (thumbnail)"
-                width="600"
-                height="400"
-              />
-              <div class="carousel-item-overlay">
-                <h3 class="carousel-item-title">Spaceman – Scene Replication</h3>
-              </div>
-            </div>
-
-            <div class="carousel-item" data-lightbox-id="arrival-scene-replication" onclick="openLightbox('arrival-scene-replication')">
-              <img
-                src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761277692/3d_arrival_main_ygykys.png"
-                alt="Arrival - Scene Replication (thumbnail)"
-                width="600"
-                height="400"
-              />
-              <div class="carousel-item-overlay">
-                <h3 class="carousel-item-title">Arrival – Scene Replication</h3>
-              </div>
-            </div>
-
-            <div class="carousel-item" data-lightbox-id="procedural-experiments" onclick="openLightbox('procedural-experiments')">
-              <img
-                src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761276291/3d_geo_exp_01_eqkxjw.png"
-                alt="Procedural Geometry Experiments (thumbnail)"
-                width="600"
-                height="400"
-              />
-              <div class="carousel-item-overlay">
-                <h3 class="carousel-item-title">Procedural Geometry Experiments</h3>
-              </div>
-            </div>
-
-            <div class="carousel-item" data-lightbox-id="hallway-study" onclick="openLightbox('hallway-study')">
-              <img
-                src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/hallway_textured"
-                alt="Ornate Temple Corridor (thumbnail)"
-                width="600"
-                height="400"
-              />
-              <div class="carousel-item-overlay">
-                <h3 class="carousel-item-title">Ornate Temple Corridor</h3>
-              </div>
+  <!-- 2. Other 3D Work -->
+  <div class="work-category">
+    <h3 class="category-title">Other 3D Work</h3>
+    <div class="carousel-container">
+      <div class="carousel-rail">
+        <div class="carousel">
+          <div class="carousel-item" data-lightbox-id="spaceman" onclick="openLightbox('spaceman')">
+            <img
+              src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761276276/3d_spaceman_main_hdjup4.png"
+              alt="Spaceman – Scene Replication (thumbnail)"
+              width="600"
+              height="400"
+            />
+            <div class="carousel-item-overlay">
+              <h3 class="carousel-item-title">Spaceman – Scene Replication</h3>
             </div>
           </div>
-          <!-- The clipping track + thumb (sibling of .carousel) -->
-          <div class="scroll-track">
-            <div class="scroll-thumb"></div>
+
+          <div class="carousel-item" data-lightbox-id="arrival-scene-replication" onclick="openLightbox('arrival-scene-replication')">
+            <img
+              src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761277692/3d_arrival_main_ygykys.png"
+              alt="Arrival - Scene Replication (thumbnail)"
+              width="600"
+              height="400"
+            />
+            <div class="carousel-item-overlay">
+              <h3 class="carousel-item-title">Arrival – Scene Replication</h3>
+            </div>
+          </div>
+
+          <div class="carousel-item" data-lightbox-id="procedural-experiments" onclick="openLightbox('procedural-experiments')">
+            <img
+              src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761276291/3d_geo_exp_01_eqkxjw.png"
+              alt="Procedural Geometry Experiments (thumbnail)"
+              width="600"
+              height="400"
+            />
+            <div class="carousel-item-overlay">
+              <h3 class="carousel-item-title">Procedural Geometry Experiments</h3>
+            </div>
+          </div>
+
+          <div class="carousel-item" data-lightbox-id="hallway-study" onclick="openLightbox('hallway-study')">
+            <img
+              src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/hallway_textured"
+              alt="Ornate Temple Corridor (thumbnail)"
+              width="600"
+              height="400"
+            />
+            <div class="carousel-item-overlay">
+              <h3 class="carousel-item-title">Ornate Temple Corridor</h3>
+            </div>
           </div>
         </div>
-        <!-- End .carousel-rail -->
+        <!-- The clipping track + thumb -->
+        <div class="scroll-track">
+          <div class="scroll-thumb"></div>
+        </div>
       </div>
-      <!-- End .carousel-container -->
     </div>
-    <!-- End .work-category -->
-    
-    <!-- Industrial Design -->
-    <div class="work-category">
-      <h3 class="category-title">Industrial Design</h3>
-      <div class="carousel-container">
-        <div class="carousel-rail">
-          <div class="carousel">
-            <div class="carousel-item" data-lightbox-id="industrial-design-luminis-lumistik-ip-merge" onclick="openLightbox('industrial-design-luminis-lumistik-ip-merge')">
-              <img
-                src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761517482/id_luminis_internship_11_eednyt.png"
-                alt="Luminis Lumistik IP Merge (thumbnail)"
-                width="600"
-                height="400"
-              />
-              <div class="carousel-item-overlay">
-                <h3 class="carousel-item-title">Luminis Lumistik IP Merge</h3>
-              </div>
-            </div>
-            <div class="carousel-item" data-lightbox-id="industrial-design-national-gallery-internship" onclick="openLightbox('industrial-design-national-gallery-internship')">
-              <img
-                src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761454345/ngc_internship_3_qdvhzy.png"
-                alt="National Gallery of Canada – Exhibition Design Internship (thumbnail)"
-                width="600"
-                height="400"
-              />
-              <div class="carousel-item-overlay">
-                <h3 class="carousel-item-title">National Gallery of Canada – Exhibition Design</h3>
-              </div>
-            </div>
-            <div class="carousel-item" data-lightbox-id="industrial-design-myco-audio-speaker" onclick="openLightbox('industrial-design-myco-audio-speaker')">
-              <img
-                src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761348307/id_myco_audio_main_up_qiq0dl.png"
-                alt="Myco Audio Mycoboard Composite Speaker (thumbnail)"
-                width="600"
-                height="400"
-              />
-              <div class="carousel-item-overlay">
-                <h3 class="carousel-item-title">Myco Audio – Mycoboard Composite Speaker</h3>
-              </div>
-            </div>
-            <div class="carousel-item" data-lightbox-id="industrial-design-alaya-hologram-projector" onclick="openLightbox('industrial-design-alaya-hologram-projector')">
-              <img
-                src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761277799/id_alaya_main_htubvx.png"
-                alt="Alaya – Hologram Projector (thumbnail)"
-                width="600"
-                height="400"
-              />
-              <div class="carousel-item-overlay">
-                <h3 class="carousel-item-title">Alaya Hologram Projector</h3>
-              </div>
-            </div>
-            <div class="carousel-item" data-lightbox-id="industrial-design-onx-mini-itx-case" onclick="openLightbox('industrial-design-onx-mini-itx-case')">
-              <img
-                src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761348963/id_onx_main_sxvv78.png"
-                alt="ONX – Mini-ITX PC Case with AI Visualizer (thumbnail)"
-                width="600"
-                height="400"
-              />
-              <div class="carousel-item-overlay">
-                <h3 class="carousel-item-title">ONX – Mini-ITX PC Case with AI Visualizer</h3>
-              </div>
-            </div>
-            <div class="carousel-item" data-lightbox-id="industrial-design-pneumatic-stone-grinder" onclick="openLightbox('industrial-design-pneumatic-stone-grinder')">
-              <img
-                src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761344724/id_grinder_main_jfhqve.png"
-                alt="Pneumatic Stone Grinder with Integrated Water Jet System (thumbnail)"
-                width="600"
-                height="400"
-              />
-              <div class="carousel-item-overlay">
-                <h3 class="carousel-item-title">Pneumatic Stone Grinder with Water Jet System</h3>
-              </div>
-            </div>
-            <div class="carousel-item" data-lightbox-id="industrial-design-colony-modular-charging-system" onclick="openLightbox('industrial-design-colony-modular-charging-system')">
-              <img
-                src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761337266/id_colony_main_g7yvcg.png"
-                alt="Colony – Smart Modular Charging System (thumbnail)"
-                width="600"
-                height="400"
-              />
-              <div class="carousel-item-overlay">
-                <h3 class="carousel-item-title">Colony – Smart Modular Charging System</h3>
-              </div>
-            </div>
-            <div class="carousel-item" data-lightbox-id="industrial-design-ora-speaker-projection-system" onclick="openLightbox('industrial-design-ora-speaker-projection-system')">
-              <img
-                src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761349615/id_ora_main_wtroyh.png"
-                alt="ORA – Speaker with Integrated HDMI Projection System (thumbnail)"
-                width="600"
-                height="400"
-              />
-              <div class="carousel-item-overlay">
-                <h3 class="carousel-item-title">ORA – Speaker with Projection System</h3>
-              </div>
-            </div>
-            <div class="carousel-item" data-lightbox-id="industrial-design-additional-renders" onclick="openLightbox('industrial-design-additional-renders')">
-              <img
-                src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761352341/id_seaker_product2_hborsa.png"
-                alt="Additional Renders – Product Design Collection (thumbnail)"
-                width="600"
-                height="400"
-              />
-              <div class="carousel-item-overlay">
-                <h3 class="carousel-item-title">Additional Renders – Product Design Collection</h3>
-              </div>
+  </div>
+
+  <!-- 3. Industrial Design -->
+  <div class="work-category">
+    <h3 class="category-title">Industrial Design</h3>
+    <div class="carousel-container">
+      <div class="carousel-rail">
+        <div class="carousel">
+          <div class="carousel-item" data-lightbox-id="industrial-design-luminis-lumistik-ip-merge" onclick="openLightbox('industrial-design-luminis-lumistik-ip-merge')">
+            <img
+              src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761517482/id_luminis_internship_11_eednyt.png"
+              alt="Luminis Lumistik IP Merge (thumbnail)"
+              width="600"
+              height="400"
+            />
+            <div class="carousel-item-overlay">
+              <h3 class="carousel-item-title">Luminis Lumistik IP Merge</h3>
             </div>
           </div>
-          <!-- The clipping track + thumb (sibling of .carousel) -->
-          <div class="scroll-track">
-            <div class="scroll-thumb"></div>
+          <div class="carousel-item" data-lightbox-id="industrial-design-national-gallery-internship" onclick="openLightbox('industrial-design-national-gallery-internship')">
+            <img
+              src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761454345/ngc_internship_3_qdvhzy.png"
+              alt="National Gallery of Canada – Exhibition Design Internship (thumbnail)"
+              width="600"
+              height="400"
+            />
+            <div class="carousel-item-overlay">
+              <h3 class="carousel-item-title">National Gallery of Canada – Exhibition Design</h3>
+            </div>
+          </div>
+          <div class="carousel-item" data-lightbox-id="industrial-design-myco-audio-speaker" onclick="openLightbox('industrial-design-myco-audio-speaker')">
+            <img
+              src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761348307/id_myco_audio_main_up_qiq0dl.png"
+              alt="Myco Audio Mycoboard Composite Speaker (thumbnail)"
+              width="600"
+              height="400"
+            />
+            <div class="carousel-item-overlay">
+              <h3 class="carousel-item-title">Myco Audio – Mycoboard Composite Speaker</h3>
+            </div>
+          </div>
+          <div class="carousel-item" data-lightbox-id="industrial-design-alaya-hologram-projector" onclick="openLightbox('industrial-design-alaya-hologram-projector')">
+            <img
+              src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761277799/id_alaya_main_htubvx.png"
+              alt="Alaya – Hologram Projector (thumbnail)"
+              width="600"
+              height="400"
+            />
+            <div class="carousel-item-overlay">
+              <h3 class="carousel-item-title">Alaya Hologram Projector</h3>
+            </div>
+          </div>
+          <div class="carousel-item" data-lightbox-id="industrial-design-onx-mini-itx-case" onclick="openLightbox('industrial-design-onx-mini-itx-case')">
+            <img
+              src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761348963/id_onx_main_sxvv78.png"
+              alt="ONX – Mini-ITX PC Case with AI Visualizer (thumbnail)"
+              width="600"
+              height="400"
+            />
+            <div class="carousel-item-overlay">
+              <h3 class="carousel-item-title">ONX – Mini-ITX PC Case with AI Visualizer</h3>
+            </div>
+          </div>
+          <div class="carousel-item" data-lightbox-id="industrial-design-pneumatic-stone-grinder" onclick="openLightbox('industrial-design-pneumatic-stone-grinder')">
+            <img
+              src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761344724/id_grinder_main_jfhqve.png"
+              alt="Pneumatic Stone Grinder with Integrated Water Jet System (thumbnail)"
+              width="600"
+              height="400"
+            />
+            <div class="carousel-item-overlay">
+              <h3 class="carousel-item-title">Pneumatic Stone Grinder with Water Jet System</h3>
+            </div>
+          </div>
+          <div class="carousel-item" data-lightbox-id="industrial-design-colony-modular-charging-system" onclick="openLightbox('industrial-design-colony-modular-charging-system')">
+            <img
+              src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761337266/id_colony_main_g7yvcg.png"
+              alt="Colony – Smart Modular Charging System (thumbnail)"
+              width="600"
+              height="400"
+            />
+            <div class="carousel-item-overlay">
+              <h3 class="carousel-item-title">Colony – Smart Modular Charging System</h3>
+            </div>
+          </div>
+          <div class="carousel-item" data-lightbox-id="industrial-design-ora-speaker-projection-system" onclick="openLightbox('industrial-design-ora-speaker-projection-system')">
+            <img
+              src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761349615/id_ora_main_wtroyh.png"
+              alt="ORA – Speaker with Integrated HDMI Projection System (thumbnail)"
+              width="600"
+              height="400"
+            />
+            <div class="carousel-item-overlay">
+              <h3 class="carousel-item-title">ORA – Speaker with Projection System</h3>
+            </div>
+          </div>
+          <div class="carousel-item" data-lightbox-id="industrial-design-additional-renders" onclick="openLightbox('industrial-design-additional-renders')">
+            <img
+              src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761352341/id_seaker_product2_hborsa.png"
+              alt="Additional Renders – Product Design Collection (thumbnail)"
+              width="600"
+              height="400"
+            />
+            <div class="carousel-item-overlay">
+              <h3 class="carousel-item-title">Additional Renders – Product Design Collection</h3>
+            </div>
           </div>
         </div>
-        <!-- End .carousel-rail -->
+        <!-- The clipping track + thumb -->
+        <div class="scroll-track">
+          <div class="scroll-thumb"></div>
+        </div>
       </div>
-      <!-- End .carousel-container -->
     </div>
-    <!-- End .work-category -->
+  </div>
 
-        <!-- Graphic Design -->
-        <div class="work-category">
-          <h3 class="category-title">Graphic & Motion Design</h3>
-          <div class="carousel-container">
-            <div class="carousel-rail">
-              <div class="carousel">
-                <div class="carousel-item" data-lightbox-id="graphic-design-beatdapp-battle-of-the-bands" onclick="openLightbox('graphic-design-beatdapp-battle-of-the-bands')">
-                  <img
-                    src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761518983/graphic_beatdapp_banner_thumb_u8drc8.png"
-                    alt="Beatdapp – Battle of the Bands Event Branding (thumbnail)"
-                    width="600"
-                    height="400"
-                  />
-                  <div class="carousel-item-overlay">
-                    <h3 class="carousel-item-title">Beatdapp – Battle of the Bands</h3>
-                  </div>
-                </div>
-                <div class="carousel-item" data-lightbox-id="graphic-design-renaissance-bts-contest" onclick="openLightbox('graphic-design-renaissance-bts-contest')">
-                  <img
-                    src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761520958/graphic_ren_bts_3_ck2dz0.jpg"
-                    alt="Renaissance App – BTS Concert Experience Contest (thumbnail)"
-                    width="600"
-                    height="400"
-                  />
-                  <div class="carousel-item-overlay">
-                    <h3 class="carousel-item-title">Renaissance App – BTS Contest</h3>
-                  </div>
-                </div>
-                <div class="carousel-item" data-lightbox-id="graphic-design-curbside-car-wash-logo" onclick="openLightbox('graphic-design-curbside-car-wash-logo')">
-                  <img
-                    src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761406667/graphic_curbsidecarwash_usszlo.png"
-                    alt="Curbside Car Wash – Company Logo Design (thumbnail)"
-                    width="600"
-                    height="400"
-                  />
-                  <div class="carousel-item-overlay">
-                    <h3 class="carousel-item-title">Curbside Car Wash – Logo Design</h3>
-                  </div>
-                </div>
-                <div class="carousel-item" data-lightbox-id="graphic-design-the-drop-shoe-cleaning" onclick="openLightbox('graphic-design-the-drop-shoe-cleaning')">
-                  <img
-                    src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761495773/graphic_drop_sellursole_crop_l2isbf.png"
-                    alt="The Drop – Shoe Cleaning Service Branding (thumbnail)"
-                    width="600"
-                    height="400"
-                  />
-                  <div class="carousel-item-overlay">
-                    <h3 class="carousel-item-title">The Drop – Shoe Cleaning Branding</h3>
-                  </div>
-                </div>
-                <div class="carousel-item" data-lightbox-id="graphic-design-glory-days-fine-goods" onclick="openLightbox('graphic-design-glory-days-fine-goods')">
-                  <img
-                    src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761496284/graphic_glorydays_crop_gbyynf.jpg"
-                    alt="Glory Days Fine Goods – Apparel Graphic Commission (thumbnail)"
-                    width="600"
-                    height="400"
-                  />
-                  <div class="carousel-item-overlay">
-                    <h3 class="carousel-item-title">Glory Days Fine Goods – Apparel Graphic</h3>
-                  </div>
-                </div>
-                <div class="carousel-item" data-lightbox-id="graphic-design-university-of-montreal-mental-health" onclick="openLightbox('graphic-design-university-of-montreal-mental-health')">
-                  <img
-                    src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761406648/Art_UOM_graphic1_unpael.jpg"
-                    alt="University of Montreal – Mental Health Pamphlet Graphics (thumbnail)"
-                    width="600"
-                    height="400"
-                  />
-                  <div class="carousel-item-overlay">
-                    <h3 class="carousel-item-title">University of Montreal – Mental Health Graphics</h3>
-                  </div>
-                </div>
-                <div class="carousel-item" data-lightbox-id="graphic-design-heidi-conrod-motion-graphic" onclick="openLightbox('graphic-design-heidi-conrod-motion-graphic')">
-                  <img
-                    src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761495431/Blinded_contact_hbier3.webp"
-                    alt="Heidi Conrod – Motion Graphic Commission (thumbnail)"
-                    width="600"
-                    height="400"
-                  />
-                  <div class="carousel-item-overlay">
-                    <h3 class="carousel-item-title">Heidi Conrod – Motion Graphic</h3>
-                  </div>
-                </div>
-              </div>
-            <!-- The clipping track + thumb (sibling of .carousel) -->
-            <div class="scroll-track">
-              <div class="scroll-thumb"></div>
+  <!-- 4. Graphic & Motion Design -->
+  <div class="work-category">
+    <h3 class="category-title">Graphic & Motion Design</h3>
+    <div class="carousel-container">
+      <div class="carousel-rail">
+        <div class="carousel">
+          <div class="carousel-item" data-lightbox-id="graphic-design-beatdapp-battle-of-the-bands" onclick="openLightbox('graphic-design-beatdapp-battle-of-the-bands')">
+            <img
+              src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761518983/graphic_beatdapp_banner_thumb_u8drc8.png"
+              alt="Beatdapp – Battle of the Bands Event Branding (thumbnail)"
+              width="600"
+              height="400"
+            />
+            <div class="carousel-item-overlay">
+              <h3 class="carousel-item-title">Beatdapp – Battle of the Bands</h3>
             </div>
           </div>
-          <!-- End .carousel-rail -->
-        </div>
-        <!-- End .carousel-container -->
-      </div>
-      <!-- End .work-category -->
-
-        <!-- Art & Sculptures -->
-        <div class="work-category">
-          <h3 class="category-title">Art & Sculptures</h3>
-          <div class="carousel-container">
-            <div class="carousel-rail">
-              <div class="carousel">
-                <div class="carousel-item" data-lightbox-id="art-soul-bird-sculpture" onclick="openLightbox('art-soul-bird-sculpture')">
-                  <img
-                    src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761411149/art_soul_bird_03_bg_rljqzn.png"
-                    alt="Soul Bird Sculpture (thumbnail)"
-                    width="600"
-                    height="400"
-                  />
-                  <div class="carousel-item-overlay">
-                    <h3 class="carousel-item-title">Soul Bird Sculpture</h3>
-                  </div>
-                </div>
-                <div class="carousel-item" data-lightbox-id="art-skeleton-studies" onclick="openLightbox('art-skeleton-studies')">
-                  <img
-                    src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761406812/art_skeleton2_xv31jl.jpg"
-                    alt="Skeleton Studies (thumbnail)"
-                    width="600"
-                    height="400"
-                  />
-                  <div class="carousel-item-overlay">
-                    <h3 class="carousel-item-title">Skeleton Studies</h3>
-                  </div>
-                </div>
-                <div class="carousel-item" data-lightbox-id="art-humpback-whale" onclick="openLightbox('art-humpback-whale')">
-                  <img
-                    src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761406821/art_whale_kd6skk.png"
-                    alt="Humpback Whale (thumbnail)"
-                    width="600"
-                    height="400"
-                  />
-                  <div class="carousel-item-overlay">
-                    <h3 class="carousel-item-title">Humpback Whale</h3>
-                  </div>
-                </div>
-                <div class="carousel-item" data-lightbox-id="art-spirit-bear" onclick="openLightbox('art-spirit-bear')">
-                  <img
-                    src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761406984/art_spirit_bear_tgfdje.png"
-                    alt="Spirit Bear (thumbnail)"
-                    width="600"
-                    height="400"
-                  />
-                  <div class="carousel-item-overlay">
-                    <h3 class="carousel-item-title">Spirit Bear</h3>
-                  </div>
-                </div>
-                <div class="carousel-item" data-lightbox-id="graphic-design-untitled-personal-project" onclick="openLightbox('graphic-design-untitled-personal-project')">
-                  <img
-                    src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761406675/art_bb_igyt64.png"
-                    alt="Untitled – Personal Graphic Work (thumbnail)"
-                    width="600"
-                    height="400"
-                  />
-                  <div class="carousel-item-overlay">
-                    <h3 class="carousel-item-title">Untitled – Personal Work</h3>
-                  </div>
-                </div>
-              </div>
-            <!-- The clipping track + thumb (sibling of .carousel) -->
-            <div class="scroll-track">
-              <div class="scroll-thumb"></div>
+          <div class="carousel-item" data-lightbox-id="graphic-design-renaissance-bts-contest" onclick="openLightbox('graphic-design-renaissance-bts-contest')">
+            <img
+              src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761520958/graphic_ren_bts_3_ck2dz0.jpg"
+              alt="Renaissance App – BTS Concert Experience Contest (thumbnail)"
+              width="600"
+              height="400"
+            />
+            <div class="carousel-item-overlay">
+              <h3 class="carousel-item-title">Renaissance App – BTS Contest</h3>
             </div>
           </div>
-          <!-- End .carousel-rail -->
+          <div class="carousel-item" data-lightbox-id="graphic-design-curbside-car-wash-logo" onclick="openLightbox('graphic-design-curbside-car-wash-logo')">
+            <img
+              src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761406667/graphic_curbsidecarwash_usszlo.png"
+              alt="Curbside Car Wash – Company Logo Design (thumbnail)"
+              width="600"
+              height="400"
+            />
+            <div class="carousel-item-overlay">
+              <h3 class="carousel-item-title">Curbside Car Wash – Logo Design</h3>
+            </div>
+          </div>
+          <div class="carousel-item" data-lightbox-id="graphic-design-the-drop-shoe-cleaning" onclick="openLightbox('graphic-design-the-drop-shoe-cleaning')">
+            <img
+              src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761495773/graphic_drop_sellursole_crop_l2isbf.png"
+              alt="The Drop – Shoe Cleaning Service Branding (thumbnail)"
+              width="600"
+              height="400"
+            />
+            <div class="carousel-item-overlay">
+              <h3 class="carousel-item-title">The Drop – Shoe Cleaning Branding</h3>
+            </div>
+          </div>
+          <div class="carousel-item" data-lightbox-id="graphic-design-glory-days-fine-goods" onclick="openLightbox('graphic-design-glory-days-fine-goods')">
+            <img
+              src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761496284/graphic_glorydays_crop_gbyynf.jpg"
+              alt="Glory Days Fine Goods – Apparel Graphic Commission (thumbnail)"
+              width="600"
+              height="400"
+            />
+            <div class="carousel-item-overlay">
+              <h3 class="carousel-item-title">Glory Days Fine Goods – Apparel Graphic</h3>
+            </div>
+          </div>
+          <div class="carousel-item" data-lightbox-id="graphic-design-university-of-montreal-mental-health" onclick="openLightbox('graphic-design-university-of-montreal-mental-health')">
+            <img
+              src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761406648/Art_UOM_graphic1_unpael.jpg"
+              alt="University of Montreal – Mental Health Pamphlet Graphics (thumbnail)"
+              width="600"
+              height="400"
+            />
+            <div class="carousel-item-overlay">
+              <h3 class="carousel-item-title">University of Montreal – Mental Health Graphics</h3>
+            </div>
+          </div>
+          <div class="carousel-item" data-lightbox-id="graphic-design-heidi-conrod-motion-graphic" onclick="openLightbox('graphic-design-heidi-conrod-motion-graphic')">
+            <img
+              src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761495431/Blinded_contact_hbier3.webp"
+              alt="Heidi Conrod – Motion Graphic Commission (thumbnail)"
+              width="600"
+              height="400"
+            />
+            <div class="carousel-item-overlay">
+              <h3 class="carousel-item-title">Heidi Conrod – Motion Graphic</h3>
+            </div>
+          </div>
         </div>
-        <!-- End .carousel-container -->
+        <!-- The clipping track + thumb -->
+        <div class="scroll-track">
+          <div class="scroll-thumb"></div>
+        </div>
       </div>
-      <!-- End .work-category -->
+    </div>
+  </div>
+
+  <!-- 5. Art & Sculptures -->
+  <div class="work-category">
+    <h3 class="category-title">Art & Sculptures</h3>
+    <div class="carousel-container">
+      <div class="carousel-rail">
+        <div class="carousel">
+          <div class="carousel-item" data-lightbox-id="art-soul-bird-sculpture" onclick="openLightbox('art-soul-bird-sculpture')">
+            <img
+              src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761411149/art_soul_bird_03_bg_rljqzn.png"
+              alt="Soul Bird Sculpture (thumbnail)"
+              width="600"
+              height="400"
+            />
+            <div class="carousel-item-overlay">
+              <h3 class="carousel-item-title">Soul Bird Sculpture</h3>
+            </div>
+          </div>
+          <div class="carousel-item" data-lightbox-id="art-skeleton-studies" onclick="openLightbox('art-skeleton-studies')">
+            <img
+              src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761406812/art_skeleton2_xv31jl.jpg"
+              alt="Skeleton Studies (thumbnail)"
+              width="600"
+              height="400"
+            />
+            <div class="carousel-item-overlay">
+              <h3 class="carousel-item-title">Skeleton Studies</h3>
+            </div>
+          </div>
+          <div class="carousel-item" data-lightbox-id="art-humpback-whale" onclick="openLightbox('art-humpback-whale')">
+            <img
+              src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761406821/art_whale_kd6skk.png"
+              alt="Humpback Whale (thumbnail)"
+              width="600"
+              height="400"
+            />
+            <div class="carousel-item-overlay">
+              <h3 class="carousel-item-title">Humpback Whale</h3>
+            </div>
+          </div>
+          <div class="carousel-item" data-lightbox-id="art-spirit-bear" onclick="openLightbox('art-spirit-bear')">
+            <img
+              src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761406984/art_spirit_bear_tgfdje.png"
+              alt="Spirit Bear (thumbnail)"
+              width="600"
+              height="400"
+            />
+            <div class="carousel-item-overlay">
+              <h3 class="carousel-item-title">Spirit Bear</h3>
+            </div>
+          </div>
+          <div class="carousel-item" data-lightbox-id="graphic-design-untitled-personal-project" onclick="openLightbox('graphic-design-untitled-personal-project')">
+            <img
+              src="https://res.cloudinary.com/dlepppgm2/image/upload/f_auto,q_auto:eco,h_400,c_limit,dpr_2.0/v1761406675/art_bb_igyt64.png"
+              alt="Untitled – Personal Graphic Work (thumbnail)"
+              width="600"
+              height="400"
+            />
+            <div class="carousel-item-overlay">
+              <h3 class="carousel-item-title">Untitled – Personal Work</h3>
+            </div>
+          </div>
+        </div>
+        <!-- The clipping track + thumb -->
+        <div class="scroll-track">
+          <div class="scroll-thumb"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+<!-- End #additional-work -->
 
 <!--
       ========================================
@@ -989,6 +974,11 @@
 
   <!-- ==== Back Home Button ==== -->
     <button id="globalBackBtn" class="back-home" onclick="navigateToPage('home')" style="display: none;">← Back to Home</button>
+
+  <!-- ==== Scroll To Top Button (Project Pages) ==== -->
+    <button id="scrollTopBtn" class="scroll-top" type="button" aria-label="Scroll to top" style="display:none;">
+      ↑ Top
+    </button>
 
 <!-- ==== Project 1 page ==== -->
 <div id="project1" class="page">
@@ -1419,68 +1409,73 @@
     </div>
 </div>
 
-  <!-- ==== Lightbox (single unified rich instance) ==== -->
-  <div id="lightbox" class="lightbox">
-    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-    
-    <!-- Previous Project -->
-    <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">
-      &#8249; <span class="label">Previous Project</span>
-    </button>
-    
-    <!-- Next Project -->
-    <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">
-      <span class="label">Next Project</span> &#8250;
-    </button>
+<!-- ==== Lightbox (Unified Rich Instance) ==== -->
+<div id="lightbox" class="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  
+  <!-- Fixed Elements -->
+  <h2 id="lightbox-project-title" class="lightbox-project-title"></h2>
+  <div class="lightbox-expansion-hint">Double-tap to expand</div>
 
-    <div class="lightbox-content">
-      <!-- Desktop fullscreen hint -->
-      <div class="lightbox-hint">Click image to fullscreen</div>
+  <!-- Standard Subcarousel Arrows -->
+  <button class="sub-nav-arrow sub-prev" onclick="navigateSubCarousel(-1)">&#8249;</button>
+  <button class="sub-nav-arrow sub-next" onclick="navigateSubCarousel(1)">&#8250;</button>
+
+  <!-- Project Navigation (Bottom) -->
+  <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">
+    &#8249; <span class="label">Previous Project</span>
+  </button>
+  
+  <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">
+    <span class="label">Next Project</span> &#8250;
+  </button>
+
+  <div class="lightbox-content">
+    
+    <div class="lightbox-media-container">
+      <div class="lightbox-track">
+        <img id="lightbox-image" class="lightbox-image" src="" alt="" style="display:none;">
+        <video id="lightbox-video" class="lightbox-video" controls style="display:none;">
+          <source src="" type="video/mp4">
+        </video>
+      </div>
       
-      <div class="lightbox-media-container">
-        <!-- Mobile expansion hint -->
-        <div class="lightbox-expansion-hint">Double-tap to expand</div>
-        
-        <div class="lightbox-track">
-          <img id="lightbox-image" class="lightbox-image" src="" alt="" style="display:none;">
-          <video id="lightbox-video" class="lightbox-video" controls style="display:none;">
-            <source src="" type="video/mp4">
-          </video>
-        </div>
-        
-        <!-- Fullscreen navigation arrows -->
-        <div class="fullscreen-nav-arrows" id="fullscreen-nav-arrows" style="display: none;">
-          <div class="fullscreen-nav-arrow fullscreen-nav-left" onclick="navigateSubCarousel(-1)">‹</div>
-          <div class="fullscreen-nav-arrow fullscreen-nav-right" onclick="navigateSubCarousel(1)">›</div>
-          <div class="desktop-nav-hint">Use arrow keys to navigate</div> <!-- ⬅️ Desktop hint added here! -->
-        </div>
+      <!-- Fullscreen Navigation (Expanded Mode) -->
+      <div class="fullscreen-nav-arrows" id="fullscreen-nav-arrows" style="display: none;">
+        <div class="fullscreen-nav-arrow fullscreen-nav-left" onclick="event.stopPropagation(); navigateSubCarousel(-1)">‹</div>
+        <div class="fullscreen-nav-arrow fullscreen-nav-right" onclick="event.stopPropagation(); navigateSubCarousel(1)">›</div>
+        <div class="desktop-nav-hint">Use arrow keys to navigate</div>
+      </div>
+    </div>
+
+    <!-- ✅ Desktop Hint (Moved AFTER media container for CSS targeting) -->
+    <div class="lightbox-hint">Click image to fullscreen</div>
+
+    <div id="lightbox-sub-carousel" class="lightbox-sub-carousel" style="display:none;"></div>
+
+    <div class="lightbox-info">
+      <h3 id="lightbox-title" class="lightbox-title"></h3>
+
+      <div id="lightbox-tabs" class="lightbox-tabs" style="display:none;">
+        <button class="lightbox-tab active" onclick="switchLightboxTab('description', this)">Description</button>
+        <button class="lightbox-tab" onclick="switchLightboxTab('details', this)">Details</button>
+        <button class="lightbox-tab" onclick="switchLightboxTab('links', this)">Links</button>
       </div>
 
-      <div id="lightbox-sub-carousel" class="lightbox-sub-carousel" style="display:none;"></div>
+      <div id="tab-description" class="lightbox-tab-content active">
+        <p id="lightbox-description" class="lightbox-description"></p>
+      </div>
 
-      <div class="lightbox-info">
-        <h3 id="lightbox-title" class="lightbox-title"></h3>
+      <div id="tab-details" class="lightbox-tab-content">
+        <p id="lightbox-details" class="lightbox-details"></p>
+      </div>
 
-        <div id="lightbox-tabs" class="lightbox-tabs" style="display:none;">
-          <button class="lightbox-tab active" onclick="switchLightboxTab('description', this)">Description</button>
-          <button class="lightbox-tab" onclick="switchLightboxTab('details', this)">Details</button>
-          <button class="lightbox-tab" onclick="switchLightboxTab('links', this)">Links</button>
-        </div>
-
-        <div id="tab-description" class="lightbox-tab-content active">
-          <p id="lightbox-description" class="lightbox-description"></p>
-        </div>
-
-        <div id="tab-details" class="lightbox-tab-content">
-          <p id="lightbox-details" class="lightbox-details"></p>
-        </div>
-
-        <div id="tab-links" class="lightbox-tab-content">
-          <div id="lightbox-links" class="lightbox-links"></div>
-        </div>
+      <div id="tab-links" class="lightbox-tab-content">
+        <div id="lightbox-links" class="lightbox-links"></div>
       </div>
     </div>
   </div>
+</div>
 
 <!-- GSAP integration -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>

@@ -543,7 +543,7 @@
     }
   }
 
-  /* Beefier custom scrollbar (desktop only) */
+  /* Custom scrollbar (desktop only) */
   @media (hover: hover) and (pointer: fine) {
     #project1-topology-carousel::-webkit-scrollbar {
       height: 14px;
@@ -750,6 +750,78 @@
       }
     }
 
+    /* --- Scroll To Top (Project Pages) --- */
+    .scroll-top {
+      position: fixed !important;
+
+      /* Bottom-right so it won't fight Back to Home (top corner) */
+      right: calc(env(safe-area-inset-right, 0px) + 20px);
+      bottom: calc(env(safe-area-inset-bottom, 0px) + 20px);
+
+      background: rgba(0,0,0,.8);
+      border: 1px solid rgba(255,255,255,.2);
+      color: #fff;
+
+      padding: 12px 16px;
+      border-radius: 25px;
+      font-size: 1rem;
+      letter-spacing: 1px;
+
+      cursor: pointer;
+      min-width: 44px;
+      min-height: 44px;
+
+      z-index: 1200; /* above content, below your 1800 mobile nav toggle */
+
+      /* hidden state */
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(120%);
+    }
+
+    /* Hover matches your vibe */
+    .scroll-top:hover {
+      background: rgba(255,255,255,.1);
+      transform: translateX(120%) translateY(-2px);
+    }
+
+    /* Visible: slide in from right (like hamburger but mirrored) */
+    .scroll-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      animation: slideInRight 0.5s ease-out forwards;
+    }
+
+    @keyframes slideInRight {
+      from {
+        transform: translateX(120%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    /* Mobile tweaks */
+    @media (max-width: 768px) {
+      .scroll-top {
+        right: calc(env(safe-area-inset-right, 0px) + 20px);
+        bottom: calc(env(safe-area-inset-bottom, 0px) + 20px);
+        font-size: 0.9rem;
+        padding: 10px 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .scroll-top {
+        right: calc(env(safe-area-inset-right, 0px) + 15px);
+        bottom: calc(env(safe-area-inset-bottom, 0px) + 15px);
+        font-size: 0.8rem;
+        padding: 8px 12px;
+      }
+    }
+
     /* --- Additional Work  --- */
     .additional-work { padding:80px 20px; max-width:min(95vw, 1800px); margin:0 auto; }
     .work-category { margin-bottom:80px; }
@@ -927,10 +999,13 @@
     .carousel-item-title {
       font-family: 'Montserrat', sans-serif;
       font-size: 1rem;
-      font-weight: 600;
+      font-weight: 300;          /* ✅ Thinner weight */
       margin: 0;
       color: #fff;
       text-align: center;
+      letter-spacing: 2px;       /* ✅ Wide spacing */
+      text-transform: uppercase; /* ✅ Uppercase */
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
     }
 
     /* Hide carousel overlays on mobile to preserve touch navigation */
@@ -1096,17 +1171,31 @@
     .lightbox.active { display:flex; opacity:1; align-items:center; justify-content:center; }
     .lightbox-content { position:relative; max-width:90vw; max-height:90vh; display:flex; flex-direction:column; align-items:center; animation:lightboxZoom .3s ease; }
     @keyframes lightboxZoom { from{ transform:scale(.8); opacity:0 } to{ transform:scale(1); opacity:1 } }
-    .lightbox-media-container { 
-    position: relative; 
-    width: min(90vw, 1000px); 
-    height: auto;
-    min-height: 50vh;
-    max-height: 70vh; 
-    margin-bottom: 20px; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    .lightbox-media-container {
+      position: relative;
+      width: min(90vw, 1000px);
+      
+      /* ✅ Reduced to 10px (was 70px) to close the gap to the title */
+      margin-top: 10px; 
+      margin-bottom: 10px;
+      
+      height: auto;
+      min-height: 40vh;
+      max-height: calc(75vh - 20px); 
+      
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden; /* Ensure swipe preview doesn't leak */
+    }
+
+    @media (max-width: 768px) {
+      .lightbox-media-container {
+        /* Keep mobile spacing large to clear wrapped titles */
+        margin-top: 110px; 
+        max-height: calc(70vh - 110px);
+      }
+    }
     
     /* Hide native browser fullscreen button */
     .lightbox-media-container::-webkit-media-controls-fullscreen-button,
@@ -1183,56 +1272,76 @@
       pointer-events: none;
     }
 
-    /* Mobile expansion hint - fixed to top like close button */
+    /* ==== Mobile Expansion Hint  ==== */
     .lightbox-expansion-hint {
-      position: fixed; 
-      top: 15px; 
+      position: absolute; 
+      top: 50px; /* ✅ Fixed tight to the top (adjust based on title height) */
       left: 50%;
       transform: translateX(-50%);
+      
       text-align: center;
-      font-size: 0.6rem;
-      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.7rem;
+      color: rgba(255, 255, 255, 0.8);
       font-family: 'Montserrat', sans-serif;
-      font-weight: 300;
+      font-weight: 400;
       letter-spacing: 0.5px;
-      white-space: nowrap; 
-      padding: 6px 10px;
-      background: rgba(0, 0, 0, 0.3); 
-      backdrop-filter: blur(8px);
-      border-radius: 12px;
-      opacity: 0;
-      transition: opacity 0.3s ease;
+      
+      padding: 4px 12px;
+      background: rgba(0, 0, 0, 0.5); 
+      backdrop-filter: blur(4px);
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+      
       pointer-events: none;
       z-index: 3200; 
       display: none; 
+      
+      opacity: 0;
+      animation: hintFadeSequence 4s ease forwards;
     }
 
-    /* Show on mobile only */
     @media (max-width: 768px) {
       .lightbox-expansion-hint {
         display: block;
-      }
-      
-      /* Show hint when lightbox is active and NOT expanded */
-      .lightbox.active:not(.expanded-mode) .lightbox-expansion-hint {
-        opacity: 1;
-      }
-      
-      /* Hide hint when expanded */
-      .lightbox.expanded-mode .lightbox-expansion-hint {
-        opacity: 0;
+        /* ✅ Lowered to 110px (was 95px) */
+        top: 110px; 
       }
     }
 
-    /* Add top padding to media container so content never overlaps hint */
-    @media (max-width: 768px) {
-      .lightbox-media-container {
-        padding-top: 40px; /* ⬅️ Space for hint + breathing room */
-      }
+    /* ==== Lightbox Project Title  ==== */
+    .lightbox-project-title {
+      position: absolute;
+      top: 50px; /* ✅ Shifted down to 50px */
+      left: 0;
+      width: 100%;
+      padding: 0 60px;
+      box-sizing: border-box;
       
-      /* Remove padding when expanded */
-      .lightbox-media-container.expanded {
-        padding-top: 0;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      text-align: center;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #fff;
+      font-size: clamp(1rem, 2vw, 1.6rem);
+      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+      z-index: 999;
+      pointer-events: none;
+      
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Hide in expanded mode */
+    .lightbox.expanded-mode .lightbox-project-title {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+
+    /* Mobile Title Position */
+    @media (max-width: 768px) {
+      .lightbox-project-title {
+        top: 20px; /* Slightly higher on mobile */
+        padding: 0 50px;
       }
     }
 
@@ -1414,27 +1523,40 @@
     }
     /* Lightbox fullscreen hint (desktop only) */
     .lightbox-hint {
-      position: relative;
+      position: fixed; /* ✅ Fixed to viewport, not content */
+      top: 115px;       /* ✅ Pinned just under the title (which is at 50px) */
+      left: 50%;
+      transform: translateX(-50%);
+      
       text-align: center;
-      font-size: 0.75rem;
-      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.6rem; 
+      color: rgba(255, 255, 255, 0.5); 
       font-family: 'Montserrat', sans-serif;
       font-weight: 300;
-      letter-spacing: 0.5px;
-      padding: 8px 0;
-      margin-bottom: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      
+      padding: 2px 10px;
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(2px);
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.05);
+      
       opacity: 0;
       transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 4000; /* High z-index to sit above everything */
     }
 
-    .lightbox-content:hover .lightbox-hint {
-      opacity: 1;
-    }
-
-    /* Hide on mobile (since there's already a fullscreen icon) */
-    @media (max-width: 768px) {
-      .lightbox-hint {
-        display: none;
+    /* Show on hover (Desktop only) */
+    @media (min-width: 769px) {
+      /* Trigger when hovering the media container */
+      .lightbox-media-container:hover + .lightbox-hint {
+        opacity: 1;
+      }
+      
+      .lightbox.expanded-mode .lightbox-hint {
+        display: none !important;
       }
     }
 
@@ -1675,13 +1797,13 @@
         height: 40px;
         background: rgba(0, 0, 0, 0.7);
         backdrop-filter: blur(4px);
-        z-index: 3001; /* ⬅️ Higher than .lightbox-content */
-        pointer-events: auto; /* ⬅️ Ensure they're clickable */
+        z-index: 3001; 
+        pointer-events: auto; 
       }
 
       /* Ensure lightbox-content doesn't block nav */
       .lightbox-content {
-        pointer-events: none; /* ⬅️ Let clicks pass through to nav */
+        pointer-events: none; /* Let clicks pass through to nav */
         z-index: 3000;
       }
 
@@ -1762,33 +1884,47 @@
     }
     }
 
-    /* === Expanded Mode Styles === */
+    /* ==== Mobile Fullscreen Vertical Centering ==== */
     .lightbox-media-container.expanded {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw !important;
-    height: 100vh !important;
-    max-width: 100vw !important;
-    max-height: 100vh !important;
-    margin: 0 !important;
-    z-index: 5500;
-    background: #000;
-    transition: all 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw !important;
+      height: 100dvh !important; /* ✅ Use dynamic viewport height for mobile browsers */
+      max-width: 100vw !important;
+      max-height: 100dvh !important;
+      
+      /* ✅ Aggressively reset margins */
+      margin: 0 !important;
+      padding: 0 !important;
+      
+      z-index: 5500;
+      background: #000;
+      
+      /* ✅ Force Flex Centering */
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
     }
 
+    /* Ensure track fills the centered container */
     .lightbox-media-container.expanded .lightbox-track {
-    width: 100%;
-    height: 100%;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
+    /* Ensure image fits within the centered track */
     .lightbox-media-container.expanded .lightbox-image,
     .lightbox-media-container.expanded .lightbox-video {
-    max-width: 100vw !important;
-    max-height: 100vh !important;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+      max-width: 100vw !important;
+      max-height: 100dvh !important;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      margin: 0 !important; /* Ensure no auto margins interfere */
     }
 
     /* Slide title, tabs, description UNDER the media */
@@ -1920,80 +2056,219 @@
 
   /* Fullscreen subcarousel navigation arrows */
   .fullscreen-nav-arrows {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-    z-index: 9999; /* ⬅️ Bumped up for desktop visibility – arrows on top! */
-    opacity: 0;
-    transition: opacity 0.5s ease;
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0;
+      transition: opacity 0.5s ease;
   }
 
-  /* Show arrows when expanded with pulse */
   .lightbox-media-container.expanded .fullscreen-nav-arrows {
-    opacity: 1;
-    animation: arrowsFadeInPulseOut 3.5s ease forwards;
+      opacity: 1;
+      /* Removed the pulse animation on the container so arrows stay interactive */
   }
 
-  /* Fade in, pulse a couple times, then fade out */
-  @keyframes arrowsFadeInPulseOut {
-    0% { opacity: 0; }
-    10% { opacity: 1; }
-    30% { opacity: 0.6; }
-    50% { opacity: 1; }
-    70% { opacity: 0.6; }
-    85% { opacity: 1; }
-    100% { opacity: 0; }
-  }
-
+  /* ✅ Full-Height Clickable Zones */
   .fullscreen-nav-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 52px;
-    font-weight: 300;
-    color: rgba(255, 255, 255, 0.8);
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
-    pointer-events: auto;
-    cursor: pointer;
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
-
-  .fullscreen-nav-arrow:hover {
-    color: rgba(255, 255, 255, 1);
-    transform: translateY(-50%) scale(1.1);
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 15vw; 
+      min-width: 100px;
+      display: flex;
+      align-items: center;
+      
+      font-size: 60px;
+      font-weight: 100;
+      color: rgba(255, 255, 255, 0.0);
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+      
+      pointer-events: none; 
+      cursor: default;
+      transition: all 0.4s ease;
   }
 
   .fullscreen-nav-left {
-    left: 2vw;
+      left: 0;
+      right: auto; /* Safety */
+      justify-content: flex-start;
+      padding-left: 30px;
   }
 
   .fullscreen-nav-right {
-    right: 2vw;
+      right: 0;
+      left: auto; 
+      justify-content: flex-end;
+      padding-right: 30px;
   }
 
-  /* Desktop arrow key hint (pulses and fades, only on desktop) */
+  /* ✅ Only enable pointer events when expanded */
+  .lightbox-media-container.expanded .fullscreen-nav-arrow {
+      pointer-events: auto;
+      cursor: pointer;
+  }
+
+  /* Hover Effects (Only works when pointer-events is auto) */
+  .fullscreen-nav-left:hover {
+      color: rgba(255, 255, 255, 1);
+      background: linear-gradient(to right, rgba(0,0,0,0.5), transparent);
+  }
+
+  .fullscreen-nav-right:hover {
+      color: rgba(255, 255, 255, 1);
+      background: linear-gradient(to left, rgba(0,0,0,0.5), transparent);
+  }
+
+  /* Initial Pulse Animation for the ARROW ICON only (via color) */
+  .lightbox-media-container.expanded .fullscreen-nav-arrow {
+      animation: arrowIconPulse 4s ease forwards;
+  }
+
+  @keyframes arrowIconPulse {
+      0% { color: rgba(255,255,255,0); }
+      10% { color: rgba(255,255,255,0.8); }
+      30% { color: rgba(255,255,255,0.4); }
+      50% { color: rgba(255,255,255,0.8); }
+      100% { color: rgba(255,255,255,0.1); } /* Settle at very faint visibility */
+  }
+
+  /* ==== Subcarousel Side Arrows (Subtle) ==== */
+  .sub-nav-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+      color: rgba(255, 255, 255, 0.25);
+      font-size: 4rem; 
+      font-family: 'Montserrat', sans-serif; 
+      font-weight: 100;
+      cursor: pointer;
+      z-index: 3500;
+      
+      /* ✅ Increased Clickable Area */
+      padding: 0;
+      width: 90px;   /* Up from 70px */
+      height: 160px; /* Up from 120px */
+      
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      transition: all 0.3s ease;
+      display: none; 
+      outline: none;
+      user-select: none;
+  }
+
+  .sub-prev { left: 0; justify-content: flex-start; padding-left: 20px; }
+  .sub-next { right: 0; justify-content: flex-end; padding-right: 20px; }
+
+  /* Hide side arrows on mobile (swipe is preferred) */
+  @media (max-width: 768px) {
+      .sub-nav-arrow { display: none !important; }
+  }
+
+  /* ==== UPDATE: Project Navigation (Move to Bottom on Desktop) ==== */
+  @media (min-width: 769px) {
+      /* Target specific buttons to override global centering */
+      .lightbox-prev, 
+      .lightbox-next {
+          top: auto !important;          
+          transform: none !important;    
+          
+          /* 1. Position: Higher up and further in (Responsive) */
+          bottom: clamp(40px, 8vh, 80px) !important; 
+          
+          /* 2. Size: Bigger buttons (Responsive) */
+          height: clamp(60px, 7vh, 80px);
+          padding: 0 clamp(30px, 3vw, 50px);
+          border-radius: 50px;
+          
+          /* 3. Visuals: Restore the distinct grey background */
+          background: rgba(255, 255, 255, 0.15); 
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          backdrop-filter: blur(10px);
+          box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+          
+          /* Ensure flex layout for icon+text alignment */
+          display: flex;
+          align-items: center;
+          gap: 15px;
+      }
+
+      /* Left positioning */
+      .lightbox-prev {
+          left: clamp(60px, 8vw, 120px) !important;
+      }
+
+      /* Right positioning */
+      .lightbox-next {
+          right: clamp(60px, 8vw, 120px) !important;
+      }
+
+      /* Hover Effects */
+      .lightbox-nav:hover {
+          background: rgba(255, 255, 255, 0.25);
+          border-color: rgba(255, 255, 255, 0.5);
+          transform: scale(1.05) !important; 
+          box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+      }
+
+      /* 4. Typography: Bigger arrows and text */
+      .lightbox-nav {
+          font-size: clamp(2rem, 2.5vw, 3rem); /* Larger arrows */
+      }
+      
+      .lightbox-nav .label {
+          font-size: clamp(0.9rem, 1.1vw, 1.2rem); /* Larger text */
+          font-weight: 500;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+      }
+  }
+
+
+  /* ==== Desktop Nav Hint (Desktop) ==== */
   .desktop-nav-hint {
-    display: none; /* Hidden by default */
-    position: absolute;
-    bottom: 5vh;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1.2rem;
-    font-weight: 300;
-    color: rgba(255, 255, 255, 0.7);
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
-    pointer-events: none;
-    white-space: nowrap;
-    animation: arrowsFadeInPulseOut 3.5s ease forwards; /* Same pulse as arrows */
+      display: none;
+      position: absolute;
+      bottom: 8vh;
+      left: 50%;
+      transform: translateX(-50%);
+      
+      font-size: 1rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.9);
+      letter-spacing: 0.5px;
+      
+      /* The Pill Shape */
+      background: rgba(0, 0, 0, 0.6);
+      padding: 12px 24px;
+      border-radius: 50px;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      
+      pointer-events: none;
+      white-space: nowrap;
+      opacity: 0;
+      
+      /* ✅ Animation: Fade In -> Wait -> Fade Out -> Stay Out */
+      animation: hintFadeSequence 4s ease forwards; 
+  }
+
+  @keyframes hintFadeSequence {
+      0% { opacity: 0; transform: translate(-50%, 10px); }
+      10% { opacity: 1; transform: translate(-50%, 0); }
+      80% { opacity: 1; transform: translate(-50%, 0); }
+      100% { opacity: 0; transform: translate(-50%, -10px); }
   }
 
   @media (min-width: 769px) {
-    .lightbox-media-container.expanded .desktop-nav-hint {
-      display: block;
-    }
+      .lightbox-media-container.expanded .desktop-nav-hint {
+          display: block;
+      }
   }
 
   /* Enable pinch-zoom in expanded mode */
