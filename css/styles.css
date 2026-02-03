@@ -1408,7 +1408,7 @@
     }
 
     .lightbox-nav:hover {
-      background: rgba(255,255,255,.2);
+      background: rgba(255,255,255,.1);
       transform: scale(1.05);
     }
 
@@ -2055,82 +2055,112 @@
     }
 
   /* Fullscreen subcarousel navigation arrows */
-  .fullscreen-nav-arrows {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      pointer-events: none;
-      z-index: 9999;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-  }
+.fullscreen-nav-arrows {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
 
-  .lightbox-media-container.expanded .fullscreen-nav-arrows {
-      opacity: 1;
-      /* Removed the pulse animation on the container so arrows stay interactive */
-  }
+.lightbox-media-container.expanded .fullscreen-nav-arrows {
+    opacity: 1;
+}
 
-  /* ✅ Full-Height Clickable Zones */
-  .fullscreen-nav-arrow {
-      position: absolute;
-      top: 0; bottom: 0;
-      width: 15vw; 
-      min-width: 100px;
-      display: flex;
-      align-items: center;
-      
-      font-size: 60px;
-      font-weight: 100;
-      color: rgba(255, 255, 255, 0.0);
-      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
-      
-      pointer-events: none; 
-      cursor: default;
-      transition: all 0.4s ease;
-  }
+.fullscreen-nav-arrow {
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 15vw; 
+    min-width: 100px;
+    display: flex;
+    align-items: center;
+    
+    font-size: 60px;
+    font-weight: 100;
+    
+    /* Default Base State (Desktop) */
+    color: rgba(255, 255, 255, 0.0); /* Transparent text */
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6); /* Shadow is visible */
+    
+    pointer-events: none; 
+    cursor: default;
+    transition: all 0.4s ease;
+}
 
-  .fullscreen-nav-left {
-      left: 0;
-      right: auto; /* Safety */
-      justify-content: flex-start;
-      padding-left: 30px;
-  }
+.fullscreen-nav-left {
+    left: 0;
+    right: auto; 
+    justify-content: flex-start;
+    padding-left: 30px;
+}
 
-  .fullscreen-nav-right {
-      right: 0;
-      left: auto; 
-      justify-content: flex-end;
-      padding-right: 30px;
-  }
+.fullscreen-nav-right {
+    right: 0;
+    left: auto; 
+    justify-content: flex-end;
+    padding-right: 30px;
+}
 
-  /* ✅ Only enable pointer events when expanded */
-  .lightbox-media-container.expanded .fullscreen-nav-arrow {
-      pointer-events: auto;
-      cursor: pointer;
-  }
+.lightbox-media-container.expanded .fullscreen-nav-arrow {
+    pointer-events: auto;
+    cursor: pointer;
+}
 
-  /* Hover Effects (Only works when pointer-events is auto) */
-  .fullscreen-nav-left:hover {
-      color: rgba(255, 255, 255, 1);
-      background: linear-gradient(to right, rgba(0,0,0,0.5), transparent);
-  }
+/* ---- Desktop Hover Effects ---- */
+@media (min-width: 769px) {
+    /* !important forces these to override the animation's frozen state */
+    .fullscreen-nav-left:hover {
+        color: rgba(255, 255, 255, 1) !important;
+        background: linear-gradient(to right, rgba(0,0,0,0.5), transparent) !important;
+    }
 
-  .fullscreen-nav-right:hover {
-      color: rgba(255, 255, 255, 1);
-      background: linear-gradient(to left, rgba(0,0,0,0.5), transparent);
-  }
+    .fullscreen-nav-right:hover {
+        color: rgba(255, 255, 255, 1) !important;
+        background: linear-gradient(to left, rgba(0,0,0,0.5), transparent) !important;
+    }
+}
 
-  /* Initial Pulse Animation for the ARROW ICON only (via color) */
-  .lightbox-media-container.expanded .fullscreen-nav-arrow {
-      animation: arrowIconPulse 4s ease forwards;
-  }
+/* ---- Animations ---- */
 
-  @keyframes arrowIconPulse {
-      0% { color: rgba(255,255,255,0); }
-      10% { color: rgba(255,255,255,0.8); }
-      30% { color: rgba(255,255,255,0.4); }
-      50% { color: rgba(255,255,255,0.8); }
-      100% { color: rgba(255,255,255,0.1); } /* Settle at very faint visibility */
-  }
+/* Desktop: Pulse Color Only (Settles at 10% visible) */
+@keyframes arrowIconPulse {
+    0% { color: rgba(255,255,255,0); }
+    10% { color: rgba(255,255,255,0.8); }
+    30% { color: rgba(255,255,255,0.4); }
+    50% { color: rgba(255,255,255,0.8); }
+    100% { color: rgba(255,255,255,0.1); } 
+}
+
+/* Mobile: Fade Opacity (Settles at 0% / Invisible) */
+@keyframes arrowMobileFade {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    50% { opacity: 1; }
+    100% { opacity: 0; } /* ✅ Completely invisible */
+}
+
+.lightbox-media-container.expanded .fullscreen-nav-arrow {
+    /* Default Desktop Animation */
+    animation: arrowIconPulse 4s ease forwards;
+}
+
+/* ---- Mobile Specific Overrides (The Fix) ---- */
+@media (max-width: 768px) {
+    .fullscreen-nav-arrow {
+        /* 1. Make it fully visible by default so opacity controls it */
+        color: rgba(255, 255, 255, 0.8); 
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+        
+        /* 2. Start invisible */
+        opacity: 0; 
+    }
+
+    .lightbox-media-container.expanded .fullscreen-nav-arrow {
+        /* 3. Use the Opacity Animation */
+        animation: arrowMobileFade 3s ease forwards;
+    }
+}
 
   /* ==== Subcarousel Side Arrows (Subtle) ==== */
   .sub-nav-arrow {
@@ -2144,12 +2174,13 @@
       font-family: 'Montserrat', sans-serif; 
       font-weight: 100;
       cursor: pointer;
-      z-index: 3500;
       
-      /* ✅ Increased Clickable Area */
+      /* ✅ Z-Index 10001 ensures these sit ON TOP of the fullscreen zones */
+      z-index: 10001;
+      
       padding: 0;
-      width: 90px;   /* Up from 70px */
-      height: 160px; /* Up from 120px */
+      width: 90px;   
+      height: 160px; 
       
       display: flex;
       align-items: center;
@@ -2164,7 +2195,25 @@
   .sub-prev { left: 0; justify-content: flex-start; padding-left: 20px; }
   .sub-next { right: 0; justify-content: flex-end; padding-right: 20px; }
 
-  /* Hide side arrows on mobile (swipe is preferred) */
+  /* ---- Desktop Hover Effects ---- */
+  @media (min-width: 769px) {
+      .sub-nav-arrow:hover {
+          color: rgba(255, 255, 255, 1);
+          transform: translateY(-50%) scale(1.15); 
+          text-shadow: 0 0 20px rgba(255,255,255,0.6);
+      }
+
+      /* Gradients (0.3 opacity) */
+      .sub-prev:hover {
+          background: linear-gradient(to right, rgba(0,0,0,0.3), transparent);
+      }
+
+      .sub-next:hover {
+          background: linear-gradient(to left, rgba(0,0,0,0.3), transparent);
+      }
+  }
+
+  /* Hide side arrows on mobile */
   @media (max-width: 768px) {
       .sub-nav-arrow { display: none !important; }
   }
